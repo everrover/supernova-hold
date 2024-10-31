@@ -137,3 +137,18 @@ python3 -m pip install --upgrade pwntools
 └──╼ $
 ```
 
+### Remote run - with INFO logs enabled
+
+```sh
+[*] Imported pwntools
+[*] Creating GDB instance!
+[*] [] : mercury.picoctf.net:6312 : () : {}
+[*] Remote mode run!!
+[+] Opening connection to mercury.picoctf.net on port 6312: Done
+[*] IO instance: <pwnlib.tubes.remote.remote object at 0x7f979f63e5d0>
+[*] leak: 0x80487d6
+[!] picoCTF{d0ubl3_j30p4rdy_ad77070e}
+[*] Closed connection to mercury.picoctf.net port 6312
+```
+
+Found the flag on remote: `picoCTF{d0ubl3_j30p4rdy_ba307b82}`
