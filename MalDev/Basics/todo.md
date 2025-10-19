@@ -1,0 +1,2 @@
+- `tinyaes` based payload encryption
+- Control flow obfuscation and other obfuscation techniques
