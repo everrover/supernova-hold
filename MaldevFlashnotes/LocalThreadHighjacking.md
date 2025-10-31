@@ -236,6 +236,35 @@ In real scenarios, we may want to hijack an existing thread within our process. 
 ```cpp
 #include <tlhelp32.h>
 
+bool PrintAllThreadsInCurrentProcess() {
+	DWORD dwProcessId = GetCurrentProcessId();
+
+	THREADENTRY32 thr{};
+	thr.dwSize = sizeof(thr);
+
+	HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPTHREAD, 0);
+	if (hSnapshot == INVALID_HANDLE_VALUE) {
+		std::cerr << "[!] CreateToolhelp32Snapshot Failed With Error : " << GetLastError() << '\n';
+		return false;
+	}
+
+	if (!Thread32First(hSnapshot, &thr)) {
+		std::cerr << "[!] Thread32First Failed With Error : " << GetLastError() << '\n';
+		CloseHandle(hSnapshot);
+		return false;
+	}
+
+	std::cout << "[#] Threads in Current Process (PID: " << dwProcessId << "):\n";
+	do {
+		if (thr.th32OwnerProcessID == dwProcessId) {
+			std::cout << "    Thread ID: " << thr.th32ThreadID << '\n';
+		}
+	} while (Thread32Next(hSnapshot, &thr));
+
+	CloseHandle(hSnapshot);
+	return true;
+}
+
 bool GetLocalThreadHandle(DWORD dwMainThreadId, DWORD &dwThreadId, HANDLE &hThread) {
     dwThreadId = 0;
     hThread = NULL;
@@ -281,8 +310,8 @@ bool GetLocalThreadHandle(DWORD dwMainThreadId, DWORD &dwThreadId, HANDLE &hThre
 
 int main() {
 	HANDLE hThread = nullptr;
-	DWORD dwMainThreadId = GetCurrentThreadId();
-	DWORD dwTargetThreadId = 0;
+	DWORD dwMainThreadId = GetCurrentThreadId(); // main thread ID
+	DWORD dwTargetThreadId = 0; // to be filled by enumeration
 
 	// Get a handle to a target thread within the same process
 	if (!GetLocalThreadHandle(dwMainThreadId, dwTargetThreadId, hThread)) {
