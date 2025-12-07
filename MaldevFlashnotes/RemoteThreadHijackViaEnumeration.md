@@ -1,4 +1,6 @@
+# Remote Thread Hijack via Enumeration
 
+Same principle as in remote thread hijack. What we can do is enumerate the threads of a target process, pick one and hijack it to execute our shellcode.
 
 ```cpp
 #define _CRT_SECURE_NO_WARNINGS 1
