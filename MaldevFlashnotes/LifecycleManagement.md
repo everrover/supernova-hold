@@ -6,4 +6,5 @@ Basic things I remember that can be useful are
 - Singletons
 - Semaphores/Mutexes/etc.
 - Thread/process-pools
-- Async events => `` for Windows
+- Async events => `CreateEventA` for Windows
+- And definitely more...
