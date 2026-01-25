@@ -37,8 +37,8 @@ PORT     STATE SERVICE
 - Also,
 ```bash
 curl 'http://10.66.131.250:8080/feedback' \
-  -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8' \
-  -H 'Accept-Language: en-US,en;q=0.9' \
+`  -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8' \
+`  -H 'Accept-Language: en-US,en;q=0.9' \
   -H 'Cache-Control: max-age=0' \
   -H 'Connection: keep-alive' \
   -H 'Content-Type: application/x-www-form-urlencoded' \
