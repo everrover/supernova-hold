@@ -1,0 +1,273 @@
+file pwn104-1644300377109.pwn104
+   78  mv pwn102.py exploit-pwn102.py
+   79  mv pwn103.py exploit-pwn103.py
+   80  cp exploit-pwn103.py exploit-pwn104.py
+   81  nano exploit-pwn104.py
+   82  cat exploit-pwn104.py
+   83  ls -al
+   84  ./pwn107-1644307530397.pwn107
+   85  r2 -d -A pwn107-1644307530397.pwn107
+   86  ./pwn107-1644307530397.pwn107
+   87  r2 --help
+   88  r2 -d -A pwn107-1644307530397.pwn107
+   89  r2 -d -A pwn108-1644300489260.pwn108
+   90  r2 -d -A pwn108-1644300489260.pwn108 -O ch8_payload
+   91  r2 -d -A pwn108-1644300489260.pwn108 -stdin=./ch8_payload
+   92  r2 -d -A pwn108-1644300489260.pwn108 -R stdin=ch8_payload
+   93  r2 -R stdin=ch8_payload -d -A pwn108-1644300489260.pwn108
+   94  ls
+   95  cat pwn109ropgadgets.txt | grep "ret" | tail -10
+   96  cat pwn109ropgadgets.txt | grep "rdi" | tail -10
+   97  python ./exploit-pwn109.py local\n
+   98  source pwn-env/
+   99  source pwn-env/bin/activate
+  100  python ./exploit-pwn109.py local\n
+  101  python ./exploit-pwn107.py remote --target=10.48.162.99 --port=9007
+  102  r2 -R -d -A pwn107-1644307530397.pwn107
+  103  history | grep ROP
+  104  getconf PAGESIZE
+  105  ls
+  106  pip freeze > req.txt
+quests: 1' \\n  -H 'Priority: u=0, i' -o-
+   44  python3 exp.py
+   45  history
+   46  cd Downloads
+   47  ls
+   48  ls -al
+   49  cd ..
+   50  ls -al
+   51  cd Downloads
+   52  sudo nmap -sC -sV --top-ports=1000 10.49.187.68
+   53  sudo openvpn eu-west-3-everroveractual-regular.ovpn
+   54  rm eu-west-3-everroveractual-regular.ovpn
+   55  sudo openvpn eu-west-3-everroveractual-regular.ovpn
+   56  sudo openvpn eu-west-3-everroveractual-regular\(1\).ovpn
+   57  python ./MnemonicCrypto/Mnemonic.py
+   58  pipx list
+   59  pip list
+   60  pip list | grep cv
+   61  pip3 list | grep cv
+   62  pip3 install opencv
+   63  pip3 install opencv-python
+   64  python3 -m venv thmenv
+   65  source thmenv/bin/activate
+   66  pip install opencv-python
+   67  python3 ./MnemonicCrypto/Mnemonic.py
+   68  pip install termcolo-python
+   69  pip install termcolor-python
+   70  pip install termcoloe
+   71  pip install termcolor
+   72  python ./MnemonicCrypto/Mnemonic.py
+   73  nano MnemonicCrypto/Mnemonic.py
+   74  python ./MnemonicCrypto/Mnemonic.py
+   75  history
+   76  ls
+   77  file pwn104-1644300377109.pwn104
+   78  mv pwn102.py exploit-pwn102.py
+   79  mv pwn103.py exploit-pwn103.py
+   80  cp exploit-pwn103.py exploit-pwn104.py
+   81  nano exploit-pwn104.py
+   82  ./pwn107-1644307530397.pwn107 
+   83  python3 ./exploit-pwn107.py local
+   84  source ./pwn-env/bin/activate\n
+   85  python3 ./exploit-pwn107.py local
+   86  ./pwn107-1644307530397.pwn107 
+   87  python3 ./exploit-pwn107.py local
+   88  ./pwn107-1644307530397.pwn107 
+   89  python3 ./exploit-pwn107.py local
+   90  ./pwn107-1644307530397.pwn107 
+   91  nano exploit-pwn107.py
+   92  ls
+   93  nano exploit-pwn107.py
+   94  python3 ./exploit-pwn107.py local
+   95  ./pwn107-1644307530397.pwn107 
+   96  python3 ./exploit-pwn107.py local
+   97  sudo python3 ./exploit-pwn107.py local
+   98  python3 ./exploit-pwn107.py local
+   99  ./pwn108-1644300489260.pwn108
+  100  python3 ./exploit-pwn108.py
+  101  python3 ./exploit-pwn108.py local
+  102  cat ch8_payload
+  103  xxd ch8_payload
+  104  python3 ./exploit-pwn108.py local
+  105  xxd ch8_payload
+  106  ./pwn108-1644300489260.pwn108
+  107  xxd ch8_payload
+  108  cat ch8_payload
+  109  python3 ./exploit-pwn108.py local
+  110  cat ch8_payload
+  111  python3 ./exploit-pwn108.py local
+  112  cat ch8_payload
+  113  python3 ./exploit-pwn108.py local
+  114  r2 -d -A pwn108-1644300489260.pwn108
+  115  xxd ch8_payload
+  116  python3 ./exploit-pwn108.py local
+  117  xxd ch8_payload
+  118  python3 ./exploit-pwn108.py local
+  119  xxd ch8_payload
+  120  ./pwn108-1644300489260.pwn108
+  121  xxd ch8_payload
+  122  python3 ./exploit-pwn108.py local
+  123  xxd ch8_payload
+  124  python3 ./exploit-pwn108.py local
+  125  xxd ch8_payload
+  126  ./pwn108-1644300489260.pwn108
+  127  python3 ./exploit-pwn108.py local
+  128  cat ch8_payload
+  129  ./pwn108-1644300489260.pwn108
+  130  cat ch8_payload
+  131  python3 ./exploit-pwn108.py local
+  132  cat ch8_payload
+  133  python3 ./exploit-pwn108.py local
+  134  cat ch8_payload
+  135  python3 ./exploit-pwn108.py local
+  136  mv ../pwn109-1644300507645.pwn109 ./pwn109-1644300507645.pwn109
+  137  chmod +x pwn109-1644300507645.pwn109
+  138  ./pwn109-1644300507645.pwn109 
+  139  ROPgadget --binary pwn109-1644300507645.pwn109 --output pwn109ropgadgets.txt
+  140  ROPgadget --binary pwn109-1644300507645.pwn109 > pwn109ropgadgets.txt
+  141  tail -10 pwn109ropgadgets.txt
+  142  cp exploit-pwn108.py exploit-pwn109.py
+  143  nano exploit-pwn109.py
+  144  history | grep ROP
+  145  ROPgadget --binary pwn107-1644307530397.pwn107 > pwn107ropgadgets.txt
+  146  cat pwn107ropgadgets.txt | grep ret | tail -10
+  147  nano exploit-pwn108.py
+  148  nano exploit-pwn109.py
+  149  cp exploit-pwn108.py exploit-pwn110.py
+  150  mv ../pwn110-1644300525386.pwn110 ./pwn110-1644300525386.pwn110
+  151  chmod +x pwn110-1644300525386.pwn110
+  152  ./pwn110-1644300525386.pwn110
+
+
+ 1' \\n  -H 'Priority: u=0, i' -o-
+   44  python3 exp.py
+   45  history
+   46  cd Downloads
+   47  ls
+   48  ls -al
+   49  cd ..
+   50  ls -al
+   51  cd Downloads
+   52  sudo nmap -sC -sV --top-ports=1000 10.49.187.68
+   53  sudo openvpn eu-west-3-everroveractual-regular.ovpn
+   54  rm eu-west-3-everroveractual-regular.ovpn
+   55  sudo openvpn eu-west-3-everroveractual-regular.ovpn
+   56  sudo openvpn eu-west-3-everroveractual-regular\(1\).ovpn
+   57  python ./MnemonicCrypto/Mnemonic.py
+   58  pipx list
+   59  pip list
+   60  pip list | grep cv
+   61  pip3 list | grep cv
+   62  pip3 install opencv
+   63  pip3 install opencv-python
+   64  python3 -m venv thmenv
+   65  source thmenv/bin/activate
+   66  pip install opencv-python
+   67  python3 ./MnemonicCrypto/Mnemonic.py
+   68  pip install termcolo-python
+   69  pip install termcolor-python
+   70  pip install termcoloe
+   71  pip install termcolor
+   72  python ./MnemonicCrypto/Mnemonic.py
+   73  nano MnemonicCrypto/Mnemonic.py
+   74  python ./MnemonicCrypto/Mnemonic.py
+   75  history
+   76  ls
+   77  file pwn104-1644300377109.pwn104
+   78  mv pwn102.py exploit-pwn102.py
+   79  mv pwn103.py exploit-pwn103.py
+   80  cp exploit-pwn103.py exploit-pwn104.py
+   81  nano exploit-pwn104.py
+   82  cat exploit-pwn104.py
+   83  ls -al
+   84  ./pwn107-1644307530397.pwn107
+   85  r2 -d -A pwn107-1644307530397.pwn107
+   86  ./pwn107-1644307530397.pwn107
+   87  r2 --help
+   88  r2 -d -A pwn107-1644307530397.pwn107
+   89  r2 -d -A pwn108-1644300489260.pwn108
+   90  r2 -d -A pwn108-1644300489260.pwn108 -O ch8_payload
+   91  r2 -d -A pwn108-1644300489260.pwn108 -stdin=./ch8_payload
+   92  r2 -d -A pwn108-1644300489260.pwn108 -R stdin=ch8_payload
+   93  r2 -R stdin=ch8_payload -d -A pwn108-1644300489260.pwn108
+   94  ls
+   95  cat pwn109ropgadgets.txt | grep "ret" | tail -10
+   96  cat pwn109ropgadgets.txt | grep "rdi" | tail -10
+   97  python ./exploit-pwn109.py local\n
+   98  source pwn-env/
+   99  source pwn-env/bin/activate
+  100  python ./exploit-pwn109.py local\n
+  101  python ./exploit-pwn107.py remote --target=10.48.162.99 --port=9007
+  102  r2 -R -d -A pwn107-1644307530397.pwn107
+  103  history | grep ROP
+  104  getconf PAGESIZE
+  105  ls
+  106  pip freeze > req.txt
+
+ls
+   77  file pwn104-1644300377109.pwn104
+   78  mv pwn102.py exploit-pwn102.py
+   79  mv pwn103.py exploit-pwn103.py
+   80  cp exploit-pwn103.py exploit-pwn104.py
+   81  nano exploit-pwn104.py
+   82  python3 ./exploit-pwn104.py local
+   83  source ./pwn-env/bin/activate
+   84  python3 ./exploit-pwn104.py local
+   85  ls
+   86  python3 ./exploit-pwn104.py local
+   87  ls
+   88  python3 ./exploit-pwn104.py local
+   89  cat exploit-pwn104.py
+   90  ping 10.48.149.245
+   91  python3 ./exploit-pwn104.py remote --target 10.48.149.245 --port 9004
+   92  python3 ./exploit-pwn103.py remote --target 10.48.149.245 --port 9003
+   93  python3 ./exploit-pwn104.py remote --target 10.48.149.245 --port 9004
+   94  history
+   95  python3 
+   96  ls
+   97  python3 exploit-pwn105.py local
+   98  ls -al
+   99  file pwn106-user-1644300441063.pwn106-user
+  100  cp exploit-pwn104.py exploit-pwn106.py
+  101  nano exploit-pwn106.py
+  102  nano exploit-pwn107.py
+  103  history
+  104  nano exploit-pwn107.py
+  105  source ./pwn-env/bin/activate
+  106  python3 
+  107  nc 10.48.162.99 9007
+  108  source ./pwn-env/bin/activate
+  109  python3 ./exploit-pwn107.py remote --target=10.48.162.99 --port=9007
+  110  python3 ./exploit-pwn107.py local
+  111  python3 ./exploit-pwn107.py remote --target=10.48.162.99 --port=9007
+  112  ./pwn107-1644307530397.pwn107
+  113  python3 ./exploit-pwn107.py remote --target=10.48.162.99 --port=9007
+  114  python3 ./exploit-pwn108.py remote --target=10.48.162.99 --port=9008
+  115  python3 ./exploit-pwn107.py remote --target=10.48.162.99 --port=9007
+  116  history | grep ROP
+  117  python3 ./exploit-pwn107.py remote --target=10.48.162.99 --port=9007
+  118  nc 10.48.162.99 9007
+  119  python3 ./exploit-pwn109.py remote --target=10.48.162.99 --port=9009
+  120  python3 ./exploit-pwn109.py local
+  121  ROPgadget ./pwn110-1644300525386.pwn110 > pwn110ropgadgets.txt
+  122  history | grep ROP
+  123  ROPgadget --binary ./pwn110-1644300525386.pwn110 > pwn110ropgadgets.txt
+  124  cat pwn110ropgadgets.txt | grep ret | tail -10
+  125  cat pwn110ropgadgets.txt | grep ret rax | tail -10
+  126  cat pwn110ropgadgets.txt | grep "ret rax" | tail -10
+  127  cat pwn110ropgadgets.txt | grep "pop rax" | tail -10
+  128  cp exploit-pwn110.py exploit-pwn110.py
+  129  cp exploit-pwn109.py exploit-pwn110.py
+  130  cat pwn110ropgadgets.txt | grep "pop rdi" | tail -10
+  131  cat pwn110ropgadgets.txt | grep "ret" | tail -10
+  132  cat pwn110ropgadgets.txt | grep ": ret" | tail -10
+  133  cat pwn110ropgadgets.txt | grep ": ret" | head -10
+  134  cat pwn110ropgadgets.txt | grep ": pop rsi" | head -10
+  135  cat pwn110ropgadgets.txt | grep ": pop rsi" | tail -10
+  136  cat pwn110ropgadgets.txt | grep ": pop rdx" | tail -10
+  137  cat pwn110ropgadgets.txt | grep ": jmp rsp" | tail -10
+
+
+
+## there's more that's lost in the void
