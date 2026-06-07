@@ -1,6 +1,6 @@
 ### Function Stomping
 
-Basically, function or any other code/data structure's memory is overwritten with malicious code or data. And then run.
+Basically, function or any other code/data structure's memory is overwritten with malicious code or data. And then run. For both local and remote processes.
 
 Allows:
 - privilege escalation
