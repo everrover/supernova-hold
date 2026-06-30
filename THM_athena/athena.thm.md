@@ -67,7 +67,7 @@ WantedBy=multi-user.target
 ## Got access on another `nc -lvnp 4568`
 
 Look at line `0x80004ae`, condition is to kill process 59!
-![img](./THM_athena/cutter.png)
+![img](./cutter.png)
 
 ```
 > # stabilization first
