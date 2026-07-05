@@ -1,0 +1,1095 @@
+
+Incorrect Usage: invalid value "4" for flag -timeout: parse error
+
+NAME:
+   gobuster dir - Uses directory/file enumeration mode
+
+USAGE:
+   gobuster dir command [command options] [arguments...]
+
+COMMANDS:
+   help, h  Shows a list of commands or help for one command
+
+OPTIONS:
+   --url value, -u value                                    The target URL
+   --cookies value, -c value                                Cookies to use for the requests
+   --username value, -U value                               Username for Basic Auth
+   --password value, -P value                               Password for Basic Auth
+   --follow-redirect, -r                                    Follow redirects (default: false)
+   --headers value, -H value [ --headers value, -H value ]  Specify HTTP headers, -H 'Header1: val1' -H 'Header2: val2'
+   --no-canonicalize-headers, --nch                         Do not canonicalize HTTP header names. If set header names are sent as is (default: false)
+   --method value, -m value                                 the password to the p12 file (default: "GET")
+   --useragent value, -a value                              Set the User-Agent string (default: "gobuster/3.8.2")
+   --random-agent, --rua                                    Use a random User-Agent string (default: false)
+   --proxy value                                            Proxy to use for requests [http(s)://host:port] or [socks5://host:port]
+   --timeout value, --to value                              HTTP Timeout (default: 10s)
+   --no-tls-validation, -k                                  Skip TLS certificate verification (default: false)
+   --retry                                                  Should retry on request timeout (default: false)
+   --retry-attempts value, --ra value                       Times to retry on request timeout (default: 3)
+   --client-cert-pem value, --ccp value                     public key in PEM format for optional TLS client certificates]
+   --client-cert-pem-key value, --ccpk value                private key in PEM format for optional TLS client certificates (this key needs to have no password)
+   --client-cert-p12 value, --ccp12 value                   a p12 file to use for options TLS client certificates
+   --client-cert-p12-password value, --ccp12p value         the password to the p12 file
+   --tls-renegotiation                                      Enable TLS renegotiation (default: false)
+   --interface value, --iface value                         specify network interface to use. Can't be used with local-ip
+   --local-ip value                                         specify local ip of network interface to use. Can't be used with interface
+   --wordlist value, -w value                               Path to the wordlist. Set to - to use STDIN.
+   --delay value, -d value                                  Time each thread waits between requests (e.g. 1500ms) (default: 0s)
+   --threads value, -t value                                Number of concurrent threads (default: 10)
+   --wordlist-offset value, --wo value                      Resume from a given position in the wordlist (default: 0)
+   --output value, -o value                                 Output file to write results to (defaults to stdout)
+   --quiet, -q                                              Don't print the banner and other noise (default: false)
+   --no-progress, --np                                      Don't display progress (default: false)
+   --no-error, --ne                                         Don't display errors (default: false)
+   --pattern value, -p value                                File containing replacement patterns
+   --discover-pattern value, --pd value                     File containing replacement patterns applied to successful guesses
+   --no-color, --nc                                         Disable color output (default: false)
+   --debug                                                  enable debug output (default: false)
+   --status-codes value, -s value                           Positive status codes (will be overwritten with status-codes-blacklist if set). Can also handle ranges like 200,300-400,404
+   --status-codes-blacklist value, -b value                 Negative status codes (will override status-codes if set). Can also handle ranges like 200,300-400,404. (default: "404")
+   --extensions value, -x value                             File extension(s) to search for
+   --extensions-file value, -X value                        Read file extension(s) to search from the file
+   --expanded, -e                                           Expanded mode, print full URLs (default: false)
+   --no-status, -n                                          Don't print status codes (default: false)
+   --hide-length, --hl                                      Hide the length of the body in the output (default: false)
+   --add-slash, -f                                          Append / to each request (default: false)
+   --discover-backup, --db                                  Upon finding a file search for backup files by appending multiple backup extensions (default: false)
+   --exclude-length value, --xl value                       exclude the following content lengths (completely ignores the status). You can separate multiple lengths by comma and it also supports ranges like 203-206
+   --force                                                  Continue even if the prechecks fail. Please only use this if you know what you are doing, it can lead to unexpected results. (default: false)
+   --help, -h                                               show help
+Incorrect Usage: invalid value "4" for flag -timeout: parse error
+
+NAME:
+   gobuster dir - Uses directory/file enumeration mode
+
+USAGE:
+   gobuster dir command [command options] [arguments...]
+
+COMMANDS:
+   help, h  Shows a list of commands or help for one command
+
+OPTIONS:
+   --url value, -u value                                    The target URL
+   --cookies value, -c value                                Cookies to use for the requests
+   --username value, -U value                               Username for Basic Auth
+   --password value, -P value                               Password for Basic Auth
+   --follow-redirect, -r                                    Follow redirects (default: false)
+   --headers value, -H value [ --headers value, -H value ]  Specify HTTP headers, -H 'Header1: val1' -H 'Header2: val2'
+   --no-canonicalize-headers, --nch                         Do not canonicalize HTTP header names. If set header names are sent as is (default: false)
+   --method value, -m value                                 the password to the p12 file (default: "GET")
+   --useragent value, -a value                              Set the User-Agent string (default: "gobuster/3.8.2")
+   --random-agent, --rua                                    Use a random User-Agent string (default: false)
+   --proxy value                                            Proxy to use for requests [http(s)://host:port] or [socks5://host:port]
+   --timeout value, --to value                              HTTP Timeout (default: 10s)
+   --no-tls-validation, -k                                  Skip TLS certificate verification (default: false)
+   --retry                                                  Should retry on request timeout (default: false)
+   --retry-attempts value, --ra value                       Times to retry on request timeout (default: 3)
+   --client-cert-pem value, --ccp value                     public key in PEM format for optional TLS client certificates]
+   --client-cert-pem-key value, --ccpk value                private key in PEM format for optional TLS client certificates (this key needs to have no password)
+   --client-cert-p12 value, --ccp12 value                   a p12 file to use for options TLS client certificates
+   --client-cert-p12-password value, --ccp12p value         the password to the p12 file
+   --tls-renegotiation                                      Enable TLS renegotiation (default: false)
+   --interface value, --iface value                         specify network interface to use. Can't be used with local-ip
+   --local-ip value                                         specify local ip of network interface to use. Can't be used with interface
+   --wordlist value, -w value                               Path to the wordlist. Set to - to use STDIN.
+   --delay value, -d value                                  Time each thread waits between requests (e.g. 1500ms) (default: 0s)
+   --threads value, -t value                                Number of concurrent threads (default: 10)
+   --wordlist-offset value, --wo value                      Resume from a given position in the wordlist (default: 0)
+   --output value, -o value                                 Output file to write results to (defaults to stdout)
+   --quiet, -q                                              Don't print the banner and other noise (default: false)
+   --no-progress, --np                                      Don't display progress (default: false)
+   --no-error, --ne                                         Don't display errors (default: false)
+   --pattern value, -p value                                File containing replacement patterns
+   --discover-pattern value, --pd value                     File containing replacement patterns applied to successful guesses
+   --no-color, --nc                                         Disable color output (default: false)
+   --debug                                                  enable debug output (default: false)
+   --status-codes value, -s value                           Positive status codes (will be overwritten with status-codes-blacklist if set). Can also handle ranges like 200,300-400,404
+   --status-codes-blacklist value, -b value                 Negative status codes (will override status-codes if set). Can also handle ranges like 200,300-400,404. (default: "404")
+   --extensions value, -x value                             File extension(s) to search for
+   --extensions-file value, -X value                        Read file extension(s) to search from the file
+   --expanded, -e                                           Expanded mode, print full URLs (default: false)
+   --no-status, -n                                          Don't print status codes (default: false)
+   --hide-length, --hl                                      Hide the length of the body in the output (default: false)
+   --add-slash, -f                                          Append / to each request (default: false)
+   --discover-backup, --db                                  Upon finding a file search for backup files by appending multiple backup extensions (default: false)
+   --exclude-length value, --xl value                       exclude the following content lengths (completely ignores the status). You can separate multiple lengths by comma and it also supports ranges like 203-206
+   --force                                                  Continue even if the prechecks fail. Please only use this if you know what you are doing, it can lead to unexpected results. (default: false)
+   --help, -h                                               show help
+Incorrect Usage: invalid value "4" for flag -timeout: parse error
+
+NAME:
+   gobuster dir - Uses directory/file enumeration mode
+
+USAGE:
+   gobuster dir command [command options] [arguments...]
+
+COMMANDS:
+   help, h  Shows a list of commands or help for one command
+
+OPTIONS:
+   --url value, -u value                                    The target URL
+   --cookies value, -c value                                Cookies to use for the requests
+   --username value, -U value                               Username for Basic Auth
+   --password value, -P value                               Password for Basic Auth
+   --follow-redirect, -r                                    Follow redirects (default: false)
+   --headers value, -H value [ --headers value, -H value ]  Specify HTTP headers, -H 'Header1: val1' -H 'Header2: val2'
+   --no-canonicalize-headers, --nch                         Do not canonicalize HTTP header names. If set header names are sent as is (default: false)
+   --method value, -m value                                 the password to the p12 file (default: "GET")
+   --useragent value, -a value                              Set the User-Agent string (default: "gobuster/3.8.2")
+   --random-agent, --rua                                    Use a random User-Agent string (default: false)
+   --proxy value                                            Proxy to use for requests [http(s)://host:port] or [socks5://host:port]
+   --timeout value, --to value                              HTTP Timeout (default: 10s)
+   --no-tls-validation, -k                                  Skip TLS certificate verification (default: false)
+   --retry                                                  Should retry on request timeout (default: false)
+   --retry-attempts value, --ra value                       Times to retry on request timeout (default: 3)
+   --client-cert-pem value, --ccp value                     public key in PEM format for optional TLS client certificates]
+   --client-cert-pem-key value, --ccpk value                private key in PEM format for optional TLS client certificates (this key needs to have no password)
+   --client-cert-p12 value, --ccp12 value                   a p12 file to use for options TLS client certificates
+   --client-cert-p12-password value, --ccp12p value         the password to the p12 file
+   --tls-renegotiation                                      Enable TLS renegotiation (default: false)
+   --interface value, --iface value                         specify network interface to use. Can't be used with local-ip
+   --local-ip value                                         specify local ip of network interface to use. Can't be used with interface
+   --wordlist value, -w value                               Path to the wordlist. Set to - to use STDIN.
+   --delay value, -d value                                  Time each thread waits between requests (e.g. 1500ms) (default: 0s)
+   --threads value, -t value                                Number of concurrent threads (default: 10)
+   --wordlist-offset value, --wo value                      Resume from a given position in the wordlist (default: 0)
+   --output value, -o value                                 Output file to write results to (defaults to stdout)
+   --quiet, -q                                              Don't print the banner and other noise (default: false)
+   --no-progress, --np                                      Don't display progress (default: false)
+   --no-error, --ne                                         Don't display errors (default: false)
+   --pattern value, -p value                                File containing replacement patterns
+   --discover-pattern value, --pd value                     File containing replacement patterns applied to successful guesses
+   --no-color, --nc                                         Disable color output (default: false)
+   --debug                                                  enable debug output (default: false)
+   --status-codes value, -s value                           Positive status codes (will be overwritten with status-codes-blacklist if set). Can also handle ranges like 200,300-400,404
+   --status-codes-blacklist value, -b value                 Negative status codes (will override status-codes if set). Can also handle ranges like 200,300-400,404. (default: "404")
+   --extensions value, -x value                             File extension(s) to search for
+   --extensions-file value, -X value                        Read file extension(s) to search from the file
+   --expanded, -e                                           Expanded mode, print full URLs (default: false)
+   --no-status, -n                                          Don't print status codes (default: false)
+   --hide-length, --hl                                      Hide the length of the body in the output (default: false)
+   --add-slash, -f                                          Append / to each request (default: false)
+   --discover-backup, --db                                  Upon finding a file search for backup files by appending multiple backup extensions (default: false)
+   --exclude-length value, --xl value                       exclude the following content lengths (completely ignores the status). You can separate multiple lengths by comma and it also supports ranges like 203-206
+   --force                                                  Continue even if the prechecks fail. Please only use this if you know what you are doing, it can lead to unexpected results. (default: false)
+   --help, -h                                               show help
+Incorrect Usage: invalid value "4" for flag -timeout: parse error
+
+NAME:
+   gobuster dir - Uses directory/file enumeration mode
+
+USAGE:
+   gobuster dir command [command options] [arguments...]
+
+COMMANDS:
+   help, h  Shows a list of commands or help for one command
+
+OPTIONS:
+   --url value, -u value                                    The target URL
+   --cookies value, -c value                                Cookies to use for the requests
+   --username value, -U value                               Username for Basic Auth
+   --password value, -P value                               Password for Basic Auth
+   --follow-redirect, -r                                    Follow redirects (default: false)
+   --headers value, -H value [ --headers value, -H value ]  Specify HTTP headers, -H 'Header1: val1' -H 'Header2: val2'
+   --no-canonicalize-headers, --nch                         Do not canonicalize HTTP header names. If set header names are sent as is (default: false)
+   --method value, -m value                                 the password to the p12 file (default: "GET")
+   --useragent value, -a value                              Set the User-Agent string (default: "gobuster/3.8.2")
+   --random-agent, --rua                                    Use a random User-Agent string (default: false)
+   --proxy value                                            Proxy to use for requests [http(s)://host:port] or [socks5://host:port]
+   --timeout value, --to value                              HTTP Timeout (default: 10s)
+   --no-tls-validation, -k                                  Skip TLS certificate verification (default: false)
+   --retry                                                  Should retry on request timeout (default: false)
+   --retry-attempts value, --ra value                       Times to retry on request timeout (default: 3)
+   --client-cert-pem value, --ccp value                     public key in PEM format for optional TLS client certificates]
+   --client-cert-pem-key value, --ccpk value                private key in PEM format for optional TLS client certificates (this key needs to have no password)
+   --client-cert-p12 value, --ccp12 value                   a p12 file to use for options TLS client certificates
+   --client-cert-p12-password value, --ccp12p value         the password to the p12 file
+   --tls-renegotiation                                      Enable TLS renegotiation (default: false)
+   --interface value, --iface value                         specify network interface to use. Can't be used with local-ip
+   --local-ip value                                         specify local ip of network interface to use. Can't be used with interface
+   --wordlist value, -w value                               Path to the wordlist. Set to - to use STDIN.
+   --delay value, -d value                                  Time each thread waits between requests (e.g. 1500ms) (default: 0s)
+   --threads value, -t value                                Number of concurrent threads (default: 10)
+   --wordlist-offset value, --wo value                      Resume from a given position in the wordlist (default: 0)
+   --output value, -o value                                 Output file to write results to (defaults to stdout)
+   --quiet, -q                                              Don't print the banner and other noise (default: false)
+   --no-progress, --np                                      Don't display progress (default: false)
+   --no-error, --ne                                         Don't display errors (default: false)
+   --pattern value, -p value                                File containing replacement patterns
+   --discover-pattern value, --pd value                     File containing replacement patterns applied to successful guesses
+   --no-color, --nc                                         Disable color output (default: false)
+   --debug                                                  enable debug output (default: false)
+   --status-codes value, -s value                           Positive status codes (will be overwritten with status-codes-blacklist if set). Can also handle ranges like 200,300-400,404
+   --status-codes-blacklist value, -b value                 Negative status codes (will override status-codes if set). Can also handle ranges like 200,300-400,404. (default: "404")
+   --extensions value, -x value                             File extension(s) to search for
+   --extensions-file value, -X value                        Read file extension(s) to search from the file
+   --expanded, -e                                           Expanded mode, print full URLs (default: false)
+   --no-status, -n                                          Don't print status codes (default: false)
+   --hide-length, --hl                                      Hide the length of the body in the output (default: false)
+   --add-slash, -f                                          Append / to each request (default: false)
+   --discover-backup, --db                                  Upon finding a file search for backup files by appending multiple backup extensions (default: false)
+   --exclude-length value, --xl value                       exclude the following content lengths (completely ignores the status). You can separate multiple lengths by comma and it also supports ranges like 203-206
+   --force                                                  Continue even if the prechecks fail. Please only use this if you know what you are doing, it can lead to unexpected results. (default: false)
+   --help, -h                                               show help
+Incorrect Usage: invalid value "4" for flag -timeout: parse error
+
+NAME:
+   gobuster dir - Uses directory/file enumeration mode
+
+USAGE:
+   gobuster dir command [command options] [arguments...]
+
+COMMANDS:
+   help, h  Shows a list of commands or help for one command
+
+OPTIONS:
+   --url value, -u value                                    The target URL
+   --cookies value, -c value                                Cookies to use for the requests
+   --username value, -U value                               Username for Basic Auth
+   --password value, -P value                               Password for Basic Auth
+   --follow-redirect, -r                                    Follow redirects (default: false)
+   --headers value, -H value [ --headers value, -H value ]  Specify HTTP headers, -H 'Header1: val1' -H 'Header2: val2'
+   --no-canonicalize-headers, --nch                         Do not canonicalize HTTP header names. If set header names are sent as is (default: false)
+   --method value, -m value                                 the password to the p12 file (default: "GET")
+   --useragent value, -a value                              Set the User-Agent string (default: "gobuster/3.8.2")
+   --random-agent, --rua                                    Use a random User-Agent string (default: false)
+   --proxy value                                            Proxy to use for requests [http(s)://host:port] or [socks5://host:port]
+   --timeout value, --to value                              HTTP Timeout (default: 10s)
+   --no-tls-validation, -k                                  Skip TLS certificate verification (default: false)
+   --retry                                                  Should retry on request timeout (default: false)
+   --retry-attempts value, --ra value                       Times to retry on request timeout (default: 3)
+   --client-cert-pem value, --ccp value                     public key in PEM format for optional TLS client certificates]
+   --client-cert-pem-key value, --ccpk value                private key in PEM format for optional TLS client certificates (this key needs to have no password)
+   --client-cert-p12 value, --ccp12 value                   a p12 file to use for options TLS client certificates
+   --client-cert-p12-password value, --ccp12p value         the password to the p12 file
+   --tls-renegotiation                                      Enable TLS renegotiation (default: false)
+   --interface value, --iface value                         specify network interface to use. Can't be used with local-ip
+   --local-ip value                                         specify local ip of network interface to use. Can't be used with interface
+   --wordlist value, -w value                               Path to the wordlist. Set to - to use STDIN.
+   --delay value, -d value                                  Time each thread waits between requests (e.g. 1500ms) (default: 0s)
+   --threads value, -t value                                Number of concurrent threads (default: 10)
+   --wordlist-offset value, --wo value                      Resume from a given position in the wordlist (default: 0)
+   --output value, -o value                                 Output file to write results to (defaults to stdout)
+   --quiet, -q                                              Don't print the banner and other noise (default: false)
+   --no-progress, --np                                      Don't display progress (default: false)
+   --no-error, --ne                                         Don't display errors (default: false)
+   --pattern value, -p value                                File containing replacement patterns
+   --discover-pattern value, --pd value                     File containing replacement patterns applied to successful guesses
+   --no-color, --nc                                         Disable color output (default: false)
+   --debug                                                  enable debug output (default: false)
+   --status-codes value, -s value                           Positive status codes (will be overwritten with status-codes-blacklist if set). Can also handle ranges like 200,300-400,404
+   --status-codes-blacklist value, -b value                 Negative status codes (will override status-codes if set). Can also handle ranges like 200,300-400,404. (default: "404")
+   --extensions value, -x value                             File extension(s) to search for
+   --extensions-file value, -X value                        Read file extension(s) to search from the file
+   --expanded, -e                                           Expanded mode, print full URLs (default: false)
+   --no-status, -n                                          Don't print status codes (default: false)
+   --hide-length, --hl                                      Hide the length of the body in the output (default: false)
+   --add-slash, -f                                          Append / to each request (default: false)
+   --discover-backup, --db                                  Upon finding a file search for backup files by appending multiple backup extensions (default: false)
+   --exclude-length value, --xl value                       exclude the following content lengths (completely ignores the status). You can separate multiple lengths by comma and it also supports ranges like 203-206
+   --force                                                  Continue even if the prechecks fail. Please only use this if you know what you are doing, it can lead to unexpected results. (default: false)
+   --help, -h                                               show help
+Incorrect Usage: invalid value "4" for flag -timeout: parse error
+
+NAME:
+   gobuster dir - Uses directory/file enumeration mode
+
+USAGE:
+   gobuster dir command [command options] [arguments...]
+
+COMMANDS:
+   help, h  Shows a list of commands or help for one command
+
+OPTIONS:
+   --url value, -u value                                    The target URL
+   --cookies value, -c value                                Cookies to use for the requests
+   --username value, -U value                               Username for Basic Auth
+   --password value, -P value                               Password for Basic Auth
+   --follow-redirect, -r                                    Follow redirects (default: false)
+   --headers value, -H value [ --headers value, -H value ]  Specify HTTP headers, -H 'Header1: val1' -H 'Header2: val2'
+   --no-canonicalize-headers, --nch                         Do not canonicalize HTTP header names. If set header names are sent as is (default: false)
+   --method value, -m value                                 the password to the p12 file (default: "GET")
+   --useragent value, -a value                              Set the User-Agent string (default: "gobuster/3.8.2")
+   --random-agent, --rua                                    Use a random User-Agent string (default: false)
+   --proxy value                                            Proxy to use for requests [http(s)://host:port] or [socks5://host:port]
+   --timeout value, --to value                              HTTP Timeout (default: 10s)
+   --no-tls-validation, -k                                  Skip TLS certificate verification (default: false)
+   --retry                                                  Should retry on request timeout (default: false)
+   --retry-attempts value, --ra value                       Times to retry on request timeout (default: 3)
+   --client-cert-pem value, --ccp value                     public key in PEM format for optional TLS client certificates]
+   --client-cert-pem-key value, --ccpk value                private key in PEM format for optional TLS client certificates (this key needs to have no password)
+   --client-cert-p12 value, --ccp12 value                   a p12 file to use for options TLS client certificates
+   --client-cert-p12-password value, --ccp12p value         the password to the p12 file
+   --tls-renegotiation                                      Enable TLS renegotiation (default: false)
+   --interface value, --iface value                         specify network interface to use. Can't be used with local-ip
+   --local-ip value                                         specify local ip of network interface to use. Can't be used with interface
+   --wordlist value, -w value                               Path to the wordlist. Set to - to use STDIN.
+   --delay value, -d value                                  Time each thread waits between requests (e.g. 1500ms) (default: 0s)
+   --threads value, -t value                                Number of concurrent threads (default: 10)
+   --wordlist-offset value, --wo value                      Resume from a given position in the wordlist (default: 0)
+   --output value, -o value                                 Output file to write results to (defaults to stdout)
+   --quiet, -q                                              Don't print the banner and other noise (default: false)
+   --no-progress, --np                                      Don't display progress (default: false)
+   --no-error, --ne                                         Don't display errors (default: false)
+   --pattern value, -p value                                File containing replacement patterns
+   --discover-pattern value, --pd value                     File containing replacement patterns applied to successful guesses
+   --no-color, --nc                                         Disable color output (default: false)
+   --debug                                                  enable debug output (default: false)
+   --status-codes value, -s value                           Positive status codes (will be overwritten with status-codes-blacklist if set). Can also handle ranges like 200,300-400,404
+   --status-codes-blacklist value, -b value                 Negative status codes (will override status-codes if set). Can also handle ranges like 200,300-400,404. (default: "404")
+   --extensions value, -x value                             File extension(s) to search for
+   --extensions-file value, -X value                        Read file extension(s) to search from the file
+   --expanded, -e                                           Expanded mode, print full URLs (default: false)
+   --no-status, -n                                          Don't print status codes (default: false)
+   --hide-length, --hl                                      Hide the length of the body in the output (default: false)
+   --add-slash, -f                                          Append / to each request (default: false)
+   --discover-backup, --db                                  Upon finding a file search for backup files by appending multiple backup extensions (default: false)
+   --exclude-length value, --xl value                       exclude the following content lengths (completely ignores the status). You can separate multiple lengths by comma and it also supports ranges like 203-206
+   --force                                                  Continue even if the prechecks fail. Please only use this if you know what you are doing, it can lead to unexpected results. (default: false)
+   --help, -h                                               show help
+Incorrect Usage: invalid value "5" for flag -timeout: parse error
+
+NAME:
+   gobuster dir - Uses directory/file enumeration mode
+
+USAGE:
+   gobuster dir command [command options] [arguments...]
+
+COMMANDS:
+   help, h  Shows a list of commands or help for one command
+
+OPTIONS:
+   --url value, -u value                                    The target URL
+   --cookies value, -c value                                Cookies to use for the requests
+   --username value, -U value                               Username for Basic Auth
+   --password value, -P value                               Password for Basic Auth
+   --follow-redirect, -r                                    Follow redirects (default: false)
+   --headers value, -H value [ --headers value, -H value ]  Specify HTTP headers, -H 'Header1: val1' -H 'Header2: val2'
+   --no-canonicalize-headers, --nch                         Do not canonicalize HTTP header names. If set header names are sent as is (default: false)
+   --method value, -m value                                 the password to the p12 file (default: "GET")
+   --useragent value, -a value                              Set the User-Agent string (default: "gobuster/3.8.2")
+   --random-agent, --rua                                    Use a random User-Agent string (default: false)
+   --proxy value                                            Proxy to use for requests [http(s)://host:port] or [socks5://host:port]
+   --timeout value, --to value                              HTTP Timeout (default: 10s)
+   --no-tls-validation, -k                                  Skip TLS certificate verification (default: false)
+   --retry                                                  Should retry on request timeout (default: false)
+   --retry-attempts value, --ra value                       Times to retry on request timeout (default: 3)
+   --client-cert-pem value, --ccp value                     public key in PEM format for optional TLS client certificates]
+   --client-cert-pem-key value, --ccpk value                private key in PEM format for optional TLS client certificates (this key needs to have no password)
+   --client-cert-p12 value, --ccp12 value                   a p12 file to use for options TLS client certificates
+   --client-cert-p12-password value, --ccp12p value         the password to the p12 file
+   --tls-renegotiation                                      Enable TLS renegotiation (default: false)
+   --interface value, --iface value                         specify network interface to use. Can't be used with local-ip
+   --local-ip value                                         specify local ip of network interface to use. Can't be used with interface
+   --wordlist value, -w value                               Path to the wordlist. Set to - to use STDIN.
+   --delay value, -d value                                  Time each thread waits between requests (e.g. 1500ms) (default: 0s)
+   --threads value, -t value                                Number of concurrent threads (default: 10)
+   --wordlist-offset value, --wo value                      Resume from a given position in the wordlist (default: 0)
+   --output value, -o value                                 Output file to write results to (defaults to stdout)
+   --quiet, -q                                              Don't print the banner and other noise (default: false)
+   --no-progress, --np                                      Don't display progress (default: false)
+   --no-error, --ne                                         Don't display errors (default: false)
+   --pattern value, -p value                                File containing replacement patterns
+   --discover-pattern value, --pd value                     File containing replacement patterns applied to successful guesses
+   --no-color, --nc                                         Disable color output (default: false)
+   --debug                                                  enable debug output (default: false)
+   --status-codes value, -s value                           Positive status codes (will be overwritten with status-codes-blacklist if set). Can also handle ranges like 200,300-400,404
+   --status-codes-blacklist value, -b value                 Negative status codes (will override status-codes if set). Can also handle ranges like 200,300-400,404. (default: "404")
+   --extensions value, -x value                             File extension(s) to search for
+   --extensions-file value, -X value                        Read file extension(s) to search from the file
+   --expanded, -e                                           Expanded mode, print full URLs (default: false)
+   --no-status, -n                                          Don't print status codes (default: false)
+   --hide-length, --hl                                      Hide the length of the body in the output (default: false)
+   --add-slash, -f                                          Append / to each request (default: false)
+   --discover-backup, --db                                  Upon finding a file search for backup files by appending multiple backup extensions (default: false)
+   --exclude-length value, --xl value                       exclude the following content lengths (completely ignores the status). You can separate multiple lengths by comma and it also supports ranges like 203-206
+   --force                                                  Continue even if the prechecks fail. Please only use this if you know what you are doing, it can lead to unexpected results. (default: false)
+   --help, -h                                               show help
+Incorrect Usage: invalid value "5" for flag -timeout: parse error
+
+NAME:
+   gobuster dir - Uses directory/file enumeration mode
+
+USAGE:
+   gobuster dir command [command options] [arguments...]
+
+COMMANDS:
+   help, h  Shows a list of commands or help for one command
+
+OPTIONS:
+   --url value, -u value                                    The target URL
+   --cookies value, -c value                                Cookies to use for the requests
+   --username value, -U value                               Username for Basic Auth
+   --password value, -P value                               Password for Basic Auth
+   --follow-redirect, -r                                    Follow redirects (default: false)
+   --headers value, -H value [ --headers value, -H value ]  Specify HTTP headers, -H 'Header1: val1' -H 'Header2: val2'
+   --no-canonicalize-headers, --nch                         Do not canonicalize HTTP header names. If set header names are sent as is (default: false)
+   --method value, -m value                                 the password to the p12 file (default: "GET")
+   --useragent value, -a value                              Set the User-Agent string (default: "gobuster/3.8.2")
+   --random-agent, --rua                                    Use a random User-Agent string (default: false)
+   --proxy value                                            Proxy to use for requests [http(s)://host:port] or [socks5://host:port]
+   --timeout value, --to value                              HTTP Timeout (default: 10s)
+   --no-tls-validation, -k                                  Skip TLS certificate verification (default: false)
+   --retry                                                  Should retry on request timeout (default: false)
+   --retry-attempts value, --ra value                       Times to retry on request timeout (default: 3)
+   --client-cert-pem value, --ccp value                     public key in PEM format for optional TLS client certificates]
+   --client-cert-pem-key value, --ccpk value                private key in PEM format for optional TLS client certificates (this key needs to have no password)
+   --client-cert-p12 value, --ccp12 value                   a p12 file to use for options TLS client certificates
+   --client-cert-p12-password value, --ccp12p value         the password to the p12 file
+   --tls-renegotiation                                      Enable TLS renegotiation (default: false)
+   --interface value, --iface value                         specify network interface to use. Can't be used with local-ip
+   --local-ip value                                         specify local ip of network interface to use. Can't be used with interface
+   --wordlist value, -w value                               Path to the wordlist. Set to - to use STDIN.
+   --delay value, -d value                                  Time each thread waits between requests (e.g. 1500ms) (default: 0s)
+   --threads value, -t value                                Number of concurrent threads (default: 10)
+   --wordlist-offset value, --wo value                      Resume from a given position in the wordlist (default: 0)
+   --output value, -o value                                 Output file to write results to (defaults to stdout)
+   --quiet, -q                                              Don't print the banner and other noise (default: false)
+   --no-progress, --np                                      Don't display progress (default: false)
+   --no-error, --ne                                         Don't display errors (default: false)
+   --pattern value, -p value                                File containing replacement patterns
+   --discover-pattern value, --pd value                     File containing replacement patterns applied to successful guesses
+   --no-color, --nc                                         Disable color output (default: false)
+   --debug                                                  enable debug output (default: false)
+   --status-codes value, -s value                           Positive status codes (will be overwritten with status-codes-blacklist if set). Can also handle ranges like 200,300-400,404
+   --status-codes-blacklist value, -b value                 Negative status codes (will override status-codes if set). Can also handle ranges like 200,300-400,404. (default: "404")
+   --extensions value, -x value                             File extension(s) to search for
+   --extensions-file value, -X value                        Read file extension(s) to search from the file
+   --expanded, -e                                           Expanded mode, print full URLs (default: false)
+   --no-status, -n                                          Don't print status codes (default: false)
+   --hide-length, --hl                                      Hide the length of the body in the output (default: false)
+   --add-slash, -f                                          Append / to each request (default: false)
+   --discover-backup, --db                                  Upon finding a file search for backup files by appending multiple backup extensions (default: false)
+   --exclude-length value, --xl value                       exclude the following content lengths (completely ignores the status). You can separate multiple lengths by comma and it also supports ranges like 203-206
+   --force                                                  Continue even if the prechecks fail. Please only use this if you know what you are doing, it can lead to unexpected results. (default: false)
+   --help, -h                                               show help
+Incorrect Usage: invalid value "5" for flag -timeout: parse error
+
+NAME:
+   gobuster dir - Uses directory/file enumeration mode
+
+USAGE:
+   gobuster dir command [command options] [arguments...]
+
+COMMANDS:
+   help, h  Shows a list of commands or help for one command
+
+OPTIONS:
+   --url value, -u value                                    The target URL
+   --cookies value, -c value                                Cookies to use for the requests
+   --username value, -U value                               Username for Basic Auth
+   --password value, -P value                               Password for Basic Auth
+   --follow-redirect, -r                                    Follow redirects (default: false)
+   --headers value, -H value [ --headers value, -H value ]  Specify HTTP headers, -H 'Header1: val1' -H 'Header2: val2'
+   --no-canonicalize-headers, --nch                         Do not canonicalize HTTP header names. If set header names are sent as is (default: false)
+   --method value, -m value                                 the password to the p12 file (default: "GET")
+   --useragent value, -a value                              Set the User-Agent string (default: "gobuster/3.8.2")
+   --random-agent, --rua                                    Use a random User-Agent string (default: false)
+   --proxy value                                            Proxy to use for requests [http(s)://host:port] or [socks5://host:port]
+   --timeout value, --to value                              HTTP Timeout (default: 10s)
+   --no-tls-validation, -k                                  Skip TLS certificate verification (default: false)
+   --retry                                                  Should retry on request timeout (default: false)
+   --retry-attempts value, --ra value                       Times to retry on request timeout (default: 3)
+   --client-cert-pem value, --ccp value                     public key in PEM format for optional TLS client certificates]
+   --client-cert-pem-key value, --ccpk value                private key in PEM format for optional TLS client certificates (this key needs to have no password)
+   --client-cert-p12 value, --ccp12 value                   a p12 file to use for options TLS client certificates
+   --client-cert-p12-password value, --ccp12p value         the password to the p12 file
+   --tls-renegotiation                                      Enable TLS renegotiation (default: false)
+   --interface value, --iface value                         specify network interface to use. Can't be used with local-ip
+   --local-ip value                                         specify local ip of network interface to use. Can't be used with interface
+   --wordlist value, -w value                               Path to the wordlist. Set to - to use STDIN.
+   --delay value, -d value                                  Time each thread waits between requests (e.g. 1500ms) (default: 0s)
+   --threads value, -t value                                Number of concurrent threads (default: 10)
+   --wordlist-offset value, --wo value                      Resume from a given position in the wordlist (default: 0)
+   --output value, -o value                                 Output file to write results to (defaults to stdout)
+   --quiet, -q                                              Don't print the banner and other noise (default: false)
+   --no-progress, --np                                      Don't display progress (default: false)
+   --no-error, --ne                                         Don't display errors (default: false)
+   --pattern value, -p value                                File containing replacement patterns
+   --discover-pattern value, --pd value                     File containing replacement patterns applied to successful guesses
+   --no-color, --nc                                         Disable color output (default: false)
+   --debug                                                  enable debug output (default: false)
+   --status-codes value, -s value                           Positive status codes (will be overwritten with status-codes-blacklist if set). Can also handle ranges like 200,300-400,404
+   --status-codes-blacklist value, -b value                 Negative status codes (will override status-codes if set). Can also handle ranges like 200,300-400,404. (default: "404")
+   --extensions value, -x value                             File extension(s) to search for
+   --extensions-file value, -X value                        Read file extension(s) to search from the file
+   --expanded, -e                                           Expanded mode, print full URLs (default: false)
+   --no-status, -n                                          Don't print status codes (default: false)
+   --hide-length, --hl                                      Hide the length of the body in the output (default: false)
+   --add-slash, -f                                          Append / to each request (default: false)
+   --discover-backup, --db                                  Upon finding a file search for backup files by appending multiple backup extensions (default: false)
+   --exclude-length value, --xl value                       exclude the following content lengths (completely ignores the status). You can separate multiple lengths by comma and it also supports ranges like 203-206
+   --force                                                  Continue even if the prechecks fail. Please only use this if you know what you are doing, it can lead to unexpected results. (default: false)
+   --help, -h                                               show help
+Incorrect Usage: invalid value "5" for flag -timeout: parse error
+
+NAME:
+   gobuster dir - Uses directory/file enumeration mode
+
+USAGE:
+   gobuster dir command [command options] [arguments...]
+
+COMMANDS:
+   help, h  Shows a list of commands or help for one command
+
+OPTIONS:
+   --url value, -u value                                    The target URL
+   --cookies value, -c value                                Cookies to use for the requests
+   --username value, -U value                               Username for Basic Auth
+   --password value, -P value                               Password for Basic Auth
+   --follow-redirect, -r                                    Follow redirects (default: false)
+   --headers value, -H value [ --headers value, -H value ]  Specify HTTP headers, -H 'Header1: val1' -H 'Header2: val2'
+   --no-canonicalize-headers, --nch                         Do not canonicalize HTTP header names. If set header names are sent as is (default: false)
+   --method value, -m value                                 the password to the p12 file (default: "GET")
+   --useragent value, -a value                              Set the User-Agent string (default: "gobuster/3.8.2")
+   --random-agent, --rua                                    Use a random User-Agent string (default: false)
+   --proxy value                                            Proxy to use for requests [http(s)://host:port] or [socks5://host:port]
+   --timeout value, --to value                              HTTP Timeout (default: 10s)
+   --no-tls-validation, -k                                  Skip TLS certificate verification (default: false)
+   --retry                                                  Should retry on request timeout (default: false)
+   --retry-attempts value, --ra value                       Times to retry on request timeout (default: 3)
+   --client-cert-pem value, --ccp value                     public key in PEM format for optional TLS client certificates]
+   --client-cert-pem-key value, --ccpk value                private key in PEM format for optional TLS client certificates (this key needs to have no password)
+   --client-cert-p12 value, --ccp12 value                   a p12 file to use for options TLS client certificates
+   --client-cert-p12-password value, --ccp12p value         the password to the p12 file
+   --tls-renegotiation                                      Enable TLS renegotiation (default: false)
+   --interface value, --iface value                         specify network interface to use. Can't be used with local-ip
+   --local-ip value                                         specify local ip of network interface to use. Can't be used with interface
+   --wordlist value, -w value                               Path to the wordlist. Set to - to use STDIN.
+   --delay value, -d value                                  Time each thread waits between requests (e.g. 1500ms) (default: 0s)
+   --threads value, -t value                                Number of concurrent threads (default: 10)
+   --wordlist-offset value, --wo value                      Resume from a given position in the wordlist (default: 0)
+   --output value, -o value                                 Output file to write results to (defaults to stdout)
+   --quiet, -q                                              Don't print the banner and other noise (default: false)
+   --no-progress, --np                                      Don't display progress (default: false)
+   --no-error, --ne                                         Don't display errors (default: false)
+   --pattern value, -p value                                File containing replacement patterns
+   --discover-pattern value, --pd value                     File containing replacement patterns applied to successful guesses
+   --no-color, --nc                                         Disable color output (default: false)
+   --debug                                                  enable debug output (default: false)
+   --status-codes value, -s value                           Positive status codes (will be overwritten with status-codes-blacklist if set). Can also handle ranges like 200,300-400,404
+   --status-codes-blacklist value, -b value                 Negative status codes (will override status-codes if set). Can also handle ranges like 200,300-400,404. (default: "404")
+   --extensions value, -x value                             File extension(s) to search for
+   --extensions-file value, -X value                        Read file extension(s) to search from the file
+   --expanded, -e                                           Expanded mode, print full URLs (default: false)
+   --no-status, -n                                          Don't print status codes (default: false)
+   --hide-length, --hl                                      Hide the length of the body in the output (default: false)
+   --add-slash, -f                                          Append / to each request (default: false)
+   --discover-backup, --db                                  Upon finding a file search for backup files by appending multiple backup extensions (default: false)
+   --exclude-length value, --xl value                       exclude the following content lengths (completely ignores the status). You can separate multiple lengths by comma and it also supports ranges like 203-206
+   --force                                                  Continue even if the prechecks fail. Please only use this if you know what you are doing, it can lead to unexpected results. (default: false)
+   --help, -h                                               show help
+Incorrect Usage: invalid value "5" for flag -timeout: parse error
+
+NAME:
+   gobuster dir - Uses directory/file enumeration mode
+
+USAGE:
+   gobuster dir command [command options] [arguments...]
+
+COMMANDS:
+   help, h  Shows a list of commands or help for one command
+
+OPTIONS:
+   --url value, -u value                                    The target URL
+   --cookies value, -c value                                Cookies to use for the requests
+   --username value, -U value                               Username for Basic Auth
+   --password value, -P value                               Password for Basic Auth
+   --follow-redirect, -r                                    Follow redirects (default: false)
+   --headers value, -H value [ --headers value, -H value ]  Specify HTTP headers, -H 'Header1: val1' -H 'Header2: val2'
+   --no-canonicalize-headers, --nch                         Do not canonicalize HTTP header names. If set header names are sent as is (default: false)
+   --method value, -m value                                 the password to the p12 file (default: "GET")
+   --useragent value, -a value                              Set the User-Agent string (default: "gobuster/3.8.2")
+   --random-agent, --rua                                    Use a random User-Agent string (default: false)
+   --proxy value                                            Proxy to use for requests [http(s)://host:port] or [socks5://host:port]
+   --timeout value, --to value                              HTTP Timeout (default: 10s)
+   --no-tls-validation, -k                                  Skip TLS certificate verification (default: false)
+   --retry                                                  Should retry on request timeout (default: false)
+   --retry-attempts value, --ra value                       Times to retry on request timeout (default: 3)
+   --client-cert-pem value, --ccp value                     public key in PEM format for optional TLS client certificates]
+   --client-cert-pem-key value, --ccpk value                private key in PEM format for optional TLS client certificates (this key needs to have no password)
+   --client-cert-p12 value, --ccp12 value                   a p12 file to use for options TLS client certificates
+   --client-cert-p12-password value, --ccp12p value         the password to the p12 file
+   --tls-renegotiation                                      Enable TLS renegotiation (default: false)
+   --interface value, --iface value                         specify network interface to use. Can't be used with local-ip
+   --local-ip value                                         specify local ip of network interface to use. Can't be used with interface
+   --wordlist value, -w value                               Path to the wordlist. Set to - to use STDIN.
+   --delay value, -d value                                  Time each thread waits between requests (e.g. 1500ms) (default: 0s)
+   --threads value, -t value                                Number of concurrent threads (default: 10)
+   --wordlist-offset value, --wo value                      Resume from a given position in the wordlist (default: 0)
+   --output value, -o value                                 Output file to write results to (defaults to stdout)
+   --quiet, -q                                              Don't print the banner and other noise (default: false)
+   --no-progress, --np                                      Don't display progress (default: false)
+   --no-error, --ne                                         Don't display errors (default: false)
+   --pattern value, -p value                                File containing replacement patterns
+   --discover-pattern value, --pd value                     File containing replacement patterns applied to successful guesses
+   --no-color, --nc                                         Disable color output (default: false)
+   --debug                                                  enable debug output (default: false)
+   --status-codes value, -s value                           Positive status codes (will be overwritten with status-codes-blacklist if set). Can also handle ranges like 200,300-400,404
+   --status-codes-blacklist value, -b value                 Negative status codes (will override status-codes if set). Can also handle ranges like 200,300-400,404. (default: "404")
+   --extensions value, -x value                             File extension(s) to search for
+   --extensions-file value, -X value                        Read file extension(s) to search from the file
+   --expanded, -e                                           Expanded mode, print full URLs (default: false)
+   --no-status, -n                                          Don't print status codes (default: false)
+   --hide-length, --hl                                      Hide the length of the body in the output (default: false)
+   --add-slash, -f                                          Append / to each request (default: false)
+   --discover-backup, --db                                  Upon finding a file search for backup files by appending multiple backup extensions (default: false)
+   --exclude-length value, --xl value                       exclude the following content lengths (completely ignores the status). You can separate multiple lengths by comma and it also supports ranges like 203-206
+   --force                                                  Continue even if the prechecks fail. Please only use this if you know what you are doing, it can lead to unexpected results. (default: false)
+   --help, -h                                               show help
+Incorrect Usage: invalid value "5" for flag -timeout: parse error
+
+NAME:
+   gobuster dir - Uses directory/file enumeration mode
+
+USAGE:
+   gobuster dir command [command options] [arguments...]
+
+COMMANDS:
+   help, h  Shows a list of commands or help for one command
+
+OPTIONS:
+   --url value, -u value                                    The target URL
+   --cookies value, -c value                                Cookies to use for the requests
+   --username value, -U value                               Username for Basic Auth
+   --password value, -P value                               Password for Basic Auth
+   --follow-redirect, -r                                    Follow redirects (default: false)
+   --headers value, -H value [ --headers value, -H value ]  Specify HTTP headers, -H 'Header1: val1' -H 'Header2: val2'
+   --no-canonicalize-headers, --nch                         Do not canonicalize HTTP header names. If set header names are sent as is (default: false)
+   --method value, -m value                                 the password to the p12 file (default: "GET")
+   --useragent value, -a value                              Set the User-Agent string (default: "gobuster/3.8.2")
+   --random-agent, --rua                                    Use a random User-Agent string (default: false)
+   --proxy value                                            Proxy to use for requests [http(s)://host:port] or [socks5://host:port]
+   --timeout value, --to value                              HTTP Timeout (default: 10s)
+   --no-tls-validation, -k                                  Skip TLS certificate verification (default: false)
+   --retry                                                  Should retry on request timeout (default: false)
+   --retry-attempts value, --ra value                       Times to retry on request timeout (default: 3)
+   --client-cert-pem value, --ccp value                     public key in PEM format for optional TLS client certificates]
+   --client-cert-pem-key value, --ccpk value                private key in PEM format for optional TLS client certificates (this key needs to have no password)
+   --client-cert-p12 value, --ccp12 value                   a p12 file to use for options TLS client certificates
+   --client-cert-p12-password value, --ccp12p value         the password to the p12 file
+   --tls-renegotiation                                      Enable TLS renegotiation (default: false)
+   --interface value, --iface value                         specify network interface to use. Can't be used with local-ip
+   --local-ip value                                         specify local ip of network interface to use. Can't be used with interface
+   --wordlist value, -w value                               Path to the wordlist. Set to - to use STDIN.
+   --delay value, -d value                                  Time each thread waits between requests (e.g. 1500ms) (default: 0s)
+   --threads value, -t value                                Number of concurrent threads (default: 10)
+   --wordlist-offset value, --wo value                      Resume from a given position in the wordlist (default: 0)
+   --output value, -o value                                 Output file to write results to (defaults to stdout)
+   --quiet, -q                                              Don't print the banner and other noise (default: false)
+   --no-progress, --np                                      Don't display progress (default: false)
+   --no-error, --ne                                         Don't display errors (default: false)
+   --pattern value, -p value                                File containing replacement patterns
+   --discover-pattern value, --pd value                     File containing replacement patterns applied to successful guesses
+   --no-color, --nc                                         Disable color output (default: false)
+   --debug                                                  enable debug output (default: false)
+   --status-codes value, -s value                           Positive status codes (will be overwritten with status-codes-blacklist if set). Can also handle ranges like 200,300-400,404
+   --status-codes-blacklist value, -b value                 Negative status codes (will override status-codes if set). Can also handle ranges like 200,300-400,404. (default: "404")
+   --extensions value, -x value                             File extension(s) to search for
+   --extensions-file value, -X value                        Read file extension(s) to search from the file
+   --expanded, -e                                           Expanded mode, print full URLs (default: false)
+   --no-status, -n                                          Don't print status codes (default: false)
+   --hide-length, --hl                                      Hide the length of the body in the output (default: false)
+   --add-slash, -f                                          Append / to each request (default: false)
+   --discover-backup, --db                                  Upon finding a file search for backup files by appending multiple backup extensions (default: false)
+   --exclude-length value, --xl value                       exclude the following content lengths (completely ignores the status). You can separate multiple lengths by comma and it also supports ranges like 203-206
+   --force                                                  Continue even if the prechecks fail. Please only use this if you know what you are doing, it can lead to unexpected results. (default: false)
+   --help, -h                                               show help
+===============================================================
+Gobuster v3.8.2
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.49.173.136
+[+] Method:                  GET
+[+] Threads:                 50
+[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.8.2
+[+] Extensions:              log,php,html,js,json,jsx,eml,txt
+[+] Timeout:                 4s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+===============================================================
+Gobuster v3.8.2
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.49.173.136
+[+] Method:                  POST
+[+] Threads:                 50
+[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.8.2
+[+] Extensions:              jsx,eml,txt,log,php,html,js,json
+[+] Timeout:                 4s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+===============================================================
+Gobuster v3.8.2
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.49.173.136
+[+] Method:                  PUT
+[+] Threads:                 50
+[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.8.2
+[+] Extensions:              eml,txt,log,php,html,js,json,jsx
+[+] Timeout:                 4s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+===============================================================
+Gobuster v3.8.2
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.49.173.136
+[+] Method:                  DELETE
+[+] Threads:                 50
+[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.8.2
+[+] Extensions:              log,php,html,js,json,jsx,eml,txt
+[+] Timeout:                 4s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+===============================================================
+Gobuster v3.8.2
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.49.173.136
+[+] Method:                  HEAD
+[+] Threads:                 50
+[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.8.2
+[+] Extensions:              txt,log,php,html,js,json,jsx,eml
+[+] Timeout:                 4s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+===============================================================
+Gobuster v3.8.2
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.49.173.136
+[+] Method:                  OPTIONS
+[+] Threads:                 50
+[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.8.2
+[+] Extensions:              eml,txt,log,php,html,js,json,jsx
+[+] Timeout:                 4s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+===============================================================
+Gobuster v3.8.2
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.48.189.50
+[+] Method:                  GET
+[+] Threads:                 50
+[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.8.2
+[+] Extensions:              html,js,json,jsx,eml,txt,log,php
+[+] Timeout:                 4s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+index.php            (Status: 200) [Size: 337]
+search               (Status: 200) [Size: 197]
+action.php           (Status: 400) [Size: 0]
+attack               (Status: 200) [Size: 181]
+lamp                 (Status: 200) [Size: 261]
+matches              (Status: 200) [Size: 249]
+walk                 (Status: 200) [Size: 161]
+===============================================================
+Finished
+===============================================================
+===============================================================
+Gobuster v3.8.2
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.48.189.50
+[+] Method:                  POST
+[+] Threads:                 50
+[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.8.2
+[+] Extensions:              eml,txt,log,php,html,js,json,jsx
+[+] Timeout:                 4s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+index.php            (Status: 200) [Size: 337]
+search               (Status: 200) [Size: 197]
+action.php           (Status: 400) [Size: 0]
+attack               (Status: 200) [Size: 181]
+lamp                 (Status: 200) [Size: 261]
+matches              (Status: 200) [Size: 249]
+walk                 (Status: 200) [Size: 161]
+===============================================================
+Finished
+===============================================================
+===============================================================
+Gobuster v3.8.2
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.48.189.50
+[+] Method:                  PUT
+[+] Threads:                 50
+[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.8.2
+[+] Extensions:              jsx,eml,txt,log,php,html,js,json
+[+] Timeout:                 4s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+===============================================================
+Gobuster v3.8.2
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.48.189.50
+[+] Method:                  DELETE
+[+] Threads:                 50
+[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.8.2
+[+] Extensions:              jsx,eml,txt,log,php,html,js,json
+[+] Timeout:                 4s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+===============================================================
+Gobuster v3.8.2
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.48.189.50
+[+] Method:                  HEAD
+[+] Threads:                 50
+[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.8.2
+[+] Extensions:              txt,log,php,html,js,json,jsx,eml
+[+] Timeout:                 4s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+index.php            (Status: 200) [Size: 0]
+search               (Status: 200) [Size: 0]
+action.php           (Status: 400) [Size: 0]
+===============================================================
+Gobuster v3.8.2
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.48.189.50
+[+] Method:                  GET
+[+] Threads:                 50
+[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.8.2
+[+] Extensions:              jsx,eml,txt,log,php,html,js,json
+[+] Timeout:                 4s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+===============================================================
+Gobuster v3.8.2
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.48.189.50
+[+] Method:                  POST
+[+] Threads:                 50
+[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.8.2
+[+] Extensions:              php,html,js,json,jsx,eml,txt,log
+[+] Timeout:                 4s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+===============================================================
+Gobuster v3.8.2
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.48.189.50
+[+] Method:                  PUT
+[+] Threads:                 50
+[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.8.2
+[+] Extensions:              eml,txt,log,php,html,js,json,jsx
+[+] Timeout:                 4s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+===============================================================
+Gobuster v3.8.2
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.48.189.50
+[+] Method:                  DELETE
+[+] Threads:                 50
+[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.8.2
+[+] Extensions:              html,js,json,jsx,eml,txt,log,php
+[+] Timeout:                 4s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+===============================================================
+Gobuster v3.8.2
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.48.189.50
+[+] Method:                  HEAD
+[+] Threads:                 50
+[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.8.2
+[+] Extensions:              log,php,html,js,json,jsx,eml,txt
+[+] Timeout:                 4s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+===============================================================
+Gobuster v3.8.2
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.48.189.50
+[+] Method:                  OPTIONS
+[+] Threads:                 50
+[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.8.2
+[+] Extensions:              json,jsx,eml,txt,log,php,html,js
+[+] Timeout:                 4s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+===============================================================
+Gobuster v3.8.2
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.48.189.50
+[+] Method:                  GET
+[+] Threads:                 50
+[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.8.2
+[+] Extensions:              html,js,json,jsx,eml,txt,log,php
+[+] Timeout:                 4s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+index.php            (Status: 200) [Size: 337]
+search               (Status: 200) [Size: 197]
+action.php           (Status: 400) [Size: 0]
+attack               (Status: 200) [Size: 181]
+lamp                 (Status: 200) [Size: 261]
+matches              (Status: 200) [Size: 249]
+walk                 (Status: 200) [Size: 161]
+===============================================================
+Finished
+===============================================================
+===============================================================
+Gobuster v3.8.2
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.48.189.50
+[+] Method:                  POST
+[+] Threads:                 50
+[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.8.2
+[+] Extensions:              php,html,js,json,jsx,eml,txt,log
+[+] Timeout:                 4s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+index.php            (Status: 200) [Size: 337]
+search               (Status: 200) [Size: 197]
+action.php           (Status: 400) [Size: 0]
+attack               (Status: 200) [Size: 181]
+lamp                 (Status: 200) [Size: 261]
+matches              (Status: 200) [Size: 249]
+walk                 (Status: 200) [Size: 161]
+===============================================================
+Finished
+===============================================================
+===============================================================
+Gobuster v3.8.2
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.48.189.50
+[+] Method:                  PUT
+[+] Threads:                 50
+[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.8.2
+[+] Extensions:              txt,log,php,html,js,json,jsx,eml
+[+] Timeout:                 4s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+===============================================================
+Gobuster v3.8.2
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.48.189.50
+[+] Method:                  DELETE
+[+] Threads:                 50
+[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.8.2
+[+] Extensions:              js,json,jsx,eml,txt,log,php,html
+[+] Timeout:                 4s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+===============================================================
+Gobuster v3.8.2
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.48.189.50
+[+] Method:                  HEAD
+[+] Threads:                 50
+[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.8.2
+[+] Extensions:              jsx,eml,txt,log,php,html,js,json
+[+] Timeout:                 4s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+index.php            (Status: 200) [Size: 0]
+search               (Status: 200) [Size: 0]
+action.php           (Status: 400) [Size: 0]
+attack               (Status: 200) [Size: 0]
+lamp                 (Status: 200) [Size: 0]
+matches              (Status: 200) [Size: 0]
+walk                 (Status: 200) [Size: 0]
+===============================================================
+Finished
+===============================================================
+===============================================================
+Gobuster v3.8.2
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.48.189.50
+[+] Method:                  OPTIONS
+[+] Threads:                 50
+[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.8.2
+[+] Extensions:              php,html,js,json,jsx,eml,txt,log
+[+] Timeout:                 4s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
