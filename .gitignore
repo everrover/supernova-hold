@@ -32,3 +32,9 @@
 *.app
 
 MOV.md
+*.zip
+WRITEUP.md
+his*.txt
+
+*pycache*
+token
