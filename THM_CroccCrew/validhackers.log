@@ -1,0 +1,24 @@
+
+    __             __               __     
+   / /_____  _____/ /_  _______  __/ /____ 
+  / //_/ _ \/ ___/ __ \/ ___/ / / / __/ _ \
+ / ,< /  __/ /  / /_/ / /  / /_/ / /_/  __/
+/_/|_|\___/_/  /_.___/_/   \__,_/\__/\___/                                        
+
+Version: v1.0.3 (9dad6e1) - 09/09/26 - Ronnie Flathers @ropnop
+
+2026/09/09 08:46:58 >  Using KDC(s):[0m
+2026/09/09 08:46:58 >  	COOCTUS.CORP0:88
+[0m
+[32m2026/09/09 08:46:58 >  [+] VALID USERNAME:	 CRYILLIC@COOCTUS.CORP[0m
+[36m2026/09/09 08:46:58 >  [!] DARKSTAR7471@COOCTUS.CORP - User does not exist[0m
+[36m2026/09/09 08:46:58 >  [!] MILES@COOCTUS.CORP - User does not exist[0m
+[36m2026/09/09 08:46:58 >  [!] HORSHARK@COOCTUS.CORP - User does not exist[0m
+[36m2026/09/09 08:46:58 >  [!] CAKE@COOCTUS.CORP - User does not exist[0m
+[36m2026/09/09 08:46:58 >  [!] SP00KY@COOCTUS.CORP - User does not exist[0m
+[32m2026/09/09 08:46:58 >  [+] VALID USERNAME:	 VARG@COOCTUS.CORP[0m
+[36m2026/09/09 08:46:58 >  [!] SMACKHACK@COOCTUS.CORP - User does not exist[0m
+[36m2026/09/09 08:46:58 >  [!] ORIEL@COOCTUS.CORP - User does not exist[0m
+[36m2026/09/09 08:46:58 >  [!] NAMELESS0NE@COOCTUS.CORP - User does not exist[0m
+[32m2026/09/09 08:46:59 >  [+] VALID USERNAME:	 FAWAZ@COOCTUS.CORP[0m
+2026/09/09 08:46:59 >  Done! Tested 11 usernames (3 valid) in 0.068 seconds[0m

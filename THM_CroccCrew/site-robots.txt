@@ -1,0 +1,29 @@
+User-Agent: *
+Disallow:
+/robots.txt
+/db-config.bak
+/backdoor.php
+
+=============
+
+<?php
+
+$servername = "db.cooctus.corp";
+$username = "C00ctusAdm1n";
+$password = "B4dt0th3b0n3";
+
+// Create connection $conn = new mysqli($servername, $username, $password);
+
+// Check connection if ($conn->connect_error) {
+die ("Connection Failed: " .$conn->connect_error);
+}
+
+echo "Connected Successfully";
+
+?>
+
+============
+
+terminal--
+CroccCre >:)
+> 

@@ -1,0 +1,48 @@
+┌──(kali㉿kali)-[~/Downloads]
+└─$ sudo nmap -sC -sV -T5 10.49.191.103
+[sudo] password for kali: 
+Starting Nmap 7.98 ( https://nmap.org ) at 2026-09-08 10:02 -0600
+Nmap scan report for 10.49.191.103
+Host is up (0.033s latency).
+Not shown: 989 filtered tcp ports (no-response)
+PORT     STATE SERVICE       VERSION
+53/tcp   open  domain        Simple DNS Plus
+80/tcp   open  http          Microsoft IIS httpd 10.0
+|_http-server-header: Microsoft-IIS/10.0
+| http-methods: 
+|_  Potentially risky methods: TRACE
+88/tcp   open  kerberos-sec  Microsoft Windows Kerberos (server time: 2026-09-08 16:02:36Z)
+135/tcp  open  msrpc         Microsoft Windows RPC
+139/tcp  open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: COOCTUS.CORP, Site: Default-First-Site-Name)
+445/tcp  open  microsoft-ds?
+464/tcp  open  kpasswd5?
+593/tcp  open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp  open  tcpwrapped
+3389/tcp open  ms-wbt-server Microsoft Terminal Services
+| ssl-cert: Subject: commonName=DC.COOCTUS.CORP
+| Not valid before: 2026-09-07T16:02:00
+|_Not valid after:  2027-03-09T16:02:00
+|_ssl-date: 2026-09-08T16:03:18+00:00; -1s from scanner time.
+| rdp-ntlm-info: 
+|   Target_Name: COOCTUS
+|   NetBIOS_Domain_Name: COOCTUS
+|   NetBIOS_Computer_Name: DC
+|   DNS_Domain_Name: COOCTUS.CORP
+|   DNS_Computer_Name: DC.COOCTUS.CORP
+|   Product_Version: 10.0.17763
+|_  System_Time: 2026-09-08T16:02:38+00:00
+Service Info: Host: DC; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-time: 
+|   date: 2026-09-08T16:02:39
+|_  start_date: N/A
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled and required
+|_clock-skew: mean: -1s, deviation: 0s, median: -1s
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 53.52 seconds
+
