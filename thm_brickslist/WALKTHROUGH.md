@@ -133,16 +133,66 @@ all were visible in recon (`robots.txt`, wpscan output) but are decoys. `/wp-adm
 `phpmyadmin/` are exposed but never touched; the entire foothold is the one unauthenticated
 `render_element` REST call above.
 
-## Loose thread in the captured log
+## 7. Post-exploitation: the box was already infected with a cryptominer
 
-`thm_brickslist.txt` also has a long tail of `[*] Miner()` lines and an `ID: <hex>` blob
-starting around the point the reverse shell attempt failed. That's not part of this
-exploitation chain — it's the start of the room's **post-exploitation** stage (a disguised
-cryptominer running as `ubuntu.service` / binary `nm-inet-dialog`, logging to
-`/lib/NetworkManager/inet.conf`, wallet address hidden as hex→base64→base64→base64 in that log,
-tied by transaction history to an OFAC-sanctioned LockBit wallet). If you want that part
-written up too, say so — it's a separate investigation from the RCE foothold above, not a
-second exploitation vector.
+The reverse-shell attempt in step 6 does eventually land — egress on 9586 isn't actually
+blocked, the PoC's own HTTP client just times out waiting on the blocking `bash -c` call while
+the payload runs server-side. The callback comes in as a real interactive shell:
+
+```
+apache@ip-10-49-147-114:/lib/NetworkManager$
+```
+
+`/lib/NetworkManager` is a deliberately unremarkable place to poke around, and it's not empty —
+it's the working directory of a cryptomining implant that predates this session, disguised
+under a legitimate-sounding systemd/NetworkManager name (`nm-inet-dialog`, run as
+`ubuntu.service`) so a casual `ps`/`systemctl` scan reads it as normal networking machinery.
+This is not part of the CVE-2024-25600 chain — it's forensic evidence of a *separate*, prior
+compromise of this box, left in place by the room.
+
+### 7.1 The miner's activity log
+
+Sitting in that directory is a log that heartbeats a `[*] Miner()` line roughly every 2 seconds,
+continuously, from `2024-04-08` through `2024-04-11` in the capture — 1,300+ lines, i.e. the
+implant had been mining unattended for days:
+
+```
+2024-04-08 10:49:04,711 [*] Miner()
+2024-04-08 10:49:06,713 [*] Miner()
+...
+```
+
+### 7.2 Decoding the payout wallet from `inet.conf`
+
+The miner's config, `inet.conf`, is a binary file that stores its payout address obfuscated
+behind three layers (hex → base64 → base64) under an `ID:` field:
+
+```
+apache@ip-10-49-147-114:/lib/NetworkManager$ grep '^ID:' inet.conf | awk '{print $2}' | xxd -r -p | base64 -d | base64 -d
+```
+
+Decoding the same hex blob manually confirms it:
+
+```python
+python3 -c "import base64;h='5757...UT0=';print(base64.b64decode(base64.b64decode(bytes.fromhex(h))).decode())"
+```
+
+```
+bc1qyk79fcp9hd5kreprce89tkh4wrtl8avt4l67qa
+```
+
+That's a bech32 Bitcoin address the implant mines to. Per transaction-history attribution
+against public sanctions data, this wallet has been tied to an OFAC-sanctioned LockBit
+ransomware-affiliated address — i.e. the box wasn't just running "a miner", it had been
+conscripted into infrastructure linked to a sanctioned ransomware group's payout chain.
+
+### 7.3 Takeaway
+
+The intended room objective (Flag 1, via CVE-2024-25600) and this discovery are two unrelated
+findings that happen to sit in the same box: the theme RCE is the documented vulnerability to
+exploit for the flag, while the `/lib/NetworkManager/inet.conf` miner is leftover evidence that
+the same unauthenticated RCE (or an equally trivial vector) had already been abused by someone
+else before this session ever started.
 
 ## References
 
