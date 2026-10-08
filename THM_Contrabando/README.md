@@ -155,7 +155,7 @@ user `hansolo` on `contrabando` (outside the container, on `172.18.0.1`).
 
 ## 5. Privilege escalation: hansolo → root
 
-`hansolo`'s home has `bf.py`, a brute-forcer against
+i created a `bf.py`, a brute-forcer against
 `sudo /usr/bin/bash /usr/bin/vault`:
 
 ```python
