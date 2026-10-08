@@ -227,6 +227,77 @@ Apache proxy (front end, localhost)
                                    → sudo python2 app.py: Py2 input() = eval() → root
 ```
 
+## Appendix: the same bug class in the wild — CVE-2023-25690
+
+The smuggling primitive used against the Apache proxy in this box (decode a
+CRLF somewhere, re-emit it unescaped into a second request) isn't a one-off
+trick — it's exactly the root cause of a real, critical Apache httpd CVE:
+**CVE-2023-25690**, "HTTP Request Smuggling with mod_rewrite and mod_proxy"
+(CVSS 10.0, affects 2.4.0–2.4.55, fixed in 2.4.56).
+
+**Vulnerable pattern.** It needs `mod_proxy` used together with a
+`RewriteRule`/`ProxyPassMatch` where a loose regex (`(.*)`) captures part of
+the client's request-target and that capture is spliced back into the
+**query string** of the proxied destination via a backreference:
+
+```apache
+RewriteEngine on
+RewriteRule "^/(.*)" "http://backend:8081/?arg=$1" [P]   # vulnerable
+RewriteRule "^/(.*)" "http://backend:8081/$1"      [P]   # not vulnerable
+```
+
+Only the first form is exploitable — the difference is *where* `$1` lands
+(query vs. path), which turns out to matter a lot (see below).
+
+**Why Apache "allows" this — three individually-reasonable decisions
+composing badly:**
+
+1. **mod_rewrite has to match on decoded text.** For `RewriteRule
+   "^/here/(.*)"` to match a human-typed path like `/here/foo bar`, mod_rewrite
+   unescapes the URL *before* matching. So if the client sent `%0D%0A` in
+   the original request, the captured `$1` now contains a literal CR LF —
+   that's inherent to "decode before matching," not a bug by itself.
+2. **Substitution doesn't re-escape by default.** mod_rewrite has always had
+   an opt-in `B` flag (`[P,B]`) to re-escape backreferences before
+   substitution — its existence proves the risk was known — but it was never
+   the default, and essentially nobody enabled it on reverse-proxy rules,
+   because the assumed risk was "a weird character breaks my URL," not "the
+   backend's TCP connection gets split into two requests."
+3. **mod_proxy trusts the string it's handed.** Once mod_rewrite substitutes
+   `$1` in, mod_proxy just sees `http://backend:8081/?arg=<whatever>` — syntactically
+   identical to a normal, trusted, admin-authored `ProxyPass` target. It has
+   no way to know part of that string is attacker-controlled, so it builds
+   the outgoing backend request from it as-is, exactly as it's supposed to.
+
+On top of that, httpd treats **path** components as routing/security-relevant
+(canonicalized, traversal-checked) but treats **query strings** as opaque
+application data it deliberately doesn't touch or re-encode, since many
+backend apps depend on receiving the client's raw query bytes untouched.
+That's why the query string specifically was the gap nobody was
+independently re-validating.
+
+None of the three decisions above is wrong in isolation — mod_rewrite's
+unescape-to-match behavior, its default no-escape substitution, and
+mod_proxy's trust in its input are each reasonable on their own. The CVE
+exists because nobody had chained "unescaped regex capture" → "lands in a
+query string" → "destination is a live backend connection, not a log line"
+into one exploitable path until it was specifically looked for. That's the
+generic shape of request-smuggling bugs in general, including the hand-built
+one used against `/gen.php` above: one layer decodes-to-match, a second
+layer re-emits the result assuming it's still inert data, and nothing in
+between checks that the round trip didn't just hand an attacker literal
+protocol-framing bytes.
+
+**Impact:** front-end access-control bypass, proxying unintended URLs to the
+origin server, cache poisoning — the first of which is precisely what the
+smuggling step in this room's exploit chain achieves against `/gen.php`.
+
+**Fix (2.4.56):** control characters are now stripped/rejected from the
+fully-substituted request-target before it's handed to mod_proxy, instead of
+relying on admins remembering to opt into `[P,B]`.
+
+Sources: [Apache httpd 2.4 vulnerabilities list](https://httpd.apache.org/security/vulnerabilities_24.html) · [RewriteRule flags docs (`B` flag)](https://httpd.apache.org/docs/current/rewrite/flags.html) · [Rapid7 CVE-2023-25690 analysis](https://www.rapid7.com/blog/post/ra-cve-2023-25690-analysis/) · [exploit-intel.com summary](https://exploit-intel.com/vuln/CVE-2023-25690)
+
 ## Files in this folder
 
 | File | Role |
